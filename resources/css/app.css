@@ -4,23 +4,24 @@
 
 @font-face {
   font-family: 'Metropolis';
-  src: url('/fonts/Metropolis-Regular.otf') format('opentype');
+  src: url('/resources/fonts/Metropolis-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Metropolis';
-  src: url('/fonts/Metropolis-Bold.otf') format('opentype');
+  src: url('/resources/fonts/Metropolis-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
     font-family: 'Metropolis';
-    src: url('/fonts/Metropolis-Italic.otf') format('truetype');
+    src: url('resources/fonts/Metropolis-Italic.otf') format('truetype');
     font-style: italic;
 }
+
 body {
     font-family: 'Metropolis', sans-serif;
 }
