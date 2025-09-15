@@ -1,5 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+<style>
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        content: '';
+        display: none;
+    }
+</style>
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +22,9 @@
     <title>Intan Safety</title>
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
+    <!-- Tambahkan Swiper.js untuk slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body class="bg-white text-blue-950 font-metropolis">
@@ -285,6 +303,482 @@
         </div>
     </section>
 
+    <!-- Program Pelatihan Unggulan Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
+            <div class="mb-6 md:mb-0">
+                <h2 class="text-3xl font-bold text-[#144F5F]">Program Pelatihan Unggulan</h2>
+                <p class="text-gray-600 mt-2">Pilih program pelatihan sesuai kebutuhan Anda</p>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div class="flex flex-wrap gap-2 md:gap-4">
+                <button
+                    class="tab-btn px-4 py-2 rounded-full border border-[#73BA7D] text-[#73BA7D] hover:bg-[#73BA7D] hover:text-white transition-colors duration-300 active"
+                    data-category="kemnaker">
+                    Kemnaker RI
+                </button>
+                <button
+                    class="tab-btn px-4 py-2 rounded-full border border-[#73BA7D] text-[#73BA7D] hover:bg-[#73BA7D] hover:text-white transition-colors duration-300"
+                    data-category="bnsp">
+                    BNSP
+                </button>
+                <button
+                    class="tab-btn px-4 py-2 rounded-full border border-[#73BA7D] text-[#73BA7D] hover:bg-[#73BA7D] hover:text-white transition-colors duration-300"
+                    data-category="softskill">
+                    Soft Skill
+                </button>
+            </div>
+        </div>
+
+        <!-- Program Content -->
+        <div class="program-content">
+            <!-- Kemnaker RI Programs (Default Active) -->
+            <div class="program-category active" id="kemnaker">
+                <div class="swiper programSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Card 1 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Juru Las 1" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 1</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 1 dengan
+                                        standar Kemnaker RI</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Juru Las 2" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 2</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 2 dengan
+                                        standar Kemnaker RI</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 2.800.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Juru Las 3" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Offline Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 3</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 3 dengan
+                                        standar Kemnaker RI</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Overhead Crane" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Blended Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Overhead Crane</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan operator overhead crane bersertifikat
+                                        Kemnaker RI</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.500.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Advance Financial" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Blended Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Advance Financial</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan keuangan tingkat lanjut dengan sertifikasi
+                                        Kemnaker RI</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 4.000.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <div
+                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BNSP Programs (Hidden by default) -->
+            <div class="program-category hidden" id="bnsp">
+                <div class="swiper programSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- BNSP Card 1 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Ahli K3 Umum" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum</h3>
+                                    <p class="text-gray-600 mb-4">Sertifikasi ahli K3 umum bersertifikat BNSP</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BNSP Card 2 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Teknisi Listrik" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Teknisi Listrik</h3>
+                                    <p class="text-gray-600 mb-4">Sertifikasi teknisi listrik bersertifikat BNSP</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BNSP Card 3 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Operator Boiler" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Operator Boiler</h3>
+                                    <p class="text-gray-600 mb-4">Sertifikasi bersertifikat BNSP</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <div
+                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skill Programs (Hidden by default) -->
+            <div class="program-category hidden" id="softskill">
+                <div class="swiper programSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Soft Skill Card 1 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Public Speaking" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan public speaking untuk jenjang profesional
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Skill Card 2 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Leadership" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Leadership</h3>
+                                    <p class="text-gray-600 mb-4">Pengembangan kemampuan kepemimpinan</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Skill Card 3 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                        alt="Team Building" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Team Building</h3>
+                                    <p class="text-gray-600 mb-4">Pelatihan membangun tim yang solid dan efektif</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
+                                        <a href="#"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Detail
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <div
+                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         // Toggle Mobile Menu
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -312,6 +806,101 @@
             if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
                 mobileMenu.classList.add('hidden');
             }
+        });
+
+        // Program Tab Functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-[#73BA7D]', 'text-white');
+                    btn.classList.add('text-[#73BA7D]');
+                });
+
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-[#73BA7D]', 'text-white');
+                this.classList.remove('text-[#73BA7D]');
+
+                // Hide all program categories
+                document.querySelectorAll('.program-category').forEach(category => {
+                    category.classList.add('hidden');
+                });
+
+                // Show selected program category
+                const categoryId = this.getAttribute('data-category');
+                document.getElementById(categoryId).classList.remove('hidden');
+
+                // Reinit swiper for the active category
+                setTimeout(() => {
+                    if (typeof programSwiper !== 'undefined') {
+                        programSwiper.update();
+                    }
+                }, 100);
+            });
+        });
+
+        // Initialize Swiper for program sliders
+        let programSwipers = [];
+
+        function initSwipers() {
+            const swiperContainers = document.querySelectorAll('.programSwiper');
+
+            swiperContainers.forEach(container => {
+                const swiper = new Swiper(container, {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: container.querySelector('.swiper-button-next'),
+                        prevEl: container.querySelector('.swiper-button-prev'),
+                    },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                        },
+                    },
+                });
+
+                programSwipers.push(swiper);
+            });
+        }
+
+        // Program Tab Functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active', 'bg-[#73BA7D]', 'text-white');
+                    btn.classList.add('text-[#73BA7F]');
+                });
+
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-[#73BA7D]', 'text-white');
+                this.classList.remove('text-[#73BA7F]');
+
+                // Hide all program categories
+                document.querySelectorAll('.program-category').forEach(category => {
+                    category.classList.add('hidden');
+                });
+
+                // Show selected program category
+                const categoryId = this.getAttribute('data-category');
+                document.getElementById(categoryId).classList.remove('hidden');
+
+                // Update all swiper instances
+                setTimeout(() => {
+                    programSwipers.forEach(swiper => {
+                        swiper.update();
+                    });
+                }, 100);
+            });
+        });
+
+        // Initialize swipers when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initSwipers();
         });
     </script>
 </body>
