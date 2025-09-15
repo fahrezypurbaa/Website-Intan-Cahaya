@@ -12,7 +12,7 @@
 <body class="bg-white text-blue-950 font-metropolis">
 
     <!-- Navbar -->
-    <nav class="bg-white sticky top-0 shadow-sm w-full z-50">
+    <nav class="bg-white relative top-0 shadow-sm w-full z-50">
         <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
             <!-- Logo -->
             <a href="/" class="flex items-center">
@@ -35,13 +35,15 @@
                         </svg>
                     </button>
                     <div
-                        class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0">
-                        <a href="#"
-                            class="block px-4 py-3 text-sm hover:bg-[#73BA7D] hover:text-white transition-colors border-b border-gray-100 last:border-b-0">Tentang
-                            Perusahaan</a>
-                        <a href="#"
-                            class="block px-4 py-3 text-sm hover:bg-[#73BA7D] hover:text-white transition-colors">Hubungi
-                            Kami</a>
+                        class="absolute left-0 mt-2 w-[220px] bg-white shadow-lg rounded-lg border opacity-0 invisible 
+               group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out 
+               transform translate-y-2 group-hover:translate-y-0 px-6 py-4">
+
+                        <div class="flex flex-col space-y-3">
+                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Tentang
+                                Perusahaan</a>
+                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Hubungi Kami</a>
+                        </div>
                     </div>
                 </div>
 
@@ -109,15 +111,16 @@
 
             <!-- Button Desktop -->
             <div class="hidden lg:flex">
-            <a href="#"
-                class="bg-[#73BA7D] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition duration-300 flex items-center space-x-2">
-                Get An Appointment
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    {{-- tanda → → pada Get An Appointment --}}
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                    </path> 
-                </svg>
-            </a>
+                <a href="#"
+                    class="bg-[#73BA7D] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition duration-300 flex items-center space-x-2">
+                    Get An Appointment
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        {{-- tanda → → pada Get An Appointment --}}
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
+                    </svg>
+                </a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -282,29 +285,6 @@
         </div>
     </section>
 
-    <!-- Program Section -->
-    {{-- <section class="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="mb-8">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#144F5F] mb-4">Program Pelatihan Unggulan</h2>
-            <p class="text-gray-600 text-lg">Pilih Pelatihan yang sesuai dengan kompetensi anda</p>
-        </div>
-
-        <div class="flex flex-wrap gap-3 sm:gap-4">
-            <button
-                class="training-btn active px-6 py-3 rounded-full bg-[#73BA7D] text-white font-semibold hover:bg-[#5fa467] transition-all duration-300 border-2 border-[#73BA7D]">
-                Kemnaker RI
-            </button>
-            <button
-                class="training-btn px-6 py-3 rounded-full border-2 border-[#73BA7D] text-[#73BA7D] hover:bg-[#73BA7D] hover:text-white transition-all duration-300 font-medium">
-                BNSP
-            </button>
-            <button
-                class="training-btn px-6 py-3 rounded-full border-2 border-[#73BA7D] text-[#73BA7D] hover:bg-[#73BA7D] hover:text-white transition-all duration-300 font-medium">
-                Soft Skill
-            </button>
-        </div>
-    </section> --}}
-
     <script>
         // Toggle Mobile Menu
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
@@ -324,22 +304,7 @@
             });
         });
 
-        // Training Button Interactions
-        document.querySelectorAll('.training-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                document.querySelectorAll('.training-btn').forEach(btn => {
-                    btn.classList.remove('active', 'bg-[#73BA7D]', 'text-white');
-                    btn.classList.add('text-[#73BA7D]');
-                });
-
-                // Add active class to clicked button
-                this.classList.add('active', 'bg-[#73BA7D]', 'text-white');
-                this.classList.remove('text-[#73BA7D]');
-            });
-        });
-
-        // Close mobile menu when clicking outside
+        // Menutup mobile menu ketika mengklik luar bagian mobile menu
         document.addEventListener('click', function(event) {
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -348,18 +313,7 @@
                 mobileMenu.classList.add('hidden');
             }
         });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-white', 'bg-opacity-95', 'backdrop-blur-sm');
-            } else {
-                navbar.classList.remove('bg-opacity-95', 'backdrop-blur-sm');
-            }
-        });
     </script>
-
 </body>
 
 </html>
