@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
     <!-- Tambahkan Swiper.js untuk slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
@@ -762,5 +765,101 @@
             </div>
         </div>
     </section>
+
+    <!-- Section: Legalitas Terjamin, Kualitas Terbukti -->
+    <section class="py-12 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-10 items-start">
+            <!-- Bagian Kiri: Teks dan Kotak-kotak -->
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    Legalitas Terjamin, Kualitas Terbukti
+                </h2>
+                <p class="text-gray-600 mb-8 leading-relaxed">
+                    Kami lahir sebagai mitra terpercaya dalam pembinaan & pelatihan K3 dengan legalitas resmi Kemnaker
+                    RI & Kemenkumham. Mengutamakan kualitas, pengalaman, serta pelayanan terbaik untuk mencetak tenaga
+                    kerja yang kompeten dan siap menghadapi tantangan di dunia industri.
+                </p>
+
+                <!-- Grid Kotak-kotak -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Kotak 1: Instruktur Berpengalaman -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-xl font-semibold text-custom-blue mb-3">INSTRUKTUR BERPENGALAMAN</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>Dibimbing oleh berbagai trainer</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>Bersertifikasi dan professional</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Kotak 2: Harga Kompetitif -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-xl font-semibold text-custom-blue mb-3">HARGA KOMPETITIF</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>Harga kompetitif dengan kualitas pelatihan terbaik</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Kotak 3: PJK3 Resmi -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-xl font-semibold text-custom-blue mb-3">PJK3 RESMI</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>PJK3 Resmi diunjuk KEMNAKER RI dan BNSP</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Kotak 4: Kelas Training Terlengkap -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-xl font-semibold text-custom-blue mb-3">KELAS TRAINING TERLENGKAP</h3>
+                        <ul class="text-gray-600 space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>100+ pilihan pelatihan berbasis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>sertifikasi KEMNAKER RI, BNSP, Non Sertifikasi, dll</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bagian Kanan: Video YouTube -->
+            <div class="lg:w-1/2">
+                <div class="video-wrapper">
+                    <div class="w-full">
+                        <div class="youtube-container">
+                            <div class="relative pb-[56.25%] h-0"> <!-- Aspect ratio 16:9 -->
+                                <iframe class="absolute top-0 left-0 w-full h-full"
+                                    src="https://www.youtube.com/embed/yrtJ1GMbRr0" title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-center text-gray-600 font-medium">
+                            JANUARI RECAP 2024 | Pelatihan & Sertifikasi K3 | Intan Safety Jogja
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
 </body>
+
 </html>

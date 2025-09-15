@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Metropolis';
@@ -17,24 +18,52 @@
 }
 
 @font-face {
-    font-family: 'Metropolis';
-    src: url('resources/fonts/Metropolis-Italic.otf') format('truetype');
-    font-style: italic;
+  font-family: 'Metropolis';
+  src: url('resources/fonts/Metropolis-Italic.otf') format('truetype');
+  font-style: italic;
 }
 
 body {
-    font-family: 'Metropolis', sans-serif;
+  font-family: 'Metropolis', sans-serif;
 }
-.swiper-button-next,
-    .swiper-button-prev {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-    }
 
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        content: '';
-        display: none;
-    }
+/* Program Pelatihan Unggulan */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  content: '';
+  display: none;
+}
+
+/* Legalitas Terjamin */
+.feature-card {
+  border-left: 4px solid #144F5F;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.youtube-container {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Container khusus untuk video YouTube dengan penyesuaian posisi */
+.video-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 2rem;
+  /* Menurunkan posisi video */
+}
