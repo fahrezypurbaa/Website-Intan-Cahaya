@@ -925,6 +925,381 @@
         </div>
     </div>
 
+    <!-- Section: Alumni -->
+    <section class="py-12 bg-[#F5F9F4]">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Bagian atas -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- Card kiri -->
+                <div class="relative bg-[#73BA7D] rounded-2xl overflow-hidden h-72 flex items-end justify-center">
+                    <img src="{{ asset('images/hero.png') }}" alt="Alumni"
+                        class="h-full object-bottom object-contain">
+                </div>
+
+                <!-- Card tengah -->
+                <div class="bg-white rounded-2xl p-6 flex flex-col justify-center">
+                    <div class="flex items-center justify-center mb-3">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full">
+                            <i class="fas fa-hard-hat text-xl"></i> <!-- icon pekerja -->
+                        </div>
+                    </div>
+                    <h3 class="text-lg font-semibold text-[#144F5F] text-center mb-2">
+                        Ribuan Alumni Percaya
+                    </h3>
+                    <p class="text-gray-600 text-center text-sm">
+                        Pelatihan K3 kami telah meluluskan banyak peserta yang kini berkontribusi di berbagai bidang
+                        kerja.
+                    </p>
+                </div>
+
+                <!-- Card kanan -->
+                <div class="bg-[#73BA7D] rounded-2xl flex flex-col justify-center items-center p-6 h-72">
+                    <img src="{{ asset('images/logo.png') }}" alt="Safety Quality"
+                        class="w-20 h-20 object-contain mx-auto mb-3">
+                    <h4 class="text-[#144F5F] font-bold text-base text-center leading-tight">
+                        #SAFETY <br> QUALITY <br> COMPETENT
+                    </h4>
+                </div>
+            </div>
+
+            <!-- Bagian bawah (counter) -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="4000">0</h2>
+                    <p class="text-[#73BA7D] font-semibold">Alumni</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="352">0</h2>
+                    <p class="text-green-600 font-semibold">Pembinaan</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="500">0</h2>
+                    <p class="text-green-600 font-semibold">Loyal Customer & Perusahaan</p>
+                </div>
+
+                <div class="p-6 bg-white rounded-xl shadow-md">
+                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="352">0</h2>
+                    <p class="text-green-600 font-semibold">Pembinaan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Apa Kata Mereka -->
+    {{-- <section class="py-16 bg-[#F5F9F4]">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-[#144F5F] mb-10">
+            What They Say About Us
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            @forelse($reviews as $review)
+                <div class="bg-white rounded-2xl shadow-md p-6">
+                    <div class="flex items-center mb-4">
+                        <img src="{{ $review['profile_photo_url'] ?? 'https://via.placeholder.com/50' }}" 
+                             alt="{{ $review['author_name'] ?? 'Anonymous' }}"
+                             class="w-12 h-12 rounded-full object-cover mr-3">
+                        <div>
+                            <h4 class="font-semibold text-[#144F5F]">
+                                {{ $review['author_name'] ?? 'Anonymous' }}
+                            </h4>
+                            <p class="text-sm text-gray-500">
+                                ⭐ {{ $review['rating'] ?? '-' }}/5
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        {{ $review['text'] ?? '' }}
+                    </p>
+                </div>
+            @empty
+                <p class="text-center text-gray-500 col-span-3">Belum ada review.</p>
+            @endforelse
+        </div> --}}
+    {{-- </div>
+</section> --}}
+
+    <!-- Section: Galeri -->
+    <!-- Galeri Pembinaan -->
+    <div class="bg-[#F3F7F0] py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Heading -->
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <p class="text-sm font-medium text-green-700 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6h4m6 6V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h10" />
+                        </svg>
+                        GALERI PEMBINAAN KAMI
+                    </p>
+                    <h2 class="mt-2 text-3xl font-bold text-[#144F5F] leading-snug">
+                        Mengabadikan Moment <br> Bersama Alumni
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="overflow-hidden rounded-lg shadow">
+                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="text-center mt-10">
+                <a href="#"
+                    class="px-6 py-2 bg-teal-800 text-white rounded-md shadow hover:bg-teal-900 transition-colors">
+                    Selengkapnya
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recent Blogs Section -->
+    <div class="bg-[#F3F7F0] py-16">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <p class="text-sm font-medium text-green-700 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6h4m6 6V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h10" />
+                        </svg>
+                        RECENT BLOGS
+                    </p>
+                    <h2 class="mt-2 text-3xl font-bold text-[#144F5F] leading-snug">
+                        Journeys of Discovery <br> Uncovering Hidden
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Blog Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+                    <img src="https://via.placeholder.com/500x300" alt="Blog image" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                September 9, 2025
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5.121 17.804A9.935 9.935 0 0112 15c2.21 0 4.235.716 5.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                    </path>
+                                </svg>
+                                By admin
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-green-800 mb-2">
+                            Pentingnya Sertifikasi K3 untuk Keselamatan Kerja di Perusahaan
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Pelatihan dan sertifikasi K3 tidak hanya meningkatkan kompetensi tenaga kerja, tetapi juga
+                            memastikan lingkungan kerja lebih aman sesuai standar Kemnaker.
+                        </p>
+                        <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+                    <img src="https://via.placeholder.com/500x300" alt="Blog image" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                September 10, 2025
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5.121 17.804A9.935 9.935 0 0112 15c2.21 0 4.235.716 5.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                    </path>
+                                </svg>
+                                By admin
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-green-800 mb-2">
+                            Mengenal Jenis–Jenis Pelatihan Kemnaker yang Wajib Diikuti
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Dari Ahli K3 Umum hingga operator forklift, pelatihan Kemnaker berperan penting dalam
+                            mendukung
+                            produktivitas dan keselamatan kerja.
+                        </p>
+                        <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
+                    <img src="https://via.placeholder.com/500x300" alt="Blog image" class="w-full h-56 object-cover">
+                    <div class="p-5">
+                        <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                September 11, 2025
+                            </span>
+                            <span class="flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5.121 17.804A9.935 9.935 0 0112 15c2.21 0 4.235.716 5.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z">
+                                    </path>
+                                </svg>
+                                By admin
+                            </span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-green-800 mb-2">
+                            Keunggulan Sertifikasi BNSP untuk Karier dan Perusahaan
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Sertifikasi BNSP meningkatkan kompetensi nasional, peluang karier, dan memperkuat
+                            kepercayaan
+                            klien terhadap perusahaan.
+                        </p>
+                        <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                            Read More
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Branch Office -->
+            <div>
+                <h3 class="text-lg font-bold mb-2">BRANCH OFFICE</h3>
+                <p class="text-sm leading-relaxed mb-3">
+                    Jl. Panggungan Asri No.37, RT.003/RW.033, Mayaan, Trihanggo,<br>
+                    Kec. Gamping, Kab. Sleman, Daerah Istimewa Yogyakarta 55291
+                </p>
+
+                <h3 class="text-lg font-bold mb-2">SOCIAL MEDIA</h3>
+                <div class="flex gap-3 text-lg">
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Us -->
+            <div>
+                <h3 class="text-lg font-bold mb-2">CONTACT US</h3>
+                <ul class="space-y-1 text-sm">
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:admin@intancahayamandiri.com" class="hover:underline">
+                            admin@intancahayamandiri.com
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>0274-4297535</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>0813 2718 1389</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Bantuan -->
+            <div>
+                <h3 class="text-lg font-bold mb-2">BANTUAN</h3>
+                <ul class="space-y-1 text-sm">
+                    <li><a href="#" class="hover:underline">Hubungi Kami</a></li>
+                    <li><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
+                    <li><a href="#" class="hover:underline">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-white/20 py-3 text-center text-xs">
+            Copyright 2025 - <span class="font-semibold">Intan Safety Jogja</span>
+        </div>
+    </footer>
+
 </body>
 
 </html>

@@ -123,12 +123,13 @@ document.querySelectorAll(".tab-btn").forEach((button) => {
     });
 });
 
+
 // Initialize swipers when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
     initSwipers();
 });
 
-// Initialize AOS (Animate On Scroll)
+// Logo Client Slide (perusahaan)
 document.addEventListener("DOMContentLoaded", function () {
         new Swiper(".clientSwiper", {
             slidesPerView: 5,
@@ -149,3 +150,40 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         });
     });
+
+    // ALumni Slide
+   document.addEventListener("DOMContentLoaded", function() {
+    const counters = document.querySelectorAll(".counter");
+    const options = { threshold: 0.5 };
+    
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        let count = 0;
+        const step = Math.ceil(target / 100); // semakin kecil pembagi -> semakin cepat
+        const interval = setInterval(() => {
+            count += step;
+            if (count >= target) {
+                count = target;
+                clearInterval(interval);
+                if (target >= 1000) {
+                    counter.innerText = target + "+";
+                } else {
+                    counter.innerText = target;
+                }
+            } else {
+                counter.innerText = count;
+            }
+        }, 10); // semakin kecil -> semakin cepat
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+
+    counters.forEach(counter => observer.observe(counter));
+});

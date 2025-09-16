@@ -69,7 +69,7 @@ body {
 }
 
 
-/* animasi marquee */
+/* animasi logo client */
 @keyframes scroll {
     0% {
         transform: translateX(0);
