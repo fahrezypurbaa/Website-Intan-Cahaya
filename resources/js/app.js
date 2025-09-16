@@ -123,7 +123,6 @@ document.querySelectorAll(".tab-btn").forEach((button) => {
     });
 });
 
-
 // Initialize swipers when DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
     initSwipers();
@@ -131,31 +130,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Logo Client Slide (perusahaan)
 document.addEventListener("DOMContentLoaded", function () {
-        new Swiper(".clientSwiper", {
-            slidesPerView: 5,
-            spaceBetween: 40,
-            loop: true,
-            freeMode: true,
-            autoplay: {
-                delay: 1, // harus > 0 supaya autoplay aktif
-                disableOnInteraction: false,
-            },
-            speed: 4000, // semakin besar semakin pelan jalannya
-            grabCursor: false,
-            allowTouchMove: false, // biar gak berhenti kalau disentuh
-            breakpoints: {
-                320: { slidesPerView: 2, spaceBetween: 20 },
-                640: { slidesPerView: 3, spaceBetween: 30 },
-                1024: { slidesPerView: 5, spaceBetween: 40 },
-            },
-        });
+    new Swiper(".clientSwiper", {
+        slidesPerView: 5,
+        spaceBetween: 40,
+        loop: true,
+        freeMode: true,
+        autoplay: {
+            delay: 1, // harus > 0 supaya autoplay aktif
+            disableOnInteraction: false,
+        },
+        speed: 4000, // semakin besar semakin pelan jalannya
+        grabCursor: false,
+        allowTouchMove: false, // biar gak berhenti kalau disentuh
+        breakpoints: {
+            320: { slidesPerView: 2, spaceBetween: 20 },
+            640: { slidesPerView: 3, spaceBetween: 30 },
+            1024: { slidesPerView: 5, spaceBetween: 40 },
+        },
     });
+});
 
-    // ALumni Slide
-   document.addEventListener("DOMContentLoaded", function() {
+// ALumni Slide
+document.addEventListener("DOMContentLoaded", function () {
     const counters = document.querySelectorAll(".counter");
     const options = { threshold: 0.5 };
-    
+
     const runCounter = (counter) => {
         const target = +counter.getAttribute("data-target");
         let count = 0;
@@ -177,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 runCounter(entry.target);
                 observer.unobserve(entry.target);
@@ -185,5 +184,5 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, options);
 
-    counters.forEach(counter => observer.observe(counter));
+    counters.forEach((counter) => observer.observe(counter));
 });

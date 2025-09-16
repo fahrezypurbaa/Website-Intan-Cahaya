@@ -341,9 +341,13 @@
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 1</h3>
                                     <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 1 dengan
                                         standar Kemnaker RI</p>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
-                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
+                                    <div class="flex justify-between items-end">
+                                        <div class="flex flex-col">
+                                            <!-- Harga normal -->
+                                            <span class="text-gray-400 line-through text-sm">Rp 3.000.000</span>
+                                            <!-- Harga promo -->
+                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 2.500.000</span>
+                                        </div>
                                         <a href="#"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Detail
@@ -377,7 +381,12 @@
                                     <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 2 dengan
                                         standar Kemnaker RI</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 2.800.000</span>
+                                        <div class="flex flex-col">
+                                            <!-- Harga normal -->
+                                            <span class="text-gray-400 line-through text-sm">Rp 6.000.000</span>
+                                            <!-- Harga promo -->
+                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 5.500.000</span>
+                                        </div>
                                         <a href="#"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Detail
@@ -411,7 +420,12 @@
                                     <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 3 dengan
                                         standar Kemnaker RI</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
+                                        <div class="flex flex-col">
+                                            <!-- Harga normal -->
+                                            <span class="text-gray-400 line-through text-sm">Rp 5.000.000</span>
+                                            <!-- Harga promo -->
+                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 4.500.000</span>
+                                        </div>
                                         <a href="#"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Detail
@@ -445,7 +459,12 @@
                                     <p class="text-gray-600 mb-4">Pelatihan operator overhead crane bersertifikat
                                         Kemnaker RI</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 3.500.000</span>
+                                        <div class="flex flex-col">
+                                            <!-- Harga normal -->
+                                            <span class="text-gray-400 line-through text-sm">Rp 3.500.000</span>
+                                            <!-- Harga promo -->
+                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 3.000.000</span>
+                                        </div>
                                         <a href="#"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Detail
@@ -479,7 +498,12 @@
                                     <p class="text-gray-600 mb-4">Pelatihan keuangan tingkat lanjut dengan sertifikasi
                                         Kemnaker RI</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 4.000.000</span>
+                                        <div class="flex flex-col">
+                                            <!-- Harga normal -->
+                                            <span class="text-gray-400 line-through text-sm">Rp 5.000.000</span>
+                                            <!-- Harga promo -->
+                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 4.500.000</span>
+                                        </div>
                                         <a href="#"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Detail
@@ -862,9 +886,19 @@
     <!-- Section: Logo Client -->
     <div class="overflow-hidden bg-white py-12">
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <h2 class="text-center text-lg font-semibold leading-8 text-gray-900 mb-12">
-                Dipercaya oleh perusahaan terkemuka
-            </h2>
+            <div>
+                <p class="text-sm font-medium text-green-700 flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 6v6h4m6 6V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h10" />
+                    </svg>
+                    JEJAK ALUMNI
+                </p>
+                <h2 class="text-3xl font-bold text-[#144F5F] mb-10">
+                    Bersama Alumni, Membangun <br> Kepercayaan dan Reputasi
+                </h2>
+            </div>
 
             {{-- Logo Carousel Container --}}
             <div class="relative overflow-hidden">
@@ -989,41 +1023,17 @@
     </section>
 
     <!-- Section: Apa Kata Mereka -->
-    {{-- <section class="py-16 bg-[#F5F9F4]">
-    <div class="max-w-7xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center text-[#144F5F] mb-10">
-            What They Say About Us
-        </h2>
+    <section class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4">
 
-        <div class="grid md:grid-cols-3 gap-6">
-            @forelse($reviews as $review)
-                <div class="bg-white rounded-2xl shadow-md p-6">
-                    <div class="flex items-center mb-4">
-                        <img src="{{ $review['profile_photo_url'] ?? 'https://via.placeholder.com/50' }}" 
-                             alt="{{ $review['author_name'] ?? 'Anonymous' }}"
-                             class="w-12 h-12 rounded-full object-cover mr-3">
-                        <div>
-                            <h4 class="font-semibold text-[#144F5F]">
-                                {{ $review['author_name'] ?? 'Anonymous' }}
-                            </h4>
-                            <p class="text-sm text-gray-500">
-                                ⭐ {{ $review['rating'] ?? '-' }}/5
-                            </p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        {{ $review['text'] ?? '' }}
-                    </p>
-                </div>
-            @empty
-                <p class="text-center text-gray-500 col-span-3">Belum ada review.</p>
-            @endforelse
-        </div> --}}
-    {{-- </div>
-</section> --}}
+
+            <!-- Elfsight Google Reviews -->
+            <script src="https://elfsightcdn.com/platform.js" async></script>
+            <div class="elfsight-app-18b68430-51d2-4621-badf-0bfea93a2c7c" data-elfsight-app-lazy></div>
+        </div>
+    </section>
 
     <!-- Section: Galeri -->
-    <!-- Galeri Pembinaan -->
     <div class="bg-[#F3F7F0] py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <!-- Heading -->
@@ -1046,35 +1056,35 @@
             <!-- Gallery Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="https://via.placeholder.com/400x250" alt="gallery"
+                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
             </div>
@@ -1113,7 +1123,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="https://via.placeholder.com/500x300" alt="Blog image" class="w-full h-56 object-cover">
+                    <img src="{{ asset('images/artikel/artikel1.jpg') }}" alt="Blog image"
+                        class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
                             <span class="flex items-center gap-1">
@@ -1155,7 +1166,8 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="https://via.placeholder.com/500x300" alt="Blog image" class="w-full h-56 object-cover">
+                    <img src="{{ asset('images/artikel/artikel2.jpg') }}" alt="Blog image"
+                        class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
                             <span class="flex items-center gap-1">
@@ -1198,7 +1210,8 @@
 
                 <!-- Card 3 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="https://via.placeholder.com/500x300" alt="Blog image" class="w-full h-56 object-cover">
+                    <img src="{{ asset('images/artikel/artikel3.jpg') }}" alt="Blog image"
+                        class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
                             <span class="flex items-center gap-1">
@@ -1242,6 +1255,7 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
 
