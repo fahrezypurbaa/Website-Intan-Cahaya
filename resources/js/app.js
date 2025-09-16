@@ -1,6 +1,6 @@
 import "./bootstrap";
 
-// Toggle Mobile Menu
+// Hamburger Mobile Menu
 document
     .getElementById("mobile-menu-btn")
     .addEventListener("click", function () {
@@ -127,3 +127,25 @@ document.querySelectorAll(".tab-btn").forEach((button) => {
 document.addEventListener("DOMContentLoaded", function () {
     initSwipers();
 });
+
+// Initialize AOS (Animate On Scroll)
+document.addEventListener("DOMContentLoaded", function () {
+        new Swiper(".clientSwiper", {
+            slidesPerView: 5,
+            spaceBetween: 40,
+            loop: true,
+            freeMode: true,
+            autoplay: {
+                delay: 1, // harus > 0 supaya autoplay aktif
+                disableOnInteraction: false,
+            },
+            speed: 4000, // semakin besar semakin pelan jalannya
+            grabCursor: false,
+            allowTouchMove: false, // biar gak berhenti kalau disentuh
+            breakpoints: {
+                320: { slidesPerView: 2, spaceBetween: 20 },
+                640: { slidesPerView: 3, spaceBetween: 30 },
+                1024: { slidesPerView: 5, spaceBetween: 40 },
+            },
+        });
+    });

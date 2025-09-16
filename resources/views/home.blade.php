@@ -10,7 +10,6 @@
     <!-- Tambahkan Swiper.js untuk slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
@@ -290,7 +289,7 @@
         </div>
     </section>
 
-    <!-- Program Pelatihan Unggulan Section -->
+    <!-- Section : Program Pelatihan Unggulan Section -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
             <div class="mb-6 md:mb-0">
@@ -343,6 +342,7 @@
                                     <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 1 dengan
                                         standar Kemnaker RI</p>
                                     <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
                                         <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
                                         <a href="#"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
@@ -771,10 +771,10 @@
         <div class="flex flex-col lg:flex-row gap-10 items-start">
             <!-- Bagian Kiri: Teks dan Kotak-kotak -->
             <div class="lg:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#144F5F] mb-6">
                     Legalitas Terjamin, Kualitas Terbukti
                 </h2>
-                <p class="text-gray-600 mb-8 leading-relaxed">
+                <p class="text-[#000] mb-8 leading-relaxed">
                     Kami lahir sebagai mitra terpercaya dalam pembinaan & pelatihan K3 dengan legalitas resmi Kemnaker
                     RI & Kemenkumham. Mengutamakan kualitas, pengalaman, serta pelayanan terbaik untuk mencetak tenaga
                     kerja yang kompeten dan siap menghadapi tantangan di dunia industri.
@@ -785,7 +785,7 @@
                     <!-- Kotak 1: Instruktur Berpengalaman -->
                     <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
                         <h3 class="text-xl font-semibold text-custom-blue mb-3">INSTRUKTUR BERPENGALAMAN</h3>
-                        <ul class="text-gray-600 space-y-2">
+                        <ul class="text-gray-900 space-y-2">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>Dibimbing oleh berbagai trainer</span>
@@ -800,7 +800,7 @@
                     <!-- Kotak 2: Harga Kompetitif -->
                     <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
                         <h3 class="text-xl font-semibold text-custom-blue mb-3">HARGA KOMPETITIF</h3>
-                        <ul class="text-gray-600 space-y-2">
+                        <ul class="text-gray-900 space-y-2">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>Harga kompetitif dengan kualitas pelatihan terbaik</span>
@@ -811,7 +811,7 @@
                     <!-- Kotak 3: PJK3 Resmi -->
                     <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
                         <h3 class="text-xl font-semibold text-custom-blue mb-3">PJK3 RESMI</h3>
-                        <ul class="text-gray-600 space-y-2">
+                        <ul class="text-gray-900 space-y-2">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>PJK3 Resmi diunjuk KEMNAKER RI dan BNSP</span>
@@ -822,7 +822,7 @@
                     <!-- Kotak 4: Kelas Training Terlengkap -->
                     <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
                         <h3 class="text-xl font-semibold text-custom-blue mb-3">KELAS TRAINING TERLENGKAP</h3>
-                        <ul class="text-gray-600 space-y-2">
+                        <ul class="text-gray-900 space-y-2">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>100+ pilihan pelatihan berbasis</span>
@@ -859,7 +859,72 @@
         </div>
     </section>
 
-    
+    <!-- Section: Logo Client -->
+    <div class="overflow-hidden bg-white py-12">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <h2 class="text-center text-lg font-semibold leading-8 text-gray-900 mb-12">
+                Dipercaya oleh perusahaan terkemuka
+            </h2>
+
+            {{-- Logo Carousel Container --}}
+            <div class="relative overflow-hidden">
+                <div class="flex animate-scroll space-x-16 items-center">
+                    {{-- First set of logos --}}
+                    <div class="flex space-x-16 items-center shrink-0">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/agincourt.png') }}" alt="Company 1">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/ahm.png') }}" alt="Company 2">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/antam.png') }}" alt="Company 3">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/asc.webp') }}" alt="Company 4">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/bhumi.png') }}" alt="Company 5">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/cirebon.png') }}" alt="Company 6">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/honda.jpg') }}" alt="Company 7">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/huayue.png') }}" alt="Company 8">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/indonesia-power.png') }}" alt="Company 9">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/kai.png') }}" alt="Company 10">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/pindad.png') }}" alt="Company 11">
+                    </div>
+
+                    {{-- Duplicate set for seamless loop --}}
+                    <div class="flex space-x-16 items-center shrink-0">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/agincourt.png') }}" alt="Company 1">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/ahm.png') }}" alt="Company 2">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/antam.png') }}" alt="Company 3">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/asc.webp') }}" alt="Company 4">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/bhumi.png') }}" alt="Company 5">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/cirebon.png') }}" alt="Company 6">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/honda.jpg') }}" alt="Company 7">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/huayue.png') }}" alt="Company 8">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/indonesia-power.png') }}" alt="Company 9">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/kai.png') }}" alt="Company 10">
+                        <img class="h-12 w-auto object-contain  transition-all duration-300"
+                            src="{{ asset('images/logos/pindad.png') }}" alt="Company 11">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
