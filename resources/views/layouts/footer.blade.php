@@ -44,7 +44,7 @@
             <div>
                 <h3 class="text-lg font-bold mb-2">BANTUAN</h3>
                 <ul class="space-y-1 text-sm">
-                    <li><a href="#" class="hover:underline">Hubungi Kami</a></li>
+                    <li><a href="{{ route('hubungi-kami') }}" class="hover:underline">Hubungi Kami</a></li>
                     <li><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
                     <li><a href="#" class="hover:underline">FAQ</a></li>
                 </ul>

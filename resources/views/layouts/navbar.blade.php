@@ -32,7 +32,7 @@
                                     class="text-sm hover:text-[#73BA7D] transition-colors">Tentang
                                     Perusahaan</a>
 
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Hubungi
+                                <a href="{{ route('hubungi-kami') }}" class="text-sm hover:text-[#73BA7D] transition-colors">Hubungi
                                     Kami</a>
                             </div>
                         </div>
@@ -93,14 +93,12 @@
                             </div>
                             <div class="flex flex-col space-y-3">
                                 <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Artikel</a>
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Galeri
-                                    Pembinaan</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Contact -->
-                    <a href="#" class="hover:text-[#73BA7D] font-light transition-colors duration-300">CONTACT</a>
+                    <!-- Galeri Pembinaan -->
+                    <a href="#" class="hover:text-[#73BA7D] font-light transition-colors duration-300">GALERI</a>
                 </div>
 
                 <!-- Button Desktop -->

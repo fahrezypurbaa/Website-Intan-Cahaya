@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,9 @@ Route::get('/', function () {
 Route::get('/tentang-perusahaan', function () {
     return view('tentang-perusahaan');
 })->name('tentang.perusahaan');
+
+Route::get('/hubungi-kami', function () {
+    return view('hubungi-kami');
+})->name('hubungi-kami');
+
+Route::post('/hubungi-kami', [ContactController::class, 'store'])->name('contact.store');
