@@ -42,6 +42,18 @@ body {
   display: none;
 }
 
+/* Program Content */
+.program-content {
+  height: auto !important;
+  min-height: auto !important;
+}
+
+.program-content .swiper,
+.program-content .swiper-wrapper {
+  height: auto !important;
+}
+
+
 /* Legalitas Terjamin */
 .feature-card {
   border-left: 4px solid #144F5F;

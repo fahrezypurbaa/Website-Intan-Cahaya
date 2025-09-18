@@ -1,242 +1,8 @@
-<!DOCTYPE html>
-<html lang="id">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intan Safety</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-    <!-- Tambahkan Swiper.js untuk slider -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-</head>
+@section('title', 'Home - Intan Safety')
 
-<body class="bg-white text-blue-950 font-metropolis">
-
-    <!-- Navbar -->
-    <nav class="bg-white relative top-0 shadow-sm w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-            <!-- Logo -->
-            <a href="/" class="flex items-center">
-                <img src="{{ asset('images/logo.png') }}" alt="Intan Safety" class="h-8 mr-2">
-                <span class="font-bold text-lg text-[#144F5F]">INTAN SAFETY</span>
-            </a>
-
-            <!-- Menu Desktop -->
-            <div class="hidden lg:flex space-x-8">
-                <!-- Tentang Kami -->
-                <div class="relative group">
-                    <button
-                        class="hover:text-[#73BA7D] font-light transition-colors duration-300 flex items-center gap-1">
-                        TENTANG KAMI
-                        <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
-                            fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div
-                        class="absolute left-0 mt-2 w-[220px] bg-white shadow-lg rounded-lg border opacity-0 invisible 
-               group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out 
-               transform translate-y-2 group-hover:translate-y-0 px-6 py-4">
-
-                        <div class="flex flex-col space-y-3">
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Tentang
-                                Perusahaan</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Hubungi Kami</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Layanan -->
-                <div class="relative group">
-                    <button
-                        class="hover:text-[#73BA7D] font-light transition-colors duration-300 flex items-center gap-1">
-                        LAYANAN
-                        <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
-                            fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div
-                        class="absolute left-0 mt-2 w-[500px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 grid grid-cols-2 gap-6 p-6">
-                        <div class="flex flex-col space-y-3">
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
-                                Kemnaker RI</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
-                                BNSP</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Non Sertifikasi</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">ESDM</a>
-                        </div>
-                        <div class="flex flex-col space-y-3">
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">PPSDM Migas</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Riksa Uji</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Perpanjangan SIO &
-                                Lisensi</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Informasi -->
-                <div class="relative group">
-                    <button
-                        class="hover:text-[#73BA7D] font-light transition-colors duration-300 flex items-center gap-1">
-                        INFORMASI
-                        <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
-                            fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div
-                        class="absolute left-0 mt-2 w-[400px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 grid grid-cols-2 gap-6 p-6">
-                        <div class="flex flex-col space-y-3">
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Schedule</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Legalitas</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Cek Sertifikat</a>
-                        </div>
-                        <div class="flex flex-col space-y-3">
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Artikel</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Galeri
-                                Pembinaan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact -->
-                <a href="#" class="hover:text-[#73BA7D] font-light transition-colors duration-300">CONTACT</a>
-            </div>
-
-            <!-- Button Desktop -->
-            <div class="hidden lg:flex">
-                <a href="#"
-                    class="bg-[#73BA7D] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition duration-300 flex items-center space-x-2">
-                    Get An Appointment
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        {{-- tanda → → pada Get An Appointment --}}
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3">
-                        </path>
-                    </svg>
-                </a>
-            </div>
-
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="lg:hidden text-gray-700 hover:text-[#73BA7D] focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
-                    </path>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden bg-white border-t border-gray-200">
-            <div class="px-4 pt-2 pb-3 space-y-1">
-                <!-- Mobile Tentang Kami -->
-                <div class="block">
-                    <button
-                        class="mobile-dropdown-btn w-full text-left text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 flex items-center justify-between"
-                        data-target="mobile-about">
-                        <span>TENTANG KAMI</span>
-                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-about" class="hidden pl-6 space-y-1">
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Tentang
-                            Perusahaan</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Hubungi Kami</a>
-                    </div>
-                </div>
-
-                <!-- Mobile Layanan -->
-                <div class="block">
-                    <button
-                        class="mobile-dropdown-btn w-full text-left text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 flex items-center justify-between"
-                        data-target="mobile-services">
-                        <span>LAYANAN</span>
-                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-services" class="hidden pl-6 space-y-1">
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
-                            Kemnaker RI</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
-                            BNSP</a>
-                        <a href="#" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Non
-                            Sertifikasi</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ESDM</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">PPSDM Migas</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Riksa Uji</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Perpanjangan SIO &
-                            Lisensi</a>
-                    </div>
-                </div>
-
-                <!-- Mobile Informasi -->
-                <div class="block">
-                    <button
-                        class="mobile-dropdown-btn w-full text-left text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 flex items-center justify-between"
-                        data-target="mobile-info">
-                        <span>INFORMASI</span>
-                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-info" class="hidden pl-6 space-y-1">
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Schedule</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Legalitas</a>
-                        <a href="#" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Cek
-                            Sertifikat</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Artikel</a>
-                        <a href="#"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Galeri
-                            Pembinaan</a>
-                    </div>
-                </div>
-
-                <!-- Mobile Contact -->
-                <a href="#"
-                    class="block text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 transition-colors">CONTACT</a>
-
-                <!-- Mobile Button -->
-                <div class="px-3 py-2">
-                    <a href="#"
-                        class="block w-full text-center bg-[#73BA7D] text-white px-4 py-2 rounded-full font-medium hover:bg-[#5fa467] transition-colors duration-300">
-                        Get An Appointment →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+@section('content')
 
     <!-- Hero Section -->
     <section
@@ -253,8 +19,8 @@
                     class="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-[#144F5F] transition-all duration-300 w-full sm:w-auto text-center flex items-center justify-center gap-2">
                     <span>Cek Legalitas Kami</span>
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
+                        </path>
                     </svg>
                 </a>
                 <!-- Button with Icon -->
@@ -272,8 +38,7 @@
         </div>
 
         <!-- Image + Circle -->
-        <div
-            class="relative w-full max-w-[400px] sm:max-w-[500px] lg:w-[600px] lg:h-[520px] flex items-end justify-center">
+        <div class="relative w-full max-w-[400px] sm:max-w-[500px] lg:w-[600px] lg:h-[520px] flex items-end justify-center">
             <!-- Circle Background -->
             <div
                 class="absolute bottom-[-150px] sm:bottom-[-180px] right-10 sm:right-[40px] w-[300px] sm:w-[380px] lg:w-[460px] h-[300px] sm:h-[380px] lg:h-[460px] bg-[#73BA7D] rounded-full z-0 opacity-15">
@@ -290,7 +55,7 @@
     </section>
 
     <!-- Section : Program Pelatihan Unggulan Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
             <div class="mb-6 md:mb-0">
                 <h2 class="text-3xl font-bold text-[#144F5F]">Program Pelatihan Unggulan</h2>
@@ -522,18 +287,16 @@
                     <!-- Navigation buttons -->
                     <div
                         class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </div>
                     <div
                         class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 19l-7-7 7-7"></path>
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
                         </svg>
                     </div>
                 </div>
@@ -646,18 +409,16 @@
                     <!-- Navigation buttons -->
                     <div
                         class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </div>
                     <div
                         class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 19l-7-7 7-7"></path>
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
                         </svg>
                     </div>
                 </div>
@@ -771,18 +532,16 @@
                     <!-- Navigation buttons -->
                     <div
                         class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </div>
                     <div
                         class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                            viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 19l-7-7 7-7"></path>
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
                         </svg>
                     </div>
                 </div>
@@ -791,25 +550,25 @@
     </section>
 
     <!-- Section: Legalitas Terjamin, Kualitas Terbukti -->
-    <section class="py-12 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-10 items-start">
-            <!-- Bagian Kiri: Teks dan Kotak-kotak -->
+    <section class="pt-12 pb-12 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row gap-8 items-start">
+            <!-- Bagian Kiri -->
             <div class="lg:w-1/2">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#144F5F] mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#144F5F] mb-4">
                     Legalitas Terjamin, Kualitas Terbukti
                 </h2>
-                <p class="text-[#000] mb-8 leading-relaxed">
+                <p class="text-[#000] mb-6 leading-relaxed">
                     Kami lahir sebagai mitra terpercaya dalam pembinaan & pelatihan K3 dengan legalitas resmi Kemnaker
                     RI & Kemenkumham. Mengutamakan kualitas, pengalaman, serta pelayanan terbaik untuk mencetak tenaga
                     kerja yang kompeten dan siap menghadapi tantangan di dunia industri.
                 </p>
 
                 <!-- Grid Kotak-kotak -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Kotak 1: Instruktur Berpengalaman -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-xl font-semibold text-custom-blue mb-3">INSTRUKTUR BERPENGALAMAN</h3>
-                        <ul class="text-gray-900 space-y-2">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Kotak 1 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-lg font-semibold text-custom-blue mb-2">INSTRUKTUR BERPENGALAMAN</h3>
+                        <ul class="text-gray-900 space-y-1">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>Dibimbing oleh berbagai trainer</span>
@@ -821,10 +580,10 @@
                         </ul>
                     </div>
 
-                    <!-- Kotak 2: Harga Kompetitif -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-xl font-semibold text-custom-blue mb-3">HARGA KOMPETITIF</h3>
-                        <ul class="text-gray-900 space-y-2">
+                    <!-- Kotak 2 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-lg font-semibold text-custom-blue mb-2">HARGA KOMPETITIF</h3>
+                        <ul class="text-gray-900 space-y-1">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>Harga kompetitif dengan kualitas pelatihan terbaik</span>
@@ -832,10 +591,10 @@
                         </ul>
                     </div>
 
-                    <!-- Kotak 3: PJK3 Resmi -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-xl font-semibold text-custom-blue mb-3">PJK3 RESMI</h3>
-                        <ul class="text-gray-900 space-y-2">
+                    <!-- Kotak 3 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-lg font-semibold text-custom-blue mb-2">PJK3 RESMI</h3>
+                        <ul class="text-gray-900 space-y-1">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>PJK3 Resmi diunjuk KEMNAKER RI dan BNSP</span>
@@ -843,10 +602,10 @@
                         </ul>
                     </div>
 
-                    <!-- Kotak 4: Kelas Training Terlengkap -->
-                    <div class="bg-white p-6 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-xl font-semibold text-custom-blue mb-3">KELAS TRAINING TERLENGKAP</h3>
-                        <ul class="text-gray-900 space-y-2">
+                    <!-- Kotak 4 -->
+                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
+                        <h3 class="text-lg font-semibold text-custom-blue mb-2">KELAS TRAINING TERLENGKAP</h3>
+                        <ul class="text-gray-900 space-y-1">
                             <li class="flex items-start">
                                 <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>100+ pilihan pelatihan berbasis</span>
@@ -860,12 +619,12 @@
                 </div>
             </div>
 
-            <!-- Bagian Kanan: Video YouTube -->
+            <!-- Bagian Kanan -->
             <div class="lg:w-1/2">
                 <div class="video-wrapper">
                     <div class="w-full">
                         <div class="youtube-container">
-                            <div class="relative pb-[56.25%] h-0"> <!-- Aspect ratio 16:9 -->
+                            <div class="relative pb-[56.25%] h-0">
                                 <iframe class="absolute top-0 left-0 w-full h-full"
                                     src="https://www.youtube.com/embed/yrtJ1GMbRr0" title="YouTube video player"
                                     frameborder="0"
@@ -874,7 +633,7 @@
                                 </iframe>
                             </div>
                         </div>
-                        <p class="mt-4 text-center text-gray-600 font-medium">
+                        <p class="mt-3 text-center text-gray-600 text-sm font-medium">
                             JANUARI RECAP 2024 | Pelatihan & Sertifikasi K3 | Intan Safety Jogja
                         </p>
                     </div>
@@ -973,8 +732,7 @@
                 <!-- Card tengah -->
                 <div class="bg-white rounded-2xl p-6 flex flex-col justify-center">
                     <div class="flex items-center justify-center mb-3">
-                        <div
-                            class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full">
+                        <div class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full">
                             <i class="fas fa-hard-hat text-xl"></i> <!-- icon pekerja -->
                         </div>
                     </div>
@@ -1023,7 +781,7 @@
     </section>
 
     <!-- Section: Apa Kata Mereka -->
-    <section class="py-10 bg-gray-50">
+    <section class="py-2 bg-gray-50">
         <div class="container mx-auto px-4">
 
 
@@ -1155,10 +913,9 @@
                         </p>
                         <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
                     </div>
@@ -1199,10 +956,9 @@
                         </p>
                         <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
                     </div>
@@ -1243,10 +999,9 @@
                         </p>
                         <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 5l7 7-7 7" />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                             </svg>
                         </a>
                     </div>
@@ -1255,64 +1010,8 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+@endsection
 
-            <!-- Branch Office -->
-            <div>
-                <h3 class="text-lg font-bold mb-2">BRANCH OFFICE</h3>
-                <p class="text-sm leading-relaxed mb-3">
-                    Jl. Panggungan Asri No.37, RT.003/RW.033, Mayaan, Trihanggo,<br>
-                    Kec. Gamping, Kab. Sleman, Daerah Istimewa Yogyakarta 55291
-                </p>
-
-                <h3 class="text-lg font-bold mb-2">SOCIAL MEDIA</h3>
-                <div class="flex gap-3 text-lg">
-                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
-            </div>
-
-            <!-- Contact Us -->
-            <div>
-                <h3 class="text-lg font-bold mb-2">CONTACT US</h3>
-                <ul class="space-y-1 text-sm">
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:admin@intancahayamandiri.com" class="hover:underline">
-                            admin@intancahayamandiri.com
-                        </a>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>0274-4297535</span>
-                    </li>
-                    <li class="flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>0813 2718 1389</span>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Bantuan -->
-            <div>
-                <h3 class="text-lg font-bold mb-2">BANTUAN</h3>
-                <ul class="space-y-1 text-sm">
-                    <li><a href="#" class="hover:underline">Hubungi Kami</a></li>
-                    <li><a href="#" class="hover:underline">Syarat & Ketentuan</a></li>
-                    <li><a href="#" class="hover:underline">FAQ</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Copyright -->
-        <div class="border-t border-white/20 py-3 text-center text-xs">
-            Copyright 2025 - <span class="font-semibold">Intan Safety Jogja</span>
-        </div>
-    </footer>
 
 </body>
 
