@@ -142,10 +142,10 @@
                             </svg>
                         </button>
                         <div id="mobile-about" class="hidden pl-6 space-y-1">
-                            <a href="#"
+                            <a href="{{ route('tentang.perusahaan') }}"
                                 class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Tentang
                                 Perusahaan</a>
-                            <a href="#"
+                            <a href="{{ route('hubungi-kami') }}"
                                 class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Hubungi
                                 Kami</a>
                         </div>
