@@ -12,8 +12,8 @@
 
     <div class="max-w-6xl mx-auto px-6 py-12">
         <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8">
-            Contact Information <br>
-            <span class="text-[#73BA7D] text-lg font-medium">Let Your Wanderlust Guide You</span>
+            Kontak Informasi<br>
+            <span class="text-[#73BA7D] text-lg font-medium">hubungi kami segera</span>
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
