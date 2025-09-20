@@ -6,6 +6,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\ParticipantController;
+use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
+use App\Http\Controllers\GalleryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,11 +45,18 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Admin routes
+// Admin routes (backend)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('trainings', TrainingController::class);
     Route::resource('participants', ParticipantController::class);
 });
 
+// Public
+Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
+
+// Admin (group dengan prefix & middleware auth)
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('galleries', AdminGalleryController::class);
+});
 require __DIR__.'/auth.php';

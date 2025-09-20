@@ -23,6 +23,11 @@
                 <a href="{{ route('admin.participants.index') }}" class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/participants*') ? 'bg-blue-700' : '' }}">
                     Participant
                 </a>
+                <a href="{{ route('admin.galleries.index') }}" 
+   class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/galleries*') ? 'bg-blue-700' : '' }}">
+   Gallery
+</a>
+
             </nav>
             <div class="p-4 border-t border-blue-700">
                 <form action="{{ route('logout') }}" method="POST">

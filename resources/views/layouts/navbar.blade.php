@@ -98,7 +98,7 @@
                     </div>
 
                     <!-- Galeri Pembinaan -->
-                    <a href="#" class="hover:text-[#73BA7D] font-light transition-colors duration-300">GALERI</a>
+                    <a href="{{ route('galeri')  }}" class="hover:text-[#73BA7D] font-light transition-colors duration-300">GALERI</a>
                 </div>
 
                 <!-- Button Desktop -->
