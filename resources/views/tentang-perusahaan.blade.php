@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Tentang Perusahaan - Intan Safety')
+
 @section('content')
     <!-- Hero / Banner -->
     <section class="relative bg-white">
