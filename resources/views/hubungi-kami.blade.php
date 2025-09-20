@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Hubungi Kami - Intan Safety')
+
 @section('content')
     {{-- Banner Kontak Kami --}}
     <div class="relative">
