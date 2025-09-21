@@ -4,8 +4,16 @@
 
 @section('content')
 
+{{-- Banner Kontak Kami --}}
+    <div class="relative">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Kontak Kami"
+            class="w-full h-64 object-cover rounded-lg shadow-md">
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">GALERI INTAN SAFETY</h1>
+        </div>
+    </div>
 <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold mb-6 text-center">Galeri</h1>
+    <h1 class="text-3xl font-bold mb-6 text-center">DOKUMENTASI KEGIATAN</h1>
 
     <!-- Filter kategori (scrollable di mobile) -->
     <div id="galleryFilters" class="flex space-x-4 overflow-x-auto pb-2 mb-6 no-scrollbar">
