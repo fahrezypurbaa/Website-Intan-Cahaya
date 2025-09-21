@@ -210,15 +210,12 @@
                                 Sertifikat</a>
                             <a href="#"
                                 class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Artikel</a>
-                            <a href="#"
-                                class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Galeri
-                                Pembinaan</a>
                         </div>
                     </div>
 
                     <!-- Mobile Contact -->
-                    <a href="#"
-                        class="block text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 transition-colors">CONTACT</a>
+                    <a href="{{ route('galeri')  }}"
+                        class="block text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 transition-colors">GALERI</a>
 
                     <!-- Mobile Button -->
                     <div class="px-3 py-2">

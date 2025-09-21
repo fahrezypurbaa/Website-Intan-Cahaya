@@ -186,3 +186,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     counters.forEach((counter) => observer.observe(counter));
 });
+
+// Halaman Galeri (filter gambar)
+document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll("#galleryFilters button");
+    const items = document.querySelectorAll(".gallery-item");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            // reset warna semua button
+            buttons.forEach(b => b.classList.remove("bg-blue-600", "text-white"));
+            buttons.forEach(b => b.classList.add("bg-gray-200"));
+
+            // kasih warna biru ke button yang dipilih
+            btn.classList.remove("bg-gray-200");
+            btn.classList.add("bg-blue-600", "text-white");
+
+            // filter gambar
+            const category = btn.getAttribute("data-category");
+            items.forEach(item => {
+                if (category === "all" || item.dataset.category === category) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    });
+
+    // saat halaman baru dibuka → tampilkan semua gambar, tapi tidak ada tombol aktif
+    items.forEach(item => item.style.display = "block");
+});

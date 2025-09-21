@@ -1,34 +1,39 @@
 @extends('layouts.app')
 
-@section('title', 'Galeri - Intan Safety')
+@section('title', 'Galeri')
 
 @section('content')
-    <!-- Hero Section -->
-    <div class="relative">
-        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Kontak Kami"
-            class="w-full h-64 object-cover rounded-lg shadow-md">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <h1 class="text-4xl text-green-100 font-bold">Galeri Intan Safety</h1>
-        </div>
-    </div>
-    <!-- Dokumentasi -->
-    <section class="py-12 bg-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-10">Dokumentasi Pelaksanaan</h2>
 
-            <!-- Grid Galeri -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                @foreach ($galleries as $gallery)
-                    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition">
-                        <img src="{{ asset('storage/' . $gallery->image) }}" alt="{{ $gallery->title }}"
-                            class="w-full h-56 object-cover">
-                        <div class="p-4">
-                            <h3 class="text-lg font-semibold text-gray-800">{{ $gallery->title ?? 'Tanpa Judul' }}</h3>
-                            <p class="text-sm text-gray-500">{{ $gallery->category ?? '-' }}</p>
-                        </div>
-                    </div>
-                @endforeach
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6 text-center">Galeri</h1>
+
+    <!-- Filter kategori (scrollable di mobile) -->
+    <div id="galleryFilters" class="flex space-x-4 overflow-x-auto pb-2 mb-6 no-scrollbar">
+        <button data-category="all"
+            class="px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white whitespace-nowrap">
+            Semua
+        </button>
+        @foreach($categories as $category)
+            <button data-category="{{ $category }}"
+                class="px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white whitespace-nowrap">
+                {{ ucfirst($category) }}
+            </button>
+        @endforeach
+    </div>
+
+    <!-- Grid galeri -->
+    <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        @foreach($galleries as $gallery)
+            <div class="gallery-item" data-category="{{ $gallery->category }}">
+                <img src="{{ asset('storage/' . $gallery->image) }}" 
+                     alt="{{ $gallery->title ?? 'Gallery' }}" 
+                     class="gallery-img">
+                <p class="gallery-caption">
+                    {{ $gallery->title ?? ucfirst($gallery->category) }}
+                </p>
             </div>
-        </div>
-    </section>
+        @endforeach
+    </div>
+</div>
+
 @endsection

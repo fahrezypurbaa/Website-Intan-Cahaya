@@ -52,8 +52,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('participants', ParticipantController::class);
 });
 
-// Public
-Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
+// Galeri Public
+// Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
+Route::get('/galeri', [App\Http\Controllers\GalleryPublicController::class, 'index'])->name('galeri');
+
 
 // Admin (group dengan prefix & middleware auth)
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
