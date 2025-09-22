@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('title','Dashboard Admin')
+
 @section('content')
 <div class="p-6">
     <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>

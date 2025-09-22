@@ -20,11 +20,10 @@
                     class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->routeIs('admin.dashboard') ? 'bg-[#73BA7D]' : '' }}">
                     Dashboard
                 </a>
-                <a href="{{ route('admin.dashboard') }}"
-                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->routeIs('admin.dashboard') ? 'bg-[#73BA7D]' : '' }}">
-                    Dashboard
+                <a href="{{ route('admin.contacts.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->routeIs('admin.contacts') ? 'bg-[#73BA7D]' : '' }}">
+                    Hubungi Kami
                 </a>
-
                 <a href="{{ route('admin.galleries.index') }}"
                     class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/galleries*') ? 'bg-[#73BA7D]' : '' }}">
                     Gallery

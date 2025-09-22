@@ -12,6 +12,7 @@ use App\Http\Controllers\GalleryPublicController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\ContactAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,8 +71,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     // Galleries
     Route::resource('galleries', AdminGalleryController::class);
 
-    // // Schedule Management
-    // Route::resource('scheduleadmin', ScheduleAdminController::class);
+    // Contact
+    Route::get('contacts', [\App\Http\Controllers\Admin\ContactAdminController::class, 'index'])->name('contacts.index');
+
+
 
     // Registrasi Management
     Route::get('registrations', [RegistrationAdminController::class, 'index'])->name('registrations.index');

@@ -21,12 +21,7 @@ class ContactController extends Controller
             'pesan'   => 'required|string',
         ]);
 
-        Contact::create([
-            'nama'    => $request->nama,
-            'email'   => $request->email,
-            'telepon' => $request->telepon,
-            'pesan'   => $request->pesan,
-        ]);
+ Contact::create($request->only('nama','email','telepon','pesan'));
 
         return redirect()->back()->with('success', 'Pesan berhasil dikirim!');
     }

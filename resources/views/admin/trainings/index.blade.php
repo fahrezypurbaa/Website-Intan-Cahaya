@@ -4,25 +4,27 @@
 
 @section('content')
 <a href="{{ route('admin.trainings.create') }}" 
-   class="px-4 py-2 bg-green-600 text-white rounded mb-4 inline-block">+ Tambah Training</a>
+   class="px-4 py-2 bg-[#73BA7D] text-white rounded mb-4 inline-block">+ Tambah Training</a>
 
-<table class="w-full bg-white shadow rounded-lg overflow-hidden">
-    <thead class="bg-green-600 text-white">
+<table class="min-w-full text-sm text-left border border-gray-200 rounded-lg">
+    <thead class="bg-gray-100">
         <tr>
-            <th class="px-4 py-2">Judul</th>
-            <th class="px-4 py-2">Kategori</th>
-            <th class="px-4 py-2">Mode</th>
-            <th class="px-4 py-2">Aksi</th>
+            <th class="px-4 py-2">No</th>
+            <th class="px-4 py-2">Nama</th>
+            <th class="px-4 py-2">Email</th>
+            <th class="px-4 py-2">No HP</th>
+            <th class="px-4 py-2">Tanggal Daftar</th>
+            <th class="px-4 py-2">Waktu Daftar</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="divide-y divide-gray-200">
         @foreach($trainings as $t)
         <tr class="border-b">
-            <td class="px-4 py-2">{{ $t->title }}</td>
+           <td class="px-4 py-2">{{ $t->title }}</td>
             <td class="px-4 py-2">{{ $t->category->name }}</td>
             <td class="px-4 py-2">{{ $t->mode }}</td>
             <td class="px-4 py-2">
-                <a href="{{ route('admin.trainings.edit',$t) }}" class="text-blue-600">Edit</a> |
+              <a href="{{ route('admin.trainings.edit',$t) }}" class="text-blue-600">Edit</a> |
                 <form action="{{ route('admin.trainings.destroy',$t) }}" method="POST" class="inline">
                     @csrf @method('DELETE')
                     <button type="submit" onclick="return confirm('Yakin hapus?')" class="text-red-600">Hapus</button>

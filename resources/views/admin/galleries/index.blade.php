@@ -5,7 +5,7 @@
 @section('content')
 <div class="flex justify-between items-center mb-4">
     <h2 class="text-xl font-bold">Gallery</h2>
-    <a href="{{ route('admin.galleries.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded">+ Tambah Foto</a>
+    <a href="{{ route('admin.galleries.create') }}" class="bg-[#73BA7D] text-white px-4 py-2 rounded">+ Tambah Foto</a>
 </div>
 
 @if(session('success'))
