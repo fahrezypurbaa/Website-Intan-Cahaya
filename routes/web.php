@@ -62,7 +62,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
 Route::get('/download-jadwal-2025', [ScheduleController::class, 'download'])->name('schedule.download');
 
-// 
+// Admin Schedule Management
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::resource('scheduleadmin', \App\Http\Controllers\Admin\ScheduleAdminController::class);
 });

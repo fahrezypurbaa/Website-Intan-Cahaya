@@ -1,33 +1,45 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="max-w-5xl mx-auto py-12">
-    <h2 class="text-3xl font-bold mb-6">Jadwal Pelatihan 2025</h2>
+<div class="max-w-6xl mx-auto py-12 px-4">
+    <h2 class="text-3xl font-bold mb-8 text-center">Jadwal Pelatihan 2025</h2>
 
     @if($schedules->count())
-        <table class="min-w-full border border-gray-300 rounded-lg text-sm">
-            <thead>
-                <tr class="bg-gray-100">
-                    <th class="px-4 py-2 text-left">Tanggal</th>
-                    <th class="px-4 py-2 text-left">Pelatihan</th>
-                    <th class="px-4 py-2 text-left">Lokasi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($schedules as $schedule)
-                    <tr class="border-b">
-                        <td class="px-4 py-2">
-                            {{ \Carbon\Carbon::parse($schedule->start_date)->format('d M') }} -
-                            {{ \Carbon\Carbon::parse($schedule->end_date)->format('d M Y') }}
-                        </td>
-                        <td class="px-4 py-2">{{ $schedule->title }}</td>
-                        <td class="px-4 py-2">{{ $schedule->location ?? '-' }}</td>
+        <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+            <table class="min-w-full text-sm text-left border border-gray-200 rounded-lg">
+                <thead style="background-color: #73BA7D;" class="text-white">
+                    <tr>
+                        <th class="px-4 py-3">No</th>
+                        <th class="px-4 py-3">Tanggal</th>
+                        <th class="px-4 py-3">Pelatihan</th>
+                        <th class="px-4 py-3">Lokasi</th>
+                        <th class="px-4 py-3">Aksi</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                    @foreach($schedules as $index => $schedule)
+                        <tr class="hover:bg-gray-50">
+                            <td class="px-4 py-3">{{ $index + 1 }}</td>
+                            <td class="px-4 py-3">
+                                {{ \Carbon\Carbon::parse($schedule->start_date)->format('d M') }}
+                                -
+                                {{ \Carbon\Carbon::parse($schedule->end_date)->format('d M Y') }}
+                            </td>
+                            <td class="px-4 py-3 font-medium">{{ $schedule->title }}</td>
+                            <td class="px-4 py-3">{{ $schedule->location ?? '-' }}</td>
+                            <td class="px-4 py-3">
+                                <a href="#"
+                                   class="inline-block px-3 py-1 bg-green-600 text-white rounded-md hover:bg-green-700 transition">
+                                    Daftar
+                                </a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     @else
-        <p>Tidak ada jadwal tersedia untuk tahun 2025.</p>
+        <p class="text-center text-gray-600">Tidak ada jadwal tersedia untuk tahun 2025.</p>
     @endif
 </div>
 @endsection
