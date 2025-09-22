@@ -24,7 +24,7 @@
                     </svg>
                 </a>
                 <!-- Button with Icon -->
-                <a href="#"
+                <a href="{{ route('schedule.download') }}"
                     class="flex items-center justify-center gap-2 text-white hover:text-gray-200 transition-colors duration-300 w-full sm:w-auto">
                     <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -849,7 +849,7 @@
 
             <!-- Button -->
             <div class="text-center mt-10">
-                <a href="#"
+                <a href="{{ route('galeri') }}"
                     class="px-6 py-2 bg-teal-800 text-white rounded-md shadow hover:bg-teal-900 transition-colors">
                     Selengkapnya
                 </a>

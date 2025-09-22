@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\Admin\ParticipantController;
 use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,10 +22,6 @@ use App\Http\Controllers\GalleryController;
 Route::get('/', function () {
     return view('home');
 });
-// Tidak Perlu karena sudah ada Admin/Dashboard
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Tentang Perusahaan
 Route::get('/tentang-perusahaan', function () {
@@ -53,7 +50,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 });
 
 // Galeri Public
-// Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri');
 Route::get('/galeri', [App\Http\Controllers\GalleryPublicController::class, 'index'])->name('galeri');
 
 
@@ -61,4 +57,15 @@ Route::get('/galeri', [App\Http\Controllers\GalleryPublicController::class, 'ind
 Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
     Route::resource('galleries', AdminGalleryController::class);
 });
+
+// Jadwal 2025 & Schedule
+Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
+Route::get('/download-jadwal-2025', [ScheduleController::class, 'download'])->name('schedule.download');
+
+// 
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('scheduleadmin', \App\Http\Controllers\Admin\ScheduleAdminController::class);
+});
+
+
 require __DIR__.'/auth.php';

@@ -195,12 +195,12 @@ document.addEventListener("DOMContentLoaded", () => {
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
             // reset warna semua button
-            buttons.forEach(b => b.classList.remove("bg-blue-600", "text-white"));
+            buttons.forEach(b => b.classList.remove("bg-[#73BA7D]", "text-white"));
             buttons.forEach(b => b.classList.add("bg-gray-200"));
 
             // kasih warna biru ke button yang dipilih
             btn.classList.remove("bg-gray-200");
-            btn.classList.add("bg-blue-600", "text-white");
+            btn.classList.add("bg-[#73BA7D]", "text-white");
 
             // filter gambar
             const category = btn.getAttribute("data-category");

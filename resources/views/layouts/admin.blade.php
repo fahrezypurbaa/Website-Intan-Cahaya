@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | Intan Cahaya</title>
     @vite('resources/css/app.css')
 </head>
+
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
@@ -14,19 +16,26 @@
                 Admin Panel
             </div>
             <nav class="flex-1 p-4 space-y-2">
-                <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->routeIs('admin.dashboard') ? 'bg-blue-700' : '' }}">
+                <a href="{{ route('admin.dashboard') }}"
+                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->routeIs('admin.dashboard') ? 'bg-blue-700' : '' }}">
                     Dashboard
                 </a>
-                <a href="{{ route('admin.trainings.index') }}" class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/trainings*') ? 'bg-blue-700' : '' }}">
+                <a href="{{ route('admin.trainings.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/trainings*') ? 'bg-blue-700' : '' }}">
                     Training
                 </a>
-                <a href="{{ route('admin.participants.index') }}" class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/participants*') ? 'bg-blue-700' : '' }}">
+                <a href="{{ route('admin.participants.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/participants*') ? 'bg-blue-700' : '' }}">
                     Participant
                 </a>
-                <a href="{{ route('admin.galleries.index') }}" 
-   class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/galleries*') ? 'bg-blue-700' : '' }}">
-   Gallery
-</a>
+                <a href="{{ route('admin.galleries.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/galleries*') ? 'bg-blue-700' : '' }}">
+                    Gallery
+                </a>
+                <a href="{{ route('admin.scheduleadmin.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/galleries*') ? 'bg-blue-700' : '' }}">
+                    Schedule
+                </a>
 
             </nav>
             <div class="p-4 border-t border-blue-700">
@@ -44,7 +53,8 @@
                 <h1 class="text-xl font-semibold">@yield('title')</h1>
                 <div class="flex items-center space-x-4">
                     <span class="text-gray-700">{{ Auth::user()->name }}</span>
-                    <img class="w-10 h-10 rounded-full border" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="Avatar">
+                    <img class="w-10 h-10 rounded-full border"
+                        src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="Avatar">
                 </div>
             </header>
 
@@ -55,4 +65,5 @@
         </main>
     </div>
 </body>
+
 </html>

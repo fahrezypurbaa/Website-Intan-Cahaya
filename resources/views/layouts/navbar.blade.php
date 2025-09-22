@@ -86,7 +86,7 @@
                         <div
                             class="absolute left-0 mt-2 w-[400px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 grid grid-cols-2 gap-6 p-6">
                             <div class="flex flex-col space-y-3">
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Schedule</a>
+                                <a href="{{ route('schedule') }}" class="text-sm hover:text-[#73BA7D] transition-colors">Schedule</a>
                                 <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Legalitas</a>
                                 <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Cek
                                     Sertifikat</a>

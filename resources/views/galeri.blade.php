@@ -18,12 +18,12 @@
     <!-- Filter kategori (scrollable di mobile) -->
     <div id="galleryFilters" class="flex space-x-4 overflow-x-auto pb-2 mb-6 no-scrollbar">
         <button data-category="all"
-            class="px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white whitespace-nowrap">
+            class="px-4 py-2 rounded-full bg-gray-200 hover:bg-[#73BA7D] hover:text-white whitespace-nowrap">
             Semua
         </button>
         @foreach($categories as $category)
             <button data-category="{{ $category }}"
-                class="px-4 py-2 rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white whitespace-nowrap">
+                class="px-4 py-2 rounded-full bg-gray-200 hover:bg-[#73BA7D] hover:text-white whitespace-nowrap">
                 {{ ucfirst($category) }}
             </button>
         @endforeach
