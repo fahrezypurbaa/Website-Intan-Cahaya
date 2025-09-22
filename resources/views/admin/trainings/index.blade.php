@@ -1,43 +1,39 @@
 @extends('layouts.admin')
 
-@section('title', 'Training')
+@section('title','Kelola Training')
 
 @section('content')
-<div class="flex justify-between items-center mb-4">
-    <h2 class="text-xl font-bold">Daftar Training</h2>
-    <a href="{{ route('admin.trainings.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">+ Tambah Training</a>
-</div>
+<a href="{{ route('admin.trainings.create') }}" 
+   class="px-4 py-2 bg-green-600 text-white rounded mb-4 inline-block">+ Tambah Training</a>
 
-<div class="bg-white shadow rounded-xl overflow-hidden">
-    <table class="min-w-full divide-y divide-gray-200">
-        <thead class="bg-gray-50">
-            <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nama</th>
-                <th class="px-6 py-3">Tanggal</th>
-                <th class="px-6 py-3">Status</th>
-                <th class="px-6 py-3">Peserta</th>
-                <th class="px-6 py-3 text-right">Aksi</th>
-            </tr>
-        </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
-            @foreach ($trainings as $training)
-            <tr>
-                <td class="px-6 py-4">{{ $training->name }}</td>
-                <td class="px-6 py-4">{{ $training->start_date }} - {{ $training->end_date }}</td>
-                <td class="px-6 py-4">
-                    <span class="px-2 py-1 text-xs rounded bg-green-100 text-green-800">{{ ucfirst($training->status) }}</span>
-                </td>
-                <td class="px-6 py-4">{{ $training->participants->count() }}</td>
-                <td class="px-6 py-4 text-right space-x-2">
-                    <a href="{{ route('admin.trainings.edit', $training) }}" class="text-blue-600 hover:underline">Edit</a>
-                    <form action="{{ route('admin.trainings.destroy', $training) }}" method="POST" class="inline">
-                        @csrf @method('DELETE')
-                        <button class="text-red-600 hover:underline">Hapus</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
+<table class="w-full bg-white shadow rounded-lg overflow-hidden">
+    <thead class="bg-green-600 text-white">
+        <tr>
+            <th class="px-4 py-2">Judul</th>
+            <th class="px-4 py-2">Kategori</th>
+            <th class="px-4 py-2">Mode</th>
+            <th class="px-4 py-2">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($trainings as $t)
+        <tr class="border-b">
+            <td class="px-4 py-2">{{ $t->title }}</td>
+            <td class="px-4 py-2">{{ $t->category->name }}</td>
+            <td class="px-4 py-2">{{ $t->mode }}</td>
+            <td class="px-4 py-2">
+                <a href="{{ route('admin.trainings.edit',$t) }}" class="text-blue-600">Edit</a> |
+                <form action="{{ route('admin.trainings.destroy',$t) }}" method="POST" class="inline">
+                    @csrf @method('DELETE')
+                    <button type="submit" onclick="return confirm('Yakin hapus?')" class="text-red-600">Hapus</button>
+                </form>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+<div class="mt-4">
+    {{ $trainings->links() }}
 </div>
 @endsection

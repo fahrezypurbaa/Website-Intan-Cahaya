@@ -11,34 +11,35 @@
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-blue-900 text-white flex flex-col">
-            <div class="p-4 text-2xl font-bold border-b border-blue-700">
+        <aside class="w-64 bg-[#144F5F] text-white flex flex-col">
+            <div class="p-4 text-2xl font-bold border-b border-[#73BA7D]">
                 Admin Panel
             </div>
             <nav class="flex-1 p-4 space-y-2">
                 <a href="{{ route('admin.dashboard') }}"
-                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->routeIs('admin.dashboard') ? 'bg-blue-700' : '' }}">
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->routeIs('admin.dashboard') ? 'bg-[#73BA7D]' : '' }}">
                     Dashboard
                 </a>
-                <a href="{{ route('admin.trainings.index') }}"
-                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/trainings*') ? 'bg-blue-700' : '' }}">
-                    Training
+                <a href="{{ route('admin.dashboard') }}"
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->routeIs('admin.dashboard') ? 'bg-[#73BA7D]' : '' }}">
+                    Dashboard
                 </a>
-                <a href="{{ route('admin.participants.index') }}"
-                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/participants*') ? 'bg-blue-700' : '' }}">
-                    Participant
-                </a>
+
                 <a href="{{ route('admin.galleries.index') }}"
-                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/galleries*') ? 'bg-blue-700' : '' }}">
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/galleries*') ? 'bg-[#73BA7D]' : '' }}">
                     Gallery
                 </a>
-                <a href="{{ route('admin.scheduleadmin.index') }}"
-                    class="block px-4 py-2 rounded hover:bg-blue-700 {{ request()->is('admin/galleries*') ? 'bg-blue-700' : '' }}">
-                    Schedule
+                <a href="{{ route('admin.registrations.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/registrations*') ? 'bg-[#73BA7D]' : '' }}">
+                    Registrations
+                </a>
+                <a href="{{ route('admin.trainings.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/trainings*') ? 'bg-[#73BA7D]' : '' }}">
+                    Pelatihan
                 </a>
 
             </nav>
-            <div class="p-4 border-t border-blue-700">
+            <div class="p-4 border-t border-[#73BA7D]">
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button class="w-full bg-red-600 hover:bg-red-700 py-2 rounded">Logout</button>

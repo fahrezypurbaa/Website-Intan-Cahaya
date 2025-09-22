@@ -1,21 +1,24 @@
 <?php
-
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Training;
+use App\Models\Category;
+use App\Models\Registration; // kalau ada pendaftaran
 use Illuminate\Http\Request;
-use App\Models\Training;     // ✅ ini model
-use App\Models\Participant;
 
 class DashboardController extends Controller
 {
-     public function index()
+    public function index()
     {
-         // hitung jumlah data
-        $trainingsCount = Training::count();
-        $participantsCount = Participant::count();
+        $trainingsCount   = Training::count();
+        $categoriesCount  = Category::count();
+        $registrationsCount = class_exists(Registration::class) ? Registration::count() : 0;
 
-        // kirim ke view
-        return view('admin.dashboard', compact('trainingsCount', 'participantsCount'));
+        return view('admin.dashboard', compact(
+            'trainingsCount',
+            'categoriesCount',
+            'registrationsCount'
+        ));
     }
 }

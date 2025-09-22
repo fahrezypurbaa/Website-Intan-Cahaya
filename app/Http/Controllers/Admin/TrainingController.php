@@ -3,68 +3,87 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Category;
 use App\Models\Training;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TrainingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-         // ambil data training, pakai pagination biar aman
-        $trainings = Training::withCount('participants')->orderBy('start_date', 'desc')->paginate(10);
+        $trainings = Training::with('category')->latest()->paginate(10);
 
-        // kirim ke view
         return view('admin.trainings.index', compact('trainings'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.trainings.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'nullable|string',
+            'duration' => 'nullable|string',
+            'requirement' => 'nullable|string',
+            'mode' => 'nullable|string',
+            'image' => 'nullable|image|max:2048',
+        ]);
+
+        $data['slug'] = Str::slug($data['title']);
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('trainings', 'public');
+        }
+
+        Training::create($data);
+
+        return redirect()->route('admin.trainings.index')
+            ->with('success', 'Training berhasil ditambahkan');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function edit(Training $training)
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.trainings.edit', compact('training', 'categories'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    public function update(Request $request, Training $training)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'category_id' => 'required|exists:categories,id',
+            'description' => 'nullable|string',
+            'duration' => 'nullable|string',
+            'requirement' => 'nullable|string',
+            'mode' => 'nullable|string',
+            'image' => 'nullable|image|max:2048',
+        ]);
+
+        $data['slug'] = Str::slug($data['title']);
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('trainings', 'public');
+        }
+
+        $training->update($data);
+
+        return redirect()->route('admin.trainings.index')
+            ->with('success', 'Training berhasil diperbarui');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function destroy(Training $training)
     {
-        //
-    }
+        $training->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('admin.trainings.index')
+            ->with('success', 'Training berhasil dihapus');
     }
 }

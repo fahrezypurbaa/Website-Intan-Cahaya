@@ -1,19 +1,22 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard')
-
 @section('content')
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- Card Training -->
-    <div class="bg-white p-6 rounded-xl shadow">
-        <h2 class="text-gray-500">Total Training</h2>
-        <p class="text-2xl font-bold">{{ $trainingsCount }}</p>
-    </div>
+<div class="p-6">
+    <h1 class="text-2xl font-bold mb-6">Admin Dashboard</h1>
 
-    <!-- Card Participant -->
-    <div class="bg-white p-6 rounded-xl shadow">
-        <h2 class="text-gray-500">Total Participant</h2>
-        <p class="text-2xl font-bold">{{ $participantsCount }}</p>
+    <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow text-center">
+            <h2 class="text-xl font-bold">{{ $trainingsCount }}</h2>
+            <p class="text-gray-600">Total Training</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <h2 class="text-xl font-bold">{{ $categoriesCount }}</h2>
+            <p class="text-gray-600">Total Kategori</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow text-center">
+            <h2 class="text-xl font-bold">{{ $registrationsCount }}</h2>
+            <p class="text-gray-600">Total Pendaftar</p>
+        </div>
     </div>
 </div>
 @endsection
