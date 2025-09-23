@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Layanan Pelatihan & Sertifikasi - Intan Safety')
+
 @section('content')
 <div class="max-w-7xl mx-auto py-10 px-4 flex gap-6">
 

@@ -6,7 +6,6 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
 use App\Http\Controllers\Admin\RegistrationAdminController;
-use App\Http\Controllers\Admin\ScheduleAdminController;
 use App\Http\Controllers\Admin\TrainingController;
 use App\Http\Controllers\GalleryPublicController;
 use App\Http\Controllers\ScheduleController;
@@ -51,8 +50,12 @@ Route::get('/layanan', [LayananController::class,'index'])->name('layanan.index'
 Route::get('/layanan/{slug}', [LayananController::class,'show'])->name('layanan.show');
 
 // Jadwal 2025 & Schedule
-Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
-Route::get('/download-jadwal-2025', [ScheduleController::class, 'download'])->name('schedule.download');
+Route::get('/schedule/download', function () {
+    return response()->download(public_path('files/jadwal-2025.pdf'));
+})->name('schedule.download');
+Route::get('/schedule', function () {
+    return view('schedule');
+})->name('schedule');
 
 // Form Registrasi User
 Route::get('/registration', [RegistrationController::class, 'create'])->name('registration.form');

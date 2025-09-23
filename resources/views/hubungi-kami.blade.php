@@ -7,8 +7,9 @@
     <div class="relative">
         <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Kontak Kami"
             class="w-full h-64 object-cover rounded-lg shadow-md">
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-white">KONTAK KAMI</h1>
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-end pr-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-white">
+                KONTAK KAMI</h1>
         </div>
     </div>
 
