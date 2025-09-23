@@ -31,11 +31,11 @@
                     </li>
                     <li class="flex items-center gap-2">
                         <i class="fa-solid fa-phone"></i>
-                        <span>0274-4297535</span>
+                        <span>082146134846</span>
                     </li>
                     <li class="flex items-center gap-2">
                         <i class="fa-brands fa-whatsapp"></i>
-                        <span>0813 2718 1389</span>
+                        <span>0082146134846</span>
                     </li>
                 </ul>
             </div>

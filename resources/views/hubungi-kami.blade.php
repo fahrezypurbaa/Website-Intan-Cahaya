@@ -35,7 +35,7 @@
                             class="w-10 h-10 flex items-center justify-center rounded-full bg-green-100 text-green-700 mr-3">
                             📞
                         </span>
-                        <span class="text-gray-900">081268044470</span>
+                        <span class="text-gray-900">082146134846</span>
                     </li>
                     <li class="flex items-center">
                         <span
