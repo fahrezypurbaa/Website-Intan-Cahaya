@@ -74,8 +74,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function() {
     // Contact
     Route::get('contacts', [\App\Http\Controllers\Admin\ContactAdminController::class, 'index'])->name('contacts.index');
 
-
-
     // Registrasi Management
     Route::get('registrations', [RegistrationAdminController::class, 'index'])->name('registrations.index');
 });
