@@ -30,11 +30,15 @@
                 </a>
                 <a href="{{ route('admin.registrations.index') }}"
                     class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/registrations*') ? 'bg-[#73BA7D]' : '' }}">
-                    Registrations
+                    Registrasi
                 </a>
                 <a href="{{ route('admin.trainings.index') }}"
                     class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/trainings*') ? 'bg-[#73BA7D]' : '' }}">
                     Pelatihan
+                </a>
+                <a href="{{ route('admin.articles.index') }}"
+                    class="block px-4 py-2 rounded hover:bg-[#73BA7D] {{ request()->is('admin/articles*') ? 'bg-[#73BA7D]' : '' }}">
+                    Artikel
                 </a>
 
             </nav>

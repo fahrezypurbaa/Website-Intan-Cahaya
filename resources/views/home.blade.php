@@ -113,9 +113,9 @@
                                             <!-- Harga promo -->
                                             <span class="text-[#73BA7D] font-bold text-lg">Rp 2.500.000</span>
                                         </div>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -152,9 +152,9 @@
                                             <!-- Harga promo -->
                                             <span class="text-[#73BA7D] font-bold text-lg">Rp 5.500.000</span>
                                         </div>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -191,9 +191,9 @@
                                             <!-- Harga promo -->
                                             <span class="text-[#73BA7D] font-bold text-lg">Rp 4.500.000</span>
                                         </div>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -230,9 +230,9 @@
                                             <!-- Harga promo -->
                                             <span class="text-[#73BA7D] font-bold text-lg">Rp 3.000.000</span>
                                         </div>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -269,9 +269,9 @@
                                             <!-- Harga promo -->
                                             <span class="text-[#73BA7D] font-bold text-lg">Rp 4.500.000</span>
                                         </div>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -325,9 +325,9 @@
                                     <p class="text-gray-600 mb-4">Sertifikasi ahli K3 umum bersertifikat BNSP</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -358,9 +358,9 @@
                                     <p class="text-gray-600 mb-4">Sertifikasi teknisi listrik bersertifikat BNSP</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -391,9 +391,9 @@
                                     <p class="text-gray-600 mb-4">Sertifikasi bersertifikat BNSP</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -448,9 +448,9 @@
                                     </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -481,9 +481,9 @@
                                     <p class="text-gray-600 mb-4">Pengembangan kemampuan kepemimpinan</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -514,9 +514,9 @@
                                     <p class="text-gray-600 mb-4">Pelatihan membangun tim yang solid dan efektif</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
-                                        <a href="#"
+                                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                            Detail
+                                            Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -911,7 +911,7 @@
                             Pelatihan dan sertifikasi K3 tidak hanya meningkatkan kompetensi tenaga kerja, tetapi juga
                             memastikan lingkungan kerja lebih aman sesuai standar Kemnaker.
                         </p>
-                        <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                        <a href="{{ route('articles.index') }}" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -954,7 +954,7 @@
                             mendukung
                             produktivitas dan keselamatan kerja.
                         </p>
-                        <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                        <a href="{{ route('articles.index') }}" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -997,7 +997,7 @@
                             kepercayaan
                             klien terhadap perusahaan.
                         </p>
-                        <a href="#" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                        <a href="{{ route('articles.index') }}" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
