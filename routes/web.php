@@ -49,6 +49,12 @@ Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri')
 // Layanan & Training Frontend
 Route::get('/layanan', [LayananController::class,'index'])->name('layanan.index');
 Route::get('/layanan/{slug}', [LayananController::class,'show'])->name('layanan.show');
+// Layanan DropDown
+Route::get('/layanan/sertifikasi-kemnaker', [LayananController::class, 'kemnaker'])->name('layanan.kemnaker');
+Route::get('/layanan/sertifikasi-bnsp', [LayananController::class, 'bnsp'])->name('layanan.bnsp');
+Route::get('/layanan/non-sertifikasi', [LayananController::class, 'nonSertifikasi'])->name('layanan.nonSertifikasi');
+Route::get('/layanan/esdm', [LayananController::class, 'esdm'])->name('layanan.esdm');
+
 
 // Jadwal 2025 & Schedule
 Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');

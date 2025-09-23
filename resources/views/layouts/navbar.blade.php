@@ -53,18 +53,18 @@
                         <div
                             class="absolute left-0 mt-2 w-[500px] bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out transform translate-y-2 group-hover:translate-y-0 grid grid-cols-2 gap-6 p-6">
                             <div class="flex flex-col space-y-3">
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
+                                <a href="/layanan?category=sertifikasi-kemnaker-ri" class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
                                     Kemnaker RI</a>
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
+                                <a href="/layanan?category=sertifikasi-bnsp" class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
                                     BNSP</a>
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Non
+                                <a href="/layanan?category=non-sertifikasi" class="text-sm hover:text-[#73BA7D] transition-colors">Non
                                     Sertifikasi</a>
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">ESDM</a>
+                                <a href="/layanan?category=esdm" class="text-sm hover:text-[#73BA7D] transition-colors">ESDM</a>
                             </div>
                             <div class="flex flex-col space-y-3">
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">PPSDM Migas</a>
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Riksa Uji</a>
-                                <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Perpanjangan
+                                <a href="/layanan?category=ppsdm-migas" class="text-sm hover:text-[#73BA7D] transition-colors">PPSDM Migas</a>
+                                <a href="/layanan?category=riksa-uji" class="text-sm hover:text-[#73BA7D] transition-colors">Riksa Uji</a>
+                                <a href="/layanan?category=perpanjangan-sio-lisensi" class="text-sm hover:text-[#73BA7D] transition-colors">Perpanjangan
                                     SIO &
                                     Lisensi</a>
                             </div>
