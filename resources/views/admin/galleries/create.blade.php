@@ -27,7 +27,7 @@
             <div>
                 <label class="block text-sm font-medium">Kategori</label>
                 <select name="category" class="w-full border rounded p-2">
-                    <option value="JURU LAS SURABAYA">JURU LAS SURABAYA</option>
+                    <option value="JURU LAS SURABAYA 4-8 AGUSTUS 2025">JURU LAS SURABAYA 4-8 AGUSTUS 2025</option>
                     <option value="TOT LEVEL 4 7-11 AGUSTUS 2025">TOT LEVEL 4 7-11 AGUSTUS 2025</option>
                     <option value="AK3U 12 & 19 AGUSTUS 2025">AK3U 12 & 19 AGUSTUS 2025</option>
                     <option value="OPERATOR K3 GENSET 14-15 AGUSTUS 2025">OPERATOR K3 GENSET 14-15 AGUSTUS 2025</option>
