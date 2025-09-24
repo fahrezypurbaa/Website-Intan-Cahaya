@@ -814,35 +814,35 @@
             <!-- Gallery Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict1.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict2.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict3.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict4.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict5.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict6.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict7.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
                 <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/jurulas.jpg') }}" alt="gallery"
+                    <img src="{{ asset('images/galeri/pict8.jpg') }}" alt="gallery"
                         class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
                 </div>
             </div>
