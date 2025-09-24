@@ -12,7 +12,7 @@
 
                 <h3 class="text-lg font-bold mb-2">SOCIAL MEDIA</h3>
                 <div class="flex gap-3 text-lg">
-                    <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/intansafetyjogja/" class="hover:text-gray-300"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-tiktok"></i></a>
                     <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#" class="hover:text-gray-300"><i class="fa-brands fa-linkedin"></i></a>
