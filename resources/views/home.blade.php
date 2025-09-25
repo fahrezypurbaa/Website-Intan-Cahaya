@@ -6,27 +6,31 @@
 
     <!-- Hero Section -->
     <section
-        class="relative bg-[#144F5F] rounded-[40px] mx-4 sm:mx-6 lg:mx-8 mt-6 px-6 sm:px-10 lg:px-12 py-8 sm:py-12 lg:py-16 flex flex-col lg:flex-row items-center justify-between overflow-hidden min-h-[400px] lg:min-h-[500px]">
+        class="relative bg-[#144F5F] rounded-[40px] mx-4 sm:mx-6 lg:mx-8 mt-6 
+           px-6 sm:px-10 lg:px-12 
+           py-4 sm:py-6 lg:py-8 
+           flex flex-col lg:flex-row items-center justify-between 
+           overflow-hidden min-h-[300px] lg:min-h-[400px]">
 
         <!-- Text Content -->
-        <div class="text-white max-w-xl mb-8 lg:mb-0 z-10">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-8 tracking-wide">
-                SAFETY, QUALITY & <br />COMPETENT
+        <div class="text-white max-w-xl mb-6 lg:mb-0 z-10">
+            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-6 tracking-wide">
+                Safety, Quality & <br />Competent
             </h1>
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
                 <!-- Button Outline -->
                 <a href="#"
-                    class="px-6 py-3 border border-white rounded-full hover:bg-white hover:text-[#144F5F] transition-all duration-300 w-full sm:w-auto text-center flex items-center justify-center gap-2">
+                    class="px-5 py-2.5 border border-white rounded-full 
+                       hover:bg-white hover:text-[#144F5F] transition-all duration-300 
+                       w-full sm:w-auto text-center flex items-center justify-center gap-2">
                     <span>Cek Legalitas Kami</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3">
-                        </path>
-                    </svg>
                 </a>
                 <!-- Button with Icon -->
                 <a href="{{ route('schedule.download') }}"
-                    class="flex items-center justify-center gap-2 text-white hover:text-gray-200 transition-colors duration-300 w-full sm:w-auto">
-                    <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                    class="flex items-center justify-center gap-2 text-white 
+                       hover:text-gray-200 transition-colors duration-300 
+                       w-full sm:w-auto">
+                    <div class="w-9 h-9 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
@@ -38,19 +42,22 @@
         </div>
 
         <!-- Image + Circle -->
-        <div class="relative w-full max-w-[400px] sm:max-w-[500px] lg:w-[600px] lg:h-[520px] flex items-end justify-center">
+        <div class="relative w-full max-w-[360px] sm:max-w-[460px] lg:w-[520px] lg:h-[440px] flex items-end justify-center">
             <!-- Circle Background -->
             <div
-                class="absolute bottom-[-150px] sm:bottom-[-180px] right-10 sm:right-[40px] w-[300px] sm:w-[380px] lg:w-[460px] h-[300px] sm:h-[380px] lg:h-[460px] bg-[#73BA7D] rounded-full z-0 opacity-15">
+                class="absolute bottom-[-120px] sm:bottom-[-150px] right-8 sm:right-[36px] 
+                   w-[260px] sm:w-[340px] lg:w-[420px] h-[260px] sm:h-[340px] lg:h-[420px] 
+                   bg-[#73BA7D] rounded-full z-0 opacity-15">
             </div>
             <!-- Image -->
             <img src="{{ asset('images/hero1.png') }}" alt="Hero Image"
-                class="relative z-10 w-[260px] sm:w-[360px] lg:w-[460px] object-contain" />
+                class="relative z-10 w-[220px] sm:w-[320px] lg:w-[420px] object-contain" />
         </div>
 
-        <!-- Background Shape for better visual -->
+        <!-- Background Shape -->
         <div
-            class="absolute right-[-15%] top-1/2 transform -translate-y-1/2 w-[70%] h-[140%] bg-[#73BA7D] rounded-full opacity-10 z-0">
+            class="absolute right-[-15%] top-1/2 transform -translate-y-1/2 
+               w-[70%] h-[120%] bg-[#73BA7D] rounded-full opacity-10 z-0">
         </div>
     </section>
 
@@ -59,7 +66,7 @@
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
             <div class="mb-6 md:mb-0">
                 <h2 class="text-3xl font-bold text-[#144F5F]">Program Pelatihan Unggulan</h2>
-                <p class="text-gray-600 mt-2">Pilih program pelatihan sesuai kebutuhan Anda</p>
+                <p class="text-gray-600 mt-2">Pilih Program Pelatihan Sesuai Kebutuhan Anda</p>
             </div>
 
             <!-- Tab Navigation -->
@@ -881,7 +888,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/artikel/artikel1.jpg') }}" alt="Blog image"
+                    <img src="{{ asset('images/artikel/artikel1.png') }}" alt="Blog image"
                         class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
@@ -911,7 +918,8 @@
                             Pelatihan dan sertifikasi K3 tidak hanya meningkatkan kompetensi tenaga kerja, tetapi juga
                             memastikan lingkungan kerja lebih aman sesuai standar Kemnaker.
                         </p>
-                        <a href="{{ route('articles.index') }}" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                        <a href="{{ route('articles.index') }}"
+                            class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -923,7 +931,7 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/artikel/artikel2.jpg') }}" alt="Blog image"
+                    <img src="{{ asset('images/artikel/artikel2.png') }}" alt="Blog image"
                         class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
@@ -954,7 +962,8 @@
                             mendukung
                             produktivitas dan keselamatan kerja.
                         </p>
-                        <a href="{{ route('articles.index') }}" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                        <a href="{{ route('articles.index') }}"
+                            class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -997,7 +1006,8 @@
                             kepercayaan
                             klien terhadap perusahaan.
                         </p>
-                        <a href="{{ route('articles.index') }}" class="text-green-700 font-medium flex items-center gap-1 hover:underline">
+                        <a href="{{ route('articles.index') }}"
+                            class="text-green-700 font-medium flex items-center gap-1 hover:underline">
                             Read More
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
