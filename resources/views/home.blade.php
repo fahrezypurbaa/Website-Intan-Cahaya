@@ -65,7 +65,9 @@
     <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
             <div class="mb-6 md:mb-0">
-                <h2 class="text-3xl font-bold text-[#144F5F]">Program Pelatihan Unggulan</h2>
+                <h2 class="text-3xl font-bold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                    Program Pelatihan Unggulan
+                </h2>
                 <p class="text-gray-600 mt-2">Pilih Program Pelatihan Sesuai Kebutuhan Anda</p>
             </div>
 
@@ -561,7 +563,8 @@
         <div class="flex flex-col lg:flex-row gap-8 items-start">
             <!-- Bagian Kiri -->
             <div class="lg:w-1/2">
-                <h2 class="text-2xl md:text-3xl font-bold text-[#144F5F] mb-4">
+                <h2
+                    class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent mb-4">
                     Legalitas Terjamin, Kualitas Terbukti
                 </h2>
                 <p class="text-[#000] mb-6 leading-relaxed">
@@ -661,9 +664,11 @@
                     </svg>
                     JEJAK ALUMNI
                 </p>
-                <h2 class="text-3xl font-bold text-[#144F5F] mb-10">
+                <h2
+                    class="text-3xl font-bold mb-10 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent inline-block">
                     Bersama Alumni, Membangun <br> Kepercayaan dan Reputasi
                 </h2>
+
             </div>
 
             {{-- Logo Carousel Container --}}
@@ -731,7 +736,8 @@
             <!-- Bagian atas -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
                 <!-- Card kiri -->
-                <div class="relative bg-[#73BA7D] rounded-2xl overflow-hidden h-72 flex items-end justify-center">
+                <div
+                    class="relative bg-gradient-to-r from-[#144F5F] to-[#73BA7D] rounded-2xl overflow-hidden h-72 flex items-end justify-center">
                     <img src="{{ asset('images/hero.png') }}" alt="Alumni"
                         class="h-full object-bottom object-contain">
                 </div>
@@ -747,16 +753,16 @@
                         Ribuan Alumni Percaya
                     </h3>
                     <p class="text-gray-600 text-center text-sm">
-                        Pelatihan K3 kami telah meluluskan banyak peserta yang kini berkontribusi di berbagai bidang
-                        kerja.
+                        Pelatihan K3 kami telah meluluskan banyak peserta yang kini berkontribusi di berbagai bidang kerja.
                     </p>
                 </div>
 
                 <!-- Card kanan -->
-                <div class="bg-[#73BA7D] rounded-2xl flex flex-col justify-center items-center p-6 h-72">
+                <div
+                    class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] rounded-2xl flex flex-col justify-center items-center p-6 h-72">
                     <img src="{{ asset('images/logo.png') }}" alt="Safety Quality"
                         class="w-20 h-20 object-contain mx-auto mb-3">
-                    <h4 class="text-[#144F5F] font-bold text-base text-center leading-tight">
+                    <h4 class="text-white font-bold text-base text-center leading-tight">
                         #SAFETY <br> QUALITY <br> COMPETENT
                     </h4>
                 </div>
@@ -812,7 +818,8 @@
                         </svg>
                         GALERI PEMBINAAN KAMI
                     </p>
-                    <h2 class="mt-2 text-3xl font-bold text-[#144F5F] leading-snug">
+                    <h2
+                        class="mt-2 text-3xl font-bold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent leading-snug">
                         Mengabadikan Moment <br> Bersama Alumni
                     </h2>
                 </div>
@@ -857,9 +864,10 @@
             <!-- Button -->
             <div class="text-center mt-10">
                 <a href="{{ route('galeri') }}"
-                    class="px-6 py-2 bg-teal-800 text-white rounded-md shadow hover:bg-teal-900 transition-colors">
+                    class="px-6 py-2 rounded-md shadow bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-medium transition-all duration-300 hover:opacity-90">
                     Selengkapnya
                 </a>
+
             </div>
         </div>
     </div>
@@ -878,9 +886,11 @@
                         </svg>
                         RECENT BLOGS
                     </p>
-                    <h2 class="mt-2 text-3xl font-bold text-[#144F5F] leading-snug">
+                    <h2
+                        class="mt-2 text-3xl font-bold leading-snug bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent inline-block">
                         Journeys of Discovery <br> Uncovering Hidden
                     </h2>
+
                 </div>
             </div>
 
@@ -888,7 +898,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/artikel/artikel1.png') }}" alt="Blog image"
+                    <img src="{{ asset('images/artikel/artikel1.jpg') }}" alt="Blog image"
                         class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
@@ -931,7 +941,7 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/artikel/artikel2.png') }}" alt="Blog image"
+                    <img src="{{ asset('images/artikel/artikel2.jpg') }}" alt="Blog image"
                         class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
