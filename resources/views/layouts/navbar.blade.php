@@ -3,9 +3,19 @@
         <nav class="bg-white relative top-0 shadow-sm w-full z-50">
             <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
                 <!-- Logo -->
-                <a href="/" class="flex items-center">
-                    <img src="{{ asset('images/logo.png') }}" alt="Intan Safety" class="h-8 mr-2">
-                    <span class="font-bold text-lg text-[#144F5F]">INTAN SAFETY</span>
+                <a href="/" class="flex items-center ml-4">
+                    <!-- Logo -->
+                    <img src="{{ asset('images/logo.png') }}" alt="Intan Safety" class="h-12 w-12 object-contain mr-2">
+
+                    <!-- Teks -->
+                    <div class="flex flex-col leading-tight">
+                        <!-- Gradient text -->
+                        <span
+                            class="font-semibold text-base bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                            Intan Safety Jogja
+                        </span>
+                        <span class="text-[10px] text-gray-600">PT. Intan Cahaya Mandiri</span>
+                    </div>
                 </a>
 
                 <!-- Menu Desktop -->
@@ -101,7 +111,8 @@
                                     Sertifikat</a>
                             </div>
                             <div class="flex flex-col space-y-3">
-                                <a href="{{ route('articles.index') }}" class="text-sm hover:text-[#73BA7D] transition-colors">Artikel</a>
+                                <a href="{{ route('articles.index') }}"
+                                    class="text-sm hover:text-[#73BA7D] transition-colors">Artikel</a>
                             </div>
                         </div>
                     </div>
@@ -114,13 +125,13 @@
                 <!-- Button Desktop -->
                 <div class="hidden lg:flex">
                     <a href="#"
-                        class="bg-[#73BA7D] text-white px-6 py-2 rounded-full font-medium hover:bg-opacity-90 transition duration-300 flex items-center space-x-2">
-                        Get An Appointment
+                        class="px-6 py-2 rounded-full font-medium text-white 
+              bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+              hover:opacity-90 transition duration-300 flex items-center space-x-2">
+                        Daftar Pelatihan
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            {{-- tanda → → pada Get An Appointment --}}
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3">
-                            </path>
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                     </a>
                 </div>
