@@ -24,7 +24,7 @@
                 <div class="relative group">
                     <button
                         class="hover:text-[#73BA7D] font-light transition-colors duration-300 flex items-center gap-1">
-                        TENTANG KAMI
+                        Tentang Kami
                         <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                             fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -52,7 +52,7 @@
                 <div class="relative group">
                     <button
                         class="hover:text-[#73BA7D] font-light transition-colors duration-300 flex items-center gap-1">
-                        LAYANAN
+                        Layanan
                         <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                             fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -92,7 +92,7 @@
                 <div class="relative group">
                     <button
                         class="hover:text-[#73BA7D] font-light transition-colors duration-300 flex items-center gap-1">
-                        INFORMASI
+                        Informasi
                         <svg class="w-4 h-4 transform group-hover:rotate-180 transition-transform duration-300"
                             fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd"
@@ -119,7 +119,7 @@
 
                 <!-- Galeri Pembinaan -->
                 <a href="{{ route('galeri') }}"
-                    class="hover:text-[#73BA7D] font-light transition-colors duration-300">GALERI</a>
+                    class="hover:text-[#73BA7D] font-light transition-colors duration-300">Galeri</a>
             </div>
 
             <!-- Button Desktop -->
