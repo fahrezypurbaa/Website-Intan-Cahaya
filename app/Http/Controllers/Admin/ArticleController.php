@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;      
+use Illuminate\Support\Str;       
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -11,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->paginate(10); // ambil artikel dari DB
+        $articles = Article::latest()->paginate(10);
         return view('admin.articles.index', compact('articles'));
     }
 
@@ -29,19 +32,18 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'excerpt' => 'nullable|string',
-            'content' => 'required',
+            'title'     => 'required|string|max:255',
+            'excerpt'   => 'nullable|string',
+            'content'   => 'required',
             'thumbnail' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
         $article = new Article();
-        $article->title = $validated['title'];
-        $article->slug = Str::slug($validated['title']); // slug auto dari judul
+        $article->title   = $validated['title'];
+        $article->slug    = Str::slug($validated['title']);
         $article->excerpt = $validated['excerpt'] ?? Str::limit(strip_tags($validated['content']), 150);
         $article->content = $validated['content'];
 
-        // upload thumbnail jika ada
         if ($request->hasFile('thumbnail')) {
             $path = $request->file('thumbnail')->store('articles', 'public');
             $article->thumbnail = $path;
@@ -66,14 +68,14 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'excerpt' => 'nullable|string',
-            'content' => 'required',
+            'title'     => 'required|string|max:255',
+            'excerpt'   => 'nullable|string',
+            'content'   => 'required',
             'thumbnail' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
 
-        $article->title = $validated['title'];
-        $article->slug = Str::slug($validated['title']); // update slug juga
+        $article->title   = $validated['title'];
+        $article->slug    = Str::slug($validated['title']);
         $article->excerpt = $validated['excerpt'] ?? Str::limit(strip_tags($validated['content']), 150);
         $article->content = $validated['content'];
 

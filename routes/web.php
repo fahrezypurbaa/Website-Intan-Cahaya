@@ -86,6 +86,8 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Articles (Admin)
     Route::resource('articles', AdminArticleController::class);
+    Route::resource('articles', ArticleController::class)->except(['show']);
+
 });
 
 require __DIR__.'/auth.php';

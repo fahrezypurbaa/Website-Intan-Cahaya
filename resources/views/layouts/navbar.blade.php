@@ -57,7 +57,7 @@
                                 <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                     class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
                                     Kemnaker RI</a>
-                                <a href=""{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
+                                <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                     class="text-sm hover:text-[#73BA7D] transition-colors">Sertifikasi
                                     BNSP</a>
                                 <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"

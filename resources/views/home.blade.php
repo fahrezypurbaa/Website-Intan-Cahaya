@@ -881,7 +881,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/artikel/artikel1.png') }}" alt="Blog image"
+                    <img src="{{ asset('images/artikel/artikel1.jpg') }}" alt="Blog image"
                         class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
@@ -923,7 +923,7 @@
 
                 <!-- Card 2 -->
                 <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200">
-                    <img src="{{ asset('images/artikel/artikel2.png') }}" alt="Blog image"
+                    <img src="{{ asset('images/artikel/artikel2.jpg') }}" alt="Blog image"
                         class="w-full h-56 object-cover">
                     <div class="p-5">
                         <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">

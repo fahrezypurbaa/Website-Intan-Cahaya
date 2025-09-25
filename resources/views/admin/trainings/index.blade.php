@@ -9,12 +9,10 @@
 <table class="min-w-full text-sm text-left border border-gray-200 rounded-lg">
     <thead class="bg-gray-100">
         <tr>
-            <th class="px-4 py-2">No</th>
-            <th class="px-4 py-2">Nama</th>
-            <th class="px-4 py-2">Email</th>
-            <th class="px-4 py-2">No HP</th>
-            <th class="px-4 py-2">Tanggal Daftar</th>
-            <th class="px-4 py-2">Waktu Daftar</th>
+            <th class="px-4 py-2">Nama Pelatihan</th>
+            <th class="px-4 py-2">Jenis Pelatihan</th>
+            <th class="px-4 py-2">Pelaksanaan Pelatihan</th>
+            <th class="px-4 py-2">CRUD</th>
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
