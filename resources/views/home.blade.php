@@ -5,61 +5,148 @@
 @section('content')
 
     <!-- Hero Section -->
-    <section
-        class="relative bg-[#144F5F] rounded-[40px] mx-4 sm:mx-6 lg:mx-8 mt-6 
-           px-6 sm:px-10 lg:px-12 
-           py-4 sm:py-6 lg:py-8 
-           flex flex-col lg:flex-row items-center justify-between 
-           overflow-hidden min-h-[300px] lg:min-h-[400px]">
+    <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)" class="relative w-full h-[500px] overflow-hidden">
+        <!-- Wrapper Slides -->
+        <div class="flex transition-transform duration-700 ease-in-out"
+            :style="`transform: translateX(-${activeSlide * 100}%)`">
+            <!-- Slide 1 -->
+            <div class="w-full flex-shrink-0 relative bg-gray-900">
+                <img src="{{ asset('images/kolase-hero.png') }}" alt="Hero 1" class="w-full h-[500px] object-cover">
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white">Welcome to Our Website</h1>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="w-full flex-shrink-0 relative">
+                <!-- Background foto -->
+                <img src="{{ asset('images/2.png') }}" alt="Hero 2" class="w-full h-[500px] object-cover">
+                <div class="absolute inset-0 bg-black/50"></div>
 
-        <!-- Text Content -->
-        <div class="text-white max-w-xl mb-6 lg:mb-0 z-10">
-            <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-6 tracking-wide">
-                Safety, Quality & <br />Competent
-            </h1>
-            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
-                <!-- Button Outline -->
-                <a href="#"
-                    class="px-5 py-2.5 border border-white rounded-full 
-                       hover:bg-white hover:text-[#144F5F] transition-all duration-300 
-                       w-full sm:w-auto text-center flex items-center justify-center gap-2">
-                    <span>Cek Legalitas Kami</span>
-                </a>
-                <!-- Button with Icon -->
-                <a href="{{ route('schedule.download') }}"
-                    class="flex items-center justify-center gap-2 text-white 
-                       hover:text-gray-200 transition-colors duration-300 
-                       w-full sm:w-auto">
-                    <div class="w-9 h-9 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
-                        </svg>
+                <!-- Overlay konten -->
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-6"
+                    x-data="{ show: false }" x-init="$watch('activeSlide', val => {
+                        if (val === 1) {
+                            show = true
+                        } else {
+                            show = false
+                        }
+                    })">
+                    <!-- Judul -->
+                    <h2 x-show="show" x-transition.duration.700ms class="text-3xl md:text-4xl font-bold mb-10">
+                        Our Achievements
+                    </h2>
+
+                    <!-- Grid Card -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl">
+
+                        <!-- Card 1 -->
+                        <div x-show="show" x-transition.duration.700ms
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            x-data="{ count: 0 }" x-init="$watch('show', val => {
+                                if (val) {
+                                    let target = 4000;
+                                    let interval = setInterval(() => {
+                                        if (count < target) { count += Math.ceil(target / 100); } else { count = target;
+                                            clearInterval(interval); }
+                                    }, 30);
+                                } else { count = 0 }
+                            })">
+                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count + '+'">
+                            </p>
+                            <p class="mt-2 text-lg">Alumni</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div x-show="show" x-transition.duration.700ms.delay.200ms
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            x-data="{ count: 0 }" x-init="$watch('show', val => {
+                                if (val) {
+                                    let target = 352;
+                                    let interval = setInterval(() => {
+                                        if (count < target) { count += 5; } else { count = target;
+                                            clearInterval(interval); }
+                                    }, 30);
+                                } else { count = 0 }
+                            })">
+                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count"></p>
+                            <p class="mt-2 text-lg">Pembinaan</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div x-show="show" x-transition.duration.700ms.delay.400ms
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            x-data="{ count: 0 }" x-init="$watch('show', val => {
+                                if (val) {
+                                    let target = 500;
+                                    let interval = setInterval(() => {
+                                        if (count < target) { count += 10; } else { count = target;
+                                            clearInterval(interval); }
+                                    }, 30);
+                                } else { count = 0 }
+                            })">
+                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count + '+'">
+                            </p>
+                            <p class="mt-2 text-lg">Loyal Customer</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div x-show="show" x-transition.duration.700ms.delay.600ms
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            x-data="{ count: 0 }" x-init="$watch('show', val => {
+                                if (val) {
+                                    let target = 352;
+                                    let interval = setInterval(() => {
+                                        if (count < target) { count += 5; } else { count = target;
+                                            clearInterval(interval); }
+                                    }, 30);
+                                } else { count = 0 }
+                            })">
+                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count"></p>
+                            <p class="mt-2 text-lg">Perusahaan</p>
+                        </div>
                     </div>
-                    <span class="font-medium">Jadwal 2025</span>
-                </a>
+                </div>
+            </div>
+
+
+            <!-- Slide 3 -->
+            <div class="w-full flex-shrink-0 relative">
+                <img src="{{ asset('images/1.png') }}" alt="Hero 3" class="w-full h-[500px] object-cover">
+                <div
+                    class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
+                    <p class="mb-2">📍 Jl. Contoh No. 123, Jakarta</p>
+                    <p class="mb-2">📞 (021) 1234567</p>
+                    <p class="mb-2">📧 info@perusahaan.com</p>
+                    <a href="mailto:info@perusahaan.com"
+                        class="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">
+                        Kirim Email
+                    </a>
+                </div>
             </div>
         </div>
 
-        <!-- Image + Circle -->
-        <div class="relative w-full max-w-[360px] sm:max-w-[460px] lg:w-[520px] lg:h-[440px] flex items-end justify-center">
-            <!-- Circle Background -->
-            <div
-                class="absolute bottom-[-120px] sm:bottom-[-150px] right-8 sm:right-[36px] 
-                   w-[260px] sm:w-[340px] lg:w-[420px] h-[260px] sm:h-[340px] lg:h-[420px] 
-                   bg-[#73BA7D] rounded-full z-0 opacity-15">
-            </div>
-            <!-- Image -->
-            <img src="{{ asset('images/hero1.png') }}" alt="Hero Image"
-                class="relative z-10 w-[220px] sm:w-[320px] lg:w-[420px] object-contain" />
-        </div>
+        <!-- Tombol kontrol -->
+        <button @click="activeSlide = (activeSlide - 1 + slides) % slides"
+            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">
+            ❮
+        </button>
+        <button @click="activeSlide = (activeSlide + 1) % slides"
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">
+            ❯
+        </button>
 
-        <!-- Background Shape -->
-        <div
-            class="absolute right-[-15%] top-1/2 transform -translate-y-1/2 
-               w-[70%] h-[120%] bg-[#73BA7D] rounded-full opacity-10 z-0">
+        <!-- Navigasi dot -->
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+            <template x-for="i in slides" :key="i">
+                <button @click="activeSlide = i - 1" class="w-3 h-3 rounded-full"
+                    :class="activeSlide === i - 1 ? 'bg-white' : 'bg-gray-400'">
+                </button>
+            </template>
         </div>
-    </section>
+    </div>
+
+
 
     <!-- Section : Program Pelatihan Unggulan Section -->
     <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -805,7 +892,7 @@
     </section>
 
     <!-- Section: Galeri -->
-    <div class="bg-[#F3F7F0] py-12">    
+    <div class="bg-[#F3F7F0] py-12">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <!-- Heading -->
             <div class="flex items-center justify-between mb-8">
