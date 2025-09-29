@@ -805,7 +805,7 @@
     </section>
 
     <!-- Section: Galeri -->
-    <div class="bg-[#F3F7F0] py-12">
+    <div class="bg-[#F3F7F0] py-12">    
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <!-- Heading -->
             <div class="flex items-center justify-between mb-8">
