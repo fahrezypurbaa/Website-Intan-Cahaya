@@ -12,7 +12,7 @@
             <th class="px-4 py-2">Nama Pelatihan</th>
             <th class="px-4 py-2">Jenis Pelatihan</th>
             <th class="px-4 py-2">Pelaksanaan Pelatihan</th>
-            <th class="px-4 py-2">CRUD</th>
+            <th class="px-4 py-2">Aksi</th>
         </tr>
     </thead>
     <tbody class="divide-y divide-gray-200">
