@@ -133,132 +133,116 @@
             </div>
 
             <!-- Slide 3 - Safety Quality dengan Identity Color -->
-            <div class="w-full flex-shrink-0 relative h-full">
-                <!-- Background foto -->
-                <div class="absolute inset-0">
-                    <img src="{{ asset('images/Kolase 1.jpg') }}" alt="Safety Quality Competent WINNANETY"
-                        class="w-full h-full object-cover">
-                </div>
-                <div class="absolute inset-0 bg-black/50"></div>
+<!-- Slide 3 - Safety Quality dengan Identity Color -->
+<div class="w-full flex-shrink-0 relative h-full">
+    <!-- Background foto -->
+    <div class="absolute inset-0">
+        <img src="{{ asset('images/Kolase 1.jpg') }}" alt="Safety Quality Competent WINNANETY"
+            class="w-full h-full object-cover">
+    </div>
+    <div class="absolute inset-0 bg-black/50"></div>
 
-                <!-- Overlay konten -->
-                <div class="absolute inset-0 flex items-center py-8 md:py-12">
-                    <div class="container mx-auto px-4 md:px-6 h-full flex items-center">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
-                            <!-- Bagian Kiri: Safety Quality -->
-                            <div class="text-center lg:text-left">
-                                <div class="mb-6">
-                                    <h2
-                                        class="text-4xl md:text-6xl font-black uppercase tracking-wider mb-2 text-white drop-shadow-2xl">
-                                        Safety
-                                    </h2>
-                                    <h3
-                                        class="text-4xl md:text-6xl font-black uppercase tracking-wider mb-2 text-white drop-shadow-2xl">
-                                        Quality
-                                    </h3>
-                                </div>
+    <!-- Overlay konten -->
+    <div class="absolute inset-0 flex items-center justify-center py-4 md:py-8 lg:py-12 px-3 sm:px-4 md:px-6">
+        <div class="w-full max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
+                
+                <!-- Bagian Kiri: Safety Quality -->
+                <div class="text-center lg:text-left px-2 sm:px-4">
+                    <div class="mb-4 sm:mb-6">
+                        <!-- Safety -->
+                        <h2 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wide sm:tracking-wider mb-1 sm:mb-2 text-white drop-shadow-2xl leading-tight">
+                            Safety
+                        </h2>
+                        <!-- Quality -->
+                        <h3 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wide sm:tracking-wider mb-1 sm:mb-2 text-white drop-shadow-2xl leading-tight">
+                            Quality
+                        </h3>
+                    </div>
 
-                                <!-- Garis pemisah dengan gradient identity color -->
-                                <div
-                                    class="w-24 h-1 bg-white mb-4 rounded-full shadow-lg shadow-[#144F5F]/50 lg:mx-0 mx-auto">
-                                </div>
+                    <!-- Garis pemisah -->
+                    <div class="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-white mb-3 sm:mb-4 rounded-full shadow-lg shadow-[#144F5F]/50 lg:mx-0 mx-auto"></div>
 
-                                <!-- Subtitle -->
-                                <p
-                                    class="text-4xl md:text-6xl font-black uppercase tracking-wider mb-2 text-white drop-shadow-2xl">
-                                    Competent
-                                </p>
+                    <!-- Competent -->
+                    <p class="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-wide sm:tracking-wider mb-2 sm:mb-3 text-white drop-shadow-2xl leading-tight">
+                        Competent
+                    </p>
 
-                                <!-- Nama perusahaan -->
-                                <div class="mt-6">
-                                    <div
-                                        class="text-2xl md:text-3xl font-bold text-white tracking-widest uppercase drop-shadow-2xl bg-gradient-to-r from-[#144F5F] to-[#73BA7D] py-3 px-6 rounded-lg inline-block">
-                                        IntanSafety
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Bagian Kanan: Informasi Kontak -->
-                            <div
-                                class="bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-gray-200 shadow-2xl">
-                                <h3
-                                    class="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
-                                    Hubungi Kami
-                                </h3>
-
-                                <div class="space-y-4">
-                                    <!-- Telepon -->
-                                    <div
-                                        class="flex items-center p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
-                                        <div
-                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-gray-800 font-semibold text-sm md:text-base">Telepon</p>
-                                            <p class="text-[#144F5F] font-medium text-xs md:text-sm">(+62) 82146134846</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Alamat -->
-                                    <div
-                                        class="flex items-start p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
-                                        <div
-                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-gray-800 font-semibold text-sm md:text-base">Alamat</p>
-                                            <p class="text-[#144F5F] font-medium text-xs md:text-sm">Jl. Panggungan Asri
-                                                No.37, RT.003/RW.033, Mayaan, Trihanggo, Kec. Gamping, Kab. Sleman, DIY
-                                                55291</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Email -->
-                                    <div
-                                        class="flex items-center p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
-                                        <div
-                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-gray-800 font-semibold text-sm md:text-base">Email</p>
-                                            <p class="text-[#144F5F] font-medium text-xs md:text-sm break-all">
-                                                admin@intancahayamandiri.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Tombol CTA dengan gradient identity color -->
-                                <button
-                                    class="w-full mt-6 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] hover:from-[#144F5F]/90 hover:to-[#73BA7D]/90 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg text-sm md:text-base">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                    </svg>
-                                    Kirim Pesan
-                                </button>
-                            </div>
+                    <!-- Nama perusahaan -->
+                    <div class="mt-4 sm:mt-6">
+                        <div class="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide sm:tracking-widest uppercase drop-shadow-2xl bg-gradient-to-r from-[#144F5F] to-[#73BA7D] py-2 sm:py-3 px-4 sm:px-6 rounded-lg inline-block">
+                            IntanSafety
                         </div>
                     </div>
                 </div>
+
+                <!-- Bagian Kanan: Informasi Kontak -->
+                <div class="bg-white/90 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 border border-gray-200 shadow-xl sm:shadow-2xl mx-2 sm:mx-0">
+                    <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 text-center bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                        Hubungi Kami
+                    </h3>
+
+                    <div class="space-y-3 sm:space-y-4">
+                        <!-- Telepon -->
+                        <div class="flex items-center p-3 sm:p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-lg sm:rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
+                            <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-gray-800 font-semibold text-xs sm:text-sm md:text-base truncate">Telepon</p>
+                                <p class="text-[#144F5F] font-medium text-xs sm:text-sm truncate">(+62) 82146134846</p>
+                            </div>
+                        </div>
+
+                        <!-- Alamat -->
+                        <div class="flex items-start p-3 sm:p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-lg sm:rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
+                            <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0 mt-0.5">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-gray-800 font-semibold text-xs sm:text-sm md:text-base mb-1">Alamat</p>
+                                <p class="text-[#144F5F] font-medium text-xs sm:text-sm leading-relaxed break-words">
+                                    Jl. Panggungan Asri No.37, RT.003/RW.033, Mayaan, Trihanggo, Kec. Gamping, Kab. Sleman, DIY 55291
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-center p-3 sm:p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-lg sm:rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
+                            <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-gray-800 font-semibold text-xs sm:text-sm md:text-base truncate">Email</p>
+                                <p class="text-[#144F5F] font-medium text-xs sm:text-sm break-all">admin@intancahayamandiri.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol CTA -->
+                    <button class="w-full mt-4 sm:mt-5 md:mt-6 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] hover:from-[#144F5F]/90 hover:to-[#73BA7D]/90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg text-xs sm:text-sm md:text-base">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        Kirim Pesan
+                    </button>
+                </div>
             </div>
+        </div>
+    </div>
+</div>
         </div>
 
         <!-- Tombol kontrol -->
