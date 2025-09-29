@@ -5,21 +5,28 @@
 @section('content')
 
     <!-- Hero Section -->
-    <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)" class="relative w-full h-[500px] overflow-hidden">
+    <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)" class="relative w-full h-screen min-h-[600px] overflow-hidden">
         <!-- Wrapper Slides -->
-        <div class="flex transition-transform duration-700 ease-in-out"
+        <div class="flex h-full transition-transform duration-700 ease-in-out"
             :style="`transform: translateX(-${activeSlide * 100}%)`">
+
             <!-- Slide 1 -->
-            <div class="w-full flex-shrink-0 relative bg-gray-900">
-                <img src="{{ asset('images/kolase-hero.png') }}" alt="Hero 1" class="w-full h-[500px] object-cover">
-                <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white">Welcome to Our Website</h1>
+            <div class="w-full flex-shrink-0 relative h-full">
+                <div class="absolute inset-0">
+                    <img src="{{ asset('images/Kolase 2.jpg') }}" alt="Hero 1" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4 drop-shadow-2xl">Welcome to Our
+                        Website</h1>
                 </div>
             </div>
+
             <!-- Slide 2 -->
-            <div class="w-full flex-shrink-0 relative">
+            <div class="w-full flex-shrink-0 relative h-full">
                 <!-- Background foto -->
-                <img src="{{ asset('images/2.png') }}" alt="Hero 2" class="w-full h-[500px] object-cover">
+                <div class="absolute inset-0">
+                    <img src="{{ asset('images/2.png') }}" alt="Hero 2" class="w-full h-full object-cover">
+                </div>
                 <div class="absolute inset-0 bg-black/50"></div>
 
                 <!-- Overlay konten -->
@@ -32,122 +39,247 @@
                         }
                     })">
                     <!-- Judul -->
-                    <h2 x-show="show" x-transition.duration.700ms class="text-3xl md:text-4xl font-bold mb-10">
+                    <h2 x-show="show" x-transition.duration.700ms
+                        class="text-3xl md:text-4xl font-bold mb-10 text-center drop-shadow-2xl">
                         Our Achievements
                     </h2>
 
                     <!-- Grid Card -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-5xl">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl">
 
                         <!-- Card 1 -->
                         <div x-show="show" x-transition.duration.700ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
                             x-data="{ count: 0 }" x-init="$watch('show', val => {
                                 if (val) {
                                     let target = 4000;
                                     let interval = setInterval(() => {
-                                        if (count < target) { count += Math.ceil(target / 100); } else { count = target;
-                                            clearInterval(interval); }
+                                        if (count < target) {
+                                            count += Math.ceil(target / 100);
+                                        } else {
+                                            count = target;
+                                            clearInterval(interval);
+                                        }
                                     }, 30);
                                 } else { count = 0 }
                             })">
-                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count + '+'">
+                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + '+'">
                             </p>
-                            <p class="mt-2 text-lg">Alumni</p>
+                            <p class="mt-2 text-sm md:text-lg">Alumni</p>
                         </div>
 
                         <!-- Card 2 -->
                         <div x-show="show" x-transition.duration.700ms.delay.200ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
                             x-data="{ count: 0 }" x-init="$watch('show', val => {
                                 if (val) {
                                     let target = 352;
                                     let interval = setInterval(() => {
-                                        if (count < target) { count += 5; } else { count = target;
-                                            clearInterval(interval); }
+                                        if (count < target) {
+                                            count += 5;
+                                        } else {
+                                            count = target;
+                                            clearInterval(interval);
+                                        }
                                     }, 30);
                                 } else { count = 0 }
                             })">
-                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count"></p>
-                            <p class="mt-2 text-lg">Pembinaan</p>
+                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count"></p>
+                            <p class="mt-2 text-sm md:text-lg">Pembinaan</p>
                         </div>
 
                         <!-- Card 3 -->
                         <div x-show="show" x-transition.duration.700ms.delay.400ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
                             x-data="{ count: 0 }" x-init="$watch('show', val => {
                                 if (val) {
                                     let target = 500;
                                     let interval = setInterval(() => {
-                                        if (count < target) { count += 10; } else { count = target;
-                                            clearInterval(interval); }
+                                        if (count < target) {
+                                            count += 10;
+                                        } else {
+                                            count = target;
+                                            clearInterval(interval);
+                                        }
                                     }, 30);
                                 } else { count = 0 }
                             })">
-                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count + '+'">
+                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + '+'">
                             </p>
-                            <p class="mt-2 text-lg">Loyal Customer</p>
+                            <p class="mt-2 text-sm md:text-lg">Loyal Customer</p>
                         </div>
 
                         <!-- Card 4 -->
                         <div x-show="show" x-transition.duration.700ms.delay.600ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
+                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
                             x-data="{ count: 0 }" x-init="$watch('show', val => {
                                 if (val) {
                                     let target = 352;
                                     let interval = setInterval(() => {
-                                        if (count < target) { count += 5; } else { count = target;
-                                            clearInterval(interval); }
+                                        if (count < target) {
+                                            count += 5;
+                                        } else {
+                                            count = target;
+                                            clearInterval(interval);
+                                        }
                                     }, 30);
                                 } else { count = 0 }
                             })">
-                            <p class="text-4xl font-extrabold bg-white bg-clip-text text-transparent" x-text="count"></p>
-                            <p class="mt-2 text-lg">Perusahaan</p>
+                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count"></p>
+                            <p class="mt-2 text-sm md:text-lg">Perusahaan</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Slide 3 - Safety Quality dengan Identity Color -->
+            <div class="w-full flex-shrink-0 relative h-full">
+                <!-- Background foto -->
+                <div class="absolute inset-0">
+                    <img src="{{ asset('images/Kolase 1.jpg') }}" alt="Safety Quality Competent WINNANETY"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="absolute inset-0 bg-black/50"></div>
 
-            <!-- Slide 3 -->
-            <div class="w-full flex-shrink-0 relative">
-                <img src="{{ asset('images/1.png') }}" alt="Hero 3" class="w-full h-[500px] object-cover">
-                <div
-                    class="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-white text-center px-4">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Hubungi Kami</h2>
-                    <p class="mb-2">📍 Jl. Contoh No. 123, Jakarta</p>
-                    <p class="mb-2">📞 (021) 1234567</p>
-                    <p class="mb-2">📧 info@perusahaan.com</p>
-                    <a href="mailto:info@perusahaan.com"
-                        class="mt-4 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">
-                        Kirim Email
-                    </a>
+                <!-- Overlay konten -->
+                <div class="absolute inset-0 flex items-center py-8 md:py-12">
+                    <div class="container mx-auto px-4 md:px-6 h-full flex items-center">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
+                            <!-- Bagian Kiri: Safety Quality -->
+                            <div class="text-center lg:text-left">
+                                <div class="mb-6">
+                                    <h2
+                                        class="text-4xl md:text-6xl font-black uppercase tracking-wider mb-2 text-white drop-shadow-2xl">
+                                        Safety
+                                    </h2>
+                                    <h3
+                                        class="text-4xl md:text-6xl font-black uppercase tracking-wider mb-2 text-white drop-shadow-2xl">
+                                        Quality
+                                    </h3>
+                                </div>
+
+                                <!-- Garis pemisah dengan gradient identity color -->
+                                <div
+                                    class="w-24 h-1 bg-white mb-4 rounded-full shadow-lg shadow-[#144F5F]/50 lg:mx-0 mx-auto">
+                                </div>
+
+                                <!-- Subtitle -->
+                                <p
+                                    class="text-4xl md:text-6xl font-black uppercase tracking-wider mb-2 text-white drop-shadow-2xl">
+                                    Competent
+                                </p>
+
+                                <!-- Nama perusahaan -->
+                                <div class="mt-6">
+                                    <div
+                                        class="text-2xl md:text-3xl font-bold text-white tracking-widest uppercase drop-shadow-2xl bg-gradient-to-r from-[#144F5F] to-[#73BA7D] py-3 px-6 rounded-lg inline-block">
+                                        IntanSafety
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Bagian Kanan: Informasi Kontak -->
+                            <div
+                                class="bg-white/90 backdrop-blur-lg rounded-2xl p-6 md:p-8 border border-gray-200 shadow-2xl">
+                                <h3
+                                    class="text-2xl md:text-3xl font-bold mb-6 text-center bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                                    Hubungi Kami
+                                </h3>
+
+                                <div class="space-y-4">
+                                    <!-- Telepon -->
+                                    <div
+                                        class="flex items-center p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
+                                        <div
+                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-800 font-semibold text-sm md:text-base">Telepon</p>
+                                            <p class="text-[#144F5F] font-medium text-xs md:text-sm">(+62) 82146134846</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Alamat -->
+                                    <div
+                                        class="flex items-start p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
+                                        <div
+                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-800 font-semibold text-sm md:text-base">Alamat</p>
+                                            <p class="text-[#144F5F] font-medium text-xs md:text-sm">Jl. Panggungan Asri
+                                                No.37, RT.003/RW.033, Mayaan, Trihanggo, Kec. Gamping, Kab. Sleman, DIY
+                                                55291</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div
+                                        class="flex items-center p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
+                                        <div
+                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4 flex-shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-800 font-semibold text-sm md:text-base">Email</p>
+                                            <p class="text-[#144F5F] font-medium text-xs md:text-sm break-all">
+                                                admin@intancahayamandiri.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tombol CTA dengan gradient identity color -->
+                                <button
+                                    class="w-full mt-6 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] hover:from-[#144F5F]/90 hover:to-[#73BA7D]/90 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg text-sm md:text-base">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                    </svg>
+                                    Kirim Pesan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Tombol kontrol -->
         <button @click="activeSlide = (activeSlide - 1 + slides) % slides"
-            class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">
+            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 px-3 py-2 rounded-full hover:bg-white transition z-10 shadow-lg">
             ❮
         </button>
         <button @click="activeSlide = (activeSlide + 1) % slides"
-            class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white px-3 py-2 rounded-full">
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 px-3 py-2 rounded-full hover:bg-white transition z-10 shadow-lg">
             ❯
         </button>
 
         <!-- Navigasi dot -->
-        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
             <template x-for="i in slides" :key="i">
-                <button @click="activeSlide = i - 1" class="w-3 h-3 rounded-full"
-                    :class="activeSlide === i - 1 ? 'bg-white' : 'bg-gray-400'">
+                <button @click="activeSlide = i - 1" class="w-3 h-3 rounded-full transition shadow-lg"
+                    :class="activeSlide === i - 1 ? 'bg-white' : 'bg-white/50'">
                 </button>
             </template>
         </div>
     </div>
-
-
-
     <!-- Section : Program Pelatihan Unggulan Section -->
     <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
