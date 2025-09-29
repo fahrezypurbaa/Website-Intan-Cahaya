@@ -184,7 +184,7 @@
 
             <!-- Button Desktop -->
             <div class="hidden lg:flex">
-                <a href="#"
+                <a href="{{ route('layanan.index') }}"
                     class="px-6 py-2 rounded-full font-medium text-white 
                     bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
                     hover:opacity-90 transition duration-300 flex items-center space-x-2">
@@ -296,7 +296,7 @@
 
                 <!-- Mobile Button -->
                 <div class="px-3 py-2">
-                    <a href="#"
+                    <a href="{{ route('layanan.index') }}"
                         class="block w-full text-center text-white px-4 py-2 rounded-full font-medium 
                                bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
                                hover:opacity-90 transition duration-300">
