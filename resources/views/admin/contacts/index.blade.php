@@ -13,6 +13,7 @@
             <th class="px-4 py-3">Email</th>
             <th class="px-4 py-3">Pesan</th>
             <th class="px-4 py-3">Tanggal</th>
+            <th class="px-4 py-3 text-center">Aksi</th>
         </x-slot>
 
         @forelse($contacts as $index => $contact)
@@ -26,12 +27,30 @@
                         {{ $contact->email }}
                     </span>
                 </td>
-                <td class="px-4 py-3 text-gray-700">{{ $contact->pesan }}</td>
+                <td class="px-4 py-3 text-gray-700">{{ Str::limit($contact->pesan, 50) }}</td>
                 <td class="px-4 py-3 text-gray-500">{{ $contact->created_at->format('d M Y H:i') }}</td>
+                <td class="px-4 py-3 text-center">
+                    <div class="flex justify-center gap-2">
+                        <!-- Detail -->
+                        <a href="{{ route('admin.contacts.show', $contact->id) }}"
+                           class="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium rounded shadow-sm transition">
+                            🔍 Detail
+                        </a>
+                        <!-- Hapus -->
+                        <form action="{{ route('admin.contacts.destroy', $contact->id) }}" method="POST"
+                              onsubmit="return confirm('Hapus pesan ini?')">
+                            @csrf @method('DELETE')
+                            <button type="submit"
+                                    class="px-3 py-1.5 bg-red-500 hover:bg-red-600 text-white text-xs font-medium rounded shadow-sm transition">
+                                🗑️ Hapus
+                            </button>
+                        </form>
+                    </div>
+                </td>
             </tr>
         @empty
             <tr>
-                <td colspan="5" class="px-4 py-6 text-center text-gray-500">
+                <td colspan="6" class="px-4 py-6 text-center text-gray-500">
                     Belum ada pesan masuk.
                 </td>
             </tr>
