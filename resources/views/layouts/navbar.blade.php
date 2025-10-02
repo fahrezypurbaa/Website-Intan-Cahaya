@@ -166,7 +166,7 @@
                         <div class="flex flex-col space-y-3">
                             <a href="{{ route('schedule') }}"
                                 class="text-sm hover:text-[#73BA7D] transition-colors">Schedule</a>
-                            <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Legalitas</a>
+                            <a href="{{ route('legalitas.index') }}" class="text-sm hover:text-[#73BA7D] transition-colors">Legalitas</a>
                             <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Cek
                                 Sertifikat</a>
                         </div>
@@ -279,9 +279,9 @@
                         </svg>
                     </button>
                     <div id="mobile-info" class="hidden pl-6 space-y-1">
-                        <a href="#"
+                        <a href="{{ route('schedule') }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Schedule</a>
-                        <a href="#"
+                        <a href="{{ route('legalitas.index') }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Legalitas</a>
                         <a href="#" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Cek
                             Sertifikat</a>
