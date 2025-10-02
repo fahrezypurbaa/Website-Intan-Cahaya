@@ -3,17 +3,19 @@
 @section('title', 'Layanan Pelatihan & Sertifikasi - Intan Safety')
 
 @section('content')
-<div class="max-w-7xl mx-auto py-10 px-4 flex gap-6">
+<div class="max-w-7xl mx-auto py-10 px-4 flex gap-8">
 
     {{-- Sidebar kategori --}}
-    <aside class="w-64">
-        <h3 class="font-bold text-lg mb-4">Kategori</h3>
+    <aside class="w-64 flex-shrink-0">
+        <h3 class="font-bold text-lg mb-4 text-[#144F5F]">Kategori</h3>
         <ul class="space-y-2">
             @foreach($categories as $cat)
                 <li>
                     <a href="{{ route('layanan.index',['category'=>$cat->slug]) }}"
-                       class="block px-3 py-2 rounded 
-                       {{ request('category')==$cat->slug ? 'bg-green-600 text-white':'hover:bg-gray-100' }}">
+                       class="block px-3 py-2 rounded-lg transition font-medium
+                       {{ request('category')==$cat->slug 
+                            ? 'bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white shadow' 
+                            : 'hover:bg-[#73BA7D]/20 text-[#144F5F]' }}">
                         {{ $cat->name }}
                     </a>
                 </li>
@@ -21,41 +23,64 @@
         </ul>
 
         <a href="{{ route('registration.form') }}" 
-           class="mt-6 block text-center px-4 py-2 bg-yellow-500 text-white rounded font-bold">
+           class="mt-8 block w-full text-center px-4 py-2 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+                  text-white rounded-lg font-bold shadow-md hover:opacity-90 transition">
             📋 Formulir Registrasi
         </a>
     </aside>
 
     {{-- Main Content --}}
     <main class="flex-1">
-        <div class="grid md:grid-cols-3 gap-6">
-            @foreach($trainings as $t)
-                <div class="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
-                    <img src="{{ asset('storage/'.$t->image) }}" class="h-40 w-full object-cover">
-                    <div class="p-4">
-                        <div class="flex gap-2 mb-2">
-                            @if($t->mode)
-                                <span class="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded">{{ $t->mode }}</span>
-                            @endif
-                            <span class="px-2 py-1 text-xs bg-green-100 text-green-700 rounded">{{ $t->category->name }}</span>
-                        </div>
-                        <h3 class="text-lg font-bold">{{ $t->title }}</h3>
-                        <p class="text-gray-600 text-sm">🗓 {{ $t->duration }}</p>
-                        @if($t->requirement)
-                            <p class="text-gray-600 text-sm">🎓 {{ $t->requirement }}</p>
-                        @endif
-                        <a href="{{ route('layanan.show',$t->slug) }}" 
-                           class="mt-3 block w-full text-center bg-yellow-500 text-white py-2 rounded font-semibold">
-                           Lihat Detail Kelas
-                        </a>
-                    </div>
-                </div>
-            @endforeach
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-2xl font-bold text-[#144F5F]">Daftar Layanan Pelatihan</h1>
         </div>
 
-        <div class="mt-6">
-            {{ $trainings->links() }}
-        </div>
+        @if($trainings->count())
+            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+                @foreach($trainings as $t)
+                    <div class="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-gray-100 flex flex-col">
+                        <div class="relative">
+                            <img src="{{ asset('storage/'.$t->image) }}" class="h-40 w-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                        </div>
+
+                        <div class="p-5 flex-1 flex flex-col">
+                            <div class="flex flex-wrap gap-2 mb-2">
+                                @if($t->mode)
+                                    <span class="px-2 py-1 text-xs bg-gradient-to-r from-[#144F5F]/20 to-[#73BA7D]/20 text-[#144F5F] rounded">
+                                        {{ $t->mode }}
+                                    </span>
+                                @endif
+                                <span class="px-2 py-1 text-xs bg-[#144F5F]/10 text-[#144F5F] rounded">
+                                    {{ $t->category->name }}
+                                </span>
+                            </div>
+
+                            <h3 class="text-lg font-bold mb-1 text-[#144F5F]">{{ $t->title }}</h3>
+                            <p class="text-gray-600 text-sm mb-2">🗓 {{ $t->duration }}</p>
+
+                            {{-- deskripsi dipotong biar seragam --}}
+                            <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+                                {{ $t->description }}
+                            </p>
+
+                            {{-- tombol full width --}}
+                            <a href="{{ route('layanan.show',$t->slug) }}" 
+                               class="mt-auto block w-full text-center py-2 rounded font-semibold text-white
+                                      bg-gradient-to-r from-[#144F5F] to-[#73BA7D] hover:opacity-90 transition">
+                               Lihat Detail Kelas
+                            </a>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="mt-8">
+                {{ $trainings->links() }}
+            </div>
+        @else
+            <p class="text-gray-600">Tidak ada layanan tersedia saat ini.</p>
+        @endif
     </main>
 </div>
 @endsection
