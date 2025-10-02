@@ -245,21 +245,21 @@
                         </svg>
                     </button>
                     <div id="mobile-services" class="hidden pl-6 space-y-1">
-                        <a href="#"
+                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
                             Kemnaker RI</a>
-                        <a href="#"
+                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
                             BNSP</a>
-                        <a href="#" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Non
+                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Non
                             Sertifikasi</a>
-                        <a href="#"
+                        <a href="{{ route('layanan.index', ['category' => 'esdm']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ESDM</a>
-                        <a href="#"
+                        <a href="{{ route('layanan.index', ['category' => 'ppsdm-migas']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">PPSDM Migas</a>
-                        <a href="#"
+                        <a href="{{ route('layanan.index', ['category' => 'riksa-uji']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Riksa Uji</a>
-                        <a href="#"
+                        <a href="{{ route('layanan.index', ['category' => 'perpanjangan-sio-lisensi']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Perpanjangan SIO &
                             Lisensi</a>
                     </div>
