@@ -16,7 +16,8 @@ use App\Http\Controllers\{
     GalleryPublicController,
     LayananController,
     ProfileController,
-    RegistrationController
+    RegistrationController,
+    LegalitasController
 };
 use Illuminate\Support\Facades\Route;
 
@@ -35,6 +36,9 @@ Route::view('/tentang-perusahaan', 'tentang-perusahaan')->name('tentang.perusaha
 // Hubungi Kami
 Route::view('/hubungi-kami', 'hubungi-kami')->name('hubungi-kami');
 Route::post('/hubungi-kami', [ContactController::class, 'store'])->name('contact.store');
+
+// Legalitas
+Route::get('/legalitas', [LegalitasController::class, 'index'])->name('legalitas.index');
 
 // Galeri Public
 Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri');
