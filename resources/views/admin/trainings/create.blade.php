@@ -1,59 +1,57 @@
 @extends('layouts.admin')
 
-@section('title','Tambah Training')
-
 @section('content')
-<div class="bg-white p-6 rounded shadow max-w-2xl mx-auto">
-    <h2 class="text-xl font-bold mb-4">Tambah Training</h2>
+<div class="p-6">
+    <h1 class="text-2xl font-bold mb-6">Tambah Training</h1>
 
     <form action="{{ route('admin.trainings.store') }}" method="POST" enctype="multipart/form-data" class="space-y-4">
         @csrf
-        <div>
-            <label class="block font-semibold">Judul</label>
-            <input type="text" name="title" class="w-full border px-3 py-2 rounded" required>
-        </div>
 
         <div>
-            <label class="block font-semibold">Kategori</label>
-            <select name="category_id" class="w-full border px-3 py-2 rounded" required>
-                @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+            <label>Kategori</label>
+            <select name="category_id" class="w-full border rounded p-2">
+                @foreach($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                 @endforeach
             </select>
         </div>
 
         <div>
-            <label class="block font-semibold">Deskripsi</label>
-            <textarea name="description" rows="3" class="w-full border px-3 py-2 rounded"></textarea>
+            <label>Judul</label>
+            <input type="text" name="title" class="w-full border rounded p-2" value="{{ old('title') }}">
         </div>
 
         <div>
-            <label class="block font-semibold">Durasi</label>
-            <input type="text" name="duration" class="w-full border px-3 py-2 rounded" placeholder="Misal: 5 Hari">
+            <label>Slug</label>
+            <input type="text" name="slug" class="w-full border rounded p-2" value="{{ old('slug') }}">
         </div>
 
         <div>
-            <label class="block font-semibold">Syarat</label>
-            <input type="text" name="requirement" class="w-full border px-3 py-2 rounded" placeholder="Misal: Min D3">
+            <label>Deskripsi</label>
+            <textarea name="description" class="w-full border rounded p-2" rows="4">{{ old('description') }}</textarea>
         </div>
 
         <div>
-            <label class="block font-semibold">Mode</label>
-            <select name="mode" class="w-full border px-3 py-2 rounded">
-                <option value="Online Training">Online Training</option>
-                <option value="Offline Training">Offline Training</option>
-                <option value="Blended Training">Blended Training</option>
-            </select>
+            <label>Durasi</label>
+            <input type="text" name="duration" class="w-full border rounded p-2" value="{{ old('duration') }}">
         </div>
 
         <div>
-            <label class="block font-semibold">Gambar</label>
-            <input type="file" name="image" class="w-full border px-3 py-2 rounded">
+            <label>Persyaratan</label>
+            <textarea name="requirement" class="w-full border rounded p-2" rows="4">{{ old('requirement') }}</textarea>
         </div>
 
-        <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-            Simpan
-        </button>
+        <div>
+            <label>Mode</label>
+            <input type="text" name="mode" class="w-full border rounded p-2" value="{{ old('mode') }}">
+        </div>
+
+        <div>
+            <label>Gambar</label>
+            <input type="file" name="image" class="w-full border rounded p-2">
+        </div>
+
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Simpan</button>
     </form>
 </div>
 @endsection

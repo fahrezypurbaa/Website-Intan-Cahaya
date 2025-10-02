@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\ContactAdminController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
 use App\Http\Controllers\Admin\RegistrationAdminController;
 use App\Http\Controllers\Admin\TrainingController;
-use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
-use App\Http\Controllers\Admin\ContactAdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryPublicController;
@@ -75,6 +75,28 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     // Trainings
     Route::resource('trainings', TrainingController::class);
 
+    // Training Materials
+    // Route::resource('materials', App\Http\Controllers\Admin\TrainingMaterialController::class)->only(['index', 'show']);
+    Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
+        Route::resource('materials', App\Http\Controllers\Admin\TrainingMaterialController::class);
+    });
+    Route::get('/materials', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'index'])
+        ->name('materials.index');
+    Route::get('/materials/create', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'create'])
+        ->name('materials.create');
+    Route::post('/materials', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'store'])
+        ->name('materials.store');
+    Route::get('/materials/{material}/edit', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'edit'])
+        ->name('materials.edit');
+    Route::put('/materials/{material}', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'update'])
+        ->name('materials.update');
+    Route::delete('/materials/{material}', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'destroy'])
+        ->name('materials.destroy');
+
+    // versi frontend (show)
+    // Route::get('/materials/{material}', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'show'])
+    //     ->name('materials.show');
+
     // Galleries
     Route::resource('galleries', AdminGalleryController::class);
 
@@ -86,7 +108,7 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Articles (Admin)
     Route::resource('articles', AdminArticleController::class);
-    
+
 });
 
 require __DIR__.'/auth.php';
