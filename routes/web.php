@@ -1,17 +1,23 @@
 <?php
 
-use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
-use App\Http\Controllers\Admin\ContactAdminController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
-use App\Http\Controllers\Admin\RegistrationAdminController;
-use App\Http\Controllers\Admin\TrainingController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GalleryPublicController;
-use App\Http\Controllers\LayananController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\Admin\{
+    ArticleController as AdminArticleController,
+    ContactAdminController,
+    DashboardController,
+    GalleryController as AdminGalleryController,
+    RegistrationAdminController,
+    TrainingController,
+    TrainingMaterialController,
+    TrainingRundownController
+};
+use App\Http\Controllers\{
+    ArticleController,
+    ContactController,
+    GalleryPublicController,
+    LayananController,
+    ProfileController,
+    RegistrationController
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,10 +30,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', fn () => view('home'))->name('home');
 
 // Tentang Perusahaan
-Route::get('/tentang-perusahaan', fn () => view('tentang-perusahaan'))->name('tentang.perusahaan');
+Route::view('/tentang-perusahaan', 'tentang-perusahaan')->name('tentang.perusahaan');
 
 // Hubungi Kami
-Route::get('/hubungi-kami', fn () => view('hubungi-kami'))->name('hubungi-kami');
+Route::view('/hubungi-kami', 'hubungi-kami')->name('hubungi-kami');
 Route::post('/hubungi-kami', [ContactController::class, 'store'])->name('contact.store');
 
 // Galeri Public
@@ -38,14 +44,16 @@ Route::get('/layanan', [LayananController::class, 'index'])->name('layanan.index
 Route::get('/layanan/{slug}', [LayananController::class, 'show'])->name('layanan.show');
 
 // Jadwal 2025
-Route::get('/schedule', fn () => view('schedule'))->name('schedule');
+Route::view('/schedule', 'schedule')->name('schedule');
 Route::get('/schedule/download', fn () => response()->download(public_path('files/jadwal-2025.pdf')))
     ->name('schedule.download');
 
 // Form Registrasi User
-Route::get('/registration', [RegistrationController::class, 'create'])->name('registration.form');
-Route::post('/registration', [RegistrationController::class, 'store'])->name('registration.store');
-Route::get('/registration/success', [RegistrationController::class, 'success'])->name('registration.success');
+Route::controller(RegistrationController::class)->group(function () {
+    Route::get('/registration', 'create')->name('registration.form');
+    Route::post('/registration', 'store')->name('registration.store');
+    Route::get('/registration/success', 'success')->name('registration.success');
+});
 
 // Articles (Frontend Blog)
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
@@ -67,8 +75,7 @@ Route::middleware('auth')->group(function () {
 | Admin Routes (Backend)
 |--------------------------------------------------------------------------
 */
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
-
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -76,26 +83,10 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::resource('trainings', TrainingController::class);
 
     // Training Materials
-    // Route::resource('materials', App\Http\Controllers\Admin\TrainingMaterialController::class)->only(['index', 'show']);
-    Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
-        Route::resource('materials', App\Http\Controllers\Admin\TrainingMaterialController::class);
-    });
-    Route::get('/materials', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'index'])
-        ->name('materials.index');
-    Route::get('/materials/create', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'create'])
-        ->name('materials.create');
-    Route::post('/materials', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'store'])
-        ->name('materials.store');
-    Route::get('/materials/{material}/edit', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'edit'])
-        ->name('materials.edit');
-    Route::put('/materials/{material}', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'update'])
-        ->name('materials.update');
-    Route::delete('/materials/{material}', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'destroy'])
-        ->name('materials.destroy');
+    Route::resource('materials', TrainingMaterialController::class);
 
-    // versi frontend (show)
-    // Route::get('/materials/{material}', [App\Http\Controllers\Admin\TrainingMaterialController::class, 'show'])
-    //     ->name('materials.show');
+    // Training Rundowns
+    Route::resource('rundowns', TrainingRundownController::class);
 
     // Galleries
     Route::resource('galleries', AdminGalleryController::class);
@@ -108,7 +99,6 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
 
     // Articles (Admin)
     Route::resource('articles', AdminArticleController::class);
-
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

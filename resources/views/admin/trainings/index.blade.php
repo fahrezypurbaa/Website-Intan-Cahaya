@@ -13,6 +13,7 @@
                 <th class="border px-4 py-2">Kategori</th>
                 <th class="border px-4 py-2">Durasi</th>
                 <th class="border px-4 py-2">Persyaratan</th>
+                <th class="border px-4 py-2">Fasilitas</th>
                 <th class="border px-4 py-2">Aksi</th>
             </tr>
         </thead>
@@ -23,6 +24,7 @@
                 <td class="border px-4 py-2">{{ $training->category->name ?? '-' }}</td>
                 <td class="border px-4 py-2">{{ $training->duration }}</td>
                 <td class="border px-4 py-2">{{ Str::limit($training->requirement, 50) }}</td>
+                <td class="border px-4 py-2">{{ Str::limit($training->facilities, 50) }}</td>
                 <td class="border px-4 py-2">
                     <a href="{{ route('admin.trainings.show', $training) }}" class="text-blue-500">Detail</a> |
                     <a href="{{ route('admin.trainings.edit', $training) }}" class="text-green-500">Edit</a> |

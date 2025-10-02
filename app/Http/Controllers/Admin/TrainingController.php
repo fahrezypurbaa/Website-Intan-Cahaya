@@ -29,7 +29,8 @@ class TrainingController extends Controller
             'slug' => 'required|string|unique:trainings,slug',
             'description' => 'nullable|string',
             'duration' => 'nullable|string',
-            'requirement' => 'nullable|string', // persyaratan
+            'requirement' => 'nullable|string', 
+            'facilities' => 'nullable|string',
             'mode' => 'nullable|string',
             'image' => 'nullable|image',
         ]);
@@ -58,6 +59,7 @@ class TrainingController extends Controller
             'description' => 'nullable|string',
             'duration' => 'nullable|string',
             'requirement' => 'nullable|string',
+            'facilities' => 'nullable|string',
             'mode' => 'nullable|string',
             'image' => 'nullable|image',
         ]);

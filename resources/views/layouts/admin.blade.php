@@ -30,6 +30,7 @@
                         ['name' => 'Registrasi', 'route' => 'admin.registrations.index'],
                         ['name' => 'Pelatihan', 'route' => 'admin.trainings.index'],
                         ['name' => 'Materi', 'route' => 'admin.materials.index'],
+                        ['name' => 'Rundown', 'route' => 'admin.rundowns.index'],
                         ['name' => 'Artikel', 'route' => 'admin.articles.index'],
                     ];
                 @endphp

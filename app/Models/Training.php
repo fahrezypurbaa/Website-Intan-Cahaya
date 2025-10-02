@@ -11,7 +11,7 @@ class Training extends Model
 
     protected $fillable = [
         'category_id', 'title', 'slug', 'description',
-        'duration', 'requirement', 'mode', 'image',
+        'duration', 'requirement', 'facilities', 'mode', 'image',
     ];
 
     public function category()
@@ -23,5 +23,11 @@ class Training extends Model
 {
     return $this->hasMany(TrainingMaterial::class)->orderBy('order');
 }
+
+public function rundowns()
+{
+    return $this->hasMany(TrainingRundown::class);
+}
+
 
 }
