@@ -6,6 +6,7 @@
 
     <!-- Hero Section -->
     <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)" class="relative w-full h-screen min-h-[600px] overflow-hidden">
+
         <!-- Wrapper Slides -->
         <div class="flex h-full transition-transform duration-700 ease-in-out"
             :style="`transform: translateX(-${activeSlide * 100}%)`">
@@ -14,222 +15,177 @@
             <div class="w-full flex-shrink-0 relative h-full">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/Kolase 2.jpg') }}" alt="Hero 1" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
                 </div>
-                <div class="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none">
-                    <h1 class="text-4xl md:text-5xl font-bold text-white text-center px-4 drop-shadow-2xl">Welcome to Our
-                        Website</h1>
+                <div class="absolute inset-0 flex items-center justify-center px-4">
+                    <h1
+                        class="text-4xl md:text-6xl font-extrabold text-center 
+                           bg-gradient-to-r from-white via-gray-200 to-gray-100 bg-clip-text text-transparent 
+                           drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] tracking-wide leading-tight">
+                        Welcome to Our Website
+                    </h1>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
+            <!-- Slide 2 (Achievements) -->
             <div class="w-full flex-shrink-0 relative h-full">
-                <!-- Background foto -->
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/2.png') }}" alt="Hero 2" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
                 </div>
-                <div class="absolute inset-0 bg-black/50"></div>
 
-                <!-- Overlay konten -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-6"
-                    x-data="{ show: false }" x-init="$watch('activeSlide', val => {
-                        if (val === 1) {
-                            show = true
-                        } else {
-                            show = false
-                        }
-                    })">
+                    x-data="{ show: false }" x-init="$watch('activeSlide', val => show = (val === 1))">
+
                     <!-- Judul -->
                     <h2 x-show="show" x-transition.duration.700ms
-                        class="text-3xl md:text-4xl font-bold mb-10 text-center drop-shadow-2xl">
+                        class="text-3xl md:text-5xl font-extrabold mb-10 text-center 
+                           bg-gradient-to-r from-white via-gray-200 to-gray-100 bg-clip-text text-transparent
+                           drop-shadow-xl tracking-wide">
                         Our Achievements
                     </h2>
 
                     <!-- Grid Card -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl">
-
-                        <!-- Card 1 -->
-                        <div x-show="show" x-transition.duration.700ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
-                            x-data="{ count: 0 }" x-init="$watch('show', val => {
-                                if (val) {
-                                    let target = 4000;
-                                    let interval = setInterval(() => {
-                                        if (count < target) {
-                                            count += Math.ceil(target / 100);
-                                        } else {
-                                            count = target;
-                                            clearInterval(interval);
-                                        }
-                                    }, 30);
-                                } else { count = 0 }
-                            })">
-                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + '+'">
-                            </p>
-                            <p class="mt-2 text-sm md:text-lg">Alumni</p>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div x-show="show" x-transition.duration.700ms.delay.200ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
-                            x-data="{ count: 0 }" x-init="$watch('show', val => {
-                                if (val) {
-                                    let target = 352;
-                                    let interval = setInterval(() => {
-                                        if (count < target) {
-                                            count += 5;
-                                        } else {
-                                            count = target;
-                                            clearInterval(interval);
-                                        }
-                                    }, 30);
-                                } else { count = 0 }
-                            })">
-                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count"></p>
-                            <p class="mt-2 text-sm md:text-lg">Pembinaan</p>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div x-show="show" x-transition.duration.700ms.delay.400ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
-                            x-data="{ count: 0 }" x-init="$watch('show', val => {
-                                if (val) {
-                                    let target = 500;
-                                    let interval = setInterval(() => {
-                                        if (count < target) {
-                                            count += 10;
-                                        } else {
-                                            count = target;
-                                            clearInterval(interval);
-                                        }
-                                    }, 30);
-                                } else { count = 0 }
-                            })">
-                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + '+'">
-                            </p>
-                            <p class="mt-2 text-sm md:text-lg">Loyal Customer</p>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div x-show="show" x-transition.duration.700ms.delay.600ms
-                            class="bg-white/10 backdrop-blur-md rounded-2xl p-4 md:p-6 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-xl"
-                            x-data="{ count: 0 }" x-init="$watch('show', val => {
-                                if (val) {
-                                    let target = 352;
-                                    let interval = setInterval(() => {
-                                        if (count < target) {
-                                            count += 5;
-                                        } else {
-                                            count = target;
-                                            clearInterval(interval);
-                                        }
-                                    }, 30);
-                                } else { count = 0 }
-                            })">
-                            <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count"></p>
-                            <p class="mt-2 text-sm md:text-lg">Perusahaan</p>
-                        </div>
+                        <!-- Card (template) -->
+                        <template
+                            x-for="(card, index) in [
+                        {label:'Alumni',target:4000,suffix:'+'},
+                        {label:'Pembinaan',target:352,suffix:''},
+                        {label:'Loyal Customer',target:500,suffix:'+'},
+                        {label:'Perusahaan',target:352,suffix:''}
+                    ]"
+                            :key="index">
+                            <div x-show="show" x-transition.duration.700ms.delay.200ms
+                                class="bg-white/10 backdrop-blur-md border border-white/20 
+                                    rounded-2xl p-6 text-center transform transition duration-500 
+                                    hover:-translate-y-2 hover:shadow-[0_8px_25px_rgba(255,255,255,0.2)]">
+                                <div x-data="{ count: 0 }" x-init="$watch('show', val => {
+                                    if (val) {
+                                        let target = card.target;
+                                        let interval = setInterval(() => {
+                                            if (count < target) { count += Math.ceil(target / 100); } else {
+                                                count = target;
+                                                clearInterval(interval);
+                                            }
+                                        }, 30);
+                                    } else { count = 0; }
+                                })">
+                                    <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + card.suffix">
+                                    </p>
+                                </div>
+                                <p class="mt-2 text-sm md:text-lg text-gray-200" x-text="card.label"></p>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
 
-            <!-- Slide 3 - Safety Quality dengan Identity Color -->
-            <!-- Slide 3 - Safety Quality dengan Identity Color -->
+            <!-- Slide 3 (Safety Quality + Contact tetap sama tapi styling lebih halus) -->
+            <!-- Slide 3 -->
             <div class="w-full flex-shrink-0 relative h-full">
-                <!-- Background foto -->
+                <!-- Background -->
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/Kolase 1.jpg') }}" alt="Safety Quality Competent WINNANETY"
                         class="w-full h-full object-cover">
+                    <!-- Overlay gradient elegan -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
                 </div>
-                <div class="absolute inset-0 bg-black/50"></div>
 
                 <!-- Overlay konten -->
-                <div class="absolute inset-0 flex items-center justify-center py-4 md:py-8 lg:py-12 px-3 sm:px-4 md:px-6">
+                <div class="absolute inset-0 flex items-center justify-center py-8 px-4">
                     <div class="w-full max-w-7xl mx-auto">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
-                            <!-- Bagian Kiri: Safety Quality -->
-                            <div class="text-center lg:text-left px-2 sm:px-4">
-                                <div class="mb-4 sm:mb-6">
+                            <!-- Kiri: Safety Quality -->
+                            <div class="text-center lg:text-left">
+                                <div class="mb-6">
                                     <!-- Safety -->
                                     <h2
-                                        class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wide sm:tracking-wider mb-1 sm:mb-2 text-white drop-shadow-2xl leading-tight">
+                                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase 
+                                   bg-gradient-to-r from-[#73BA7D] to-[#144F5F] bg-clip-text text-transparent
+                                   drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
                                         Safety
                                     </h2>
                                     <!-- Quality -->
                                     <h3
-                                        class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-wide sm:tracking-wider mb-1 sm:mb-2 text-white drop-shadow-2xl leading-tight">
+                                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase 
+                                   bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent
+                                   drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
                                         Quality
                                     </h3>
                                 </div>
 
-                                <!-- Garis pemisah -->
+                                <!-- Garis -->
                                 <div
-                                    class="w-16 sm:w-20 md:w-24 h-0.5 sm:h-1 bg-white mb-3 sm:mb-4 rounded-full shadow-lg shadow-[#144F5F]/50 lg:mx-0 mx-auto">
+                                    class="w-20 h-1 bg-gradient-to-r from-[#73BA7D] to-[#144F5F] rounded-full shadow-lg mx-auto lg:mx-0 mb-6">
                                 </div>
 
                                 <!-- Competent -->
                                 <p
-                                    class="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black uppercase tracking-wide sm:tracking-wider mb-2 sm:mb-3 text-white drop-shadow-2xl leading-tight">
+                                    class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase 
+                              bg-gradient-to-r from-[#73BA7D] to-[#144F5F] bg-clip-text text-transparent
+                              drop-shadow-xl tracking-wider leading-tight">
                                     Competent
                                 </p>
 
                                 <!-- Nama perusahaan -->
-                                <div class="mt-4 sm:mt-6">
-                                    <div
-                                        class="text-base xs:text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white tracking-wide sm:tracking-widest uppercase drop-shadow-2xl bg-gradient-to-r from-[#144F5F] to-[#73BA7D] py-2 sm:py-3 px-4 sm:px-6 rounded-lg inline-block">
+                                <div class="mt-6">
+                                    <span
+                                        class="inline-block px-6 py-3 rounded-lg 
+                                     bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+                                     text-white font-bold text-xl sm:text-2xl tracking-wide 
+                                     shadow-lg hover:scale-105 transition">
                                         IntanSafety
-                                    </div>
+                                    </span>
                                 </div>
                             </div>
 
-                            <!-- Bagian Kanan: Informasi Kontak -->
+                            <!-- Kanan: Hubungi Kami -->
                             <div
-                                class="bg-white/90 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 border border-gray-200 shadow-xl sm:shadow-2xl mx-2 sm:mx-0">
+                                class="bg-white/20 backdrop-blur-xl border border-white/30 
+                            rounded-2xl shadow-2xl p-6 lg:p-8">
+
                                 <h3
-                                    class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-4 sm:mb-5 md:mb-6 text-center bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                                    class="text-2xl font-bold mb-6 text-center 
+                               bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
                                     Hubungi Kami
                                 </h3>
 
-                                <div class="space-y-3 sm:space-y-4">
+                                <div class="space-y-4">
                                     <!-- Telepon -->
                                     <div
-                                        class="flex items-center p-3 sm:p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-lg sm:rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
-                                        <div
-                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                        class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
+                                    border border-white/20 transition shadow-md">
+                                        <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
+                                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
+                                                stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z" />
                                             </svg>
                                         </div>
-                                        <div class="min-w-0 flex-1">
-                                            <p class="text-gray-800 font-semibold text-xs sm:text-sm md:text-base truncate">
-                                                Telepon</p>
-                                            <p class="text-[#144F5F] font-medium text-xs sm:text-sm truncate">(+62)
-                                                82146134846</p>
+                                        <div>
+                                            <p class="text-xs font-semibold text-gray-200">Telepon</p>
+                                            <p class="text-base font-medium text-white">(+62) 82146134846</p>
                                         </div>
                                     </div>
 
                                     <!-- Alamat -->
                                     <div
-                                        class="flex items-start p-3 sm:p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-lg sm:rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
-                                        <div
-                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0 mt-0.5">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        class="flex items-start p-4 rounded-xl bg-white/10 hover:bg-white/20 
+                                    border border-white/20 transition shadow-md">
+                                        <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
+                                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
+                                                stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                             </svg>
                                         </div>
-                                        <div class="min-w-0 flex-1">
-                                            <p class="text-gray-800 font-semibold text-xs sm:text-sm md:text-base mb-1">
-                                                Alamat</p>
-                                            <p
-                                                class="text-[#144F5F] font-medium text-xs sm:text-sm leading-relaxed break-words">
+                                        <div>
+                                            <p class="text-xs font-semibold text-gray-200">Alamat</p>
+                                            <p class="text-sm text-white leading-relaxed">
                                                 Jl. Panggungan Asri No.37, RT.003/RW.033, Mayaan, Trihanggo, Kec. Gamping,
                                                 Kab. Sleman, DIY 55291
                                             </p>
@@ -238,63 +194,65 @@
 
                                     <!-- Email -->
                                     <div
-                                        class="flex items-center p-3 sm:p-4 bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 rounded-lg sm:rounded-xl hover:from-[#144F5F]/20 hover:to-[#73BA7D]/20 transition duration-300 border border-[#144F5F]/20">
-                                        <div
-                                            class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-2 sm:p-3 rounded-full mr-3 sm:mr-4 flex-shrink-0">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 text-white" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
+                                    border border-white/20 transition shadow-md">
+                                        <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
+                                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
+                                                stroke-width="2" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
                                                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                             </svg>
                                         </div>
-                                        <div class="min-w-0 flex-1">
-                                            <p
-                                                class="text-gray-800 font-semibold text-xs sm:text-sm md:text-base truncate">
-                                                Email</p>
-                                            <p class="text-[#144F5F] font-medium text-xs sm:text-sm break-all">
-                                                admin@intancahayamandiri.com</p>
+                                        <div>
+                                            <p class="text-xs font-semibold text-gray-200">Email</p>
+                                            <p class="text-sm text-white">admin@intancahayamandiri.com</p>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Tombol CTA -->
+                                <!-- CTA -->
                                 <a href="{{ route('hubungi-kami') }}"
-                                    class="w-full mt-4 sm:mt-5 md:mt-6 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] hover:from-[#144F5F]/90 hover:to-[#73BA7D]/90 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition duration-300 transform hover:scale-105 flex items-center justify-center shadow-lg text-xs sm:text-sm md:text-base">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 sm:h-5 sm:w-5 mr-2"
-                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                    </svg>
-                                    Kirim Pesan
+                                    class="block w-full mt-6 text-center py-3 rounded-lg font-medium text-white 
+                              bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+                              hover:scale-105 hover:shadow-[0_0_20px_rgba(20,79,95,0.5)] 
+                              transition transform">
+                                    ✉️ Kirim Pesan
                                 </a>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
 
         <!-- Tombol kontrol -->
         <button @click="activeSlide = (activeSlide - 1 + slides) % slides"
-            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 px-3 py-2 rounded-full hover:bg-white transition z-10 shadow-lg">
+            class="absolute left-4 top-1/2 -translate-y-1/2 
+               bg-white/70 backdrop-blur-md text-gray-800 px-3 py-2 
+               rounded-full hover:bg-white hover:scale-110 transition shadow-xl">
             ❮
         </button>
         <button @click="activeSlide = (activeSlide + 1) % slides"
-            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 px-3 py-2 rounded-full hover:bg-white transition z-10 shadow-lg">
+            class="absolute right-4 top-1/2 -translate-y-1/2 
+               bg-white/70 backdrop-blur-md text-gray-800 px-3 py-2 
+               rounded-full hover:bg-white hover:scale-110 transition shadow-xl">
             ❯
         </button>
 
         <!-- Navigasi dot -->
-        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
             <template x-for="i in slides" :key="i">
-                <button @click="activeSlide = i - 1" class="w-3 h-3 rounded-full transition shadow-lg"
-                    :class="activeSlide === i - 1 ? 'bg-white' : 'bg-white/50'">
+                <button @click="activeSlide = i - 1" class="w-3.5 h-3.5 rounded-full transition transform"
+                    :class="activeSlide === i - 1 ?
+                        'bg-white scale-125 shadow-lg' :
+                        'bg-white/50 hover:bg-white/70'">
                 </button>
             </template>
         </div>
     </div>
+
     <!-- Section : Program Pelatihan Unggulan Section -->
     <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-10">
@@ -793,70 +751,86 @@
     </section>
 
     <!-- Section: Legalitas Terjamin, Kualitas Terbukti -->
-    <section class="pt-12 pb-12 px-4 md:px-8 lg:px-16 max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row gap-8 items-start">
+    <section class="relative py-16 px-4 md:px-8 lg:px-16 bg-gradient-to-br from-gray-50 via-white to-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
+
             <!-- Bagian Kiri -->
             <div class="lg:w-1/2">
                 <h2
-                    class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent mb-4">
+                    class="text-3xl md:text-4xl font-extrabold 
+                       bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+                       bg-clip-text text-transparent mb-6">
                     Legalitas Terjamin, Kualitas Terbukti
                 </h2>
-                <p class="text-[#000] mb-6 leading-relaxed">
+                <p class="text-gray-700 mb-8 leading-relaxed text-lg">
                     Kami lahir sebagai mitra terpercaya dalam pembinaan & pelatihan K3 dengan legalitas resmi Kemnaker
                     RI & Kemenkumham. Mengutamakan kualitas, pengalaman, serta pelayanan terbaik untuk mencetak tenaga
                     kerja yang kompeten dan siap menghadapi tantangan di dunia industri.
                 </p>
 
                 <!-- Grid Kotak-kotak -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Kotak 1 -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-lg font-semibold text-custom-blue mb-2">INSTRUKTUR BERPENGALAMAN</h3>
-                        <ul class="text-gray-900 space-y-1">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Kotak -->
+                    <div
+                        class="p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-gray-200 shadow-lg hover:shadow-2xl transition">
+                        <h3
+                            class="text-lg font-semibold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent mb-3">
+                            INSTRUKTUR BERPENGALAMAN
+                        </h3>
+                        <ul class="text-gray-800 space-y-2 text-sm">
                             <li class="flex items-start">
-                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span class="text-[#73BA7D] mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>Dibimbing oleh berbagai trainer</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
-                                <span>Bersertifikasi dan professional</span>
+                                <span class="text-[#73BA7D] mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>Bersertifikasi dan profesional</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Kotak 2 -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-lg font-semibold text-custom-blue mb-2">HARGA KOMPETITIF</h3>
-                        <ul class="text-gray-900 space-y-1">
+                    <div
+                        class="p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-gray-200 shadow-lg hover:shadow-2xl transition">
+                        <h3
+                            class="text-lg font-semibold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent mb-3">
+                            HARGA KOMPETITIF
+                        </h3>
+                        <ul class="text-gray-800 space-y-2 text-sm">
                             <li class="flex items-start">
-                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span class="text-[#73BA7D] mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>Harga kompetitif dengan kualitas pelatihan terbaik</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Kotak 3 -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-lg font-semibold text-custom-blue mb-2">PJK3 RESMI</h3>
-                        <ul class="text-gray-900 space-y-1">
+                    <div
+                        class="p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-gray-200 shadow-lg hover:shadow-2xl transition">
+                        <h3
+                            class="text-lg font-semibold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent mb-3">
+                            PJK3 RESMI
+                        </h3>
+                        <ul class="text-gray-800 space-y-2 text-sm">
                             <li class="flex items-start">
-                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span class="text-[#73BA7D] mt-1 mr-2"><i class="fas fa-check"></i></span>
                                 <span>PJK3 Resmi diunjuk KEMNAKER RI dan BNSP</span>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Kotak 4 -->
-                    <div class="bg-white p-5 rounded-lg shadow-sm feature-card">
-                        <h3 class="text-lg font-semibold text-custom-blue mb-2">KELAS TRAINING TERLENGKAP</h3>
-                        <ul class="text-gray-900 space-y-1">
+                    <div
+                        class="p-6 rounded-2xl bg-white/60 backdrop-blur-xl border border-gray-200 shadow-lg hover:shadow-2xl transition">
+                        <h3
+                            class="text-lg font-semibold bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent mb-3">
+                            KELAS TRAINING TERLENGKAP
+                        </h3>
+                        <ul class="text-gray-800 space-y-2 text-sm">
                             <li class="flex items-start">
-                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
-                                <span>100+ pilihan pelatihan berbasis</span>
+                                <span class="text-[#73BA7D] mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>100+ pilihan pelatihan berbasis sertifikasi</span>
                             </li>
                             <li class="flex items-start">
-                                <span class="text-custom-green mt-1 mr-2"><i class="fas fa-check"></i></span>
-                                <span>sertifikasi KEMNAKER RI, BNSP, Non Sertifikasi, dll</span>
+                                <span class="text-[#73BA7D] mt-1 mr-2"><i class="fas fa-check"></i></span>
+                                <span>Kemnaker RI, BNSP, Non Sertifikasi, dll</span>
                             </li>
                         </ul>
                     </div>
@@ -864,164 +838,127 @@
             </div>
 
             <!-- Bagian Kanan -->
+            <!-- Bagian Kanan -->
             <div class="lg:w-1/2">
-                <div class="video-wrapper">
-                    <div class="w-full">
-                        <div class="youtube-container">
-                            <div class="relative pb-[56.25%] h-0">
-                                <iframe class="absolute top-0 left-0 w-full h-full"
-                                    src="https://www.youtube.com/embed/yrtJ1GMbRr0" title="YouTube video player"
-                                    frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
-                        </div>
-                        <p class="mt-3 text-center text-gray-600 text-sm font-medium">
-                            JANUARI RECAP 2024 | Pelatihan & Sertifikasi K3 | Intan Safety Jogja
-                        </p>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-white/70 backdrop-blur-md">
+                    <div class="relative pb-[56.25%] h-0">
+                        <iframe class="absolute top-0 left-0 w-full h-full rounded-t-2xl"
+                            src="https://www.youtube.com/embed/yrtJ1GMbRr0" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
+                    <p class="p-4 text-center text-gray-600 text-sm font-medium">
+                        JANUARI RECAP 2024 | Pelatihan & Sertifikasi K3 | Intan Safety Jogja
+                    </p>
+                </div>
+
+                <!-- Tambahan bawah video -->
+                <div class="mt-6 flex flex-col items-center space-y-4">
+                    <!-- CTA -->
+                    <a href="{{ route('schedule') }}"
+                        class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition">
+                        📅 Lihat Jadwal Pelatihan
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section: Logo Client -->
-    <div class="overflow-hidden bg-white py-12">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div>
-                <p class="text-sm font-medium text-green-700 flex items-center gap-2">
+    <!-- Section: Jejak Alumni & Reputasi -->
+    <section class="relative py-20 bg-gradient-to-br from-[#F5F9F4] to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Heading -->
+            <div class="text-left max-w-3xl mb-16">
+                <p class="text-sm font-medium text-green-700 flex items-center gap-2 mb-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M12 6v6h4m6 6V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h10" />
                     </svg>
-                    JEJAK ALUMNI
+                    JEJAK ALUMNI & REPUTASI
                 </p>
                 <h2
-                    class="text-3xl font-bold mb-10 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent inline-block">
-                    Bersama Alumni, Membangun <br> Kepercayaan dan Reputasi
+                    class="text-3xl md:text-4xl font-extrabold mb-4 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent inline-block">
+                    Bersama Alumni, Membangun Kepercayaan dan Reputasi
                 </h2>
-
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Lebih dari <span class="font-semibold text-[#73BA7D]">ribuan alumni</span> telah mengikuti pelatihan K3
+                    bersama kami
+                    dan kini berkontribusi di berbagai bidang kerja. Kami berkomitmen mencetak SDM yang
+                    <span class="text-[#144F5F] font-semibold">#Safety</span>,
+                    <span class="text-[#144F5F] font-semibold">#Quality</span>, dan
+                    <span class="text-[#144F5F] font-semibold">#Competent</span>.
+                </p>
             </div>
 
-            {{-- Logo Carousel Container --}}
+            <!-- Counter Section -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-16">
+                <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                    <div
+                        class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#73BA7D]/20 text-[#144F5F]">
+                        <i class="fas fa-users text-xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-[#144F5F] counter" data-target="4000">0</h2>
+                    <p class="mt-2 text-[#73BA7D] font-semibold">Alumni</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                    <div
+                        class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#73BA7D]/20 text-[#144F5F]">
+                        <i class="fas fa-chalkboard-teacher text-xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-[#144F5F] counter" data-target="352">0</h2>
+                    <p class="mt-2 text-[#73BA7D] font-semibold">Program Pembinaan</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                    <div
+                        class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#73BA7D]/20 text-[#144F5F]">
+                        <i class="fas fa-handshake text-xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-[#144F5F] counter" data-target="500">0</h2>
+                    <p class="mt-2 text-[#73BA7D] font-semibold">Loyal Customer</p>
+                </div>
+
+                <div class="p-8 bg-white rounded-2xl shadow hover:shadow-lg transition">
+                    <div
+                        class="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full bg-[#73BA7D]/20 text-[#144F5F]">
+                        <i class="fas fa-industry text-xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-[#144F5F] counter" data-target="100">0</h2>
+                    <p class="mt-2 text-[#73BA7D] font-semibold">Perusahaan Mitra</p>
+                </div>
+            </div>
+
+            <!-- Logo Carousel -->
             <div class="relative overflow-hidden">
                 <div class="flex animate-scroll space-x-16 items-center">
-                    {{-- First set of logos --}}
-                    <div class="flex space-x-16 items-center shrink-0">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/agincourt.png') }}" alt="Company 1">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/ahm.png') }}" alt="Company 2">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/antam.png') }}" alt="Company 3">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/asc.webp') }}" alt="Company 4">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/bhumi.png') }}" alt="Company 5">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/cirebon.png') }}" alt="Company 6">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/honda.jpg') }}" alt="Company 7">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/huayue.png') }}" alt="Company 8">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/indonesia-power.png') }}" alt="Company 9">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/kai.png') }}" alt="Company 10">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/pindad.png') }}" alt="Company 11">
-                    </div>
+                    @php
+                        $logos = [
+                            'agincourt.png',
+                            'ahm.png',
+                            'antam.png',
+                            'asc.webp',
+                            'bhumi.png',
+                            'cirebon.png',
+                            'honda.jpg',
+                            'huayue.png',
+                            'indonesia-power.png',
+                            'kai.png',
+                            'pindad.png',
+                        ];
+                    @endphp
 
-                    {{-- Duplicate set for seamless loop --}}
-                    <div class="flex space-x-16 items-center shrink-0">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/agincourt.png') }}" alt="Company 1">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/ahm.png') }}" alt="Company 2">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/antam.png') }}" alt="Company 3">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/asc.webp') }}" alt="Company 4">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/bhumi.png') }}" alt="Company 5">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/cirebon.png') }}" alt="Company 6">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/honda.jpg') }}" alt="Company 7">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/huayue.png') }}" alt="Company 8">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/indonesia-power.png') }}" alt="Company 9">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/kai.png') }}" alt="Company 10">
-                        <img class="h-12 w-auto object-contain  transition-all duration-300"
-                            src="{{ asset('images/logos/pindad.png') }}" alt="Company 11">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Section: Alumni -->
-    <section class="py-12 bg-[#F5F9F4]">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Bagian atas -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <!-- Card kiri -->
-                <div
-                    class="relative bg-gradient-to-r from-[#144F5F] to-[#73BA7D] rounded-2xl overflow-hidden h-72 flex items-end justify-center">
-                    <img src="{{ asset('images/hero.png') }}" alt="Alumni"
-                        class="h-full object-bottom object-contain">
-                </div>
-
-                <!-- Card tengah -->
-                <div class="bg-white rounded-2xl p-6 flex flex-col justify-center">
-                    <div class="flex items-center justify-center mb-3">
-                        <div class="w-10 h-10 flex items-center justify-center bg-green-100 text-green-600 rounded-full">
-                            <i class="fas fa-hard-hat text-xl"></i> <!-- icon pekerja -->
+                    <!-- 2x loop supaya seamless -->
+                    @for ($i = 0; $i < 2; $i++)
+                        <div class="flex space-x-16 items-center shrink-0">
+                            @foreach ($logos as $logo)
+                                <img class="h-12 w-auto object-contain transition-all duration-300"
+                                    src="{{ asset('images/logos/' . $logo) }}" alt="Company Logo">
+                            @endforeach
                         </div>
-                    </div>
-                    <h3 class="text-lg font-semibold text-[#144F5F] text-center mb-2">
-                        Ribuan Alumni Percaya
-                    </h3>
-                    <p class="text-gray-600 text-center text-sm">
-                        Pelatihan K3 kami telah meluluskan banyak peserta yang kini berkontribusi di berbagai bidang kerja.
-                    </p>
-                </div>
-
-                <!-- Card kanan -->
-                <div
-                    class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] rounded-2xl flex flex-col justify-center items-center p-6 h-72">
-                    <img src="{{ asset('images/logo.png') }}" alt="Safety Quality"
-                        class="w-20 h-20 object-contain mx-auto mb-3">
-                    <h4 class="text-white font-bold text-base text-center leading-tight">
-                        #SAFETY <br> QUALITY <br> COMPETENT
-                    </h4>
-                </div>
-            </div>
-
-            <!-- Bagian bawah (counter) -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
-                <div class="p-6 bg-white rounded-xl shadow-md">
-                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="4000">0</h2>
-                    <p class="text-[#73BA7D] font-semibold">Alumni</p>
-                </div>
-
-                <div class="p-6 bg-white rounded-xl shadow-md">
-                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="352">0</h2>
-                    <p class="text-green-600 font-semibold">Pembinaan</p>
-                </div>
-
-                <div class="p-6 bg-white rounded-xl shadow-md">
-                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="500">0</h2>
-                    <p class="text-green-600 font-semibold">Loyal Customer & Perusahaan</p>
-                </div>
-
-                <div class="p-6 bg-white rounded-xl shadow-md">
-                    <h2 class="text-3xl font-bold text-[#144F5F] counter" data-target="352">0</h2>
-                    <p class="text-green-600 font-semibold">Pembinaan</p>
+                    @endfor
                 </div>
             </div>
         </div>
@@ -1059,39 +996,38 @@
                 </div>
             </div>
 
-            <!-- Gallery Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict1.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+            <!-- Gallery Auto Slider Lengkap -->
+            <div class="relative max-w-5xl mx-auto">
+                <!-- Slide -->
+                <div class="overflow-hidden rounded-xl shadow-lg relative">
+                    <img id="galleryImage" src="{{ asset('images/galeri/pict1.jpg') }}" alt="gallery"
+                        class="w-full h-[500px] object-cover transition-all duration-700">
+
+                    <!-- Prev Button -->
+                    <button onclick="prevImage()"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 text-black p-3 rounded-full shadow-lg hover:bg-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <!-- Next Button -->
+                    <button onclick="nextImage()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 text-black p-3 rounded-full shadow-lg hover:bg-white transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict2.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict3.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict4.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict5.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict6.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict7.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="overflow-hidden rounded-lg shadow">
-                    <img src="{{ asset('images/galeri/pict8.jpg') }}" alt="gallery"
-                        class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+
+                <!-- Indicators -->
+                <div class="flex justify-center mt-4 space-x-2">
+                    <template id="indicatorTemplate">
+                        <div class="w-3 h-3 rounded-full bg-gray-400 cursor-pointer"></div>
+                    </template>
+                    <div id="indicators" class="flex space-x-2"></div>
                 </div>
             </div>
 
@@ -1265,7 +1201,6 @@
     </div>
 
 @endsection
-
 
 </body>
 

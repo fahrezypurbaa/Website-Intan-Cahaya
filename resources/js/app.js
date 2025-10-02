@@ -1,219 +1,216 @@
 import "./bootstrap";
 
-// Hamburger Mobile Menu
-document
-    .getElementById("mobile-menu-btn")
-    .addEventListener("click", function () {
-        const mobileMenu = document.getElementById("mobile-menu");
-        mobileMenu.classList.toggle("hidden");
-    });
+// DOM Ready
+document.addEventListener("DOMContentLoaded", function () {
 
-// Mobile Dropdown Toggle
-document.querySelectorAll(".mobile-dropdown-btn").forEach((button) => {
-    button.addEventListener("click", function () {
-        const targetId = this.getAttribute("data-target");
-        const dropdown = document.getElementById(targetId);
-        const arrow = this.querySelector("svg");
-
-        dropdown.classList.toggle("hidden");
-        arrow.classList.toggle("rotate-180");
-    });
-});
-
-// Menutup mobile menu ketika mengklik luar bagian mobile menu
-document.addEventListener("click", function (event) {
-    const mobileMenu = document.getElementById("mobile-menu");
+    // === Hamburger Mobile Menu ===
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    if (
-        !mobileMenu.contains(event.target) &&
-        !mobileMenuBtn.contains(event.target)
-    ) {
-        mobileMenu.classList.add("hidden");
-    }
-});
-
-// Program Tab Functionality
-document.querySelectorAll(".tab-btn").forEach((button) => {
-    button.addEventListener("click", function () {
-        // Remove active class from all buttons
-        document.querySelectorAll(".tab-btn").forEach((btn) => {
-            btn.classList.remove("active", "bg-[#73BA7D]", "text-white");
-            btn.classList.add("text-[#73BA7D]");
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
         });
 
-        // Add active class to clicked button
-        this.classList.add("active", "bg-[#73BA7D]", "text-white");
-        this.classList.remove("text-[#73BA7D]");
-
-        // Hide all program categories
-        document.querySelectorAll(".program-category").forEach((category) => {
-            category.classList.add("hidden");
-        });
-
-        // Show selected program category
-        const categoryId = this.getAttribute("data-category");
-        document.getElementById(categoryId).classList.remove("hidden");
-
-        // Reinit swiper for the active category
-        setTimeout(() => {
-            if (typeof programSwiper !== "undefined") {
-                programSwiper.update();
+        document.addEventListener("click", (event) => {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.add("hidden");
             }
-        }, 100);
+        });
+    }
+
+    // === Mobile Dropdown Toggle ===
+    document.querySelectorAll(".mobile-dropdown-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+            const targetId = this.getAttribute("data-target");
+            const dropdown = document.getElementById(targetId);
+            const arrow = this.querySelector("svg");
+
+            dropdown.classList.toggle("hidden");
+            arrow.classList.toggle("rotate-180");
+        });
     });
-});
 
-// Initialize Swiper for program sliders
-let programSwipers = [];
+    // === Program Tabs + Swiper ===
+    let programSwipers = [];
 
-function initSwipers() {
-    const swiperContainers = document.querySelectorAll(".programSwiper");
-
-    swiperContainers.forEach((container) => {
-        const swiper = new Swiper(container, {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            navigation: {
-                nextEl: container.querySelector(".swiper-button-next"),
-                prevEl: container.querySelector(".swiper-button-prev"),
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
+    function initSwipers() {
+        document.querySelectorAll(".programSwiper").forEach((container) => {
+            const swiper = new Swiper(container, {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                navigation: {
+                    nextEl: container.querySelector(".swiper-button-next"),
+                    prevEl: container.querySelector(".swiper-button-prev"),
                 },
-                1024: {
-                    slidesPerView: 3,
+                breakpoints: {
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
                 },
-            },
-        });
-
-        programSwipers.push(swiper);
-    });
-}
-
-// Program Tab Functionality
-document.querySelectorAll(".tab-btn").forEach((button) => {
-    button.addEventListener("click", function () {
-        // Remove active class from all buttons
-        document.querySelectorAll(".tab-btn").forEach((btn) => {
-            btn.classList.remove("active", "bg-[#73BA7D]", "text-white");
-            btn.classList.add("text-[#73BA7F]");
-        });
-
-        // Add active class to clicked button
-        this.classList.add("active", "bg-[#73BA7D]", "text-white");
-        this.classList.remove("text-[#73BA7F]");
-
-        // Hide all program categories
-        document.querySelectorAll(".program-category").forEach((category) => {
-            category.classList.add("hidden");
-        });
-
-        // Show selected program category
-        const categoryId = this.getAttribute("data-category");
-        document.getElementById(categoryId).classList.remove("hidden");
-
-        // Update all swiper instances
-        setTimeout(() => {
-            programSwipers.forEach((swiper) => {
-                swiper.update();
             });
-        }, 100);
+            programSwipers.push(swiper);
+        });
+    }
+
+    // Tab Button
+    document.querySelectorAll(".tab-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+            // Reset semua button
+            document.querySelectorAll(".tab-btn").forEach((btn) => {
+                btn.classList.remove("active", "bg-[#73BA7D]", "text-white");
+                btn.classList.add("text-[#73BA7D]");
+            });
+
+            // Aktifkan button yang diklik
+            this.classList.add("active", "bg-[#73BA7D]", "text-white");
+            this.classList.remove("text-[#73BA7D]");
+
+            // Sembunyikan semua kategori
+            document.querySelectorAll(".program-category").forEach((cat) => cat.classList.add("hidden"));
+
+            // Tampilkan kategori sesuai button
+            const categoryId = this.getAttribute("data-category");
+            document.getElementById(categoryId).classList.remove("hidden");
+
+            // Update semua swiper
+            setTimeout(() => programSwipers.forEach(swiper => swiper.update()), 100);
+        });
     });
-});
 
-// Initialize swipers when DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
     initSwipers();
-});
 
-// Logo Client Slide (perusahaan)
-document.addEventListener("DOMContentLoaded", function () {
+    // === Client Logo Slider ===
     new Swiper(".clientSwiper", {
         slidesPerView: 5,
         spaceBetween: 40,
         loop: true,
         freeMode: true,
-        autoplay: {
-            delay: 1, // harus > 0 supaya autoplay aktif
-            disableOnInteraction: false,
-        },
-        speed: 4000, // semakin besar semakin pelan jalannya
+        autoplay: { delay: 1, disableOnInteraction: false },
+        speed: 4000,
         grabCursor: false,
-        allowTouchMove: false, // biar gak berhenti kalau disentuh
+        allowTouchMove: false,
         breakpoints: {
             320: { slidesPerView: 2, spaceBetween: 20 },
             640: { slidesPerView: 3, spaceBetween: 30 },
             1024: { slidesPerView: 5, spaceBetween: 40 },
         },
     });
-});
 
-// ALumni Slide
-document.addEventListener("DOMContentLoaded", function () {
+    // === Alumni Counter ===
     const counters = document.querySelectorAll(".counter");
-    const options = { threshold: 0.5 };
+    if (counters.length) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = +counter.getAttribute("data-target");
+                    let count = 0;
+                    const step = Math.ceil(target / 100);
 
-    const runCounter = (counter) => {
-        const target = +counter.getAttribute("data-target");
-        let count = 0;
-        const step = Math.ceil(target / 100); // semakin kecil pembagi -> semakin cepat
-        const interval = setInterval(() => {
-            count += step;
-            if (count >= target) {
-                count = target;
-                clearInterval(interval);
-                if (target >= 1000) {
-                    counter.innerText = target + "+";
-                } else {
-                    counter.innerText = target;
-                }
-            } else {
-                counter.innerText = count;
-            }
-        }, 10); // semakin kecil -> semakin cepat
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                runCounter(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-
-    counters.forEach((counter) => observer.observe(counter));
-});
-
-// Halaman Galeri (filter gambar)
-document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll("#galleryFilters button");
-    const items = document.querySelectorAll(".gallery-item");
-
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            // reset warna semua button
-            buttons.forEach(b => b.classList.remove("bg-[#73BA7D]", "text-white"));
-            buttons.forEach(b => b.classList.add("bg-gray-200"));
-
-            // kasih warna biru ke button yang dipilih
-            btn.classList.remove("bg-gray-200");
-            btn.classList.add("bg-[#73BA7D]", "text-white");
-
-            // filter gambar
-            const category = btn.getAttribute("data-category");
-            items.forEach(item => {
-                if (category === "all" || item.dataset.category === category) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
+                    const interval = setInterval(() => {
+                        count += step;
+                        if (count >= target) {
+                            count = target;
+                            clearInterval(interval);
+                            counter.innerText = target >= 1000 ? target + "+" : target;
+                        } else {
+                            counter.innerText = count;
+                        }
+                    }, 10);
+                    observer.unobserve(counter);
                 }
             });
-        });
-    });
+        }, { threshold: 0.5 });
 
-    // saat halaman baru dibuka → tampilkan semua gambar, tapi tidak ada tombol aktif
-    items.forEach(item => item.style.display = "block");
+        counters.forEach((counter) => observer.observe(counter));
+    }
+
+    // === Gallery Filter ===
+    const galleryButtons = document.querySelectorAll("#galleryFilters button");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+
+    if (galleryButtons.length) {
+        galleryButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // reset button style
+                galleryButtons.forEach(b => {
+                    b.classList.remove("bg-[#73BA7D]", "text-white");
+                    b.classList.add("bg-gray-200");
+                });
+
+                // aktifkan button
+                btn.classList.remove("bg-gray-200");
+                btn.classList.add("bg-[#73BA7D]", "text-white");
+
+                // filter gambar
+                const category = btn.getAttribute("data-category");
+                galleryItems.forEach(item => {
+                    item.style.display = (category === "all" || item.dataset.category === category) ? "block" : "none";
+                });
+            });
+        });
+
+        // awal → tampilkan semua
+        galleryItems.forEach(item => item.style.display = "block");
+    }
+
+    // === Gallery Slider Custom ===
+    const images = [
+    "/images/galeri/pict1.jpg",
+    "/images/galeri/pict2.jpg",
+    "/images/galeri/pict3.jpg",
+    "/images/galeri/pict4.jpg",
+    "/images/galeri/pict5.jpg",
+    "/images/galeri/pict6.jpg",
+    "/images/galeri/pict7.jpg",
+    "/images/galeri/pict8.jpg"
+];
+
+    let currentIndex = 0;
+    const galleryImage = document.getElementById('galleryImage');
+    const indicatorsContainer = document.getElementById('indicators');
+    if (galleryImage && indicatorsContainer) {
+        const indicatorTemplate = document.getElementById('indicatorTemplate').content;
+
+        // generate indikator
+        images.forEach((_, i) => {
+            const indicator = indicatorTemplate.cloneNode(true);
+            indicator.querySelector('div').addEventListener('click', () => {
+                currentIndex = i;
+                showImage(currentIndex);
+            });
+            indicatorsContainer.appendChild(indicator);
+        });
+
+        const indicators = indicatorsContainer.querySelectorAll('div');
+
+        function showImage(index) {
+            galleryImage.src = images[index];
+            indicators.forEach((dot, i) => {
+                dot.classList.toggle('bg-gray-800', i === index);
+                dot.classList.toggle('bg-gray-400', i !== index);
+            });
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        // auto slide
+        setInterval(nextImage, 3000);
+
+        // tampilkan pertama kali
+        showImage(currentIndex);
+
+        // expose biar bisa dipanggil tombol
+        window.prevImage = prevImage;
+        window.nextImage = nextImage;
+    }
+
 });
