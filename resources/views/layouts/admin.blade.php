@@ -11,44 +11,37 @@
 <body class="bg-gray-100 font-sans antialiased">
     <div class="flex h-screen">
         <!-- Sidebar -->
-        <aside class="w-64 bg-white text-gray-800 flex flex-col shadow-md">
+        <aside class="w-64 bg-white/90 backdrop-blur-md text-gray-800 flex flex-col shadow-lg border-r border-gray-200">
             <!-- Logo + Brand -->
             <div class="p-6 border-b border-gray-200 flex flex-col items-center">
-                <img src="/images/logo.png" alt="Logo" class="w-14 h-14 mb-3 rounded-full object-cover">
+                <img src="/images/logo.png" alt="Logo" class="w-14 h-14 mb-3 rounded-full object-cover shadow-md">
                 <span class="text-lg font-bold text-[#144F5F]">Intan Safety Jogja</span>
                 <span class="text-sm text-gray-500">PT Intan Cahaya Mandiri</span>
             </div>
-
 
             <!-- Nav -->
             <nav class="flex-1 p-4 space-y-2 text-sm font-medium">
                 @php
                     $links = [
-                        ['name' => 'Dashboard', 'route' => 'admin.dashboard'],
-                        ['name' => 'Hubungi Kami', 'route' => 'admin.contacts.index'],
-                        ['name' => 'Gallery', 'route' => 'admin.galleries.index'],
-                        ['name' => 'Registrasi', 'route' => 'admin.registrations.index'],
-                        ['name' => 'Pelatihan', 'route' => 'admin.trainings.index'],
-                        ['name' => 'Materi', 'route' => 'admin.materials.index'],
-                        ['name' => 'Rundown', 'route' => 'admin.rundowns.index'],
-                        ['name' => 'Artikel', 'route' => 'admin.articles.index'],
+                        ['name' => 'Dashboard', 'icon' => '📊', 'route' => 'admin.dashboard'],
+                        ['name' => 'Hubungi Kami', 'icon' => '✉️', 'route' => 'admin.contacts.index'],
+                        ['name' => 'Gallery', 'icon' => '🖼️', 'route' => 'admin.galleries.index'],
+                        ['name' => 'Registrasi', 'icon' => '📝', 'route' => 'admin.registrations.index'],
+                        ['name' => 'Pelatihan', 'icon' => '📚', 'route' => 'admin.trainings.index'],
+                        ['name' => 'Materi', 'icon' => '📂', 'route' => 'admin.materials.index'],
+                        ['name' => 'Rundown', 'icon' => '📅', 'route' => 'admin.rundowns.index'],
+                        ['name' => 'Artikel', 'icon' => '📰', 'route' => 'admin.articles.index'],
                     ];
                 @endphp
 
                 @foreach ($links as $link)
                     <a href="{{ route($link['route']) }}"
-                        class="relative flex items-center justify-between px-4 py-2 rounded-lg transition-all duration-300 ease-in-out
+                        class="relative flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out
                               {{ request()->routeIs($link['route']) || request()->is(str_replace('.', '/', $link['route']) . '*')
-                                  ? 'bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 text-[#144F5F] font-semibold pl-5'
+                                  ? 'bg-gradient-to-r from-[#144F5F]/10 to-[#73BA7D]/10 text-[#144F5F] font-semibold pl-5 shadow-sm'
                                   : 'hover:bg-gradient-to-r hover:from-[#144F5F]/5 hover:to-[#73BA7D]/5 hover:text-[#144F5F]' }}">
+                        <span>{{ $link['icon'] }}</span>
                         <span>{{ $link['name'] }}</span>
-
-                        <!-- Accent border (animated) -->
-                        <span
-                            class="absolute left-0 top-0 h-full w-1 rounded-r bg-gradient-to-b from-[#144F5F] to-[#73BA7D]
-                                     transform scale-y-0 transition-transform duration-300 ease-in-out
-                                     {{ request()->routeIs($link['route']) || request()->is(str_replace('.', '/', $link['route']) . '*') ? 'scale-y-100' : 'group-hover:scale-y-100' }}">
-                        </span>
                     </a>
                 @endforeach
             </nav>
@@ -58,7 +51,7 @@
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button
-                        class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg font-semibold transition">
+                        class="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-2 rounded-lg font-semibold transition shadow-md">
                         Logout
                     </button>
                 </form>
@@ -68,16 +61,11 @@
         <!-- Content -->
         <main class="flex-1 flex flex-col">
             <!-- Navbar -->
-            <header class="relative bg-white shadow p-4 flex justify-between items-center overflow-hidden">
-                <!-- Gradient overlay tipis -->
-                <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/15 to-[#73BA7D]/15 pointer-events-none">
-                </div>
-
-                <!-- Konten Navbar -->
-                <h1 class="relative text-xl font-semibold text-[#144F5F]">@yield('title')</h1>
+            <header class="relative bg-white/95 backdrop-blur-md shadow-md p-4 flex justify-between items-center z-10">
+                <h1 class="relative text-xl font-bold text-[#144F5F]">@yield('title')</h1>
                 <div class="relative flex items-center space-x-4">
-                    <span class="text-gray-700">{{ Auth::user()->name }}</span>
-                    <img class="w-10 h-10 rounded-full border-2 border-[#73BA7D]"
+                    <span class="text-gray-700 font-medium">{{ Auth::user()->name }}</span>
+                    <img class="w-10 h-10 rounded-full border-2 border-[#73BA7D] shadow-sm"
                         src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" alt="Avatar">
                 </div>
             </header>
@@ -89,5 +77,4 @@
         </main>
     </div>
 </body>
-
 </html>
