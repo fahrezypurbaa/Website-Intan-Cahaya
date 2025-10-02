@@ -3,10 +3,10 @@
 @section('title', 'Layanan Pelatihan & Sertifikasi - Intan Safety')
 
 @section('content')
-<div class="max-w-7xl mx-auto py-10 px-4 flex gap-8">
+<div class="max-w-7xl mx-auto py-10 px-4 grid grid-cols-1 lg:grid-cols-[16rem_1fr] gap-8">
 
     {{-- Sidebar kategori --}}
-    <aside class="w-64 flex-shrink-0">
+    <aside class="order-1 lg:order-none">
         <h3 class="font-bold text-lg mb-4 text-[#144F5F]">Kategori</h3>
         <ul class="space-y-2">
             @foreach($categories as $cat)
@@ -23,20 +23,20 @@
         </ul>
 
         <a href="{{ route('registration.form') }}" 
-           class="mt-8 block w-full text-center px-4 py-2 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+           class="mt-6 block w-full text-center px-4 py-2 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
                   text-white rounded-lg font-bold shadow-md hover:opacity-90 transition">
             📋 Formulir Registrasi
         </a>
     </aside>
 
     {{-- Main Content --}}
-    <main class="flex-1">
+    <main>
         <div class="flex items-center justify-between mb-6">
             <h1 class="text-2xl font-bold text-[#144F5F]">Daftar Layanan Pelatihan</h1>
         </div>
 
         @if($trainings->count())
-            <div class="grid md:grid-cols-3 sm:grid-cols-2 gap-6">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach($trainings as $t)
                     <div class="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-gray-100 flex flex-col">
                         <div class="relative">
