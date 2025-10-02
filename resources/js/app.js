@@ -286,3 +286,19 @@ if (modal && modalImg && closeModal) {
         }
     });
 }
+
+// === Halaman Registrations ===
+document.addEventListener("DOMContentLoaded", () => {
+    const participantType = document.getElementById("participant_type");
+    const companyFields = document.getElementById("company_fields");
+
+    if (participantType) {
+        participantType.addEventListener("change", function () {
+            if (this.value === "company") {
+                companyFields.classList.remove("hidden");
+            } else {
+                companyFields.classList.add("hidden");
+            }
+        });
+    }
+});

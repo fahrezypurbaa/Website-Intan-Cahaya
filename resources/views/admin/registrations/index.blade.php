@@ -14,6 +14,9 @@
             <th class="px-4 py-3">Nama</th>
             <th class="px-4 py-3">Email</th>
             <th class="px-4 py-3">No HP</th>
+            <th class="px-4 py-3">Tipe Peserta</th>
+            <th class="px-4 py-3">Perusahaan</th>
+            <th class="px-4 py-3">Jabatan</th>
             <th class="px-4 py-3">Tanggal Daftar</th>
             <th class="px-4 py-3">Waktu Daftar</th>
         </x-slot>
@@ -30,12 +33,22 @@
                     </span>
                 </td>
                 <td class="px-4 py-3 text-gray-700">{{ $reg->phone }}</td>
+                <td class="px-4 py-3">
+                    <span class="px-2 py-1 rounded-md text-xs font-medium
+                        {{ $reg->participant_type === 'company' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-700' }}">
+                        {{ ucfirst($reg->participant_type ?? '-') }}
+                    </span>
+                </td>
+                <td class="px-4 py-3 text-gray-700">{{ $reg->company_name ?? '-' }}</td>
+                <td class="px-4 py-3 text-gray-700">{{ $reg->position ?? '-' }}</td>
                 <td class="px-4 py-3 text-gray-600">{{ $reg->created_at->format('d M Y') }}</td>
-                <td class="px-4 py-3 text-gray-500 text-sm">{{ $reg->created_at->format('H:i') }} ({{ $reg->created_at->diffForHumans() }})</td>
+                <td class="px-4 py-3 text-gray-500 text-sm">
+                    {{ $reg->created_at->format('H:i') }} ({{ $reg->created_at->diffForHumans() }})
+                </td>
             </tr>
         @empty
             <tr>
-                <td colspan="6" class="px-4 py-6 text-center text-gray-500">
+                <td colspan="9" class="px-4 py-6 text-center text-gray-500">
                     Belum ada peserta registrasi.
                 </td>
             </tr>
