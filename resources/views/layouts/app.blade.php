@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Intan Safety')</title>
-    {{-- Fav Icon --}}
+
+    {{-- Favicon --}}
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
+    {{-- Vite Assets --}}
     @vite('resources/css/app.css')
     @vite('resources/js/app.js')
-    <!-- Tambahkan Swiper.js untuk slider -->
+
+    {{-- CDN (kalau belum install via NPM) --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body class="bg-white text-gray-800">
@@ -30,10 +31,10 @@
 
     {{-- Footer --}}
     @include('layouts.footer')
-    {{-- Floating WhatsApp Button --}}
-    <button onclick="document.getElementById('waPopup').classList.remove('hidden')"
-        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg px-4 py-3 flex items-center gap-2 z-50">
 
+    {{-- Floating WhatsApp Button --}}
+    <button aria-label="Buka WhatsApp" onclick="document.getElementById('waPopup').classList.remove('hidden')"
+        class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg px-4 py-3 flex items-center gap-2 z-50">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-6 h-6" alt="WA">
         <span class="font-semibold">Hubungi Kami</span>
     </button>
@@ -41,8 +42,7 @@
     {{-- Popup Pilih Admin --}}
     <div id="waPopup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
         <div
-            class="bg-white rounded-2xl shadow-2xl w-80 p-6 relative transform transition-all scale-95 hover:scale-100">
-
+            class="bg-white rounded-2xl shadow-2xl w-80 p-6 relative transform transition-all duration-300 ease-in-out scale-95 hover:scale-100">
             {{-- Tombol Close --}}
             <button onclick="document.getElementById('waPopup').classList.add('hidden')"
                 class="absolute top-3 right-3 text-gray-400 hover:text-gray-600">
@@ -78,6 +78,9 @@
         </div>
     </div>
 
+    {{-- Scripts --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
 </body>
 
 </html>

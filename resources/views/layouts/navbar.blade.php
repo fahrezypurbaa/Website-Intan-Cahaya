@@ -1,60 +1,59 @@
 <!-- 🔹 Topbar -->
 <div class="bg-gray-100 border-b border-gray-200 text-sm w-full">
-  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4 py-2 gap-2 sm:gap-0">
-    
-    <!-- Kiri -->
-    <div class="flex items-center space-x-2 text-gray-900">
-      <!-- Icon Jam -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
-        <defs>
-          <linearGradient id="iconGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#16a34a" />
-            <stop offset="100%" stop-color="#06b6d4" />
-          </linearGradient>
-        </defs>
-        <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" 
-              stroke="url(#iconGradient)" stroke-width="2" 
-              stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
-      <span class="truncate">Senin - Jum'at: 08.00 - 16.30</span>
-    </div>
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4 py-2 gap-2 sm:gap-0">
 
-    <!-- Kanan -->
-    <div class="flex items-center space-x-4 text-gray-700">
-      
-      <!-- Telepon -->
-      <div class="flex items-center space-x-1 min-w-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
-          <defs>
-            <linearGradient id="phoneGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#16a34a" />
-              <stop offset="100%" stop-color="#06b6d4" />
-            </linearGradient>
-          </defs>
-          <path d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.2 3.6a1 1 0 01-.272 1.06l-1.67 1.67a16.001 16.001 0 006.586 6.586l1.67-1.67a1 1 0 011.06-.272l3.6 1.2a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
-                stroke="url(#phoneGradient)" stroke-width="2" 
-                stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="truncate max-w-[120px] sm:max-w-none">082146134846</span>
-      </div>
-      
-      <!-- Email -->
-      <div class="flex items-center space-x-1 min-w-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
-          <defs>
-            <linearGradient id="mailGradient" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="#16a34a" />
-              <stop offset="100%" stop-color="#06b6d4" />
-            </linearGradient>
-          </defs>
-          <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" 
-                stroke="url(#mailGradient)" stroke-width="2" 
-                stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
-        <span class="truncate max-w-[150px] sm:max-w-none">admin@intancahayamandiri.com</span>
-      </div>
+        <!-- Kiri -->
+        <div class="flex items-center space-x-2 text-gray-900">
+            <!-- Icon Jam -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                <defs>
+                    <linearGradient id="iconGradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#16a34a" />
+                        <stop offset="100%" stop-color="#06b6d4" />
+                    </linearGradient>
+                </defs>
+                <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="url(#iconGradient)" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="truncate">Senin - Jum'at: 08.00 - 16.30</span>
+        </div>
+
+        <!-- Kanan -->
+        <div class="flex items-center space-x-4 text-gray-700">
+
+            <!-- Telepon -->
+            <div class="flex items-center space-x-1 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                    <defs>
+                        <linearGradient id="phoneGradient" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#16a34a" />
+                            <stop offset="100%" stop-color="#06b6d4" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                        d="M3 5a2 2 0 012-2h2.28a1 1 0 01.948.684l1.2 3.6a1 1 0 01-.272 1.06l-1.67 1.67a16.001 16.001 0 006.586 6.586l1.67-1.67a1 1 0 011.06-.272l3.6 1.2a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        stroke="url(#phoneGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="truncate max-w-[120px] sm:max-w-none">082146134846</span>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-center space-x-1 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 shrink-0" viewBox="0 0 24 24" fill="none">
+                    <defs>
+                        <linearGradient id="mailGradient" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#16a34a" />
+                            <stop offset="100%" stop-color="#06b6d4" />
+                        </linearGradient>
+                    </defs>
+                    <path
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        stroke="url(#mailGradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <span class="truncate max-w-[150px] sm:max-w-none">admin@intancahayamandiri.com</span>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- 🔹 Navbar -->
@@ -166,7 +165,8 @@
                         <div class="flex flex-col space-y-3">
                             <a href="{{ route('schedule') }}"
                                 class="text-sm hover:text-[#73BA7D] transition-colors">Schedule</a>
-                            <a href="{{ route('legalitas.index') }}" class="text-sm hover:text-[#73BA7D] transition-colors">Legalitas</a>
+                            <a href="{{ route('legalitas.index') }}"
+                                class="text-sm hover:text-[#73BA7D] transition-colors">Legalitas</a>
                             <a href="#" class="text-sm hover:text-[#73BA7D] transition-colors">Cek
                                 Sertifikat</a>
                         </div>

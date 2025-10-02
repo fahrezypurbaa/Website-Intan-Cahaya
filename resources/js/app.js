@@ -214,3 +214,75 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 });
+
+// === Gallery Filter ===
+const galleryButtons = document.querySelectorAll("#galleryFilters button");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+if (galleryButtons.length) {
+    galleryButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const category = btn.getAttribute("data-category");
+
+            galleryItems.forEach(item => {
+                item.style.display =
+                    category === "all" || item.dataset.category === category
+                        ? "block"
+                        : "none";
+            });
+
+            // reset style button
+            galleryButtons.forEach(b => {
+                b.classList.remove("bg-[#73BA7D]", "text-white");
+                b.classList.add("bg-gray-200");
+            });
+
+            // aktifkan btn yg dipilih
+            btn.classList.remove("bg-gray-200");
+            btn.classList.add("bg-[#73BA7D]", "text-white");
+        });
+    });
+}
+// === Halaman Legalitas Preview ===
+const docModal = document.getElementById("docModal");
+const docImg = document.getElementById("docModalImg");
+const closeDoc = document.getElementById("closeDocModal");
+
+if (docModal && docImg && closeDoc) {
+    document.querySelectorAll(".doc-preview").forEach(img => {
+        img.addEventListener("click", () => {
+            docImg.src = img.dataset.image;
+            docModal.classList.remove("hidden");
+        });
+    });
+
+    closeDoc.addEventListener("click", () => docModal.classList.add("hidden"));
+
+    docModal.addEventListener("click", (e) => {
+        if (e.target === docModal) {
+            docModal.classList.add("hidden");
+        }
+    });
+}
+
+// === Halaman Gallery Preview ===
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeModal = document.getElementById("closeModal");
+
+if (modal && modalImg && closeModal) {
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+        img.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+            modalImg.src = img.src;
+        });
+    });
+
+    closeModal.addEventListener("click", () => modal.classList.add("hidden"));
+
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.add("hidden");
+        }
+    });
+}
