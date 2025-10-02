@@ -9,5 +9,10 @@ class Registration extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'phone'];
+    protected $fillable = ['name',
+        'email',
+        'phone',
+        'participant_type',
+        'company_name',
+        'position', ];
 }
