@@ -1,47 +1,59 @@
 @extends('layouts.admin')
 
+@section('title', 'Edit Rundown Training')
+
 @section('content')
-<div class="p-6">
-    <h1 class="text-2xl font-bold mb-6">Edit Rundown Training</h1>
-
-    <form action="{{ route('admin.rundowns.update', $rundown->id) }}" method="POST" class="space-y-4">
-        @csrf
-        @method('PUT')
-
+    <x-admin.form-wrapper 
+        title="✏️ Edit Rundown Training"
+        action="{{ route('admin.rundowns.update', $rundown->id) }}"
+        method="PUT"
+        submit="💾 Update Rundown"
+        back="{{ route('admin.rundowns.index') }}"
+    >
+        {{-- Training --}}
         <div>
-            <label class="block font-medium">Training</label>
+            <label class="block font-medium mb-1">Training</label>
             <select name="training_id" class="w-full border rounded p-2" required>
                 @foreach($trainings as $training)
                     <option value="{{ $training->id }}" 
-                        {{ $rundown->training_id == $training->id ? 'selected' : '' }}>
+                        {{ old('training_id', $rundown->training_id) == $training->id ? 'selected' : '' }}>
                         {{ $training->title }}
                     </option>
                 @endforeach
             </select>
+            @error('training_id') 
+                <span class="text-red-500 text-sm">{{ $message }}</span> 
+            @enderror
         </div>
 
+        {{-- Hari ke- --}}
         <div>
-            <label class="block font-medium">Hari ke-</label>
+            <label class="block font-medium mb-1">Hari ke-</label>
             <input type="number" name="day" class="w-full border rounded p-2" 
                    value="{{ old('day', $rundown->day) }}" min="1" required>
+            @error('day') 
+                <span class="text-red-500 text-sm">{{ $message }}</span> 
+            @enderror
         </div>
 
+        {{-- Waktu --}}
         <div>
-            <label class="block font-medium">Waktu</label>
+            <label class="block font-medium mb-1">Waktu</label>
             <input type="text" name="time" class="w-full border rounded p-2" 
-                   value="{{ old('time', $rundown->time) }}" required>
+                   value="{{ old('time', $rundown->time) }}" placeholder="08:00 - 16:00" required>
+            @error('time') 
+                <span class="text-red-500 text-sm">{{ $message }}</span> 
+            @enderror
         </div>
 
+        {{-- Instruktur --}}
         <div>
-            <label class="block font-medium">Instruktur</label>
+            <label class="block font-medium mb-1">Instruktur</label>
             <input type="text" name="instructor" class="w-full border rounded p-2" 
-                   value="{{ old('instructor', $rundown->instructor) }}">
+                   value="{{ old('instructor', $rundown->instructor) }}" placeholder="Nama instruktur">
+            @error('instructor') 
+                <span class="text-red-500 text-sm">{{ $message }}</span> 
+            @enderror
         </div>
-
-        <div class="flex space-x-4">
-            <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">Update</button>
-            <a href="{{ route('admin.rundowns.index') }}" class="px-4 py-2 bg-gray-500 text-white rounded">Batal</a>
-        </div>
-    </form>
-</div>
+    </x-admin.form-wrapper>
 @endsection
