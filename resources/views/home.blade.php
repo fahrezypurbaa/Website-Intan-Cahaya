@@ -81,7 +81,6 @@
                 </div>
             </div>
 
-            <!-- Slide 3 (Safety Quality + Contact tetap sama tapi styling lebih halus) -->
             <!-- Slide 3 -->
             <div class="w-full flex-shrink-0 relative h-full">
                 <!-- Background -->
