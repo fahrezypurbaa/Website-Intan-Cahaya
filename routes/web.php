@@ -17,10 +17,10 @@ use App\Http\Controllers\{
     LayananController,
     ProfileController,
     RegistrationController,
-    LegalitasController
+    LegalitasControlleruse
 };
 use Illuminate\Support\Facades\Route;
-
+use App\Services\TelegramService;
 /*
 |--------------------------------------------------------------------------
 | Web Routes (Frontend / Public)
@@ -103,6 +103,14 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 
     // Articles (Admin)
     Route::resource('articles', AdminArticleController::class);
+
+    Route::get('/_test-telegram-class', function () {
+    return response()->json([
+        'exists' => class_exists(\App\Services\TelegramService::class)
+    ]);
 });
+
+});
+
 
 require __DIR__ . '/auth.php';
