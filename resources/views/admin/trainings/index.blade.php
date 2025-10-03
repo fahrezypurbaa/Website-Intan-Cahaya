@@ -20,6 +20,7 @@
         <table class="min-w-full text-sm text-left">
             <thead class="bg-gray-50 border-b text-gray-700 uppercase text-xs font-semibold">
                 <tr>
+                    <th class="px-4 py-3">NO</th>
                     <th class="px-4 py-3">Judul</th>
                     <th class="px-4 py-3">Kategori</th>
                     <th class="px-4 py-3">Durasi</th>
@@ -31,6 +32,9 @@
             <tbody class="divide-y divide-gray-100">
                 @forelse ($trainings as $training)
                     <tr class="hover:bg-gray-50 transition">
+                        <td class="px-4 py-3">
+                            {{ $loop->iteration + ($trainings->currentPage() - 1) * $trainings->perPage() }}
+                        </td>
                         <td class="px-4 py-3 font-medium text-gray-800">{{ $training->title }}</td>
                         <td class="px-4 py-3">{{ $training->category->name ?? '-' }}</td>
                         <td class="px-4 py-3">{{ $training->duration }}</td>
@@ -54,13 +58,18 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="6" class="px-4 py-6 text-center text-gray-500">
+                        <td colspan="7" class="px-4 py-6 text-center text-gray-500">
                             Belum ada training yang tersedia.
                         </td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
+    </div>
+
+    {{-- Pagination --}}
+    <div class="mt-6">
+        {{ $trainings->links() }}
     </div>
 </div>
 @endsection
