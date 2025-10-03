@@ -38,15 +38,13 @@
             @enderror
         </div>
 
-        {{-- Slug --}}
-        <div>
-            <label class="block font-medium mb-1">Slug</label>
-            <input type="text" name="slug" class="w-full border rounded p-2" 
-                   value="{{ old('slug') }}" required>
-            @error('slug') 
-                <span class="text-red-500 text-sm">{{ $message }}</span> 
-            @enderror
-        </div>
+        {{-- Slug (readonly) --}}
+<div class="mb-4">
+    <label class="block font-medium mb-1">Slug</label>
+    <input type="text" id="slug" name="slug" 
+           class="w-full border rounded p-2 bg-gray-100 text-gray-600" 
+           value="{{ old('slug') }}" readonly>
+</div>
 
         {{-- Deskripsi --}}
         <div>

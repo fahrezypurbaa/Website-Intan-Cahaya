@@ -302,3 +302,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// SLUG GENERATOR
+function slugify(text) {
+    return text
+        .toString()
+        .normalize('NFD')                // ubah é -> e
+        .replace(/[\u0300-\u036f]/g, '') // hapus karakter aksen
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')    // hapus simbol
+        .replace(/\s+/g, '-')            // spasi -> -
+        .replace(/-+/g, '-');            // hapus double -
+}
+
+// Auto isi slug saat mengetik judul
+document.addEventListener('DOMContentLoaded', () => {
+    let titleInput = document.getElementById('title');
+    let slugInput  = document.getElementById('slug');
+
+    if (titleInput && slugInput) {
+        titleInput.addEventListener('keyup', function () {
+            slugInput.value = slugify(this.value);
+        });
+    }
+});
+
