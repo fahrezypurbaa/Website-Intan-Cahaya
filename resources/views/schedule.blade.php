@@ -24,15 +24,21 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
             <div class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-[#144F5F] mb-2">📌 Januari</h3>
+                <h3 class="text-xl font-bold text-[#144F5F] mb-2">
+                    <i class="fa-solid fa-thumbtack text-[#73BA7D]"></i> Januari
+                </h3>
                 <p class="text-gray-600 text-sm">Pelatihan Juru Las, K3 Umum</p>
             </div>
             <div class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-[#144F5F] mb-2">📌 Maret</h3>
+                <h3 class="text-xl font-bold text-[#144F5F] mb-2">
+                    <i class="fa-solid fa-thumbtack text-[#73BA7D]"></i> Maret
+                </h3>
                 <p class="text-gray-600 text-sm">Pelatihan Forklift, Operator Crane</p>
             </div>
             <div class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-[#144F5F] mb-2">📌 Juli</h3>
+                <h3 class="text-xl font-bold text-[#144F5F] mb-2">
+                    <i class="fa-solid fa-thumbtack text-[#73BA7D]"></i> Juli
+                </h3>
                 <p class="text-gray-600 text-sm">Pelatihan K3 Migas, Scaffolding</p>
             </div>
         </div>
@@ -52,7 +58,7 @@
         <div class="mt-6 text-center">
             <a href="{{ asset('files/jadwal-2025.pdf') }}" download
                class="px-6 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold rounded-lg shadow hover:opacity-90 transition">
-                📥 Download Jadwal PDF
+                <i class="fa-solid fa-download mr-2"></i> Download Jadwal PDF
             </a>
         </div>
 
@@ -61,7 +67,7 @@
             <p class="text-gray-700 mb-4">Siap ikut pelatihan? Hubungi tim kami untuk informasi pendaftaran.</p>
             <a href="{{ url('/hubungi-kami') }}" 
                class="px-6 py-3 bg-[#73BA7D] text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
-               📞 Hubungi Kami
+               <i class="fa-solid fa-phone mr-2"></i> Hubungi Kami
             </a>
         </div>
 

@@ -16,7 +16,10 @@
     </div>
 
     <div class="container mx-auto px-4 py-12">
-        <h2 class="text-3xl font-bold mb-8 text-center text-[#144F5F]">📸 Dokumentasi Kegiatan</h2>
+        <h2 class="text-3xl font-bold mb-8 text-center text-[#144F5F]">
+            <i class="fa-solid fa-camera mr-2 text-[#73BA7D]"></i> Dokumentasi Kegiatan
+        </h2>
+
 
         {{-- Filter kategori --}}
         <div id="galleryFilters" class="flex space-x-3 overflow-x-auto pb-2 mb-10 no-scrollbar justify-center">

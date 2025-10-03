@@ -47,8 +47,8 @@
             <!-- Visi -->
             <div>
                 <h2 class="text-2xl font-bold text-[#144F5F] flex items-center gap-2 mb-4">
-                    🌟 Visi
-                </h2>
+    <i class="fa-solid fa-star text-[#73BA7D]"></i> Visi
+</h2>
                 <p class="text-gray-700 leading-relaxed">
                     Menjadi perusahaan jasa pembinaan, pelatihan dan konsultan keselamatan dan kesehatan kerja,
                     yang jujur dan terpercaya sehingga mampu merubah keadaan yang lebih baik pada pelanggan
@@ -60,8 +60,8 @@
             <div class="relative pl-6">
                 <div class="absolute top-0 bottom-0 left-0 w-1 bg-gradient-to-b from-[#73BA7D] to-[#144F5F] rounded"></div>
                 <h2 class="text-2xl font-bold text-[#144F5F] flex items-center gap-2 mb-4">
-                    🎯 Misi
-                </h2>
+    <i class="fa-solid fa-bullseye text-[#73BA7D]"></i> Misi
+</h2>
                 <ul class="space-y-3 text-gray-700">
                     <li class="flex items-start gap-2">
                         <span class="text-[#73BA7D]">✔</span> Menjadi mitra terpercaya bagi semua perusahaan yang peduli

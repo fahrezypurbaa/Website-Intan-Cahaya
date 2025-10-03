@@ -17,7 +17,7 @@ use App\Http\Controllers\{
     LayananController,
     ProfileController,
     RegistrationController,
-    LegalitasControlleruse
+    LegalitasController
 };
 use Illuminate\Support\Facades\Route;
 use App\Services\TelegramService;
