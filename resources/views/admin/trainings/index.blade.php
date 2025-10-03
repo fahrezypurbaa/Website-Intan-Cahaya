@@ -38,10 +38,6 @@
                         <td class="px-4 py-3">{{ Str::limit($training->facilities, 50) }}</td>
                         <td class="px-4 py-3 text-center">
                             <div class="flex justify-center gap-2">
-                                <a href="{{ route('admin.trainings.show', $training) }}" 
-                                   class="px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white text-xs font-medium rounded shadow-sm transition">
-                                    🔍 Detail
-                                </a>
                                 <a href="{{ route('admin.trainings.edit', $training) }}" 
                                    class="px-3 py-1.5 bg-yellow-400 hover:bg-yellow-500 text-white text-xs font-medium rounded shadow-sm transition">
                                     ✏️ Edit
