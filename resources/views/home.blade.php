@@ -115,11 +115,6 @@
                                     </h3>
                                 </div>
 
-                                <!-- Garis -->
-                                <div
-                                    class="w-20 h-1 bg-gradient-to-r from-[#73BA7D] to-[#144F5F] rounded-full shadow-lg mx-auto lg:mx-0 mb-6">
-                                </div>
-
                                 <!-- Competent -->
                                 <p
                                     class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase 
