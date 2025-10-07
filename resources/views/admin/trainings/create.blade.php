@@ -94,5 +94,17 @@
                 <span class="text-red-500 text-sm">{{ $message }}</span>
             @enderror
         </div>
+
+        {{-- PDF --}}
+        <div>
+            <label class="block font-medium mb-1">File PDF</label>
+            <input type="file" name="pdf"
+                class="w-full text-sm border rounded-lg file:mr-4 file:py-2 file:px-4
+                          file:rounded-lg file:border-0 file:text-sm file:font-semibold
+                          file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            <p class="text-xs text-gray-500 mt-1">Format: PDF | Maks: 5MB</p>
+            @error('pdf')
+                <span class="text-red-500 text-sm">{{ $message }}</span>
+            @enderror
     </x-admin.form-wrapper>
 @endsection

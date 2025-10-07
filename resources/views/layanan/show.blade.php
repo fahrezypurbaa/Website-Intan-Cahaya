@@ -121,12 +121,24 @@
                     <x-heroicon-o-rocket-launch class="w-5 h-5" />
                     Daftar Sekarang
                 </a>
-                <a href="/brosur/{{ $training->slug }}.pdf"
-                    class="px-6 py-3 text-center border-2 border-[#144F5F] text-[#144F5F] rounded-lg font-semibold 
-                      hover:bg-gradient-to-r hover:from-[#144F5F] hover:to-[#73BA7D] hover:text-white transition flex items-center justify-center gap-2">
-                    <x-heroicon-o-document-text class="w-5 h-5" />
-                    Download Brosur
-                </a>
+
+                {{-- PDF --}}
+                @if ($training->brochure_path)
+                    <a href="{{ asset('storage/' . $training->brochure_path) }}" download
+                        class="px-6 py-3 text-center border-2 border-[#144F5F] text-[#144F5F] rounded-lg font-semibold 
+          hover:bg-gradient-to-r hover:from-[#144F5F] hover:to-[#73BA7D] hover:text-white transition flex items-center justify-center gap-2">
+                        <x-heroicon-o-document-text class="w-5 h-5" />
+                        Download PDF
+                    </a>
+                @else
+                    <button disabled
+                        class="px-6 py-3 text-center border-2 border-gray-300 text-gray-400 rounded-lg font-semibold 
+               flex items-center justify-center gap-2 cursor-not-allowed bg-gray-50">
+                        <x-heroicon-o-document-text class="w-5 h-5 text-gray-400" />
+                        PDF Belum Tersedia
+                    </button>
+                @endif
+
             </div>
 
             {{-- Info --}}
@@ -177,17 +189,23 @@
                 <h3 class="text-xl font-bold text-[#144F5F] mb-4">Fasilitas & Benefit</h3>
                 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700">
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Sertifikat Kemnaker</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Sertifikat
+                        Kemnaker</li>
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Modul Pelatihan</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Modul
+                        Pelatihan</li>
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Lunch & Coffee Break</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Lunch & Coffee
+                        Break</li>
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Souvenir Eksklusif</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Souvenir
+                        Eksklusif</li>
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Dokumentasi Kegiatan</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Dokumentasi
+                        Kegiatan</li>
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Goodiebag & Polo Shirt</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Goodiebag &
+                        Polo Shirt</li>
                 </ul>
             </div>
         </div>

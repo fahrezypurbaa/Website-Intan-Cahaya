@@ -11,7 +11,7 @@ class Training extends Model
 
     protected $fillable = [
         'category_id', 'title', 'slug', 'description',
-        'duration', 'requirement', 'facilities', 'mode', 'image',
+        'duration', 'requirement', 'facilities', 'mode', 'image', 'brochure_path',
     ];
 
     public function category()
