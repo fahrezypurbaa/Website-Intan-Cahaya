@@ -14,7 +14,13 @@ class TrainingController extends Controller
 {
     public function index()
     {
+         $query = Training::with('category');
+
+    if ($request->filled('category_id')) {
+        $query->where('category_id', $request->category_id);
+    }
         $trainings = Training::latest()->paginate(10);
+        $categories = Category::orderBy('name')->get();
 
         return view('admin.trainings.index', compact('trainings'));
     }
