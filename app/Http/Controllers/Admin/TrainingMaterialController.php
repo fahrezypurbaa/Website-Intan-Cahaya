@@ -11,7 +11,9 @@ class TrainingMaterialController extends Controller
 {
     public function index()
     {
-        $materials = TrainingMaterial::with('training')->orderBy('group_name')->get();
+      $materials = \App\Models\TrainingMaterial::with('training')
+        ->orderBy('group_name')
+        ->paginate(10); // <--- ubah dari get() jadi paginate()
         return view('admin.materials.index', compact('materials'));
     }
 
