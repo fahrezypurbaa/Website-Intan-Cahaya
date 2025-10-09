@@ -38,6 +38,7 @@ class TrainingRundownController extends Controller
             'day' => $request->day,
             'time' => $request->time,
             'instructor' => $request->instructor,
+            'activity' => $request->activity,
         ]);
 
         return redirect()->route('admin.rundowns.index')->with('success', 'Rundown berhasil ditambahkan');
@@ -56,7 +57,6 @@ class TrainingRundownController extends Controller
             'day' => 'required|integer|min:1',
             'time' => 'required|string|max:255',
             'instructor' => 'nullable|string|max:255',
-            // materials dihapus
         ]);
 
         $rundown->update([
