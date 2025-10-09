@@ -12,7 +12,7 @@ use Intervention\Image\Laravel\Facades\Image;
 
 class TrainingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
          $query = Training::with('category');
 
