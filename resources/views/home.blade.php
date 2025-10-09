@@ -288,8 +288,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Juru Las 1" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 umum.jpg') }}"
+                                        alt="Ahli K3 umum" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -298,9 +298,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 1</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 1 dengan
-                                        standar Kemnaker RI</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Perkembangan teknologi meningkatkan efisiensi industri, tetapi juga meningkatkan risiko kecelakaan kerja.</p>
                                     <div class="flex justify-between items-end">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -327,8 +326,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Juru Las 2" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Auditor SMK3.jpg') }}"
+                                        alt="Auditor SMK3" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -337,9 +336,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 2</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 2 dengan
-                                        standar Kemnaker RI</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Auditor SMK3</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pelatihan Auditor SMK3 oleh Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -366,8 +364,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Juru Las 3" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 Spesialis PAA (Pesawat Angkat & Pesawat Angkut).jpg') }}"
+                                        alt="Ahli K3 Spesialis PAA" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -376,9 +374,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Juru Las 3</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan sertifikasi juru las tingkat 3 dengan
-                                        standar Kemnaker RI</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PAA (Pesawat Angkat & Pesawat Angkut)</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan barang.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -405,8 +402,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Overhead Crane" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 Spesialis PTP (Pesawat Tenaga Produksi).jpg') }}"
+                                        alt="Ahli K3 Spesialis PTP" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -415,9 +412,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Overhead Crane</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan operator overhead crane bersertifikat
-                                        Kemnaker RI</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PTP (Pesawat Tenaga Produksi)</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan organisasi internasional.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -444,8 +440,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Advance Financial" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 Spesialis PUBT (Pesawat Uap & Bejana Tekan).jpg') }}"
+                                        alt="Ahli K3 Spesialis PUBT" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -454,9 +450,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Advance Financial</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan keuangan tingkat lanjut dengan sertifikasi
-                                        Kemnaker RI</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PUBT (Pesawat Uap & Bejana Tekan)</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
