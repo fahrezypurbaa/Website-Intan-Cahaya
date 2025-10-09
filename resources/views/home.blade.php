@@ -374,7 +374,7 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PAA (Pesawat Angkat & Pesawat Angkut)</h3>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PAA</h3>
                                     <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan barang.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
@@ -412,7 +412,7 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PTP (Pesawat Tenaga Produksi)</h3>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PTP</h3>
                                     <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan organisasi internasional.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
@@ -450,7 +450,7 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PUBT (Pesawat Uap & Bejana Tekan)</h3>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PUBT</h3>
                                     <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
@@ -501,8 +501,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Ahli K3 Umum" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 umum bnsp.jpg') }}"
+                                        alt="Ahli K3 Umum BNSP" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -511,8 +511,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum</h3>
-                                    <p class="text-gray-600 mb-4">Sertifikasi ahli K3 umum bersertifikat BNSP</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum BNSP</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan Kesehatan Kerja (K3) penting bagi perusahaan nasional maupun internasional untuk melindungi karyawan dan meningkatkan efisiensi kerja.</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
@@ -534,8 +534,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Teknisi Listrik" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/HR Supervisor  Supervisor SDM.jpg') }}"
+                                        alt="HR Supervisor Supervisor SDM" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -544,8 +544,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Teknisi Listrik</h3>
-                                    <p class="text-gray-600 mb-4">Sertifikasi teknisi listrik bersertifikat BNSP</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Supervisor Supervisor SDM</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang HR Supervisor memainkan peran penting sebagai penghubung antara manajemen dan karyawan dalam menjalankan kebijakan dan operasional sumber daya manusia. </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
@@ -567,8 +567,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Operator Boiler" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/HR Manager  Manajer SDM.jpg') }}"
+                                        alt="HR Manager & Manajer SDM" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -577,8 +577,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Operator Boiler</h3>
-                                    <p class="text-gray-600 mb-4">Sertifikasi bersertifikat BNSP</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Manager & Manajer SDM</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Peran Human Resources (HR) Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi juga sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
@@ -623,7 +623,7 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                    <img src="{{ asset('images/Public Speaking For Managers (Indonesian & English).jpg') }}"
                                         alt="Public Speaking" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
@@ -633,8 +633,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan public speaking untuk jenjang profesional
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking For Managers</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang manajer tidak hanya dituntut untuk menguasai keterampilan teknis dan kepemimpinan, tetapi juga memiliki kemampuan komunikasi yang efektif, baik dalam bahasa Indonesia maupun bahasa Inggris.
                                     </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
@@ -657,8 +657,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Leadership" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Basic Fire Fighting.jpg') }}"
+                                        alt="Basic Fire Fighting" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -667,8 +667,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Leadership</h3>
-                                    <p class="text-gray-600 mb-4">Pengembangan kemampuan kepemimpinan</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Basic Fire Fighting</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Kebakaran merupakan salah satu jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik di lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
@@ -690,8 +690,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                                        alt="Team Building" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Cost Reduction Strategy.jpg') }}"
+                                        alt="Cost Reduction Strategy" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -700,8 +700,8 @@
                                     </div>
                                 </div>
                                 <div class="p-6">
-                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Team Building</h3>
-                                    <p class="text-gray-600 mb-4">Pelatihan membangun tim yang solid dan efektif</p>
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Cost Reduction Strategy</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Di tengah dinamika bisnis yang semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk senantiasa meningkatkan efisiensi dan efektivitas operasional</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
