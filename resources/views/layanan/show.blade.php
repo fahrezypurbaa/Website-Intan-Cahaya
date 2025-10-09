@@ -17,9 +17,13 @@
         {{-- Gambar + Materi --}}
         <div class="flex flex-col">
             @if ($training && $training->image)
-                <img src="{{ asset('storage/' . $training->image) }}"
-                    class="w-full h-64 sm:h-80 md:h-[600px] object-cover rounded-xl shadow-lg border border-gray-100 mb-6">
-            @endif
+    <div class="w-full flex justify-center items-center mb-6">
+        <img src="{{ asset('storage/' . $training->image) }}"
+            alt="{{ $training->title }}"
+            class="w-full max-h-[500px] object-contain rounded-2xl shadow-md border border-gray-200">
+    </div>
+@endif
+
 
             {{-- Rundown --}}
             <div x-data="{ openRundown: false }" class="space-y-4">

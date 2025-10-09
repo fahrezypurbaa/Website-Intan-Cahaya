@@ -45,7 +45,6 @@
                             class="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden transition transform hover:-translate-y-1 border border-gray-100 flex flex-col">
                             <div class="relative">
                                 <img src="{{ asset('storage/' . $t->image) }}" class="h-40 w-full object-cover">
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                             </div>
 
                             <div class="p-5 flex-1 flex flex-col">
