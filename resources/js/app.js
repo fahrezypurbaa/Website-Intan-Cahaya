@@ -2,7 +2,6 @@ import "./bootstrap";
 
 // DOM Ready
 document.addEventListener("DOMContentLoaded", function () {
-
     // === Hamburger Mobile Menu ===
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -13,7 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         document.addEventListener("click", (event) => {
-            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+            if (
+                !mobileMenu.contains(event.target) &&
+                !mobileMenuBtn.contains(event.target)
+            ) {
                 mobileMenu.classList.add("hidden");
             }
         });
@@ -66,14 +68,19 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.remove("text-[#73BA7D]");
 
             // Sembunyikan semua kategori
-            document.querySelectorAll(".program-category").forEach((cat) => cat.classList.add("hidden"));
+            document
+                .querySelectorAll(".program-category")
+                .forEach((cat) => cat.classList.add("hidden"));
 
             // Tampilkan kategori sesuai button
             const categoryId = this.getAttribute("data-category");
             document.getElementById(categoryId).classList.remove("hidden");
 
             // Update semua swiper
-            setTimeout(() => programSwipers.forEach(swiper => swiper.update()), 100);
+            setTimeout(
+                () => programSwipers.forEach((swiper) => swiper.update()),
+                100
+            );
         });
     });
 
@@ -99,28 +106,32 @@ document.addEventListener("DOMContentLoaded", function () {
     // === Alumni Counter ===
     const counters = document.querySelectorAll(".counter");
     if (counters.length) {
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const counter = entry.target;
-                    const target = +counter.getAttribute("data-target");
-                    let count = 0;
-                    const step = Math.ceil(target / 100);
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute("data-target");
+                        let count = 0;
+                        const step = Math.ceil(target / 100);
 
-                    const interval = setInterval(() => {
-                        count += step;
-                        if (count >= target) {
-                            count = target;
-                            clearInterval(interval);
-                            counter.innerText = target >= 1000 ? target + "+" : target;
-                        } else {
-                            counter.innerText = count;
-                        }
-                    }, 10);
-                    observer.unobserve(counter);
-                }
-            });
-        }, { threshold: 0.5 });
+                        const interval = setInterval(() => {
+                            count += step;
+                            if (count >= target) {
+                                count = target;
+                                clearInterval(interval);
+                                counter.innerText =
+                                    target >= 1000 ? target + "+" : target;
+                            } else {
+                                counter.innerText = count;
+                            }
+                        }, 10);
+                        observer.unobserve(counter);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
         counters.forEach((counter) => observer.observe(counter));
     }
@@ -130,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const galleryItems = document.querySelectorAll(".gallery-item");
 
     if (galleryButtons.length) {
-        galleryButtons.forEach(btn => {
+        galleryButtons.forEach((btn) => {
             btn.addEventListener("click", () => {
                 // reset button style
-                galleryButtons.forEach(b => {
+                galleryButtons.forEach((b) => {
                     b.classList.remove("bg-[#73BA7D]", "text-white");
                     b.classList.add("bg-gray-200");
                 });
@@ -144,51 +155,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // filter gambar
                 const category = btn.getAttribute("data-category");
-                galleryItems.forEach(item => {
-                    item.style.display = (category === "all" || item.dataset.category === category) ? "block" : "none";
+                galleryItems.forEach((item) => {
+                    item.style.display =
+                        category === "all" || item.dataset.category === category
+                            ? "block"
+                            : "none";
                 });
             });
         });
 
         // awal → tampilkan semua
-        galleryItems.forEach(item => item.style.display = "block");
+        galleryItems.forEach((item) => (item.style.display = "block"));
     }
 
     // === Gallery Slider Custom ===
     const images = [
-    "/images/galeri/pict1.jpg",
-    "/images/galeri/pict2.jpg",
-    "/images/galeri/pict3.jpg",
-    "/images/galeri/pict4.jpg",
-    "/images/galeri/pict5.jpg",
-    "/images/galeri/pict6.jpg",
-    "/images/galeri/pict7.jpg",
-    "/images/galeri/pict8.jpg"
-];
+        "/images/galeri/pict1.jpg",
+        "/images/galeri/pict2.jpg",
+        "/images/galeri/pict3.jpg",
+        "/images/galeri/pict4.jpg",
+        "/images/galeri/pict5.jpg",
+        "/images/galeri/pict6.jpg",
+        "/images/galeri/pict7.jpg",
+        "/images/galeri/pict8.jpg",
+    ];
 
     let currentIndex = 0;
-    const galleryImage = document.getElementById('galleryImage');
-    const indicatorsContainer = document.getElementById('indicators');
+    const galleryImage = document.getElementById("galleryImage");
+    const indicatorsContainer = document.getElementById("indicators");
     if (galleryImage && indicatorsContainer) {
-        const indicatorTemplate = document.getElementById('indicatorTemplate').content;
+        const indicatorTemplate =
+            document.getElementById("indicatorTemplate").content;
 
         // generate indikator
         images.forEach((_, i) => {
             const indicator = indicatorTemplate.cloneNode(true);
-            indicator.querySelector('div').addEventListener('click', () => {
+            indicator.querySelector("div").addEventListener("click", () => {
                 currentIndex = i;
                 showImage(currentIndex);
             });
             indicatorsContainer.appendChild(indicator);
         });
 
-        const indicators = indicatorsContainer.querySelectorAll('div');
+        const indicators = indicatorsContainer.querySelectorAll("div");
 
         function showImage(index) {
             galleryImage.src = images[index];
             indicators.forEach((dot, i) => {
-                dot.classList.toggle('bg-gray-800', i === index);
-                dot.classList.toggle('bg-gray-400', i !== index);
+                dot.classList.toggle("bg-gray-800", i === index);
+                dot.classList.toggle("bg-gray-400", i !== index);
             });
         }
 
@@ -212,7 +227,6 @@ document.addEventListener("DOMContentLoaded", function () {
         window.prevImage = prevImage;
         window.nextImage = nextImage;
     }
-
 });
 
 // === Gallery Filter ===
@@ -220,11 +234,11 @@ const galleryButtons = document.querySelectorAll("#galleryFilters button");
 const galleryItems = document.querySelectorAll(".gallery-item");
 
 if (galleryButtons.length) {
-    galleryButtons.forEach(btn => {
+    galleryButtons.forEach((btn) => {
         btn.addEventListener("click", () => {
             const category = btn.getAttribute("data-category");
 
-            galleryItems.forEach(item => {
+            galleryItems.forEach((item) => {
                 item.style.display =
                     category === "all" || item.dataset.category === category
                         ? "block"
@@ -232,7 +246,7 @@ if (galleryButtons.length) {
             });
 
             // reset style button
-            galleryButtons.forEach(b => {
+            galleryButtons.forEach((b) => {
                 b.classList.remove("bg-[#73BA7D]", "text-white");
                 b.classList.add("bg-gray-200");
             });
@@ -249,7 +263,7 @@ const docImg = document.getElementById("docModalImg");
 const closeDoc = document.getElementById("closeDocModal");
 
 if (docModal && docImg && closeDoc) {
-    document.querySelectorAll(".doc-preview").forEach(img => {
+    document.querySelectorAll(".doc-preview").forEach((img) => {
         img.addEventListener("click", () => {
             docImg.src = img.dataset.image;
             docModal.classList.remove("hidden");
@@ -271,7 +285,7 @@ const modalImg = document.getElementById("modalImage");
 const closeModal = document.getElementById("closeModal");
 
 if (modal && modalImg && closeModal) {
-    document.querySelectorAll(".gallery-item img").forEach(img => {
+    document.querySelectorAll(".gallery-item img").forEach((img) => {
         img.addEventListener("click", () => {
             modal.classList.remove("hidden");
             modalImg.src = img.src;
@@ -307,54 +321,59 @@ document.addEventListener("DOMContentLoaded", () => {
 function slugify(text) {
     return text
         .toString()
-        .normalize('NFD')                // ubah é -> e
-        .replace(/[\u0300-\u036f]/g, '') // hapus karakter aksen
+        .normalize("NFD") // ubah é -> e
+        .replace(/[\u0300-\u036f]/g, "") // hapus karakter aksen
         .toLowerCase()
         .trim()
-        .replace(/[^a-z0-9\s-]/g, '')    // hapus simbol
-        .replace(/\s+/g, '-')            // spasi -> -
-        .replace(/-+/g, '-');            // hapus double -
+        .replace(/[^a-z0-9\s-]/g, "") // hapus simbol
+        .replace(/\s+/g, "-") // spasi -> -
+        .replace(/-+/g, "-"); // hapus double -
 }
 
 // Auto isi slug saat mengetik judul
-document.addEventListener('DOMContentLoaded', () => {
-    let titleInput = document.getElementById('title');
-    let slugInput  = document.getElementById('slug');
+document.addEventListener("DOMContentLoaded", () => {
+    let titleInput = document.getElementById("title");
+    let slugInput = document.getElementById("slug");
 
     if (titleInput && slugInput) {
-        titleInput.addEventListener('keyup', function () {
+        titleInput.addEventListener("keyup", function () {
             slugInput.value = slugify(this.value);
         });
     }
 });
 
 // Registrasi peserta - Pilih Kelas
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
     // === Toggle field perusahaan ===
-    const participantSelect = document.getElementById('participant_type');
-    const companyFields = document.getElementById('company_fields');
-    
+    const participantSelect = document.getElementById("participant_type");
+    const companyFields = document.getElementById("company_fields");
+
     if (participantSelect && companyFields) {
-        participantSelect.addEventListener('change', () => {
-            companyFields.classList.toggle('hidden', participantSelect.value !== 'company');
+        participantSelect.addEventListener("change", () => {
+            companyFields.classList.toggle(
+                "hidden",
+                participantSelect.value !== "company"
+            );
         });
     }
 
     // === Filter pelatihan berdasarkan kategori ===
-    const categorySelect = document.getElementById('category_id');
-    const trainingSelect = document.getElementById('training_id');
-    
+    const categorySelect = document.getElementById("category_id");
+    const trainingSelect = document.getElementById("training_id");
+
     if (categorySelect && trainingSelect) {
-        categorySelect.addEventListener('change', () => {
+        categorySelect.addEventListener("change", () => {
             const selectedCategory = categorySelect.value;
 
             for (let option of trainingSelect.options) {
-                if (option.value === '') continue;
-                option.style.display = (option.dataset.category === selectedCategory) ? 'block' : 'none';
+                if (option.value === "") continue;
+                option.style.display =
+                    option.dataset.category === selectedCategory
+                        ? "block"
+                        : "none";
             }
 
-            trainingSelect.value = '';
+            trainingSelect.value = "";
         });
     }
 });
-
