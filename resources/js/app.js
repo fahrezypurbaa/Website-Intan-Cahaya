@@ -377,3 +377,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('docModal');
+    const modalImg = document.getElementById('docModalImg');
+    const closeBtn = document.getElementById('closeDocModal');
+
+    if (!modal || !modalImg || !closeBtn) return;
+
+    document.body.addEventListener('click', e => {
+        const btn = e.target.closest('.lihat-gambar');
+        if (btn) {
+            const imageSrc = btn.getAttribute('data-image');
+            modalImg.src = imageSrc;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        if (e.target === closeBtn || e.target === modal) {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            modalImg.src = '';
+            document.body.style.overflow = '';
+        }
+    });
+});
