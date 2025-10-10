@@ -17,6 +17,8 @@
             <th class="px-4 py-3">Tipe Peserta</th>
             <th class="px-4 py-3">Perusahaan</th>
             <th class="px-4 py-3">Jabatan</th>
+            <th class="px-4 py-3">Nama Pelatihan</th>
+            <th class="px-4 py-3">Jenis Pelatihan</th>
             <th class="px-4 py-3">Tanggal Daftar</th>
             <th class="px-4 py-3">Waktu Daftar</th>
         </x-slot>
@@ -38,6 +40,12 @@
                         {{ $reg->participant_type === 'company' ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-700' }}">
                         {{ ucfirst($reg->participant_type ?? '-') }}
                     </span>
+                </td>
+                <td class="px-4 py-3 text-gray-700">
+                    {{ $reg->training->title ?? '-' }}
+                </td>
+                <td class="px-4 py-3 text-gray-700">
+                    {{ $reg->training->category->name ?? '-' }}
                 </td>
                 <td class="px-4 py-3 text-gray-700">{{ $reg->company_name ?? '-' }}</td>
                 <td class="px-4 py-3 text-gray-700">{{ $reg->position ?? '-' }}</td>

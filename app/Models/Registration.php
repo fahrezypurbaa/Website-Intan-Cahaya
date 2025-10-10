@@ -9,10 +9,26 @@ class Registration extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name',
+    protected $fillable = [
+        'name',
         'email',
         'phone',
         'participant_type',
         'company_name',
-        'position', ];
+        'position',
+        'category_id',
+        'training_id',
+    ];
+
+    // 🔹 Relasi ke tabel trainings
+    public function training()
+    {
+        return $this->belongsTo(Training::class);
+    }
+
+    // 🔹 Relasi ke tabel categories
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -328,3 +328,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Registrasi peserta - Pilih Kelas
+document.addEventListener('DOMContentLoaded', () => {
+    // === Toggle field perusahaan ===
+    const participantSelect = document.getElementById('participant_type');
+    const companyFields = document.getElementById('company_fields');
+    
+    if (participantSelect && companyFields) {
+        participantSelect.addEventListener('change', () => {
+            companyFields.classList.toggle('hidden', participantSelect.value !== 'company');
+        });
+    }
+
+    // === Filter pelatihan berdasarkan kategori ===
+    const categorySelect = document.getElementById('category_id');
+    const trainingSelect = document.getElementById('training_id');
+    
+    if (categorySelect && trainingSelect) {
+        categorySelect.addEventListener('change', () => {
+            const selectedCategory = categorySelect.value;
+
+            for (let option of trainingSelect.options) {
+                if (option.value === '') continue;
+                option.style.display = (option.dataset.category === selectedCategory) ? 'block' : 'none';
+            }
+
+            trainingSelect.value = '';
+        });
+    }
+});
+

@@ -16,24 +16,63 @@
         <form method="POST" action="{{ route('registration.store') }}" class="space-y-6" id="registrationForm">
             @csrf
 
+            {{-- Nama --}}
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap</label>
                 <input type="text" name="name" value="{{ old('name') }}" 
                     class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm" required>
+                @error('name') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
 
+            {{-- Email --}}
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
                 <input type="email" name="email" value="{{ old('email') }}"
                     class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm">
+                @error('email') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
 
+            {{-- Phone --}}
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">No. HP / WA</label>
                 <input type="text" name="phone" value="{{ old('phone') }}"
                     class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm" required>
+                @error('phone') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
 
+            {{-- Kategori Pelatihan --}}
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori Pelatihan</label>
+                <select name="category_id" id="category_id"
+                    class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm" required>
+                    <option value="">-- Pilih Kategori --</option>
+                    @foreach($categories as $cat)
+                        <option value="{{ $cat->id }}" {{ old('category_id') == $cat->id ? 'selected' : '' }}>
+                            {{ $cat->name }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('category_id') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+
+            {{-- Nama Pelatihan --}}
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Pelatihan</label>
+                <select name="training_id" id="training_id"
+                    class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm" required>
+                    <option value="">-- Pilih Pelatihan --</option>
+                    @foreach($trainings as $train)
+                        <option value="{{ $train->id }}" 
+                                data-category="{{ $train->category_id }}"
+                                {{ old('training_id') == $train->id ? 'selected' : '' }}>
+                            {{ $train->title }}
+                        </option>
+                    @endforeach
+                </select>
+                @error('training_id') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
+            </div>
+
+            {{-- Jenis Peserta --}}
             <div>
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Jenis Peserta</label>
                 <select name="participant_type" id="participant_type" 
@@ -42,8 +81,10 @@
                     <option value="personal" {{ old('participant_type') == 'personal' ? 'selected' : '' }}>Personal</option>
                     <option value="company" {{ old('participant_type') == 'company' ? 'selected' : '' }}>Perusahaan</option>
                 </select>
+                @error('participant_type') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
             </div>
 
+            {{-- Data Perusahaan --}}
             <div id="company_fields" class="space-y-4 {{ old('participant_type') == 'company' ? '' : 'hidden' }}">
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Perusahaan</label>
@@ -57,6 +98,7 @@
                 </div>
             </div>
 
+            {{-- Tombol Submit --}}
             <button type="submit" 
                 class="w-full py-3 bg-[#73BA7D] hover:bg-[#144F5F] text-white font-semibold rounded-lg shadow-md transition duration-200">
                 Daftar Sekarang
