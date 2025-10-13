@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest()->paginate(10);
+        $articles = Article::latest()->get();
         return view('admin.articles.index', compact('articles'));
     }
 
@@ -36,14 +36,22 @@ class ArticleController extends Controller
             'excerpt'   => 'nullable|string',
             'content'   => 'required',
             'thumbnail' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'author_name' => 'nullable|string|max:100',
+            'author_bio'  => 'nullable|string|max:500',
+            'meta_title'  => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
         ]);
 
-        $article = new Article();
-        $article->title   = $validated['title'];
-        $article->slug    = Str::slug($validated['title']);
-        $article->excerpt = $validated['excerpt'] ?? Str::limit(strip_tags($validated['content']), 150);
-        $article->content = $validated['content'];
+        $article = new Article($validated);
+        $article->slug = Str::slug($validated['title']);
+        $article->views = 0;
 
+        // Generate excerpt jika kosong
+        if (empty($validated['excerpt'])) {
+            $article->excerpt = Str::limit(strip_tags($validated['content']), 150);
+        }
+
+        // Upload thumbnail
         if ($request->hasFile('thumbnail')) {
             $path = $request->file('thumbnail')->store('articles', 'public');
             $article->thumbnail = $path;
@@ -72,13 +80,21 @@ class ArticleController extends Controller
             'excerpt'   => 'nullable|string',
             'content'   => 'required',
             'thumbnail' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
+            'author_name' => 'nullable|string|max:100',
+            'author_bio'  => 'nullable|string|max:500',
+            'meta_title'  => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:255',
         ]);
 
-        $article->title   = $validated['title'];
-        $article->slug    = Str::slug($validated['title']);
-        $article->excerpt = $validated['excerpt'] ?? Str::limit(strip_tags($validated['content']), 150);
-        $article->content = $validated['content'];
+        $article->fill($validated);
+        $article->slug = Str::slug($validated['title']);
 
+        // Excerpt otomatis jika kosong
+        if (empty($validated['excerpt'])) {
+            $article->excerpt = Str::limit(strip_tags($validated['content']), 150);
+        }
+
+        // Upload thumbnail baru
         if ($request->hasFile('thumbnail')) {
             $path = $request->file('thumbnail')->store('articles', 'public');
             $article->thumbnail = $path;

@@ -403,3 +403,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// Preview Thumbnail Sebelum Upload (Artikel)
+document.addEventListener('DOMContentLoaded', function () {
+    const fileInput = document.getElementById('thumbnail');
+    const previewContainer = document.getElementById('preview-container');
+    const previewImage = document.getElementById('preview-thumbnail');
+
+    if (fileInput) {
+        fileInput.addEventListener('change', function (e) {
+            const file = e.target.files[0];
+            if (!file) {
+                previewContainer?.classList.add('hidden');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                if (previewImage) {
+                    previewImage.src = event.target.result;
+                    previewContainer?.classList.remove('hidden');
+                }
+            };
+            reader.readAsDataURL(file);
+        });
+    }
+});
