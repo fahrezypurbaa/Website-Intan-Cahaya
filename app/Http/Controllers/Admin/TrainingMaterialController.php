@@ -33,15 +33,25 @@ class TrainingMaterialController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'training_id' => 'required|exists:trainings,id',
-            'group_name'  => 'required|string',
-            'title'       => 'required|string|max:255',
-            'jp'          => 'required|integer|min:1',
+        'training_id' => 'required|exists:trainings,id',
+        'group_name' => 'required|string',
+        'materials' => 'required|array|min:1',
+        'materials.*.title' => 'required|string|max:255',
+        'materials.*.jp' => 'required|numeric|min:1',
+    ]);
+
+    foreach ($request->materials as $material) {
+        \App\Models\TrainingMaterial::create([
+            'training_id' => $request->training_id,
+            'group_name'  => $request->group_name,
+            'title'       => $material['title'],
+            'jp'          => $material['jp'],
         ]);
+    }
 
-        TrainingMaterial::create($request->all());
-
-        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil ditambahkan');
+    return redirect()
+        ->route('admin.materials.index')
+        ->with('success', '✅ Semua materi berhasil ditambahkan untuk kelompok ' . $request->group_name);
     }
 
     public function edit(TrainingMaterial $material)
