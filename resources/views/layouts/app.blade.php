@@ -58,7 +58,7 @@
 
             <div class="space-y-4">
                 {{-- Admin A --}}
-                <a href="https://wa.me/6281234567890?text=Halo%20Admin%20A,%20saya%20butuh%20informasi" target="_blank"
+                <a href="https://wa.me/6282146134846?text=Halo%20Admin%20A,%20saya%20butuh%20informasi" target="_blank"
                     class="flex items-center gap-3 p-3 rounded-lg border hover:bg-green-50 transition">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-7 h-7"
                         alt="WA">
@@ -69,7 +69,7 @@
                 </a>
 
                 {{-- Admin B --}}
-                <a href="https://wa.me/6289876543210?text=Halo%20Admin%20B,%20saya%20butuh%20informasi" target="_blank"
+                {{-- <a href="https://wa.me/6289876543210?text=Halo%20Admin%20B,%20saya%20butuh%20informasi" target="_blank"
                     class="flex items-center gap-3 p-3 rounded-lg border hover:bg-green-50 transition">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-7 h-7"
                         alt="WA">
@@ -77,7 +77,7 @@
                         <p class="font-medium text-gray-800">Admin B</p>
                         <p class="text-xs text-gray-500">Siap membantu kebutuhan Anda</p>
                     </div>
-                </a>
+                </a> --}}
             </div>
         </div>
     </div>
