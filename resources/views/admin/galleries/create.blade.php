@@ -8,7 +8,7 @@
         action="{{ route('admin.galleries.store') }}"
         method="POST"
         enctype="multipart/form-data"
-        submit="✅ Simpan Foto"
+        submit="Simpan Foto Berhasil !"
         back="{{ route('admin.galleries.index') }}"
     >
         {{-- Judul --}}

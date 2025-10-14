@@ -14,6 +14,7 @@ class TrainingRundownController extends Controller
         $rundowns = TrainingRundown::with('training')
             ->orderBy('day')
             ->paginate(10);
+
         return view('admin.rundowns.index', compact('rundowns'));
     }
 
@@ -27,21 +28,23 @@ class TrainingRundownController extends Controller
     {
         $request->validate([
             'training_id' => 'required|exists:trainings,id',
-            'day' => 'required|integer|min:1',
-            'time' => 'required|string|max:255',
-            'instructor' => 'nullable|string|max:255',
-            // materials dihapus
+            'rundowns' => 'required|array|min:1',
+            'rundowns.*.day' => 'required|string|max:255',
+            'rundowns.*.time' => 'required|string|max:255',
+            'rundowns.*.instructor' => 'nullable|string|max:255',
         ]);
 
-        TrainingRundown::create([
-            'training_id' => $request->training_id,
-            'day' => $request->day,
-            'time' => $request->time,
-            'instructor' => $request->instructor,
-            'activity' => $request->activity,
-        ]);
+        foreach ($request->rundowns as $rundown) {
+            TrainingRundown::create([
+                'training_id' => $request->training_id,
+                'day' => $rundown['day'],
+                'time' => $rundown['time'],
+                'instructor' => $rundown['instructor'],
+            ]);
+        }
 
-        return redirect()->route('admin.rundowns.index')->with('success', 'Rundown berhasil ditambahkan');
+        return redirect()->route('admin.rundowns.index')
+            ->with('success', 'Semua rundown berhasil ditambahkan ✅');
     }
 
     public function edit(TrainingRundown $rundown)
@@ -54,7 +57,7 @@ class TrainingRundownController extends Controller
     {
         $request->validate([
             'training_id' => 'required|exists:trainings,id',
-            'day' => 'required|integer|min:1',
+            'day' => 'required|string|max:255',
             'time' => 'required|string|max:255',
             'instructor' => 'nullable|string|max:255',
         ]);
@@ -66,12 +69,15 @@ class TrainingRundownController extends Controller
             'instructor' => $request->instructor,
         ]);
 
-        return redirect()->route('admin.rundowns.index')->with('success', 'Rundown berhasil diperbarui');
+        return redirect()->route('admin.rundowns.index')
+            ->with('success', 'Rundown berhasil diperbarui ✅');
     }
 
     public function destroy(TrainingRundown $rundown)
     {
         $rundown->delete();
-        return redirect()->route('admin.rundowns.index')->with('success', 'Rundown berhasil dihapus');
+
+        return redirect()->route('admin.rundowns.index')
+            ->with('success', 'Rundown berhasil dihapus 🗑️');
     }
 }
