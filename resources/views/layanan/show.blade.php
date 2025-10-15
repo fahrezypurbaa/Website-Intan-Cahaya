@@ -17,12 +17,11 @@
         {{-- Gambar + Materi --}}
         <div class="flex flex-col">
             @if ($training && $training->image)
-    <div class="w-full flex justify-center items-center mb-6">
-        <img src="{{ asset('storage/' . $training->image) }}"
-            alt="{{ $training->title }}"
-            class="w-full max-h-[500px] object-contain rounded-2xl shadow-md border border-gray-200">
-    </div>
-@endif
+                <div class="w-full flex justify-center items-center mb-6">
+                    <img src="{{ asset('storage/' . $training->image) }}" alt="{{ $training->title }}"
+                        class="w-full max-h-[500px] object-contain rounded-2xl shadow-md border border-gray-200">
+                </div>
+            @endif
 
 
             {{-- Rundown --}}
@@ -128,20 +127,21 @@
 
                 {{-- PDF --}}
                 @if ($training->brochure_path)
-                    <a href="{{ asset('storage/' . $training->brochure_path) }}" download
+                    <a href="{{ route('trainings.brochure', $training->id) }}"
                         class="px-6 py-3 text-center border-2 border-[#144F5F] text-[#144F5F] rounded-lg font-semibold 
-          hover:bg-gradient-to-r hover:from-[#144F5F] hover:to-[#73BA7D] hover:text-white transition flex items-center justify-center gap-2">
+        hover:bg-gradient-to-r hover:from-[#144F5F] hover:to-[#73BA7D] hover:text-white transition flex items-center justify-center gap-2">
                         <x-heroicon-o-document-text class="w-5 h-5" />
                         Download PDF
                     </a>
                 @else
                     <button disabled
                         class="px-6 py-3 text-center border-2 border-gray-300 text-gray-400 rounded-lg font-semibold 
-               flex items-center justify-center gap-2 cursor-not-allowed bg-gray-50">
+        flex items-center justify-center gap-2 cursor-not-allowed bg-gray-50">
                         <x-heroicon-o-document-text class="w-5 h-5 text-gray-400" />
                         PDF Belum Tersedia
                     </button>
                 @endif
+
 
             </div>
 

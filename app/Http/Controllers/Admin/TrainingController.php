@@ -14,15 +14,16 @@ class TrainingController extends Controller
 {
     public function index(Request $request)
     {
-         $query = Training::with('category');
+        $query = Training::with('category');
 
-    if ($request->filled('category_id')) {
-        $query->where('category_id', $request->category_id);
-    }
-        $trainings = Training::latest()->paginate(10);
+        if ($request->filled('category_id')) {
+            $query->where('category_id', $request->category_id);
+        }
+
+        $trainings = $query->latest()->paginate(10);
         $categories = Category::orderBy('name')->get();
 
-        return view('admin.trainings.index', compact('trainings'));
+        return view('admin.trainings.index', compact('trainings', 'categories'));
     }
 
     public function create()
@@ -42,55 +43,41 @@ class TrainingController extends Controller
             'requirement' => 'nullable|string',
             'facilities' => 'nullable|string',
             'mode' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,jpg,png|max:5120', // max 5MB
+            'image' => 'nullable|image|mimes:jpeg,jpg,png|max:5120',
+            'pdf' => 'nullable|mimes:pdf|max:10240',
         ]);
 
-        // generate slug dari title
+        // Buat slug dari title
         $data['slug'] = Str::slug($request->title);
 
+        // Simpan data awal
+        $training = Training::create($data);
+
+        // ===== Simpan gambar (jika ada) =====
         if ($request->hasFile('image')) {
             $img = $request->file('image');
             $filename = time().'_'.uniqid().'.'.$img->getClientOriginalExtension();
             $path = storage_path('app/public/trainings/'.$filename);
 
-            // Pastikan folder exists
-            if (! file_exists(storage_path('app/public/trainings'))) {
-                mkdir(storage_path('app/public/trainings'), 0755, true);
+            if (! file_exists(dirname($path))) {
+                mkdir(dirname($path), 0755, true);
             }
 
-            // Baca dan resize gambar dengan scale (v3 syntax)
             $image = Image::read($img->getRealPath());
-
-            // Scale ke max width 1200px (mempertahankan aspect ratio)
             if ($image->width() > 1200) {
                 $image->scale(width: 1200);
             }
-
-            // Save dengan quality 85%
             $image->save($path, quality: 85);
 
-            $data['image'] = 'trainings/'.$filename;
+            $training->update(['image' => 'trainings/'.$filename]);
         }
 
+        // ===== Simpan file PDF brosur (jika ada) =====
         if ($request->hasFile('pdf')) {
-    // Pastikan nama folder pakai slug (bukan nama asli)
-    $folder = 'brosur/' . Str::slug($training->name, '-');
-
-    // Simpan file ke disk 'public'
-    $path = $request->file('pdf')->storeAs(
-        $folder,
-        'brosur.pdf',
-        'public'
-    );
-
-    $training->brochure_path = $folder . '/brosur.pdf';
-    $training->save();
-}
-
-
-        $training->save();
-
-        Training::create($data);
+            $folder = 'brosur/'.$training->slug;
+            $request->file('pdf')->storeAs('public/'.$folder, 'brosur.pdf');
+            $training->update(['brochure_path' => $folder.'/brosur.pdf']);
+        }
 
         return redirect()->route('admin.trainings.index')->with('success', 'Training berhasil ditambahkan');
     }
@@ -112,11 +99,13 @@ class TrainingController extends Controller
             'requirement' => 'nullable|string',
             'facilities' => 'nullable|string',
             'mode' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,jpg,png|max:5120', // max 5MB
+            'image' => 'nullable|image|mimes:jpeg,jpg,png|max:5120',
+            'pdf' => 'nullable|mimes:pdf|max:10240',
         ]);
 
         $data['slug'] = Str::slug($request->title);
 
+        // ===== Update gambar =====
         if ($request->hasFile('image')) {
             $img = $request->file('image');
 
@@ -128,41 +117,29 @@ class TrainingController extends Controller
             $filename = time().'_'.uniqid().'.'.$img->getClientOriginalExtension();
             $path = storage_path('app/public/trainings/'.$filename);
 
-            // Pastikan folder exists
-            if (! file_exists(storage_path('app/public/trainings'))) {
-                mkdir(storage_path('app/public/trainings'), 0755, true);
+            if (! file_exists(dirname($path))) {
+                mkdir(dirname($path), 0755, true);
             }
 
-            // Baca dan resize gambar dengan scale (v3 syntax)
             $image = Image::read($img->getRealPath());
-
-            // Scale ke max width 1200px (mempertahankan aspect ratio)
             if ($image->width() > 1200) {
                 $image->scale(width: 1200);
             }
-
-            // Save dengan quality 85%
             $image->save($path, quality: 85);
 
             $data['image'] = 'trainings/'.$filename;
         }
 
-        // Cek apakah ada file PDF baru diupload
+        // ===== Update PDF brosur (jika ada) =====
         if ($request->hasFile('pdf')) {
-            // Hapus file lama kalau ada
-            if ($training->brochure_path && Storage::exists('public/'.$training->brochure_path)) {
-                Storage::delete('public/'.$training->brochure_path);
+            // Hapus file lama jika ada
+            if ($training->brochure_path && Storage::disk('public')->exists($training->brochure_path)) {
+                Storage::disk('public')->delete($training->brochure_path);
             }
 
-            // Buat folder berdasarkan slug training
             $folder = 'brosur/'.$training->slug;
-
-            // Simpan file baru
-            $path = $request->file('pdf')->storeAs('public/'.$folder, 'brosur.pdf');
-
-            // Simpan path baru ke database
-            $training->brochure_path = $folder.'/brosur.pdf';
-            $training->save();
+            $request->file('pdf')->storeAs('public/'.$folder, 'brosur.pdf');
+            $data['brochure_path'] = $folder.'/brosur.pdf';
         }
 
         $training->update($data);
@@ -177,8 +154,28 @@ class TrainingController extends Controller
             Storage::disk('public')->delete($training->image);
         }
 
+        // Hapus brosur jika ada
+        if ($training->brochure_path && Storage::disk('public')->exists($training->brochure_path)) {
+            Storage::disk('public')->delete($training->brochure_path);
+        }
+
         $training->delete();
 
         return redirect()->route('admin.trainings.index')->with('success', 'Training berhasil dihapus');
+    }
+
+    // ===== Tambahan: download brosur PDF =====
+    public function downloadBrochure(Training $training)
+    {
+        if (! $training->brochure_path || ! Storage::disk('public')->exists($training->brochure_path)) {
+            abort(404, 'Brosur tidak ditemukan');
+        }
+
+        $path = Storage::disk('public')->path($training->brochure_path);
+
+        return response()->download($path, basename($path), [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="'.basename($path).'"',
+        ]);
     }
 }
