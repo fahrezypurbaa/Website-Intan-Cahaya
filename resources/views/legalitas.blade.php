@@ -26,19 +26,22 @@
                 $legalitas = [
                     [
                         'title' => 'Nomor Induk Berusaha (NIB)',
-                        'desc' => 'Dokumen resmi identitas pelaku usaha yang diterbitkan oleh OSS (Online Single Submission).',
+                        'desc' =>
+                            'Dokumen resmi identitas pelaku usaha yang diterbitkan oleh OSS (Online Single Submission).',
                         'file' => 'files/nib.pdf',
                         'image' => 'images/nib.jpeg',
                     ],
                     [
                         'title' => 'Surat Keterangan Domisili Perusahaan (SKDP)',
-                        'desc' => 'Surat resmi dari Pemerintah Desa Trihanggo yang menyatakan alamat domisili perusahaan.',
+                        'desc' =>
+                            'Surat resmi dari Pemerintah Desa Trihanggo yang menyatakan alamat domisili perusahaan.',
                         'file' => 'files/domisili.pdf',
                         'image' => 'images/domisili.jpeg',
                     ],
                     [
                         'title' => 'Rekening Bank Perusahaan',
-                        'desc' => 'Bukti kepemilikan rekening perusahaan atas nama PT Intan Cahaya Mandiri di Bank Mandiri.',
+                        'desc' =>
+                            'Bukti kepemilikan rekening perusahaan atas nama PT Intan Cahaya Mandiri di Bank Mandiri.',
                         'file' => 'files/rekening.pdf',
                         'image' => 'images/rekening.jpeg',
                     ],
@@ -50,7 +53,8 @@
                     ],
                     [
                         'title' => 'Pengesahan Perubahan Anggaran Dasar – Kemenkumham',
-                        'desc' => 'Surat dari Kemenkumham tentang pengesahan perubahan anggaran dasar PT Intan Cahaya Mandiri.',
+                        'desc' =>
+                            'Surat dari Kemenkumham tentang pengesahan perubahan anggaran dasar PT Intan Cahaya Mandiri.',
                         'file' => 'files/kemenkumham.pdf',
                         'image' => 'images/kemenkumham.jpeg',
                     ],
@@ -60,8 +64,7 @@
             @foreach ($legalitas as $doc)
                 <div class="bg-white shadow rounded-xl overflow-hidden hover:shadow-lg transition">
                     <div class="relative">
-                        <img src="{{ asset($doc['image']) }}" alt="{{ $doc['title'] }}"
-                            class="h-48 w-full object-cover">
+                        <img src="{{ asset($doc['image']) }}" alt="{{ $doc['title'] }}" class="h-48 w-full object-cover">
                     </div>
 
                     <div class="p-4">
@@ -81,8 +84,7 @@
     </div>
 
     {{-- Modal Preview Foto --}}
-    <div id="docModal"
-        class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <div id="docModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
         <button id="closeDocModal" class="absolute top-5 right-5 text-white text-3xl">&times;</button>
         <img id="docModalImg" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg">
     </div>
