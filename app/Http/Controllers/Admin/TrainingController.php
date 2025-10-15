@@ -73,19 +73,20 @@ class TrainingController extends Controller
         }
 
         if ($request->hasFile('pdf')) {
-            // Nama folder berdasarkan slug training
-            $folder = 'brosur/'.$training->slug;
+    // Pastikan nama folder pakai slug (bukan nama asli)
+    $folder = 'brosur/' . Str::slug($training->name, '-');
 
-            // Simpan file dengan nama brosur.pdf
-            $path = $request->file('pdf')->storeAs(
-                'public/'.$folder,
-                'brosur.pdf'
-            );
+    // Simpan file ke disk 'public'
+    $path = $request->file('pdf')->storeAs(
+        $folder,
+        'brosur.pdf',
+        'public'
+    );
 
-            // Simpan path ke database (tanpa 'public/')
-            $training->brochure_path = $folder.'/brosur.pdf';
-            $training->save();
-        }
+    $training->brochure_path = $folder . '/brosur.pdf';
+    $training->save();
+}
+
 
         $training->save();
 
