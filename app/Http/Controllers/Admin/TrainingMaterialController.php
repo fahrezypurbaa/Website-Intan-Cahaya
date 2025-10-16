@@ -37,7 +37,7 @@ class TrainingMaterialController extends Controller
         'group_name' => 'required|string',
         'materials' => 'required|array|min:1',
         'materials.*.title' => 'required|string|max:255',
-        'materials.*.jp' => 'required|numeric|min:1',
+        'materials.*.jp' => 'nullable|numeric|min:0',
     ]);
 
     foreach ($request->materials as $material) {
@@ -73,7 +73,7 @@ class TrainingMaterialController extends Controller
             'training_id' => 'required|exists:trainings,id',
             'group_name'  => 'required|string',
             'title'       => 'required|string|max:255',
-            'jp'          => 'required|integer|min:1',
+            'jp'          => 'nullable|numeric|min:0',
         ]);
 
         $material->update($request->all());

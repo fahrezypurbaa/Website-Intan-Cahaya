@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-span-3">
                         <input type="number" x-model="row.jp" :name="`materials[${index}][jp]`" placeholder="JP"
-                            class="w-full border p-2 rounded" required>
+                            class="w-full border p-2 rounded">
                     </div>
                     <div class="col-span-1 flex items-center justify-center">
                         <button type="button" @click="rows.splice(index, 1)" class="text-red-600 hover:underline">
