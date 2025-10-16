@@ -21,6 +21,7 @@ class TrainingRundownController extends Controller
     public function create()
     {
         $trainings = Training::all();
+
         return view('admin.rundowns.create', compact('trainings'));
     }
 
@@ -50,6 +51,7 @@ class TrainingRundownController extends Controller
     public function edit(TrainingRundown $rundown)
     {
         $trainings = Training::all();
+
         return view('admin.rundowns.edit', compact('rundown', 'trainings'));
     }
 
