@@ -1,21 +1,30 @@
 <?php
 
-use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
-use App\Http\Controllers\Admin\ContactAdminController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
-use App\Http\Controllers\Admin\RegistrationAdminController;
-use App\Http\Controllers\Admin\TrainingController;
-use App\Http\Controllers\Admin\TrainingMaterialController;
-use App\Http\Controllers\Admin\TrainingRundownController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\GalleryPublicController;
-use App\Http\Controllers\LayananController;
-use App\Http\Controllers\LegalitasController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
+use App\Services\TelegramService;
+
+// Frontend Controllers
+use App\Http\Controllers\{
+    ArticleController,
+    ContactController,
+    GalleryPublicController,
+    LayananController,
+    LegalitasController,
+    ProfileController,
+    RegistrationController
+};
+
+// Admin Controllers
+use App\Http\Controllers\Admin\{
+    ArticleController as AdminArticleController,
+    ContactAdminController,
+    DashboardController,
+    GalleryController as AdminGalleryController,
+    RegistrationAdminController,
+    TrainingController,
+    TrainingMaterialController,
+    TrainingRundownController
+};
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +33,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Home
-Route::get('/', fn () => view('home'))->name('home');
+Route::view('/', 'home')->name('home');
 
 // Tentang Perusahaan
 Route::view('/tentang-perusahaan', 'tentang-perusahaan')->name('tentang.perusahaan');
@@ -36,7 +45,7 @@ Route::post('/hubungi-kami', [ContactController::class, 'store'])->name('contact
 // Legalitas
 Route::get('/legalitas', [LegalitasController::class, 'index'])->name('legalitas.index');
 
-// Galeri Public
+// Galeri Publik
 Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri');
 
 // Layanan
@@ -55,17 +64,39 @@ Route::controller(RegistrationController::class)->group(function () {
     Route::get('/registration/success', 'success')->name('registration.success');
 });
 
-// Articles (Frontend Blog)
+// Artikel (Blog)
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{slug}', [ArticleController::class, 'show'])->name('articles.show');
 
-// Brosur
+// Training Brochure
 Route::get('/trainings/{training}/brochure', [TrainingController::class, 'downloadBrochure'])
     ->name('trainings.brochure');
 
+// Serve Training Image
+Route::get('/trainings/image/{filename}', function ($filename) {
+    $path = storage_path("app/public/trainings/{$filename}");
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path, [
+        'Content-Type' => mime_content_type($path),
+    ]);
+})->name('trainings.image');
+
+// Alternative storage access
+Route::get('/storage/trainings/{filename}', function ($filename) {
+    $path = storage_path("app/public/trainings/{$filename}");
+
+    abort_unless(file_exists($path), 404);
+
+    return response()->file($path, [
+        'Content-Type' => mime_content_type($path),
+    ]);
+});
+
 /*
 |--------------------------------------------------------------------------
-| Auth Routes (Breeze default)
+| Auth Routes
 |--------------------------------------------------------------------------
 */
 Route::middleware('auth')->group(function () {
@@ -79,37 +110,40 @@ Route::middleware('auth')->group(function () {
 | Admin Routes (Backend)
 |--------------------------------------------------------------------------
 */
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-    // Dashboard
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::middleware('auth')
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+        // Dashboard
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Trainings
-    Route::resource('trainings', TrainingController::class);
+        // Kontak (Hubungi Kami)
+        Route::get('contacts', [ContactAdminController::class, 'index'])->name('contacts.index');
+        Route::get('contacts/{id}', [ContactAdminController::class, 'show'])->name('contacts.show');
 
-    // Training Materials
-    Route::resource('materials', TrainingMaterialController::class);
+        // Trainings
+        Route::resource('trainings', TrainingController::class);
 
-    // Training Rundowns
-    Route::resource('rundowns', TrainingRundownController::class);
+        // Training Materials
+        Route::resource('materials', TrainingMaterialController::class);
 
-    // Galleries
-    Route::resource('galleries', AdminGalleryController::class);
+        // Training Rundowns
+        Route::resource('rundowns', TrainingRundownController::class);
 
-    // Contacts
-    Route::get('contacts', [ContactAdminController::class, 'index'])->name('contacts.index');
+        // Galeri
+        Route::resource('galleries', AdminGalleryController::class);
 
-    // Registrations
-    Route::get('registrations', [RegistrationAdminController::class, 'index'])->name('registrations.index');
+        // Pendaftaran
+        Route::get('/registrations', [RegistrationAdminController::class, 'index'])->name('registrations.index');
 
-    // Articles (Admin)
-    Route::resource('articles', AdminArticleController::class);
+        // Artikel Admin
+        Route::resource('articles', AdminArticleController::class);
 
-    Route::get('/_test-telegram-class', function () {
-        return response()->json([
-            'exists' => class_exists(\App\Services\TelegramService::class),
-        ]);
+        // Test Telegram Service
+        Route::get('/_test-telegram-class', function () {
+            return response()->json(['exists' => class_exists(TelegramService::class)]);
+        });
     });
 
-});
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
