@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\TrainingMaterial;
 use App\Models\Training;
+use App\Models\TrainingMaterial;
 use Illuminate\Http\Request;
 
 class TrainingMaterialController extends Controller
 {
     public function index()
     {
-      $materials = \App\Models\TrainingMaterial::with('training')
-        ->orderBy('group_name')
-        ->paginate(10); // <--- ubah dari get() jadi paginate()
+        $materials = \App\Models\TrainingMaterial::with('training')
+            ->orderBy('group_name')
+            ->paginate(10); // <--- ubah dari get() jadi paginate()
+
         return view('admin.materials.index', compact('materials'));
     }
 
@@ -25,33 +26,34 @@ class TrainingMaterialController extends Controller
             'Kelompok Inti',
             'Kelompok Penunjang',
             'Praktek Pemeriksaan',
-            'Evaluasi'
+            'Evaluasi',
         ];
+
         return view('admin.materials.create', compact('trainings', 'groups'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-        'training_id' => 'required|exists:trainings,id',
-        'group_name' => 'required|string',
-        'materials' => 'required|array|min:1',
-        'materials.*.title' => 'required|string|max:255',
-        'materials.*.jp' => 'nullable|numeric|min:0',
-    ]);
-
-    foreach ($request->materials as $material) {
-        \App\Models\TrainingMaterial::create([
-            'training_id' => $request->training_id,
-            'group_name'  => $request->group_name,
-            'title'       => $material['title'],
-            'jp'          => $material['jp'],
+            'training_id' => 'required|exists:trainings,id',
+            'group_name' => 'required|string',
+            'materials' => 'required|array|min:1',
+            'materials.*.title' => 'required|string|max:255',
+            'materials.*.jp' => 'nullable|numeric|min:0',
         ]);
-    }
 
-    return redirect()
-        ->route('admin.materials.index')
-        ->with('success', '✅ Semua materi berhasil ditambahkan untuk kelompok ' . $request->group_name);
+        foreach ($request->materials as $material) {
+            \App\Models\TrainingMaterial::create([
+                'training_id' => $request->training_id,
+                'group_name' => $request->group_name,
+                'title' => $material['title'],
+                'jp' => $material['jp'],
+            ]);
+        }
+
+        return redirect()
+            ->route('admin.materials.index')
+            ->with('success', '✅ Semua materi berhasil ditambahkan untuk kelompok '.$request->group_name);
     }
 
     public function edit(TrainingMaterial $material)
@@ -62,8 +64,9 @@ class TrainingMaterialController extends Controller
             'Kelompok Inti',
             'Kelompok Penunjang',
             'Praktek Pemeriksaan',
-            'Evaluasi'
+            'Evaluasi',
         ];
+
         return view('admin.materials.edit', compact('material', 'trainings', 'groups'));
     }
 
@@ -71,9 +74,9 @@ class TrainingMaterialController extends Controller
     {
         $request->validate([
             'training_id' => 'required|exists:trainings,id',
-            'group_name'  => 'required|string',
-            'title'       => 'required|string|max:255',
-            'jp'          => 'nullable|numeric|min:0',
+            'group_name' => 'required|string',
+            'title' => 'required|string|max:255',
+            'jp' => 'nullable|numeric|min:0',
         ]);
 
         $material->update($request->all());
@@ -84,6 +87,7 @@ class TrainingMaterialController extends Controller
     public function destroy(TrainingMaterial $material)
     {
         $material->delete();
+
         return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil dihapus');
     }
 }
