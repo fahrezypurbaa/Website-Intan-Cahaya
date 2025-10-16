@@ -12,19 +12,25 @@ class LayananController extends Controller
     {
         $categories = Category::all();
 
+        // Ambil pelatihan berdasarkan kategori (jika ada)
         $trainings = Training::with('category')
-            ->when($request->category, function($q) use ($request) {
-                $q->whereHas('category', fn($qq) => $qq->where('slug',$request->category));
+            ->when($request->category, function ($query) use ($request) {
+                $query->whereHas('category', function ($subQuery) use ($request) {
+                    $subQuery->where('slug', $request->category);
+                });
             })
+            ->latest()
             ->paginate(9);
 
-        return view('layanan.index', compact('categories','trainings'));
+        return view('layanan.index', compact('categories', 'trainings'));
     }
 
     public function show($slug)
     {
-        $training = Training::where('slug',$slug)->with('category')->firstOrFail();
+        $training = Training::where('slug', $slug)
+            ->with('category')
+            ->firstOrFail();
+
         return view('layanan.show', compact('training'));
     }
 }
-
