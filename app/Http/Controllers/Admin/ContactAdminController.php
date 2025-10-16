@@ -9,9 +9,13 @@ class ContactAdminController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::orderBy('created_at', 'desc')->paginate(15);
-
+        $contacts = Contact::latest()->paginate(10);
         return view('admin.contacts.index', compact('contacts'));
+    }
 
+    public function show($id)
+    {
+        $contact = Contact::findOrFail($id);
+        return view('admin.contacts.show', compact('contact'));
     }
 }
