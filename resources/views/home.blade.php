@@ -475,20 +475,22 @@
                     </div>
 
                     <!-- Navigation buttons -->
-                    <div
-                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </div>
-                    <div
-                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                            </path>
-                        </svg>
-                    </div>
+<!-- Tombol Prev -->
+<div
+    class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
+    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+    ❮
+</div>
+
+<!-- Tombol Next -->
+<div
+    class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
+    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+    ❯
+</div>
+
                 </div>
             </div>
 
@@ -597,20 +599,22 @@
                     </div>
 
                     <!-- Navigation buttons -->
-                    <div
-                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </div>
-                    <div
-                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                            </path>
-                        </svg>
-                    </div>
+<!-- Tombol Prev -->
+<div
+    class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
+    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+    ❮
+</div>
+
+<!-- Tombol Next -->
+<div
+    class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
+    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+    ❯
+</div>
+
                 </div>
             </div>
 
@@ -720,20 +724,22 @@
                     </div>
 
                     <!-- Navigation buttons -->
-                    <div
-                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                            </path>
-                        </svg>
-                    </div>
-                    <div
-                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                            </path>
-                        </svg>
-                    </div>
+<!-- Tombol Prev -->
+<div
+    class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
+    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+    ❮
+</div>
+
+<!-- Tombol Next -->
+<div
+    class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
+    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+    ❯
+</div>
+
                 </div>
             </div>
         </div>

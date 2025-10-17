@@ -49,6 +49,12 @@ body {
 .program-content .swiper-wrapper {
   height: auto !important;
 }
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute !important;
+  opacity: 1 !important;
+}
+
 
 /* === Legalitas Terjamin === */
 .feature-card {
