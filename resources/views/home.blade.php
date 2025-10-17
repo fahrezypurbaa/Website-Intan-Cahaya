@@ -288,8 +288,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="{{ asset('images/Ahli K3 umum.jpg') }}" alt="Ahli K3 umum"
-                                        class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 umum.jpg') }}"
+                                        alt="Ahli K3 umum" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -299,9 +299,7 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Perkembangan teknologi
-                                        meningkatkan efisiensi industri, tetapi juga meningkatkan risiko kecelakaan kerja.
-                                    </p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Perkembangan teknologi meningkatkan efisiensi industri, tetapi juga meningkatkan risiko kecelakaan kerja.</p>
                                     <div class="flex justify-between items-end">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -328,8 +326,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="{{ asset('images/Auditor SMK3.jpg') }}" alt="Auditor SMK3"
-                                        class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Auditor SMK3.jpg') }}"
+                                        alt="Auditor SMK3" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -339,9 +337,7 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Auditor SMK3</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pelatihan Auditor SMK3 oleh
-                                        Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten
-                                        dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pelatihan Auditor SMK3 oleh Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -379,9 +375,7 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PAA</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut
-                                        adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan
-                                        barang.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan barang.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -419,9 +413,7 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PTP</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja
-                                        di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan
-                                        organisasi internasional.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan organisasi internasional.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -459,9 +451,7 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PUBT</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan
-                                        akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa
-                                        maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -485,294 +475,268 @@
                     </div>
 
                     <!-- Navigation buttons -->
-                    <!-- Tombol Next -->
                     <div
-                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full flex items-center justify-center w-9 h-9 right-2 lg:right-4 hover:bg-[#144F5F] transition">
-                        <svg class="w-4 h-4 text-[#144F5F] group-hover:text-white transition" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </div>
-
-                    <!-- Tombol Prev -->
                     <div
-                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full flex items-center justify-center w-9 h-9 left-2 lg:left-4 hover:bg-[#144F5F] transition">
-                        <svg class="w-4 h-4 text-[#144F5F] group-hover:text-white transition" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
+                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
                             </path>
                         </svg>
                     </div>
-
                 </div>
+            </div>
 
-                <!-- BNSP Programs (Hidden by default) -->
-                <div class="program-category hidden" id="bnsp">
-                    <div class="swiper programSwiper">
-                        <div class="swiper-wrapper">
-                            <!-- BNSP Card 1 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                    <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{{ asset('images/Ahli K3 umum bnsp.jpg') }}" alt="Ahli K3 Umum BNSP"
-                                            class="w-full h-full object-cover">
-                                        <div class="absolute top-3 left-3">
-                                            <span
-                                                class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
-                                                Online Training
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum BNSP</h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan Kesehatan
-                                            Kerja (K3) penting bagi perusahaan nasional maupun internasional untuk
-                                            melindungi karyawan dan meningkatkan efisiensi kerja.</p>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
-                                            <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                                                class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                                Lihat
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
+            <!-- BNSP Programs (Hidden by default) -->
+            <div class="program-category hidden" id="bnsp">
+                <div class="swiper programSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- BNSP Card 1 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="{{ asset('images/Ahli K3 umum bnsp.jpg') }}"
+                                        alt="Ahli K3 Umum BNSP" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- BNSP Card 2 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                    <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{{ asset('images/HR Supervisor  Supervisor SDM.jpg') }}"
-                                            alt="HR Supervisor Supervisor SDM" class="w-full h-full object-cover">
-                                        <div class="absolute top-3 left-3">
-                                            <span
-                                                class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
-                                                Online Training
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Supervisor Supervisor SDM
-                                        </h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang HR Supervisor
-                                            memainkan peran penting sebagai penghubung antara manajemen dan karyawan dalam
-                                            menjalankan kebijakan dan operasional sumber daya manusia. </p>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
-                                            <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                                                class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                                Lihat
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- BNSP Card 3 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                    <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{{ asset('images/HR Manager  Manajer SDM.jpg') }}"
-                                            alt="HR Manager & Manajer SDM" class="w-full h-full object-cover">
-                                        <div class="absolute top-3 left-3">
-                                            <span
-                                                class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
-                                                Online Training
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Manager & Manajer SDM</h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Peran Human Resources (HR)
-                                            Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi
-                                            juga sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
-                                            <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                                                class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                                Lihat
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum BNSP</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan Kesehatan Kerja (K3) penting bagi perusahaan nasional maupun internasional untuk melindungi karyawan dan meningkatkan efisiensi kerja.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Lihat
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Navigation buttons -->
-                        <div
-                            class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                            <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                                </path>
-                            </svg>
+                        <!-- BNSP Card 2 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="{{ asset('images/HR Supervisor  Supervisor SDM.jpg') }}"
+                                        alt="HR Supervisor Supervisor SDM" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Supervisor Supervisor SDM</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang HR Supervisor memainkan peran penting sebagai penghubung antara manajemen dan karyawan dalam menjalankan kebijakan dan operasional sumber daya manusia. </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Lihat
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div
-                            class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                            <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 19l-7-7 7-7">
-                                </path>
-                            </svg>
+
+                        <!-- BNSP Card 3 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="{{ asset('images/HR Manager  Manajer SDM.jpg') }}"
+                                        alt="HR Manager & Manajer SDM" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Manager & Manajer SDM</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Peran Human Resources (HR) Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi juga sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
+                                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Lihat
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Soft Skill Programs (Hidden by default) -->
-                <div class="program-category hidden" id="softskill">
-                    <div class="swiper programSwiper">
-                        <div class="swiper-wrapper">
-                            <!-- Soft Skill Card 1 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                    <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{{ asset('images/Public Speaking For Managers (Indonesian & English).jpg') }}"
-                                            alt="Public Speaking" class="w-full h-full object-cover">
-                                        <div class="absolute top-3 left-3">
-                                            <span
-                                                class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
-                                                Online Training
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking For Managers
-                                        </h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang manajer tidak hanya
-                                            dituntut untuk menguasai keterampilan teknis dan kepemimpinan, tetapi juga
-                                            memiliki kemampuan komunikasi yang efektif, baik dalam bahasa Indonesia maupun
-                                            bahasa Inggris.
-                                        </p>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
-                                            <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                                                class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                                Lihat
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Soft Skill Card 2 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                    <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{{ asset('images/Basic Fire Fighting.jpg') }}"
-                                            alt="Basic Fire Fighting" class="w-full h-full object-cover">
-                                        <div class="absolute top-3 left-3">
-                                            <span
-                                                class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
-                                                Online Training
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Basic Fire Fighting</h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Kebakaran merupakan salah
-                                            satu jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik
-                                            di lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
-                                            <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                                                class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                                Lihat
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Soft Skill Card 3 -->
-                            <div class="swiper-slide">
-                                <div
-                                    class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                    <div class="h-48 bg-gray-200 overflow-hidden">
-                                        <img src="{{ asset('images/Cost Reduction Strategy.jpg') }}"
-                                            alt="Cost Reduction Strategy" class="w-full h-full object-cover">
-                                        <div class="absolute top-3 left-3">
-                                            <span
-                                                class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
-                                                Online Training
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Cost Reduction Strategy</h3>
-                                        <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Di tengah dinamika bisnis
-                                            yang semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk
-                                            senantiasa meningkatkan efisiensi dan efektivitas operasional</p>
-                                        <div class="flex justify-between items-center">
-                                            <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
-                                            <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                                                class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
-                                                Lihat
-                                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
-                                                    viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M9 5l7 7-7 7"></path>
-                                                </svg>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Navigation buttons -->
-                        <div
-                            class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
-                            <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                                </path>
-                            </svg>
-                        </div>
-                        <div
-                            class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
-                            <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M15 19l-7-7 7-7">
-                                </path>
-                            </svg>
-                        </div>
+                    <!-- Navigation buttons -->
+                    <div
+                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
                     </div>
                 </div>
             </div>
+
+            <!-- Soft Skill Programs (Hidden by default) -->
+            <div class="program-category hidden" id="softskill">
+                <div class="swiper programSwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Soft Skill Card 1 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="{{ asset('images/Public Speaking For Managers (Indonesian & English).jpg') }}"
+                                        alt="Public Speaking" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking For Managers</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang manajer tidak hanya dituntut untuk menguasai keterampilan teknis dan kepemimpinan, tetapi juga memiliki kemampuan komunikasi yang efektif, baik dalam bahasa Indonesia maupun bahasa Inggris.
+                                    </p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
+                                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Lihat
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Skill Card 2 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="{{ asset('images/Basic Fire Fighting.jpg') }}"
+                                        alt="Basic Fire Fighting" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Basic Fire Fighting</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Kebakaran merupakan salah satu jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik di lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
+                                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Lihat
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Soft Skill Card 3 -->
+                        <div class="swiper-slide">
+                            <div
+                                class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
+                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                    <img src="{{ asset('images/Cost Reduction Strategy.jpg') }}"
+                                        alt="Cost Reduction Strategy" class="w-full h-full object-cover">
+                                    <div class="absolute top-3 left-3">
+                                        <span
+                                            class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
+                                            Online Training
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Cost Reduction Strategy</h3>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Di tengah dinamika bisnis yang semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk senantiasa meningkatkan efisiensi dan efektivitas operasional</p>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
+                                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
+                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            Lihat
+                                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7"></path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation buttons -->
+                    <div
+                        class="swiper-button-next absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -right-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                            </path>
+                        </svg>
+                    </div>
+                    <div
+                        class="swiper-button-prev absolute top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg rounded-full flex items-center justify-center w-12 h-12 -left-6">
+                        <svg class="w-6 h-6 text-[#144F5F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Section: Legalitas Terjamin, Kualitas Terbukti -->
