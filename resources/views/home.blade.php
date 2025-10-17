@@ -288,8 +288,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="{{ asset('images/Ahli K3 umum.jpg') }}"
-                                        alt="Ahli K3 umum" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 umum.jpg') }}" alt="Ahli K3 umum"
+                                        class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -299,7 +299,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Perkembangan teknologi meningkatkan efisiensi industri, tetapi juga meningkatkan risiko kecelakaan kerja.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Perkembangan teknologi
+                                        meningkatkan efisiensi industri, tetapi juga meningkatkan risiko kecelakaan kerja.
+                                    </p>
                                     <div class="flex justify-between items-end">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -326,8 +328,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="{{ asset('images/Auditor SMK3.jpg') }}"
-                                        alt="Auditor SMK3" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Auditor SMK3.jpg') }}" alt="Auditor SMK3"
+                                        class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -337,7 +339,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Auditor SMK3</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pelatihan Auditor SMK3 oleh Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pelatihan Auditor SMK3 oleh
+                                        Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten
+                                        dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -375,7 +379,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PAA</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan barang.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut
+                                        adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan
+                                        barang.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -413,7 +419,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PTP</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan organisasi internasional.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja
+                                        di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan
+                                        organisasi internasional.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -451,7 +459,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PUBT</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan
+                                        akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa
+                                        maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
                                     <div class="flex justify-between items-center">
                                         <div class="flex flex-col">
                                             <!-- Harga normal -->
@@ -475,21 +485,21 @@
                     </div>
 
                     <!-- Navigation buttons -->
-<!-- Tombol Prev -->
-<div
-    class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
+                    <!-- Tombol Prev -->
+                    <div
+                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
     bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
-    ❮
-</div>
+                        ❮
+                    </div>
 
-<!-- Tombol Next -->
-<div
-    class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
+                    <!-- Tombol Next -->
+                    <div
+                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
     bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
-    ❯
-</div>
+                        ❯
+                    </div>
 
                 </div>
             </div>
@@ -503,8 +513,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="{{ asset('images/Ahli K3 umum bnsp.jpg') }}"
-                                        alt="Ahli K3 Umum BNSP" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Ahli K3 umum bnsp.jpg') }}" alt="Ahli K3 Umum BNSP"
+                                        class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -514,7 +524,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum BNSP</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan Kesehatan Kerja (K3) penting bagi perusahaan nasional maupun internasional untuk melindungi karyawan dan meningkatkan efisiensi kerja.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan Kesehatan Kerja
+                                        (K3) penting bagi perusahaan nasional maupun internasional untuk melindungi karyawan
+                                        dan meningkatkan efisiensi kerja.</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
@@ -547,7 +559,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Supervisor Supervisor SDM</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang HR Supervisor memainkan peran penting sebagai penghubung antara manajemen dan karyawan dalam menjalankan kebijakan dan operasional sumber daya manusia. </p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang HR Supervisor memainkan
+                                        peran penting sebagai penghubung antara manajemen dan karyawan dalam menjalankan
+                                        kebijakan dan operasional sumber daya manusia. </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
@@ -580,7 +594,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Manager & Manajer SDM</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Peran Human Resources (HR) Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi juga sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Peran Human Resources (HR)
+                                        Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi juga
+                                        sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
@@ -599,21 +615,21 @@
                     </div>
 
                     <!-- Navigation buttons -->
-<!-- Tombol Prev -->
-<div
-    class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
+                    <!-- Tombol Prev -->
+                    <div
+                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
     bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
-    ❮
-</div>
+                        ❮
+                    </div>
 
-<!-- Tombol Next -->
-<div
-    class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
+                    <!-- Tombol Next -->
+                    <div
+                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
     bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
-    ❯
-</div>
+                        ❯
+                    </div>
 
                 </div>
             </div>
@@ -638,7 +654,10 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking For Managers</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang manajer tidak hanya dituntut untuk menguasai keterampilan teknis dan kepemimpinan, tetapi juga memiliki kemampuan komunikasi yang efektif, baik dalam bahasa Indonesia maupun bahasa Inggris.
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang manajer tidak hanya
+                                        dituntut untuk menguasai keterampilan teknis dan kepemimpinan, tetapi juga memiliki
+                                        kemampuan komunikasi yang efektif, baik dalam bahasa Indonesia maupun bahasa
+                                        Inggris.
                                     </p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
@@ -661,8 +680,8 @@
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
                                 <div class="h-48 bg-gray-200 overflow-hidden">
-                                    <img src="{{ asset('images/Basic Fire Fighting.jpg') }}"
-                                        alt="Basic Fire Fighting" class="w-full h-full object-cover">
+                                    <img src="{{ asset('images/Basic Fire Fighting.jpg') }}" alt="Basic Fire Fighting"
+                                        class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
                                         <span
                                             class="bg-white bg-opacity-90 text-xs font-semibold px-2 py-1 rounded-full text-gray-700">
@@ -672,7 +691,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Basic Fire Fighting</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Kebakaran merupakan salah satu jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik di lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Kebakaran merupakan salah satu
+                                        jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik di
+                                        lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
@@ -705,7 +726,9 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Cost Reduction Strategy</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Di tengah dinamika bisnis yang semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk senantiasa meningkatkan efisiensi dan efektivitas operasional</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Di tengah dinamika bisnis yang
+                                        semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk senantiasa
+                                        meningkatkan efisiensi dan efektivitas operasional</p>
                                     <div class="flex justify-between items-center">
                                         <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
@@ -724,21 +747,21 @@
                     </div>
 
                     <!-- Navigation buttons -->
-<!-- Tombol Prev -->
-<div
-    class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
+                    <!-- Tombol Prev -->
+                    <div
+                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
     bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
-    ❮
-</div>
+                        ❮
+                    </div>
 
-<!-- Tombol Next -->
-<div
-    class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
+                    <!-- Tombol Next -->
+                    <div
+                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
     bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
-    ❯
-</div>
+                        ❯
+                    </div>
 
                 </div>
             </div>
