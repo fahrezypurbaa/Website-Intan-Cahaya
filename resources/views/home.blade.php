@@ -660,7 +660,6 @@
                                         Inggris.
                                     </p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 1.800.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -695,7 +694,6 @@
                                         jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik di
                                         lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 2.500.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -730,7 +728,6 @@
                                         semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk senantiasa
                                         meningkatkan efisiensi dan efektivitas operasional</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
