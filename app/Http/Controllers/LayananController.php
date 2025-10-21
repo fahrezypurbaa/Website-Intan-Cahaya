@@ -19,7 +19,7 @@ class LayananController extends Controller
                     $subQuery->where('slug', $request->category);
                 });
             })
-            ->latest()
+            ->oldest()
             ->paginate(9);
 
         return view('layanan.index', compact('categories', 'trainings'));
