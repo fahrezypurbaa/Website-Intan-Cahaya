@@ -303,12 +303,6 @@
                                         meningkatkan efisiensi industri, tetapi juga meningkatkan risiko kecelakaan kerja.
                                     </p>
                                     <div class="flex justify-between items-end">
-                                        <div class="flex flex-col">
-                                            <!-- Harga normal -->
-                                            <span class="text-gray-400 line-through text-sm">Rp 3.000.000</span>
-                                            <!-- Harga promo -->
-                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 2.500.000</span>
-                                        </div>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -343,12 +337,6 @@
                                         Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten
                                         dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
                                     <div class="flex justify-between items-center">
-                                        <div class="flex flex-col">
-                                            <!-- Harga normal -->
-                                            <span class="text-gray-400 line-through text-sm">Rp 6.000.000</span>
-                                            <!-- Harga promo -->
-                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 5.500.000</span>
-                                        </div>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -383,12 +371,6 @@
                                         adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan
                                         barang.</p>
                                     <div class="flex justify-between items-center">
-                                        <div class="flex flex-col">
-                                            <!-- Harga normal -->
-                                            <span class="text-gray-400 line-through text-sm">Rp 5.000.000</span>
-                                            <!-- Harga promo -->
-                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 4.500.000</span>
-                                        </div>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -423,12 +405,6 @@
                                         di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan
                                         organisasi internasional.</p>
                                     <div class="flex justify-between items-center">
-                                        <div class="flex flex-col">
-                                            <!-- Harga normal -->
-                                            <span class="text-gray-400 line-through text-sm">Rp 3.500.000</span>
-                                            <!-- Harga promo -->
-                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 3.000.000</span>
-                                        </div>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -463,12 +439,6 @@
                                         akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa
                                         maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
                                     <div class="flex justify-between items-center">
-                                        <div class="flex flex-col">
-                                            <!-- Harga normal -->
-                                            <span class="text-gray-400 line-through text-sm">Rp 5.000.000</span>
-                                            <!-- Harga promo -->
-                                            <span class="text-[#73BA7D] font-bold text-lg">Rp 4.500.000</span>
-                                        </div>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -528,7 +498,6 @@
                                         (K3) penting bagi perusahaan nasional maupun internasional untuk melindungi karyawan
                                         dan meningkatkan efisiensi kerja.</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 4.500.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -563,7 +532,6 @@
                                         peran penting sebagai penghubung antara manajemen dan karyawan dalam menjalankan
                                         kebijakan dan operasional sumber daya manusia. </p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 3.800.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
@@ -598,7 +566,6 @@
                                         Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi juga
                                         sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[#73BA7D] font-bold">Rp 3.200.000</span>
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                                             class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
                                             Lihat
