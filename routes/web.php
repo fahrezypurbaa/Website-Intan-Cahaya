@@ -135,7 +135,8 @@ Route::middleware('auth')
 
         // Pendaftaran
         Route::get('/registrations', [RegistrationAdminController::class, 'index'])->name('registrations.index');
-
+       Route::get('/registrations/export', [RegistrationAdminController::class, 'export'])->name('registrations.export');  
+       
         // Artikel Admin
         Route::resource('articles', AdminArticleController::class);
 
