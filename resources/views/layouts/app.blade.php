@@ -91,7 +91,6 @@
             </button>
 
             <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Hubungi Admin</h2>
-            <p class="text-gray-500 text-sm text-center mb-6">Pilih admin yang ingin Anda hubungi via WhatsApp</p>
 
             <div class="space-y-4">
                 {{-- Admin A --}}
