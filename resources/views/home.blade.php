@@ -287,7 +287,7 @@
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Ahli K3 umum.jpg') }}" alt="Ahli K3 umum"
                                         class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -304,7 +304,10 @@
                                     </p>
                                     <div class="flex justify-between items-end">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -312,16 +315,18 @@
                                                     d="M9 5l7 7-7 7"></path>
                                             </svg>
                                         </a>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+
                         <!-- Card 2 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Auditor SMK3.jpg') }}" alt="Auditor SMK3"
                                         class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -333,12 +338,17 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Auditor SMK3</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pelatihan Auditor SMK3 oleh
-                                        Kementerian Ketenagakerjaan RI bertujuan menyiapkan auditor independen yang kompeten
-                                        dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Pelatihan Auditor SMK3 oleh Kementerian Ketenagakerjaan RI bertujuan menyiapkan
+                                        auditor independen yang kompeten
+                                        dalam menilai penerapan keselamatan dan kesehatan kerja di berbagai organisasi.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -351,11 +361,12 @@
                             </div>
                         </div>
 
+
                         <!-- Card 3 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Ahli K3 Spesialis PAA (Pesawat Angkat & Pesawat Angkut).jpg') }}"
                                         alt="Ahli K3 Spesialis PAA" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -367,12 +378,16 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PAA</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pesawat Angkat dan Angkut
-                                        adalah peralatan yang sangat berguna bagi proses industri khususnya dalam pemindahan
-                                        barang.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Pesawat Angkat dan Angkut adalah peralatan yang sangat berguna bagi proses industri
+                                        khususnya dalam pemindahan barang.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -385,11 +400,12 @@
                             </div>
                         </div>
 
+
                         <!-- Card 4 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Ahli K3 Spesialis PTP (Pesawat Tenaga Produksi).jpg') }}"
                                         alt="Ahli K3 Spesialis PTP" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -401,12 +417,16 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PTP</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan kesehatan kerja
-                                        di sektor pesawat tenaga produksi menjadi perhatian utama bagi banyak pemerintah dan
-                                        organisasi internasional.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Keselamatan dan kesehatan kerja di sektor pesawat tenaga produksi menjadi perhatian
+                                        utama bagi banyak pemerintah dan organisasi internasional.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -419,11 +439,12 @@
                             </div>
                         </div>
 
+
                         <!-- Card 5 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Ahli K3 Spesialis PUBT (Pesawat Uap & Bejana Tekan).jpg') }}"
                                         alt="Ahli K3 Spesialis PUBT" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -435,12 +456,17 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Spesialis PUBT</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Pemanfaatan bejana tekan
-                                        akhir-akhir ini telah berkembang pesat di berbagai proses industri barang dan jasa
-                                        maupun untuk fasilitas umum dan bahkan di rumah-rumah tangga.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Pemanfaatan bejana tekan akhir-akhir ini telah berkembang pesat di berbagai proses
+                                        industri barang dan jasa maupun untuk fasilitas umum dan bahkan di rumah-rumah
+                                        tangga.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -452,6 +478,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Navigation buttons -->
@@ -482,7 +509,7 @@
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Ahli K3 umum bnsp.jpg') }}" alt="Ahli K3 Umum BNSP"
                                         class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -494,12 +521,16 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Ahli K3 Umum BNSP</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Keselamatan dan Kesehatan Kerja
-                                        (K3) penting bagi perusahaan nasional maupun internasional untuk melindungi karyawan
-                                        dan meningkatkan efisiensi kerja.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Keselamatan dan Kesehatan Kerja (K3) penting bagi perusahaan nasional maupun
+                                        internasional untuk melindungi karyawan dan meningkatkan efisiensi kerja.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -512,11 +543,12 @@
                             </div>
                         </div>
 
+
                         <!-- BNSP Card 2 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/HR Supervisor  Supervisor SDM.jpg') }}"
                                         alt="HR Supervisor Supervisor SDM" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -528,12 +560,16 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Supervisor Supervisor SDM</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang HR Supervisor memainkan
-                                        peran penting sebagai penghubung antara manajemen dan karyawan dalam menjalankan
-                                        kebijakan dan operasional sumber daya manusia. </p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Seorang HR Supervisor memainkan peran penting sebagai penghubung antara manajemen
+                                        dan karyawan dalam menjalankan kebijakan dan operasional sumber daya manusia.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -546,11 +582,12 @@
                             </div>
                         </div>
 
+
                         <!-- BNSP Card 3 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/HR Manager  Manajer SDM.jpg') }}"
                                         alt="HR Manager & Manajer SDM" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -562,12 +599,17 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">HR Manager & Manajer SDM</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Peran Human Resources (HR)
-                                        Manager saat ini tidak hanya sebatas mengelola administrasi karyawan, tetapi juga
-                                        sebagai mitra strategis dalam mendukung pencapaian tujuan organisasi.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Peran Human Resources (HR) Manager saat ini tidak hanya sebatas mengelola
+                                        administrasi karyawan, tetapi juga sebagai mitra strategis dalam mendukung
+                                        pencapaian tujuan organisasi.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -579,6 +621,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Navigation buttons -->
@@ -609,7 +652,7 @@
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Public Speaking For Managers (Indonesian & English).jpg') }}"
                                         alt="Public Speaking" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -621,14 +664,17 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Public Speaking For Managers</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Seorang manajer tidak hanya
-                                        dituntut untuk menguasai keterampilan teknis dan kepemimpinan, tetapi juga memiliki
-                                        kemampuan komunikasi yang efektif, baik dalam bahasa Indonesia maupun bahasa
-                                        Inggris.
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Seorang manajer tidak hanya dituntut untuk menguasai keterampilan teknis dan
+                                        kepemimpinan, tetapi juga memiliki kemampuan komunikasi yang efektif, baik dalam
+                                        bahasa Indonesia maupun bahasa Inggris.
                                     </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -641,11 +687,12 @@
                             </div>
                         </div>
 
+
                         <!-- Soft Skill Card 2 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Basic Fire Fighting.jpg') }}" alt="Basic Fire Fighting"
                                         class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -657,12 +704,16 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Basic Fire Fighting</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Kebakaran merupakan salah satu
-                                        jenis keadaan darurat yang dapat terjadi kapan saja dan di mana saja, baik di
-                                        lingkungan kerja, tempat tinggal, maupun fasilitas umum.</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Kebakaran merupakan salah satu jenis keadaan darurat yang dapat terjadi kapan saja
+                                        dan di mana saja, baik di lingkungan kerja, tempat tinggal, maupun fasilitas umum.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -675,11 +726,12 @@
                             </div>
                         </div>
 
+
                         <!-- Soft Skill Card 3 -->
                         <div class="swiper-slide">
                             <div
                                 class="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transition-transform duration-300 hover:shadow-lg">
-                                <div class="h-48 bg-gray-200 overflow-hidden">
+                                <div class="h-48 bg-gray-200 overflow-hidden relative">
                                     <img src="{{ asset('images/Cost Reduction Strategy.jpg') }}"
                                         alt="Cost Reduction Strategy" class="w-full h-full object-cover">
                                     <div class="absolute top-3 left-3">
@@ -691,12 +743,17 @@
                                 </div>
                                 <div class="p-6">
                                     <h3 class="text-xl font-semibold text-[#144F5F] mb-2">Cost Reduction Strategy</h3>
-                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">Di tengah dinamika bisnis yang
-                                        semakin kompetitif dan penuh ketidakpastian, perusahaan dituntut untuk senantiasa
-                                        meningkatkan efisiensi dan efektivitas operasional</p>
+                                    <p class="text-gray-600 mb-4 line-clamp-3 min-h-[72px]">
+                                        Di tengah dinamika bisnis yang semakin kompetitif dan penuh ketidakpastian,
+                                        perusahaan dituntut untuk senantiasa meningkatkan efisiensi dan efektivitas
+                                        operasional.
+                                    </p>
                                     <div class="flex justify-between items-center">
                                         <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                                            class="text-sm text-[#144F5F] hover:text-[#73BA7D] font-medium flex items-center">
+                                            class="text-sm font-medium text-white px-4 py-2 rounded-lg flex items-center transition-all duration-300"
+                                            style="background: linear-gradient(to right, #144F5F, #73BA7D);"
+                                            onmouseover="this.style.background='linear-gradient(to right, #0f3a46, #5a9b6a)';"
+                                            onmouseout="this.style.background='linear-gradient(to right, #144F5F, #73BA7D)';">
                                             Lihat
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
                                                 viewBox="0 0 24 24">
@@ -708,6 +765,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Navigation buttons -->
