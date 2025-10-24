@@ -95,15 +95,16 @@
 
             <div class="space-y-4">
                 {{-- Admin A --}}
-                <a href="https://wa.me/6282146134846?text=Halo%20Admin%20A,%20saya%20butuh%20informasi" target="_blank"
-                    class="flex items-center gap-3 p-3 rounded-lg border hover:bg-green-50 transition">
+                <a href="https://wa.me/6282146134846?text=Halo%20Admin%20Intan%20Safety!%20Saya%20(isi%20namamu)%20dari%20(perusahaanmu)%20ingin%20menanyakan%20pelatihan%20(judul%20pelatihan%20yang%20kamu%20ingin%20tanyakan)."
+                    target="_blank" class="flex items-center gap-3 p-3 rounded-lg border hover:bg-green-50 transition">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="w-7 h-7"
                         alt="WA">
                     <div>
-                        <p class="font-medium text-gray-800">Admin A</p>
+                        <p class="font-medium text-gray-800">Admin</p>
                         <p class="text-xs text-gray-500">Respon cepat & ramah</p>
                     </div>
                 </a>
+
 
                 {{-- Admin B --}}
                 {{-- <a href="https://wa.me/6289876543210?text=Halo%20Admin%20B,%20saya%20butuh%20informasi" target="_blank"
