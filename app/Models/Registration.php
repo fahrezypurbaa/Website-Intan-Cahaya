@@ -14,10 +14,10 @@ class Registration extends Model
         'email',
         'phone',
         'participant_type',
-        'personal_city',   
+        'personal_city',
         'company_name',
         'position',
-        'company_city',    
+        'company_city',
         'category_id',
         'training_id',
     ];

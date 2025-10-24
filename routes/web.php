@@ -1,30 +1,24 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Services\TelegramService;
-
+use App\Http\Controllers\Admin\ArticleController as AdminArticleController;
+use App\Http\Controllers\Admin\ContactAdminController;
 // Frontend Controllers
-use App\Http\Controllers\{
-    ArticleController,
-    ContactController,
-    GalleryPublicController,
-    LayananController,
-    LegalitasController,
-    ProfileController,
-    RegistrationController
-};
-
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\GalleryController as AdminGalleryController;
+use App\Http\Controllers\Admin\RegistrationAdminController;
+use App\Http\Controllers\Admin\TrainingController;
+use App\Http\Controllers\Admin\TrainingMaterialController;
+use App\Http\Controllers\Admin\TrainingRundownController;
+use App\Http\Controllers\ArticleController;
 // Admin Controllers
-use App\Http\Controllers\Admin\{
-    ArticleController as AdminArticleController,
-    ContactAdminController,
-    DashboardController,
-    GalleryController as AdminGalleryController,
-    RegistrationAdminController,
-    TrainingController,
-    TrainingMaterialController,
-    TrainingRundownController
-};
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GalleryPublicController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\LegalitasController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegistrationController;
+use App\Services\TelegramService;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -136,7 +130,7 @@ Route::middleware('auth')
         // Pendaftaran
         Route::get('/registrations', [RegistrationAdminController::class, 'index'])->name('registrations.index');
         Route::get('/registrations/export', [RegistrationAdminController::class, 'export'])->name('registrations.export');
-       
+
         // Artikel Admin
         Route::resource('articles', AdminArticleController::class);
 
@@ -146,5 +140,4 @@ Route::middleware('auth')
         });
     });
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
