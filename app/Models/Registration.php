@@ -22,13 +22,11 @@ class Registration extends Model
         'training_id',
     ];
 
-    // 🔹 Relasi ke tabel trainings
     public function training()
     {
         return $this->belongsTo(Training::class);
     }
 
-    // 🔹 Relasi ke tabel categories
     public function category()
     {
         return $this->belongsTo(Category::class);
