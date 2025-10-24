@@ -16,28 +16,44 @@ class RegistrationController extends Controller
         $categories = Category::all();
         $trainings = Training::all();
 
-        return view('registration.create', compact('categories', 'trainings'));
+        // Daftar kota seluruh Indonesia (versi ringkas)
+        // Kalau mau versi lengkap (514 kota/kabupaten), aku bisa kirimkan file JSON siap pakai.
+        $cities = [
+            'Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Semarang', 'Makassar', 'Palembang', 'Bekasi',
+            'Depok', 'Tangerang', 'Bogor', 'Malang', 'Yogyakarta', 'Denpasar', 'Batam', 'Padang',
+            'Pontianak', 'Banjarmasin', 'Samarinda', 'Pekanbaru', 'Balikpapan', 'Cirebon', 'Solo',
+            'Manado', 'Mataram', 'Kupang', 'Jayapura', 'Ambon', 'Serang', 'Cilegon', 'Tegal',
+            'Banda Aceh', 'Tasikmalaya', 'Cimahi', 'Kediri', 'Magelang', 'Probolinggo', 'Pekalongan',
+            'Jambi', 'Bengkulu', 'Palangkaraya', 'Gorontalo', 'Ternate', 'Tidore', 'Tarakan'
+        ];
+
+        return view('registration.create', compact('categories', 'trainings', 'cities'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'name'             => 'required|string|max:255',
-            'email'            => 'required|email|unique:registrations,email',
+            'email' => 'required|email',
             'phone'            => 'required|string|max:20',
             'participant_type' => 'required|in:personal,company',
-            'company_name'     => 'nullable|string|max:255',
-            'position'         => 'nullable|string|max:255',
             'category_id'      => 'required|exists:categories,id',
             'training_id'      => 'required|exists:trainings,id',
+            'personal_city'    => 'nullable|string|max:100',
+            'company_name'     => 'nullable|string|max:255',
+            'position'         => 'nullable|string|max:255',
+            'company_city'     => 'nullable|string|max:100',
         ]);
 
+        // Simpan data ke database
         $reg = Registration::create([
             'name'             => $request->name,
             'email'            => $request->email,
             'phone'            => $request->phone,
             'participant_type' => $request->participant_type,
+            'personal_city'    => $request->participant_type === 'personal' ? $request->personal_city : null,
             'company_name'     => $request->participant_type === 'company' ? $request->company_name : null,
+            'company_city'     => $request->participant_type === 'company' ? $request->company_city : null,
             'position'         => $request->participant_type === 'company' ? $request->position : null,
             'category_id'      => $request->category_id,
             'training_id'      => $request->training_id,
@@ -57,7 +73,10 @@ class RegistrationController extends Controller
 
         if ($reg->participant_type === 'company') {
             $message .= "🏭 Perusahaan: {$reg->company_name}\n";
+            $message .= "🏙️ Kota Perusahaan: {$reg->company_city}\n";
             $message .= "💼 Jabatan: {$reg->position}\n";
+        } else {
+            $message .= "🏙️ Kota: {$reg->personal_city}\n";
         }
 
         $message .= "🕒 Waktu: " . now()->format('d M Y H:i');

@@ -247,4 +247,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// === Form Registrasi Tambahan ===
+document.addEventListener('DOMContentLoaded', function () {
+    // Inisialisasi TomSelect
+    new TomSelect("#personal_city", { create: false, sortField: { field: "text", direction: "asc" }, maxOptions: 500 });
+    new TomSelect("#company_city", { create: false, sortField: { field: "text", direction: "asc" }, maxOptions: 500 });
 
+    // Toggle personal/company fields
+    const participantType = document.getElementById('participant_type');
+    const companyFields = document.getElementById('company_fields');
+    const companyCityField = document.getElementById('company_city_field');
+    const personalCityField = document.getElementById('personal_city_field');
+
+    participantType.addEventListener('change', function () {
+        const type = this.value;
+        companyFields.classList.toggle('hidden', type !== 'company');
+        companyCityField.classList.toggle('hidden', type !== 'company');
+        personalCityField.classList.toggle('hidden', type !== 'personal');
+    });
+});
