@@ -18,7 +18,8 @@
 
                 {{-- Nama --}}
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Lengkap <span
+                            class="text-red-500">*</span></label>
                     <input type="text" name="name" value="{{ old('name') }}"
                         class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
                         required>
@@ -29,9 +30,11 @@
 
                 {{-- Email --}}
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Email <span
+                            class="text-red-500">*</span></label>
                     <input type="email" name="email" value="{{ old('email') }}"
-                        class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm">
+                        class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
+                        required>
                     @error('email')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -39,7 +42,8 @@
 
                 {{-- Phone --}}
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">No. HP / WA</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">No. HP / WA <span
+                            class="text-red-500">*</span></label>
                     <input type="text" name="phone" value="{{ old('phone') }}"
                         class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
                         required>
@@ -50,7 +54,8 @@
 
                 {{-- Kategori Pelatihan --}}
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori Pelatihan</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori Pelatihan <span
+                            class="text-red-500">*</span></label>
                     <select name="category_id" id="category_id"
                         class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
                         required>
@@ -68,7 +73,8 @@
 
                 {{-- Nama Pelatihan --}}
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Pelatihan</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Pelatihan <span
+                            class="text-red-500">*</span></label>
                     <select name="training_id" id="training_id"
                         class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
                         required>
@@ -87,7 +93,8 @@
 
                 {{-- Jenis Peserta --}}
                 <div>
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Jenis Peserta</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Jenis Peserta <span
+                            class="text-red-500">*</span></label>
                     <select name="participant_type" id="participant_type"
                         class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
                         required>
@@ -105,12 +112,14 @@
                 {{-- Data Perusahaan --}}
                 <div id="company_fields" class="space-y-4 {{ old('participant_type') == 'company' ? '' : 'hidden' }}">
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Perusahaan</label>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Nama Perusahaan <span
+                                class="text-red-500">*</span></label>
                         <input type="text" name="company_name" value="{{ old('company_name') }}"
-                            class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm">
+                            class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
+                            {{ old('participant_type') == 'company' ? 'required' : '' }}>
                     </div>
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">Jabatan</label>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">Jabatan (Opsional)</label>
                         <input type="text" name="position" value="{{ old('position') }}"
                             class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm">
                     </div>
@@ -118,9 +127,11 @@
 
                 {{-- Kota Personal --}}
                 <div id="personal_city_field" class="{{ old('participant_type') == 'personal' ? '' : 'hidden' }}">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kota</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kota <span
+                            class="text-red-500">*</span></label>
                     <select name="personal_city" id="personal_city"
-                        class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm">
+                        class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
+                        {{ old('participant_type') == 'personal' ? 'required' : '' }}>
                         <option value="">-- Pilih Kota --</option>
                         @foreach ($cities as $city)
                             <option value="{{ $city }}" {{ old('personal_city') == $city ? 'selected' : '' }}>
@@ -132,9 +143,11 @@
 
                 {{-- Kota Perusahaan --}}
                 <div id="company_city_field" class="{{ old('participant_type') == 'company' ? '' : 'hidden' }}">
-                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kota Perusahaan</label>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Kota Perusahaan <span
+                            class="text-red-500">*</span></label>
                     <select name="company_city" id="company_city"
-                        class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm">
+                        class="w-full border border-gray-300 focus:border-[#73BA7D] focus:ring-[#73BA7D] px-4 py-2 rounded-lg shadow-sm"
+                        {{ old('participant_type') == 'company' ? 'required' : '' }}>
                         <option value="">-- Pilih Kota --</option>
                         @foreach ($cities as $city)
                             <option value="{{ $city }}" {{ old('company_city') == $city ? 'selected' : '' }}>
@@ -153,8 +166,7 @@
         </div>
     </div>
 
-<!-- Tom Select (CDN) -->
-<link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
-
+    <!-- Tom Select (CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
 @endsection

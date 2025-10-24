@@ -11,7 +11,7 @@ class RegistrationAdminController extends Controller
     {
         // ambil semua data registrasi tanpa jadwal
         $registrations = Registration::orderBy('created_at', 'desc')
-            ->paginate(15);
+            ->paginate(10);
 
         return view('admin.registrations.index', compact('registrations'));
     }
