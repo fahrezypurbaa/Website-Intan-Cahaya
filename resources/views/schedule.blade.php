@@ -6,9 +6,8 @@
 
     {{-- Banner --}}
     <div class="relative">
-        <img src="{{ asset('images/hubungi-kami-banner.png') }}" 
-             alt="Jadwal Kami"
-             class="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover rounded-lg shadow-md">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Jadwal Kami"
+            class="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover rounded-lg shadow-md">
         <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/80 to-[#73BA7D]/80 flex items-center justify-center">
             <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white drop-shadow">
                 JADWAL PELATIHAN 2025
@@ -50,14 +49,13 @@
 
         {{-- PDF Viewer --}}
         <div class="w-full h-[800px] md:h-[900px] border rounded shadow">
-            <iframe src="{{ asset('files/jadwal-2025.pdf') }}" 
-                    class="w-full h-full rounded" frameborder="0"></iframe>
+            <iframe src="{{ asset('files/jadwal-2025.pdf') }}" class="w-full h-full rounded" frameborder="0"></iframe>
         </div>
 
         {{-- Tombol download --}}
         <div class="mt-6 text-center">
             <a href="{{ asset('files/jadwal-2025.pdf') }}" download
-               class="px-6 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold rounded-lg shadow hover:opacity-90 transition">
+                class="px-6 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold rounded-lg shadow hover:opacity-90 transition">
                 <i class="fa-solid fa-download mr-2"></i> Download Jadwal PDF
             </a>
         </div>
@@ -65,9 +63,9 @@
         {{-- Call to Action --}}
         <div class="mt-16 text-center">
             <p class="text-gray-700 mb-4">Siap ikut pelatihan? Hubungi tim kami untuk informasi pendaftaran.</p>
-            <a href="{{ url('/hubungi-kami') }}" 
-               class="px-6 py-3 bg-[#73BA7D] text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
-               <i class="fa-solid fa-phone mr-2"></i> Hubungi Kami
+            <a href="{{ url('/hubungi-kami') }}"
+                class="px-6 py-3 bg-[#73BA7D] text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
+                <i class="fa-solid fa-phone mr-2"></i> Hubungi Kami
             </a>
         </div>
 
@@ -77,15 +75,19 @@
             <div class="space-y-4 max-w-3xl mx-auto">
                 <div class="p-4 bg-white rounded-lg shadow hover:shadow-md transition">
                     <h4 class="font-semibold text-[#144F5F]">Bagaimana cara mendaftar pelatihan?</h4>
-                    <p class="text-gray-600 text-sm">Silakan hubungi tim kami melalui halaman <a href="{{ url('/hubungi-kami') }}" class="text-[#73BA7D] underline">Hubungi Kami</a> atau langsung klik tombol daftar di atas.</p>
+                    <p class="text-gray-600 text-sm">Silakan hubungi tim kami melalui halaman <a
+                            href="{{ url('/hubungi-kami') }}" class="text-[#73BA7D] underline">Hubungi Kami</a> atau
+                        langsung klik tombol daftar di atas.</p>
                 </div>
                 <div class="p-4 bg-white rounded-lg shadow hover:shadow-md transition">
                     <h4 class="font-semibold text-[#144F5F]">Apakah tersedia pelatihan online?</h4>
-                    <p class="text-gray-600 text-sm">Ya, beberapa program kami tersedia secara online untuk memudahkan peserta dari luar kota.</p>
+                    <p class="text-gray-600 text-sm">Ya, beberapa program kami tersedia secara online untuk memudahkan
+                        peserta dari luar kota.</p>
                 </div>
                 <div class="p-4 bg-white rounded-lg shadow hover:shadow-md transition">
                     <h4 class="font-semibold text-[#144F5F]">Apakah mendapat sertifikat resmi?</h4>
-                    <p class="text-gray-600 text-sm">Setiap peserta yang lulus akan mendapatkan sertifikat resmi dari Kemenaker RI atau BNSP sesuai jenis pelatihan.</p>
+                    <p class="text-gray-600 text-sm">Setiap peserta yang lulus akan mendapatkan sertifikat resmi dari
+                        Kemenaker RI atau BNSP sesuai jenis pelatihan.</p>
                 </div>
             </div>
         </div>
