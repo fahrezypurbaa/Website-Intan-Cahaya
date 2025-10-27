@@ -15,7 +15,6 @@ function slugify(text) {
 
 // === DOM Ready ===
 document.addEventListener("DOMContentLoaded", () => {
-
     /* =============================
        🟢 NAVBAR MOBILE
     ============================== */
@@ -28,7 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.addEventListener("click", (e) => {
-            if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            if (
+                !mobileMenu.contains(e.target) &&
+                !mobileMenuBtn.contains(e.target)
+            ) {
                 mobileMenu.classList.add("hidden");
             }
         });
@@ -69,14 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".tab-btn").forEach((btn) => {
         btn.addEventListener("click", function () {
-            document.querySelectorAll(".tab-btn").forEach((b) =>
-                b.classList.remove("active", "bg-[#73BA7D]", "text-white")
-            );
+            document
+                .querySelectorAll(".tab-btn")
+                .forEach((b) =>
+                    b.classList.remove("active", "bg-[#73BA7D]", "text-white")
+                );
             this.classList.add("active", "bg-[#73BA7D]", "text-white");
 
-            document.querySelectorAll(".program-category").forEach((cat) =>
-                cat.classList.add("hidden")
-            );
+            document
+                .querySelectorAll(".program-category")
+                .forEach((cat) => cat.classList.add("hidden"));
 
             const categoryId = this.dataset.category;
             document.getElementById(categoryId)?.classList.remove("hidden");
@@ -112,27 +116,31 @@ document.addEventListener("DOMContentLoaded", () => {
     ============================== */
     const counters = document.querySelectorAll(".counter");
     if (counters.length) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = +el.dataset.target;
-                    let count = 0;
-                    const step = Math.ceil(target / 100);
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.dataset.target;
+                        let count = 0;
+                        const step = Math.ceil(target / 100);
 
-                    const interval = setInterval(() => {
-                        count += step;
-                        if (count >= target) {
-                            clearInterval(interval);
-                            count = target;
-                        }
-                        el.innerText = target >= 1000 ? `${target}+` : count;
-                    }, 10);
+                        const interval = setInterval(() => {
+                            count += step;
+                            if (count >= target) {
+                                clearInterval(interval);
+                                count = target;
+                            }
+                            el.innerText =
+                                target >= 1000 ? `${target}+` : count;
+                        }, 10);
 
-                    observer.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
+                        observer.unobserve(el);
+                    }
+                });
+            },
+            { threshold: 0.5 }
+        );
 
         counters.forEach((c) => observer.observe(c));
     }
@@ -199,7 +207,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (participantType && companyFields) {
         participantType.addEventListener("change", () => {
-            companyFields.classList.toggle("hidden", participantType.value !== "company");
+            companyFields.classList.toggle(
+                "hidden",
+                participantType.value !== "company"
+            );
         });
     }
 
@@ -208,7 +219,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const selected = categorySelect.value;
             for (const option of trainingSelect.options) {
                 if (option.value)
-                    option.style.display = option.dataset.category === selected ? "block" : "none";
+                    option.style.display =
+                        option.dataset.category === selected ? "block" : "none";
             }
             trainingSelect.value = "";
         });
@@ -248,21 +260,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 // === Form Registrasi Tambahan ===
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     // Inisialisasi TomSelect
-    new TomSelect("#personal_city", { create: false, sortField: { field: "text", direction: "asc" }, maxOptions: 500 });
-    new TomSelect("#company_city", { create: false, sortField: { field: "text", direction: "asc" }, maxOptions: 500 });
+    new TomSelect("#personal_city", {
+        create: false,
+        sortField: { field: "text", direction: "asc" },
+        maxOptions: 500,
+    });
+    new TomSelect("#company_city", {
+        create: false,
+        sortField: { field: "text", direction: "asc" },
+        maxOptions: 500,
+    });
 
     // Toggle personal/company fields
-    const participantType = document.getElementById('participant_type');
-    const companyFields = document.getElementById('company_fields');
-    const companyCityField = document.getElementById('company_city_field');
-    const personalCityField = document.getElementById('personal_city_field');
+    const participantType = document.getElementById("participant_type");
+    const companyFields = document.getElementById("company_fields");
+    const companyCityField = document.getElementById("company_city_field");
+    const personalCityField = document.getElementById("personal_city_field");
 
-    participantType.addEventListener('change', function () {
+    participantType.addEventListener("change", function () {
         const type = this.value;
-        companyFields.classList.toggle('hidden', type !== 'company');
-        companyCityField.classList.toggle('hidden', type !== 'company');
-        personalCityField.classList.toggle('hidden', type !== 'personal');
+        companyFields.classList.toggle("hidden", type !== "company");
+        companyCityField.classList.toggle("hidden", type !== "company");
+        personalCityField.classList.toggle("hidden", type !== "personal");
     });
 });
