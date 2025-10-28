@@ -20,14 +20,12 @@ class Training extends Model
     }
 
     public function materials()
-{
-    return $this->hasMany(TrainingMaterial::class)->orderBy('order');
-}
+    {
+        return $this->hasMany(TrainingMaterial::class)->orderBy('order');
+    }
 
-public function rundowns()
-{
-    return $this->hasMany(TrainingRundown::class);
-}
-
-
+    public function rundowns()
+    {
+        return $this->hasMany(TrainingRundown::class);
+    }
 }
