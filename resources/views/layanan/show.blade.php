@@ -64,48 +64,77 @@
             <br>
 
             {{-- Materi Pembinaan --}}
-            <div x-data="{ openMateri: false }" class="border rounded-xl shadow overflow-hidden">
-                <button @click="openMateri = !openMateri"
-                    class="w-full flex justify-between items-center px-4 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold">
-                    <span class="flex items-center gap-2">
-                        <x-heroicon-o-book-open class="w-5 h-5" />
-                        Materi Pembinaan
-                    </span>
-                    <span x-text="openMateri ? '-' : '+'"></span>
-                </button>
-                <div x-show="openMateri" x-transition class="p-4 bg-white overflow-x-auto">
-                    @php $total = 0; @endphp
-                    <table class="w-full border-collapse border text-sm">
-                        <thead>
-                            <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
-                                <th class="p-2 text-left">Materi</th>
-                                <th class="p-2 w-20 text-center">JP</th>
+{{-- Materi Pembinaan --}}
+<div x-data="{ openMateri: false }" class="border rounded-xl shadow overflow-hidden">
+    <button @click="openMateri = !openMateri"
+        class="w-full flex justify-between items-center px-4 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold">
+        <span class="flex items-center gap-2">
+            <x-heroicon-o-book-open class="w-5 h-5" />
+            Materi Pembinaan
+        </span>
+        <span x-text="openMateri ? '-' : '+'"></span>
+    </button>
+
+    <div x-show="openMateri" x-transition class="p-4 bg-white overflow-x-auto">
+        @php
+            $category = strtolower($training->category->name ?? '');
+        @endphp
+
+        {{-- Kategori Kemnaker RI --}}
+        @if (Str::contains($category, 'kemnaker'))
+            @php $total = 0; @endphp
+            <table class="w-full border-collapse border text-sm">
+                <thead>
+                    <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
+                        <th class="p-2 text-left">Materi</th>
+                        <th class="p-2 w-20 text-center">JP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($groups as $group)
+                        @php $materials = $training->materials->where('group_name', $group); @endphp
+                        @if ($materials->count())
+                            <tr class="bg-gray-100 font-bold">
+                                <td colspan="2" class="p-2">{{ $group }}</td>
                             </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($groups as $group)
-                                @php $materials = $training ? $training->materials->where('group_name', $group) : collect(); @endphp
-                                @if ($materials->count())
-                                    <tr class="bg-gray-100 font-bold">
-                                        <td colspan="2" class="p-2">{{ $group }}</td>
-                                    </tr>
-                                    @foreach ($materials as $material)
-                                        <tr class="hover:bg-gray-50">
-                                            <td class="border p-2">{{ $material->title }}</td>
-                                            <td class="border p-2 text-center">{{ $material->jp }}</td>
-                                        </tr>
-                                        @php $total += (int) $material->jp; @endphp
-                                    @endforeach
-                                @endif
+                            @foreach ($materials as $material)
+                                <tr class="hover:bg-gray-50">
+                                    <td class="border p-2">{{ $material->title }}</td>
+                                    <td class="border p-2 text-center">{{ $material->jp }}</td>
+                                </tr>
+                                @php $total += (int) $material->jp; @endphp
                             @endforeach
-                            <tr class="bg-yellow-400 font-bold">
-                                <td class="p-2 text-right">JUMLAH</td>
-                                <td class="p-2 text-center">{{ $total }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                        @endif
+                    @endforeach
+                    <tr class="bg-yellow-400 font-bold">
+                        <td class="p-2 text-right">JUMLAH</td>
+                        <td class="p-2 text-center">{{ $total }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        {{-- Kategori BNSP atau Lainnya --}}
+        @else
+            <table class="w-full border-collapse border text-sm">
+                <thead>
+                    <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
+                        <th class="p-2 text-left w-40">Kode Unit</th>
+                        <th class="p-2 text-left">Judul Uji Kompetensi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($training->materials as $material)
+                        <tr class="hover:bg-gray-50">
+                            <td class="border p-2">{{ $material->kode_unit ?? '-' }}</td>
+                            <td class="border p-2">{{ $material->title }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @endif
+    </div>
+</div>
+
         </div>
 
         {{-- Detail --}}

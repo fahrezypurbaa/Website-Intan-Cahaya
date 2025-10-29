@@ -9,18 +9,27 @@ use Illuminate\Http\Request;
 
 class TrainingMaterialController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $materials = \App\Models\TrainingMaterial::with('training')
-            ->orderBy('group_name')
-            ->paginate(10); // <--- ubah dari get() jadi paginate()
+        $search = $request->input('search');
 
-        return view('admin.materials.index', compact('materials'));
+        $materials = TrainingMaterial::with('training.category')
+            ->when($search, function ($query, $search) {
+            $query->whereHas('training', function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%");
+            });
+        })
+        ->orderBy('group_name')
+        ->paginate(10)
+        ->appends(['search' => $search]);
+
+        return view('admin.materials.index', compact('materials', 'search'));
     }
 
     public function create()
     {
-        $trainings = Training::all();
+        $trainings = Training::with('category')->get();
+        // Kelompok hanya untuk Kemnaker
         $groups = [
             'Kelompok Dasar',
             'Kelompok Inti',
@@ -34,31 +43,47 @@ class TrainingMaterialController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'training_id' => 'required|exists:trainings,id',
-            'group_name' => 'required|string',
-            'materials' => 'required|array|min:1',
-            'materials.*.title' => 'required|string|max:255',
-            'materials.*.jp' => 'nullable|numeric|min:0',
-        ]);
+        $training = Training::with('category')->findOrFail($request->training_id);
+        $category = $training->category ? $training->category->name : null;
 
-        foreach ($request->materials as $material) {
-            \App\Models\TrainingMaterial::create([
-                'training_id' => $request->training_id,
-                'group_name' => $request->group_name,
-                'title' => $material['title'],
-                'jp' => $material['jp'],
+        // Validasi dinamis
+        $rules = [
+            'training_id' => 'required|exists:trainings,id',
+            'materials' => 'required|array|min:1',
+        ];
+
+        // Jika kategori Kemnaker → wajib ada kelompok
+        if ($category === 'Kemnaker RI') {
+            $rules['group_name'] = 'required|string';
+            $rules['materials.*.title'] = 'required|string|max:255';
+            $rules['materials.*.jp'] = 'nullable|numeric|min:0';
+        } 
+        // Jika kategori BNSP atau lainnya
+        else {
+            $rules['materials.*.kode_unit'] = 'nullable|string|max:255';
+            $rules['materials.*.title'] = 'required|string|max:255';
+        }
+
+        $validated = $request->validate($rules);
+
+        foreach ($validated['materials'] as $material) {
+            TrainingMaterial::create([
+                'training_id' => $validated['training_id'],
+                'group_name' => $validated['group_name'] ?? null, // kosong kalau bukan kemnaker
+                'kode_unit'  => $material['kode_unit'] ?? null,
+                'title'      => $material['title'],
+                'jp'         => $material['jp'] ?? null,
             ]);
         }
 
         return redirect()
             ->route('admin.materials.index')
-            ->with('success', '✅ Semua materi berhasil ditambahkan untuk kelompok '.$request->group_name);
+            ->with('success', "✅ Semua materi berhasil ditambahkan untuk kategori {$category}");
     }
 
     public function edit(TrainingMaterial $material)
     {
-        $trainings = Training::all();
+        $trainings = Training::with('category')->get();
         $groups = [
             'Kelompok Dasar',
             'Kelompok Inti',
@@ -72,22 +97,38 @@ class TrainingMaterialController extends Controller
 
     public function update(Request $request, TrainingMaterial $material)
     {
-        $request->validate([
+        $training = Training::with('category')->findOrFail($request->training_id);
+        $category = $training->category ? $training->category->name : null;
+
+        $rules = [
             'training_id' => 'required|exists:trainings,id',
-            'group_name' => 'required|string',
             'title' => 'required|string|max:255',
-            'jp' => 'nullable|numeric|min:0',
+        ];
+
+        if ($category === 'Kemnaker RI') {
+            $rules['group_name'] = 'required|string';
+            $rules['jp'] = 'nullable|numeric|min:0';
+        } else {
+            $rules['kode_unit'] = 'nullable|string|max:255';
+        }
+
+        $validated = $request->validate($rules);
+
+        $material->update([
+            'training_id' => $validated['training_id'],
+            'group_name'  => $validated['group_name'] ?? null,
+            'kode_unit'   => $validated['kode_unit'] ?? null,
+            'title'       => $validated['title'],
+            'jp'          => $validated['jp'] ?? null,
         ]);
 
-        $material->update($request->all());
-
-        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil diperbarui');
+        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil diperbarui.');
     }
 
     public function destroy(TrainingMaterial $material)
     {
         $material->delete();
 
-        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil dihapus');
+        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil dihapus.');
     }
 }

@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class TrainingMaterial extends Model
 {
     use HasFactory;
@@ -13,6 +12,7 @@ class TrainingMaterial extends Model
     protected $fillable = [
         'training_id',
         'group_name',
+        'kode_unit',
         'title',
         'jp',
         'order'
@@ -22,5 +22,4 @@ class TrainingMaterial extends Model
     {
         return $this->belongsTo(Training::class);
     }
-    
 }
