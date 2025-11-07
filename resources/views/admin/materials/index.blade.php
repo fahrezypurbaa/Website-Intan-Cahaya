@@ -11,18 +11,14 @@
             <div class="flex flex-col md:flex-row gap-3 items-center">
                 {{-- Search Form --}}
                 <form method="GET" action="{{ route('admin.materials.index') }}" class="flex items-center">
-                    <input type="text" 
-                        name="search" 
-                        value="{{ request('search') }}" 
-                        placeholder="🔍 Cari Training..." 
-                        class="border border-gray-300 rounded-l-lg px-3 py-2 w-56 focus:outline-none focus:ring-2 focus:ring-green-400"
-                    >
-                    <button type="submit" 
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="🔍 Cari Training..."
+                        class="border border-gray-300 rounded-l-lg px-3 py-2 w-56 focus:outline-none focus:ring-2 focus:ring-green-400">
+                    <button type="submit"
                         class="bg-green-500 hover:bg-green-600 text-white font-medium px-4 py-2 rounded-r-lg transition">
                         Cari
                     </button>
-                    @if(request('search'))
-                        <a href="{{ route('admin.materials.index') }}" 
+                    @if (request('search'))
+                        <a href="{{ route('admin.materials.index') }}"
                             class="ml-2 text-sm text-gray-500 hover:text-gray-700 underline">
                             Reset
                         </a>
