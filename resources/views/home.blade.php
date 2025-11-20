@@ -5,14 +5,15 @@
 @section('content')
 
     <!-- Hero Section -->
-    <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)" class="relative w-full h-screen min-h-[600px] overflow-hidden">
+    <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)"
+        class="relative w-full h-[75vh] sm:h-[85vh] md:h-screen overflow-hidden">
 
         <!-- Wrapper Slides -->
         <div class="flex h-full transition-transform duration-700 ease-in-out"
             :style="`transform: translateX(-${activeSlide * 100}%)`">
 
             <!-- Slide 1 -->
-            <div class="w-full flex-shrink-0 relative h-full">
+            <div class="w-full flex-shrink-0 relative h-full min-h-[75vh] sm:min-h-[85vh] md:min-h-screen">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/Kolase 2.jpg') }}" alt="Hero 1" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
@@ -28,7 +29,7 @@
             </div>
 
             <!-- Slide 2 (Achievements) -->
-            <div class="w-full flex-shrink-0 relative h-full">
+            <div class="w-full flex-shrink-0 relative h-full min-h-[75vh] sm:min-h-[85vh] md:min-h-screen">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/2.png') }}" alt="Hero 2" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
@@ -47,7 +48,7 @@
 
                     <!-- Grid Card -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl">
-                        <!-- Card (template) -->
+
                         <template
                             x-for="(card, index) in [
                         {label:'Alumni',target:4000,suffix:'+'},
@@ -56,57 +57,55 @@
                         {label:'Perusahaan',target:352,suffix:''}
                     ]"
                             :key="index">
+
                             <div x-show="show" x-transition.duration.700ms.delay.200ms
                                 class="bg-white/10 backdrop-blur-md border border-white/20 
                                     rounded-2xl p-6 text-center transform transition duration-500 
                                     hover:-translate-y-2 hover:shadow-[0_8px_25px_rgba(255,255,255,0.2)]">
+
                                 <div x-data="{ count: 0 }" x-init="$watch('show', val => {
                                     if (val) {
                                         let target = card.target;
                                         let interval = setInterval(() => {
-                                            if (count < target) { count += Math.ceil(target / 100); } else {
-                                                count = target;
-                                                clearInterval(interval);
-                                            }
+                                            if (count < target) { count += Math.ceil(target / 100); } else { count = target;
+                                                clearInterval(interval); }
                                         }, 30);
                                     } else { count = 0; }
                                 })">
+
                                     <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + card.suffix">
                                     </p>
                                 </div>
+
                                 <p class="mt-2 text-sm md:text-lg text-gray-200" x-text="card.label"></p>
                             </div>
+
                         </template>
                     </div>
                 </div>
             </div>
 
             <!-- Slide 3 -->
-            <div class="w-full flex-shrink-0 relative h-full">
-                <!-- Background -->
+            <div class="w-full flex-shrink-0 relative h-full min-h-[75vh] sm:min-h-[85vh] md:min-h-screen">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/Kolase 1.jpg') }}" alt="Safety Quality Competent WINNANETY"
                         class="w-full h-full object-cover">
-                    <!-- Overlay gradient elegan -->
                     <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
                 </div>
 
-                <!-- Overlay konten -->
                 <div class="absolute inset-0 flex items-center justify-center py-8 px-4">
                     <div class="w-full max-w-7xl mx-auto">
                         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
 
-                            <!-- Kiri: Safety Quality -->
+                            <!-- Kiri -->
                             <div class="text-center lg:text-left">
                                 <div class="mb-6">
-                                    <!-- Safety -->
                                     <h2
                                         class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase 
                                    bg-gradient-to-r from-[#73BA7D] to-[#144F5F] bg-clip-text text-transparent
                                    drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
                                         Safety
                                     </h2>
-                                    <!-- Quality -->
                                     <h3
                                         class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase 
                                    bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent
@@ -115,7 +114,6 @@
                                     </h3>
                                 </div>
 
-                                <!-- Competent -->
                                 <p
                                     class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase 
                               bg-gradient-to-r from-[#73BA7D] to-[#144F5F] bg-clip-text text-transparent
@@ -123,7 +121,6 @@
                                     Competent
                                 </p>
 
-                                <!-- Nama perusahaan -->
                                 <div class="mt-6">
                                     <span
                                         class="inline-block px-6 py-3 rounded-lg 
@@ -135,7 +132,7 @@
                                 </div>
                             </div>
 
-                            <!-- Kanan: Hubungi Kami -->
+                            <!-- Kanan -->
                             <div
                                 class="bg-white/20 backdrop-blur-xl border border-white/30 
                             rounded-2xl shadow-2xl p-6 lg:p-8">
@@ -147,6 +144,7 @@
                                 </h3>
 
                                 <div class="space-y-4">
+
                                     <!-- Telepon -->
                                     <div
                                         class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
@@ -204,7 +202,6 @@
                                     </div>
                                 </div>
 
-                                <!-- CTA -->
                                 <a href="{{ route('hubungi-kami') }}"
                                     class="block w-full mt-6 text-center py-3 rounded-lg font-medium text-white 
                               bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
@@ -213,21 +210,22 @@
                                     ✉️ Kirim Pesan
                                 </a>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-
         </div>
 
-        <!-- Tombol kontrol -->
+        <!-- Tombol Kontrol -->
         <button @click="activeSlide = (activeSlide - 1 + slides) % slides"
             class="absolute left-4 top-1/2 -translate-y-1/2 
                bg-white/70 backdrop-blur-md text-gray-800 px-3 py-2 
                rounded-full hover:bg-white hover:scale-110 transition shadow-xl">
             ❮
         </button>
+
         <button @click="activeSlide = (activeSlide + 1) % slides"
             class="absolute right-4 top-1/2 -translate-y-1/2 
                bg-white/70 backdrop-blur-md text-gray-800 px-3 py-2 
@@ -235,7 +233,7 @@
             ❯
         </button>
 
-        <!-- Navigasi dot -->
+        <!-- Dot Navigation -->
         <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
             <template x-for="i in slides" :key="i">
                 <button @click="activeSlide = i - 1" class="w-3.5 h-3.5 rounded-full transition transform"
@@ -245,7 +243,9 @@
                 </button>
             </template>
         </div>
+
     </div>
+
 
     <!-- Section : Program Pelatihan Unggulan Section -->
     <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
