@@ -130,3 +130,12 @@ button[type="submit"] {
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+/* === Custom Bullet Persyaratan === */
+.custom-bullet .bullet-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 9999px;
+    background: linear-gradient(to right, #144F5F, #73BA7D);
+    flex-shrink: 0;
+}
