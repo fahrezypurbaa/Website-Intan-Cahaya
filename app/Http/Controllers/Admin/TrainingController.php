@@ -13,33 +13,33 @@ use Intervention\Image\Laravel\Facades\Image;
 class TrainingController extends Controller
 {
     public function index(Request $request)
-{
-    $search = $request->input('search');
-    $categoryId = $request->input('category_id');
+    {
+        $search = $request->input('search');
+        $categoryId = $request->input('category_id');
 
-    $query = \App\Models\Training::with('category');
+        $query = \App\Models\Training::with('category');
 
-    // 🔍 Pencarian berdasarkan judul training atau nama kategori
-    if ($search) {
-        $query->where(function ($q) use ($search) {
-            $q->where('title', 'like', "%{$search}%")
-              ->orWhereHas('category', function ($qc) use ($search) {
-                  $qc->where('name', 'like', "%{$search}%");
-              });
-        });
+        // 🔍 Pencarian berdasarkan judul training atau nama kategori
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhereHas('category', function ($qc) use ($search) {
+                        $qc->where('name', 'like', "%{$search}%");
+                    });
+            });
+        }
+
+        // 🧭 Filter kategori
+        if ($categoryId) {
+            $query->where('category_id', $categoryId);
+        }
+
+        // 🔄 Pagination dan ambil data
+        $trainings = $query->latest()->paginate(10)->appends($request->all());
+        $categories = \App\Models\Category::orderBy('name')->get();
+
+        return view('admin.trainings.index', compact('trainings', 'categories'));
     }
-
-    // 🧭 Filter kategori
-    if ($categoryId) {
-        $query->where('category_id', $categoryId);
-    }
-
-    // 🔄 Pagination dan ambil data
-    $trainings = $query->latest()->paginate(10)->appends($request->all());
-    $categories = \App\Models\Category::orderBy('name')->get();
-
-    return view('admin.trainings.index', compact('trainings', 'categories'));
-}
 
     public function create()
     {
