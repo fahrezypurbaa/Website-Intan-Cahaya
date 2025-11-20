@@ -194,38 +194,39 @@
                 </li>
             </ul>
 
-           {{-- Persyaratan --}}
-@if (!empty($training->requirement))
-    <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl shadow-md mb-6">
-        <h3 class="text-xl font-bold text-[#144F5F] mb-4 flex items-center gap-2">
-            <x-heroicon-o-academic-cap class="w-6 h-6" />
-            Persyaratan Peserta
-        </h3>
+            {{-- Persyaratan --}}
+            @if (!empty($training->requirement))
+                <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl shadow-md mb-6">
+                    <h3 class="text-xl font-bold text-[#144F5F] mb-4 flex items-center gap-2">
+                        <x-heroicon-o-academic-cap class="w-6 h-6" />
+                        Persyaratan Peserta
+                    </h3>
 
-        @php
-            $requirements = preg_split('/\r\n|\r|\n/', $training->requirement);
-        @endphp
+                    @php
+                        $requirements = preg_split('/\r\n|\r|\n/', $training->requirement);
+                    @endphp
 
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-gray-700">
-            @foreach ($requirements as $req)
-                @if (trim($req))
-                    <li class="flex items-start gap-3">
-                        <!-- Bullet warna gradasi (tetap muncul) -->
-                        <span class="w-2 h-2 mt-1 flex-shrink-0 rounded-full 
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 text-sm text-gray-700">
+                        @foreach ($requirements as $req)
+                            @if (trim($req))
+                                <li class="flex items-start gap-3">
+                                    <!-- Bullet warna gradasi (tetap muncul) -->
+                                    <span
+                                        class="w-2 h-2 mt-1 flex-shrink-0 rounded-full 
                                      bg-gradient-to-r from-[#144F5F] to-[#73BA7D]">
-                        </span>
+                                    </span>
 
-                        <!-- Teks rapi dan justify -->
-                        <span class="text-justify leading-relaxed">
-                            {{ trim($req) }}
-                        </span>
-                    </li>
-                @endif
-            @endforeach
-        </ul>
+                                    <!-- Teks rapi dan justify -->
+                                    <span class="text-justify leading-relaxed">
+                                        {{ trim($req) }}
+                                    </span>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
 
-    </div>
-@endif
+                </div>
+            @endif
 
 
             {{-- Benefit --}}
