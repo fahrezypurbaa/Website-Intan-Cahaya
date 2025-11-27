@@ -15,13 +15,13 @@ class TrainingMaterialController extends Controller
 
         $materials = TrainingMaterial::with('training.category')
             ->when($search, function ($query, $search) {
-            $query->whereHas('training', function ($q) use ($search) {
-                $q->where('title', 'like', "%{$search}%");
-            });
-        })
-        ->orderBy('group_name')
-        ->paginate(10)
-        ->appends(['search' => $search]);
+                $query->whereHas('training', function ($q) use ($search) {
+                    $q->where('title', 'like', "%{$search}%");
+                });
+            })
+            ->orderBy('group_name')
+            ->paginate(10)
+            ->appends(['search' => $search]);
 
         return view('admin.materials.index', compact('materials', 'search'));
     }
@@ -29,7 +29,7 @@ class TrainingMaterialController extends Controller
     public function create()
     {
         $trainings = Training::with('category')->get();
-        // Kelompok hanya untuk Kemnaker
+
         $groups = [
             'Kelompok Dasar',
             'Kelompok Inti',
@@ -46,22 +46,31 @@ class TrainingMaterialController extends Controller
         $training = Training::with('category')->findOrFail($request->training_id);
         $category = $training->category ? $training->category->name : null;
 
-        // Validasi dinamis
         $rules = [
             'training_id' => 'required|exists:trainings,id',
             'materials' => 'required|array|min:1',
         ];
 
-        // Jika kategori Kemnaker → wajib ada kelompok
+        // Kemnaker
         if ($category === 'Kemnaker RI') {
+
             $rules['group_name'] = 'required|string';
             $rules['materials.*.title'] = 'required|string|max:255';
             $rules['materials.*.jp'] = 'nullable|numeric|min:0';
-        } 
-        // Jika kategori BNSP atau lainnya
+
+        }
+        // Non Sertifikasi
+        elseif ($category === 'Non Sertifikasi') {
+
+            $rules['materials.*.title'] = 'required|string|max:255';
+
+        }
+        // BNSP / lainnya
         else {
+
             $rules['materials.*.kode_unit'] = 'nullable|string|max:255';
             $rules['materials.*.title'] = 'required|string|max:255';
+
         }
 
         $validated = $request->validate($rules);
@@ -69,10 +78,10 @@ class TrainingMaterialController extends Controller
         foreach ($validated['materials'] as $material) {
             TrainingMaterial::create([
                 'training_id' => $validated['training_id'],
-                'group_name' => $validated['group_name'] ?? null, // kosong kalau bukan kemnaker
-                'kode_unit'  => $material['kode_unit'] ?? null,
-                'title'      => $material['title'],
-                'jp'         => $material['jp'] ?? null,
+                'group_name'  => $validated['group_name'] ?? null,
+                'kode_unit'   => $material['kode_unit'] ?? null,
+                'title'       => $material['title'],
+                'jp'          => $material['jp'] ?? null,
             ]);
         }
 
@@ -108,7 +117,11 @@ class TrainingMaterialController extends Controller
         if ($category === 'Kemnaker RI') {
             $rules['group_name'] = 'required|string';
             $rules['jp'] = 'nullable|numeric|min:0';
-        } else {
+        } 
+        elseif ($category === 'Non Sertifikasi') {
+            // hanya judul, tidak perlu kode_unit dan jp
+        }
+        else {
             $rules['kode_unit'] = 'nullable|string|max:255';
         }
 
@@ -122,13 +135,15 @@ class TrainingMaterialController extends Controller
             'jp'          => $validated['jp'] ?? null,
         ]);
 
-        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil diperbarui.');
+        return redirect()->route('admin.materials.index')
+            ->with('success', 'Materi berhasil diperbarui.');
     }
 
     public function destroy(TrainingMaterial $material)
     {
         $material->delete();
 
-        return redirect()->route('admin.materials.index')->with('success', 'Materi berhasil dihapus.');
+        return redirect()->route('admin.materials.index')
+            ->with('success', 'Materi berhasil dihapus.');
     }
 }

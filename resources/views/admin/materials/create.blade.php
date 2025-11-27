@@ -5,6 +5,7 @@
 @section('content')
     <x-admin.form-wrapper title="📚 Tambah Materi" action="{{ route('admin.materials.store') }}" method="POST"
         submitLabel="💾 Simpan Materi" back="{{ route('admin.materials.index') }}">
+
         <div x-data="{
             category: '',
             rows: [{ title: '', jp: '', kode_unit: '' }],
@@ -28,7 +29,7 @@
                 </select>
             </div>
 
-            {{-- Pilih Kelompok (hanya untuk Kemnaker) --}}
+            {{-- Pilih Kelompok (Kemnaker Saja) --}}
             <div x-show="category.toLowerCase().includes('kemnaker')" x-cloak>
                 <label class="block font-medium mb-1 text-gray-700 mt-3">Kelompok</label>
                 <select name="group_name" class="w-full border p-2 rounded">
@@ -39,7 +40,7 @@
                 </select>
             </div>
 
-            {{-- Daftar Materi Dinamis --}}
+            {{-- Daftar Materi --}}
             <div class="mt-6">
                 <div class="flex justify-between items-center mb-3">
                     <label class="font-semibold text-gray-800">Daftar Materi</label>
@@ -52,7 +53,7 @@
                 <template x-for="(row, index) in rows" :key="index">
                     <div class="grid grid-cols-12 gap-2 mb-2">
 
-                        {{-- Jika kategori termasuk Kemnaker --}}
+                        {{-- Kemnaker --}}
                         <template x-if="category.toLowerCase().includes('kemnaker')">
                             <div class="contents">
                                 <div class="col-span-8">
@@ -60,14 +61,28 @@
                                         placeholder="Judul Materi" class="w-full border p-2 rounded" required>
                                 </div>
                                 <div class="col-span-3">
-                                    <input type="number" x-model="row.jp" :name="`materials[${index}][jp]`"
-                                        placeholder="JP" class="w-full border p-2 rounded">
+                                        <input type="number" x-model="row.jp" :name="`materials[${index}][jp]`"
+                                            placeholder="JP" class="w-full border p-2 rounded">
                                 </div>
                             </div>
                         </template>
 
-                        {{-- Jika kategori BNSP dan PPSDM MIGAS --}}
-                        <template x-if="!category.toLowerCase().includes('kemnaker') && category !== ''">
+                        {{-- Non Sertifikasi (judul saja) --}}
+                        <template x-if="category.toLowerCase().includes('non sertifikasi')">
+                            <div class="contents">
+                                <div class="col-span-11">
+                                    <input type="text" x-model="row.title" :name="`materials[${index}][title]`"
+                                        placeholder="Judul Materi Non Sertifikasi" class="w-full border p-2 rounded" required>
+                                </div>
+                            </div>
+                        </template>
+
+                        {{-- BNSP atau kategori lain --}}
+                        <template x-if="
+                            !category.toLowerCase().includes('kemnaker') &&
+                            !category.toLowerCase().includes('non sertifikasi') &&
+                            category !== ''
+                        ">
                             <div class="contents">
                                 <div class="col-span-4">
                                     <input type="text" x-model="row.kode_unit" :name="`materials[${index}][kode_unit]`"
@@ -80,16 +95,16 @@
                             </div>
                         </template>
 
-                        {{-- Tombol hapus --}}
+                        {{-- Tombol Hapus --}}
                         <div class="col-span-1 flex items-center justify-center">
                             <button type="button" @click="rows.splice(index, 1)" class="text-red-600 hover:underline">
                                 🗑️
                             </button>
                         </div>
+
                     </div>
                 </template>
 
-                {{-- Pesan jika belum pilih training --}}
                 <div x-show="category === ''" class="text-sm text-gray-500 mt-3">
                     ⚠️ Pilih training terlebih dahulu untuk menentukan format tabel materi.
                 </div>

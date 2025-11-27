@@ -77,11 +77,11 @@
 
                 <div x-show="openMateri" x-transition class="p-4 bg-white overflow-x-auto">
                     @php
-                        $category = strtolower($training->category->name ?? '');
+                        $category = strtolower($training->category->slug ?? '');
                     @endphp
 
-                    {{-- Kategori Kemnaker RI --}}
-                    @if (Str::contains($category, 'kemnaker'))
+                    @if ($category === 'kemnaker')
+                        {{-- FORMAT KEMNAKER --}}
                         @php $total = 0; @endphp
                         <table class="w-full border-collapse border text-sm">
                             <thead>
@@ -112,9 +112,8 @@
                                 </tr>
                             </tbody>
                         </table>
-
-                        {{-- Kategori BNSP atau Lainnya --}}
-                    @else
+                    @elseif ($category === 'bnsp')
+                        {{-- FORMAT BNSP & PPSDM MIGAS --}}
                         <table class="w-full border-collapse border text-sm">
                             <thead>
                                 <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
@@ -131,7 +130,24 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    @elseif ($category === 'non-sertifikasi')
+                        {{-- FORMAT NON SERTIFIKASI: HANYA JUDUL --}}
+                        <table class="w-full border-collapse border text-sm">
+                            <thead>
+                                <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
+                                    <th class="p-2 text-left">Judul Materi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($training->materials as $material)
+                                    <tr class="hover:bg-gray-50">
+                                        <td class="border p-2">{{ $material->title }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     @endif
+
                 </div>
             </div>
 
@@ -227,7 +243,6 @@
 
                 </div>
             @endif
-
 
             {{-- Benefit --}}
             <div class="bg-gradient-to-r from-gray-50 to-gray-100 p-6 rounded-xl shadow-md mb-8">
