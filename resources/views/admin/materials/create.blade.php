@@ -66,7 +66,7 @@
                             </div>
                         </template>
 
-                        {{-- Jika kategori BNSP atau lainnya --}}
+                        {{-- Jika kategori BNSP dan PPSDM MIGAS --}}
                         <template x-if="!category.toLowerCase().includes('kemnaker') && category !== ''">
                             <div class="contents">
                                 <div class="col-span-4">
