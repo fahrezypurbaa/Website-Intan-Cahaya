@@ -61,8 +61,8 @@
                                         placeholder="Judul Materi" class="w-full border p-2 rounded" required>
                                 </div>
                                 <div class="col-span-3">
-                                        <input type="number" x-model="row.jp" :name="`materials[${index}][jp]`"
-                                            placeholder="JP" class="w-full border p-2 rounded">
+                                    <input type="number" x-model="row.jp" :name="`materials[${index}][jp]`"
+                                        placeholder="JP" class="w-full border p-2 rounded">
                                 </div>
                             </div>
                         </template>
@@ -72,13 +72,15 @@
                             <div class="contents">
                                 <div class="col-span-11">
                                     <input type="text" x-model="row.title" :name="`materials[${index}][title]`"
-                                        placeholder="Judul Materi Non Sertifikasi" class="w-full border p-2 rounded" required>
+                                        placeholder="Judul Materi Non Sertifikasi" class="w-full border p-2 rounded"
+                                        required>
                                 </div>
                             </div>
                         </template>
 
                         {{-- BNSP atau kategori lain --}}
-                        <template x-if="
+                        <template
+                            x-if="
                             !category.toLowerCase().includes('kemnaker') &&
                             !category.toLowerCase().includes('non sertifikasi') &&
                             category !== ''

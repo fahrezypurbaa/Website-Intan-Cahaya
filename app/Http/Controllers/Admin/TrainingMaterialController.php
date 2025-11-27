@@ -78,10 +78,10 @@ class TrainingMaterialController extends Controller
         foreach ($validated['materials'] as $material) {
             TrainingMaterial::create([
                 'training_id' => $validated['training_id'],
-                'group_name'  => $validated['group_name'] ?? null,
-                'kode_unit'   => $material['kode_unit'] ?? null,
-                'title'       => $material['title'],
-                'jp'          => $material['jp'] ?? null,
+                'group_name' => $validated['group_name'] ?? null,
+                'kode_unit' => $material['kode_unit'] ?? null,
+                'title' => $material['title'],
+                'jp' => $material['jp'] ?? null,
             ]);
         }
 
@@ -117,11 +117,9 @@ class TrainingMaterialController extends Controller
         if ($category === 'Kemnaker RI') {
             $rules['group_name'] = 'required|string';
             $rules['jp'] = 'nullable|numeric|min:0';
-        } 
-        elseif ($category === 'Non Sertifikasi') {
+        } elseif ($category === 'Non Sertifikasi') {
             // hanya judul, tidak perlu kode_unit dan jp
-        }
-        else {
+        } else {
             $rules['kode_unit'] = 'nullable|string|max:255';
         }
 
@@ -129,10 +127,10 @@ class TrainingMaterialController extends Controller
 
         $material->update([
             'training_id' => $validated['training_id'],
-            'group_name'  => $validated['group_name'] ?? null,
-            'kode_unit'   => $validated['kode_unit'] ?? null,
-            'title'       => $validated['title'],
-            'jp'          => $validated['jp'] ?? null,
+            'group_name' => $validated['group_name'] ?? null,
+            'kode_unit' => $validated['kode_unit'] ?? null,
+            'title' => $validated['title'],
+            'jp' => $validated['jp'] ?? null,
         ]);
 
         return redirect()->route('admin.materials.index')
