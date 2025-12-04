@@ -81,14 +81,25 @@
                 </div>
 
                 {{-- Pagination: tetap membawa kategori --}}
+            @elseif ($trainings->count() > 0)
                 <div class="mt-8 flex justify-center">
                     <div class="w-full max-w-md">
                         {{ $trainings->appends(request()->only('category'))->links() }}
                     </div>
                 </div>
             @else
-                <p class="text-gray-600">Tidak ada layanan tersedia saat ini.</p>
+                <div class="flex flex-col items-center text-center py-16">
+                    <img src="{{ asset('images/update-website.jpg') }}" alt="Layanan Update" class="w-64 mb-6 opacity-90">
+
+                    <h2 class="text-xl font-semibold text-gray-800">
+                        Layanan sedang kami update, mohon ditunggu ya
+                    </h2>
+                    <p class="text-gray-600 mt-2 max-w-sm">
+                        Tim kami sedang menyiapkan layanan terbaru untuk Anda.
+                    </p>
+                </div>
             @endif
+
         </main>
     </div>
 @endsection
