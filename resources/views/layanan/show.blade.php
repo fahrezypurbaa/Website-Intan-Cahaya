@@ -64,7 +64,6 @@
             <br>
 
             {{-- Materi Pembinaan --}}
-            {{-- Materi Pembinaan --}}
             <div x-data="{ openMateri: false }" class="border rounded-xl shadow overflow-hidden">
                 <button @click="openMateri = !openMateri"
                     class="w-full flex justify-between items-center px-4 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold">
@@ -80,7 +79,7 @@
                         $category = strtolower($training->category->slug ?? '');
                     @endphp
 
-                    @if ($category === 'kemnaker')
+                    @if (Str::contains($category, 'kemnaker'))
                         {{-- FORMAT KEMNAKER --}}
                         @php $total = 0; @endphp
                         <table class="w-full border-collapse border text-sm">
@@ -112,7 +111,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                    @elseif ($category === 'bnsp')
+                    @elseif (Str::contains($category, 'bnsp') || Str::contains($category, 'ppsdm'))
                         {{-- FORMAT BNSP & PPSDM MIGAS --}}
                         <table class="w-full border-collapse border text-sm">
                             <thead>
@@ -130,7 +129,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    @elseif ($category === 'non-sertifikasi')
+                    @elseif (Str::contains($category, 'non'))
                         {{-- FORMAT NON SERTIFIKASI: HANYA JUDUL --}}
                         <table class="w-full border-collapse border text-sm">
                             <thead>
