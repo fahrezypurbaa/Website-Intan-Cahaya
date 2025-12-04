@@ -67,8 +67,10 @@
                                     if (val) {
                                         let target = card.target;
                                         let interval = setInterval(() => {
-                                            if (count < target) { count += Math.ceil(target / 100); } else { count = target;
-                                                clearInterval(interval); }
+                                            if (count < target) { count += Math.ceil(target / 100); } else {
+                                                count = target;
+                                                clearInterval(interval);
+                                            }
                                         }, 30);
                                     } else { count = 0; }
                                 })">
@@ -94,128 +96,90 @@
                 </div>
 
                 <div class="absolute inset-0 flex items-center justify-center py-8 px-4">
-                    <div class="w-full max-w-7xl mx-auto">
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                    <div class="w-full max-w-xl mx-auto">
 
-                            <!-- Kiri -->
-                            <div class="text-center lg:text-left">
-                                <div class="mb-6">
-                                    <h2
-                                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase 
-                                   bg-gradient-to-r from-[#73BA7D] to-[#144F5F] bg-clip-text text-transparent
-                                   drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
-                                        Safety
-                                    </h2>
-                                    <h3
-                                        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase 
-                                   bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent
-                                   drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)] tracking-wide leading-tight">
-                                        Quality
-                                    </h3>
+                        <!-- Kotak Hubungi Kami (Tengah) -->
+                        <div
+                            class="bg-white/20 backdrop-blur-xl border border-white/30 
+                        rounded-2xl shadow-2xl p-6 lg:p-8">
+
+                            <h3
+                                class="text-2xl font-bold mb-6 text-center 
+                    bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                                Hubungi Kami
+                            </h3>
+
+                            <div class="space-y-4">
+
+                                <!-- Telepon -->
+                                <div
+                                    class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
+                        border border-white/20 transition shadow-md">
+                                    <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
+                                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-200">Telepon</p>
+                                        <p class="text-base font-medium text-white">(+62) 82146134846</p>
+                                    </div>
                                 </div>
 
-                                <p
-                                    class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase 
-                              bg-gradient-to-r from-[#73BA7D] to-[#144F5F] bg-clip-text text-transparent
-                              drop-shadow-xl tracking-wider leading-tight">
-                                    Competent
-                                </p>
+                                <!-- Alamat -->
+                                <div
+                                    class="flex items-start p-4 rounded-xl bg-white/10 hover:bg-white/20 
+                        border border-white/20 transition shadow-md">
+                                    <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
+                                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-200">Alamat</p>
+                                        <p class="text-sm text-white leading-relaxed">
+                                            Jl. Panggungan Asri No.37, RT.003/RW.033, Mayaan, Trihanggo, Kec. Gamping,
+                                            Kab. Sleman, DIY 55291
+                                        </p>
+                                    </div>
+                                </div>
 
-                                <div class="mt-6">
-                                    <span
-                                        class="inline-block px-6 py-3 rounded-lg 
-                                     bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
-                                     text-white font-bold text-xl sm:text-2xl tracking-wide 
-                                     shadow-lg hover:scale-105 transition">
-                                        IntanSafety
-                                    </span>
+                                <!-- Email -->
+                                <div
+                                    class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
+                        border border-white/20 transition shadow-md">
+                                    <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
+                                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
+                                            stroke-width="2" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs font-semibold text-gray-200">Email</p>
+                                        <p class="text-sm text-white">admin@intancahayamandiri.com</p>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Kanan -->
-                            <div
-                                class="bg-white/20 backdrop-blur-xl border border-white/30 
-                            rounded-2xl shadow-2xl p-6 lg:p-8">
-
-                                <h3
-                                    class="text-2xl font-bold mb-6 text-center 
-                               bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
-                                    Hubungi Kami
-                                </h3>
-
-                                <div class="space-y-4">
-
-                                    <!-- Telepon -->
-                                    <div
-                                        class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
-                                    border border-white/20 transition shadow-md">
-                                        <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
-                                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
-                                                stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.5a1 1 0 01-.5 1.21l-2.26 1.13a11 11 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.5 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.7 21 3 14.3 3 6V5z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs font-semibold text-gray-200">Telepon</p>
-                                            <p class="text-base font-medium text-white">(+62) 82146134846</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Alamat -->
-                                    <div
-                                        class="flex items-start p-4 rounded-xl bg-white/10 hover:bg-white/20 
-                                    border border-white/20 transition shadow-md">
-                                        <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
-                                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
-                                                stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs font-semibold text-gray-200">Alamat</p>
-                                            <p class="text-sm text-white leading-relaxed">
-                                                Jl. Panggungan Asri No.37, RT.003/RW.033, Mayaan, Trihanggo, Kec. Gamping,
-                                                Kab. Sleman, DIY 55291
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Email -->
-                                    <div
-                                        class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
-                                    border border-white/20 transition shadow-md">
-                                        <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
-                                            <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
-                                                stroke-width="2" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs font-semibold text-gray-200">Email</p>
-                                            <p class="text-sm text-white">admin@intancahayamandiri.com</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <a href="{{ route('hubungi-kami') }}"
-                                    class="block w-full mt-6 text-center py-3 rounded-lg font-medium text-white 
-                              bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
-                              hover:scale-105 hover:shadow-[0_0_20px_rgba(20,79,95,0.5)] 
-                              transition transform">
-                                    ✉️ Kirim Pesan
-                                </a>
-                            </div>
-
+                            <a href="{{ route('hubungi-kami') }}"
+                                class="block w-full mt-6 text-center py-3 rounded-lg font-medium text-white 
+                    bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+                    hover:scale-105 hover:shadow-[0_0_20px_rgba(20,79,95,0.5)] 
+                    transition transform">
+                                Kirim Pesan
+                            </a>
                         </div>
+
                     </div>
                 </div>
             </div>
-
         </div>
 
         <!-- Tombol Kontrol -->
@@ -245,7 +209,6 @@
         </div>
 
     </div>
-
 
     <!-- Section : Program Pelatihan Unggulan Section -->
     <section class="pt-16 pb-0 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
