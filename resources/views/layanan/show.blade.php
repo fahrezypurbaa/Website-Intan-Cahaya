@@ -129,7 +129,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    @elseif (Str::contains($category, 'non'))
+                    @elseif (Str::contains($category, 'non' || Str::contains($category, 'iso'))
                         {{-- FORMAT NON SERTIFIKASI: HANYA JUDUL --}}
                         <table class="w-full border-collapse border text-sm">
                             <thead>

@@ -67,13 +67,16 @@
                             </div>
                         </template>
 
-                        {{-- Non Sertifikasi (judul saja) --}}
-                        <template x-if="category.toLowerCase().includes('non sertifikasi')">
+                        {{-- Non Sertifikasi atau ISO (judul saja) --}}
+                        <template
+                            x-if="
+    category.toLowerCase().includes('non sertifikasi') ||
+    category.toLowerCase().includes('iso')
+">
                             <div class="contents">
                                 <div class="col-span-11">
                                     <input type="text" x-model="row.title" :name="`materials[${index}][title]`"
-                                        placeholder="Judul Materi Non Sertifikasi" class="w-full border p-2 rounded"
-                                        required>
+                                        placeholder="Judul Materi" class="w-full border p-2 rounded" required>
                                 </div>
                             </div>
                         </template>
@@ -81,10 +84,11 @@
                         {{-- BNSP atau kategori lain --}}
                         <template
                             x-if="
-                            !category.toLowerCase().includes('kemnaker') &&
-                            !category.toLowerCase().includes('non sertifikasi') &&
-                            category !== ''
-                        ">
+        !category.toLowerCase().includes('kemnaker') &&
+        !category.toLowerCase().includes('non sertifikasi') &&
+        !category.toLowerCase().includes('iso') &&
+        category !== ''
+    ">
                             <div class="contents">
                                 <div class="col-span-4">
                                     <input type="text" x-model="row.kode_unit" :name="`materials[${index}][kode_unit]`"
