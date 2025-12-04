@@ -131,12 +131,14 @@
                                 BNSP</a>
                             <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
                                 class="text-sm hover:text-[#73BA7D] transition-colors">Non Sertifikasi</a>
-                            <a href="{{ route('layanan.index', ['category' => 'esdm']) }}"
-                                class="text-sm hover:text-[#73BA7D] transition-colors">ESDM</a>
-                        </div>
-                        <div class="flex flex-col space-y-3">
                             <a href="{{ route('layanan.index', ['category' => 'ppsdm-migas']) }}"
                                 class="text-sm hover:text-[#73BA7D] transition-colors">PPSDM Migas</a>
+                        </div>
+                        <div class="flex flex-col space-y-3">
+                            <a href="{{ route('layanan.index', ['category' => 'iso']) }}"
+                                class="text-sm hover:text-[#73BA7D] transition-colors">ISO</a>
+                            <a href="{{ route('layanan.index', ['category' => 'esdm']) }}"
+                                class="text-sm hover:text-[#73BA7D] transition-colors">ESDM</a>
                             <a href="{{ route('layanan.index', ['category' => 'riksa-uji']) }}"
                                 class="text-sm hover:text-[#73BA7D] transition-colors">Riksa Uji</a>
                             <a href="{{ route('layanan.index', ['category' => 'perpanjangan-sio-lisensi']) }}"
@@ -251,12 +253,15 @@
                         <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
                             BNSP</a>
-                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Non
+                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Non
                             Sertifikasi</a>
-                        <a href="{{ route('layanan.index', ['category' => 'esdm']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ESDM</a>
                         <a href="{{ route('layanan.index', ['category' => 'ppsdm-migas']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">PPSDM Migas</a>
+                        <a href="{{ route('layanan.index', ['category' => 'iso']) }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ISO</a>
+                        <a href="{{ route('layanan.index', ['category' => 'esdm']) }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ESDM</a>
                         <a href="{{ route('layanan.index', ['category' => 'riksa-uji']) }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Riksa Uji</a>
                         <a href="{{ route('layanan.index', ['category' => 'perpanjangan-sio-lisensi']) }}"
