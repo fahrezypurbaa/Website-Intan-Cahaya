@@ -81,7 +81,6 @@
                 </div>
 
                 {{-- Pagination: tetap membawa kategori --}}
-            @elseif ($trainings->count() > 0)
                 <div class="mt-8 flex justify-center">
                     <div class="w-full max-w-md">
                         {{ $trainings->appends(request()->only('category'))->links() }}
@@ -99,7 +98,6 @@
                     </p>
                 </div>
             @endif
-
         </main>
     </div>
 @endsection

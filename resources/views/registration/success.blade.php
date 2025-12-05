@@ -14,7 +14,7 @@
             </div>
 
             <!-- Judul -->
-            <h2 class="text-3xl font-bold text-[#144F5F] mb-2">Pendaftaran Berhasil 🎉</h2>
+            <h2 class="text-3xl font-bold text-[#144F5F] mb-2">Pendaftaran Berhasil</h2>
             <div class="w-20 h-1 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] mx-auto rounded mb-6"></div>
 
             <p class="text-gray-700 mb-2 text-lg">Terima kasih sudah mendaftar di <span
