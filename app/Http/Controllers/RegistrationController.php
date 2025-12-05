@@ -16,29 +16,18 @@ class RegistrationController extends Controller
         $categories = Category::all();
         $trainings = Training::all();
 
-        // Daftar kota seluruh Indonesia (versi ringkas)
-        // Kalau mau versi lengkap (514 kota/kabupaten), aku bisa kirimkan file JSON siap pakai.
-        $cities = [
-            'Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Semarang', 'Makassar', 'Palembang', 'Bekasi',
-            'Depok', 'Tangerang', 'Bogor', 'Malang', 'Yogyakarta', 'Denpasar', 'Batam', 'Padang',
-            'Pontianak', 'Banjarmasin', 'Samarinda', 'Pekanbaru', 'Balikpapan', 'Cirebon', 'Solo',
-            'Manado', 'Mataram', 'Kupang', 'Jayapura', 'Ambon', 'Serang', 'Cilegon', 'Tegal',
-            'Banda Aceh', 'Tasikmalaya', 'Cimahi', 'Kediri', 'Magelang', 'Probolinggo', 'Pekalongan',
-            'Jambi', 'Bengkulu', 'Palangkaraya', 'Gorontalo', 'Ternate', 'Tidore', 'Tarakan',
-        ];
-
-        return view('registration.create', compact('categories', 'trainings', 'cities'));
+        return view('registration.create', compact('categories', 'trainings'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'name' => 'nullable|string|max:255',
+            'email' => 'nullable|email',
             'phone' => 'required|string|max:20',
             'participant_type' => 'required|in:personal,company',
-            'category_id' => 'required|exists:categories,id',
-            'training_id' => 'required|exists:trainings,id',
+            'category_id' => 'nullable|exists:categories,id',
+            'training_id' => 'nullable|exists:trainings,id',
             'personal_city' => 'nullable|string|max:100',
             'company_name' => 'nullable|string|max:255',
             'position' => 'nullable|string|max:255',

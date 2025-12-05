@@ -198,30 +198,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =============================
-       🟢 FORM REGISTRASI
-    ============================== */
+   🟢 FORM REGISTRASI (FINAL BERSIH)
+============================== */
     const participantType = document.getElementById("participant_type");
+    const personalFields = document.getElementById("personal_fields");
     const companyFields = document.getElementById("company_fields");
     const categorySelect = document.getElementById("category_id");
     const trainingSelect = document.getElementById("training_id");
 
-    if (participantType && companyFields) {
-        participantType.addEventListener("change", () => {
-            companyFields.classList.toggle(
-                "hidden",
-                participantType.value !== "company"
-            );
-        });
+    // Toggle personal/company field
+    if (participantType && personalFields && companyFields) {
+        const toggleParticipantFields = () => {
+            const type = participantType.value;
+            personalFields.classList.toggle("hidden", type !== "personal");
+            companyFields.classList.toggle("hidden", type !== "company");
+        };
+
+        toggleParticipantFields(); // load pertama
+        participantType.addEventListener("change", toggleParticipantFields);
     }
 
+    // Filter training berdasarkan kategori
     if (categorySelect && trainingSelect) {
         categorySelect.addEventListener("change", () => {
             const selected = categorySelect.value;
+
             for (const option of trainingSelect.options) {
-                if (option.value)
+                if (option.value) {
                     option.style.display =
                         option.dataset.category === selected ? "block" : "none";
+                }
             }
+
             trainingSelect.value = "";
         });
     }
@@ -258,31 +266,4 @@ document.addEventListener("DOMContentLoaded", () => {
             reader.readAsDataURL(file);
         });
     }
-});
-// === Form Registrasi Tambahan ===
-document.addEventListener("DOMContentLoaded", function () {
-    // Inisialisasi TomSelect
-    new TomSelect("#personal_city", {
-        create: false,
-        sortField: { field: "text", direction: "asc" },
-        maxOptions: 500,
-    });
-    new TomSelect("#company_city", {
-        create: false,
-        sortField: { field: "text", direction: "asc" },
-        maxOptions: 500,
-    });
-
-    // Toggle personal/company fields
-    const participantType = document.getElementById("participant_type");
-    const companyFields = document.getElementById("company_fields");
-    const companyCityField = document.getElementById("company_city_field");
-    const personalCityField = document.getElementById("personal_city_field");
-
-    participantType.addEventListener("change", function () {
-        const type = this.value;
-        companyFields.classList.toggle("hidden", type !== "company");
-        companyCityField.classList.toggle("hidden", type !== "company");
-        personalCityField.classList.toggle("hidden", type !== "personal");
-    });
 });
