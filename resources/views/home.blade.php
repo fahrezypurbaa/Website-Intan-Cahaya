@@ -18,13 +18,46 @@
                     <img src="{{ asset('images/Kolase 2.jpg') }}" alt="Hero 1" class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
                 </div>
-                <div class="absolute inset-0 flex items-center justify-center px-4">
+                <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+
+                    <!-- Judul Besar -->
                     <h1
-                        class="text-4xl md:text-6xl font-extrabold text-center 
-                           bg-gradient-to-r from-white via-gray-200 to-gray-100 bg-clip-text text-transparent 
-                           drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)] tracking-wide leading-tight">
-                        Welcome to Our Website
+                        class="text-4xl md:text-6xl font-extrabold 
+               bg-gradient-to-r from-white via-gray-200 to-gray-100 
+               bg-clip-text text-transparent
+               drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]
+               tracking-wide leading-tight">
+                        Pusat Pelatihan & Sertifikasi
                     </h1>
+
+                    <!-- Subjudul -->
+                    <p
+                        class="mt-4 text-lg md:text-2xl font-medium 
+              text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
+                        Program Kemnaker RI, BNSP & Softskill
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+
+                        <!-- Button 1: Lihat Pilihan Program -->
+                        <a href="/layanan"
+                            class="px-6 py-3 rounded-xl text-lg text-white
+                  bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                  shadow-lg transition-all duration-300
+                  hover:scale-[1.05] hover:shadow-2xl hover:brightness-110">
+                            Lihat Pilihan Program
+                        </a>
+
+                        <!-- Button 2: Daftar Sekarang -->
+                        <a href="/registration"
+                            class="px-6 py-3 rounded-xl text-lg text-white
+                  bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                  shadow-lg transition-all duration-300
+                  hover:scale-[1.05] hover:shadow-2xl hover:brightness-110">
+                            Daftar Sekarang
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -460,7 +493,6 @@
     hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❯
                     </div>
-
                 </div>
             </div>
 
