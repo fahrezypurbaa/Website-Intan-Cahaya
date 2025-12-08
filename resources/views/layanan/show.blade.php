@@ -173,14 +173,14 @@
                 @if ($training->brochure_path)
                     <a href="{{ route('trainings.brochure', $training->id) }}"
                         class="px-6 py-3 text-center border-2 border-[#144F5F] text-[#144F5F] rounded-lg font-semibold 
-        hover:bg-gradient-to-r hover:from-[#144F5F] hover:to-[#73BA7D] hover:text-white transition flex items-center justify-center gap-2">
+                        hover:bg-gradient-to-r hover:from-[#144F5F] hover:to-[#73BA7D] hover:text-white transition flex items-center justify-center gap-2">
                         <x-heroicon-o-document-text class="w-5 h-5" />
                         Download PDF
                     </a>
                 @else
                     <button disabled
                         class="px-6 py-3 text-center border-2 border-gray-300 text-gray-400 rounded-lg font-semibold 
-        flex items-center justify-center gap-2 cursor-not-allowed bg-gray-50">
+                        flex items-center justify-center gap-2 cursor-not-allowed bg-gray-50">
                         <x-heroicon-o-document-text class="w-5 h-5 text-gray-400" />
                         PDF Belum Tersedia
                     </button>

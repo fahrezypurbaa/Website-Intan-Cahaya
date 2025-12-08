@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="max-w-7xl mx-auto py-10 px-4 grid grid-cols-1 lg:grid-cols-[16rem_1fr] gap-8">
-
+        
         {{-- Sidebar Kategori --}}
         <aside class="order-1 lg:order-none lg:sticky lg:top-24 self-start max-h-[80vh] overflow-y-auto">
             <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
@@ -34,7 +34,14 @@
         {{-- Main Content --}}
         <main>
             <div class="flex items-center justify-between mb-6">
-                <h1 class="text-2xl font-bold text-[#144F5F]">Daftar Layanan Pelatihan</h1>
+                <h1 class="text-3xl font-extrabold text-[#144F5F] mb-6 inline-block pb-1 border-b-4 
+                    border-gradient-to-r from-[#144F5F] to-[#73BA7D]">
+                @if (!empty($categorySlug))
+                    {{ ucwords(str_replace('-', ' ', $categorySlug)) }}
+                @else
+                    Layanan Pelatihan & Sertifikasi Intan Safety
+                @endif
+                </h1>
             </div>
 
             @if ($trainings->count())
