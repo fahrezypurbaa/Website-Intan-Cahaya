@@ -306,7 +306,7 @@
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Legalitas</a>
                         <a href="#" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Cek
                             Sertifikat</a>
-                        <a href="#"
+                        <a href="{{ route('articles.index') }}"
                             class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Artikel</a>
                     </div>
                 </div>
