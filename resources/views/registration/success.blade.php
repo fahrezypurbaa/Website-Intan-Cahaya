@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="relative">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Registration-success"
+            class="w-full h-64 object-cover rounded-lg shadow-md">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/70 to-[#73BA7D]/70 flex items-center justify-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow">
+                PENDAFTARAN PELATIHAN BERHASIL
+            </h1>
+        </div>
+    </div>
     <div class="min-h-screen flex items-center justify-center bg-gray-50 px-6 py-12">
         <div class="bg-white shadow-lg rounded-2xl p-10 max-w-xl w-full text-center border border-gray-100">
             <!-- Icon sukses -->

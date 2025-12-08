@@ -1,10 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+    {{-- Banner --}}
+    <div class="relative">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Registration"
+            class="w-full h-64 object-cover rounded-lg shadow-md">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/70 to-[#73BA7D]/70 flex items-center justify-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow">
+                PENDAFTARAN PELATIHAN
+            </h1>
+        </div>
+    </div>
+
     <div class="max-w-2xl mx-auto py-12 px-6">
         <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
             <h2 class="text-3xl font-bold mb-6 text-[#144F5F] text-center">
-                📝 Form Pendaftaran Pelatihan K3
+                Formulir Registrasi Pelatihan
             </h2>
 
             @if (session('success'))
