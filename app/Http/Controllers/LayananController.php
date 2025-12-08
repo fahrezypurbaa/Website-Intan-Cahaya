@@ -8,22 +8,27 @@ use Illuminate\Http\Request;
 
 class LayananController extends Controller
 {
-    public function index(Request $request)
-    {
-        $categories = Category::all();
+    public function index(Request $request, $categorySlug = null, $page = null)
+{
+    $categories = Category::all();
 
-        // Ambil pelatihan berdasarkan kategori (jika ada)
-        $trainings = Training::with('category')
-            ->when($request->category, function ($query) use ($request) {
-                $query->whereHas('category', function ($subQuery) use ($request) {
-                    $subQuery->where('slug', $request->category);
-                });
-            })
-            ->oldest()
-            ->paginate(9);
-
-        return view('layanan.index', compact('categories', 'trainings'));
+    // Jika menggunakan SEO pagination: /layanan/{category}/page/{page}
+    if ($page) {
+        $request->merge(['page' => $page]);
     }
+
+    // Query training
+    $trainings = Training::with('category')
+        ->when($categorySlug, function ($query) use ($categorySlug) {
+            $query->whereHas('category', function ($subQuery) use ($categorySlug) {
+                $subQuery->where('slug', $categorySlug);
+            });
+        })
+        ->oldest()
+        ->paginate(9);
+
+    return view('layanan.index', compact('categories', 'trainings', 'categorySlug'));
+}
 
     public function show($slug)
     {

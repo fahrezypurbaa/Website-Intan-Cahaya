@@ -42,9 +42,17 @@ Route::get('/legalitas', [LegalitasController::class, 'index'])->name('legalitas
 // Galeri Publik
 Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri');
 
-// Layanan
-Route::get('/layanan', [LayananController::class, 'index'])->name('layanan.index');
-Route::get('/layanan/{slug}', [LayananController::class, 'show'])->name('layanan.show');
+// Layanan list berdasarkan kategori + pagination
+Route::get('/layanan/{categorySlug?}', [LayananController::class, 'index'])
+    ->name('layanan.index');
+
+// Pagination SEO friendly
+Route::get('/layanan/{categorySlug}/page/{page}', [LayananController::class, 'index'])
+    ->name('layanan.pagination');
+
+// Detail layanan
+Route::get('/layanan/detail/{slug}', [LayananController::class, 'show'])
+    ->name('layanan.show');
 
 // Jadwal 2025
 Route::view('/schedule', 'schedule')->name('schedule');

@@ -12,9 +12,9 @@
                 <ul class="space-y-2">
                     @foreach ($categories as $cat)
                         <li>
-                            <a href="{{ route('layanan.index', ['category' => $cat->slug]) }}"
+                            <a href="{{ url('/layanan/' . $cat->slug) }}"
                                 class="block px-3 py-2 rounded-lg transition font-medium
-                            {{ request('category') == $cat->slug
+                                {{ ($categorySlug ?? null) == $cat->slug
                                 ? 'bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white shadow'
                                 : 'hover:bg-[#73BA7D]/20 text-[#144F5F]' }}">
                                 {{ $cat->name }}
@@ -59,7 +59,6 @@
                                         {{ $t->category->name }}
                                     </span>
                                 </div>
-
                                 <h3 class="text-lg font-bold mb-1 text-[#144F5F]">{{ $t->title }}</h3>
                                 <div class="flex items-center gap-2 mb-2">
                                     <x-heroicon-o-calendar class="w-5 h-5 text-[#144F5F] flex-shrink-0" />
@@ -83,7 +82,50 @@
                 {{-- Pagination: tetap membawa kategori --}}
                 <div class="mt-8 flex justify-center">
                     <div class="w-full max-w-md">
-                        {{ $trainings->appends(request()->only('category'))->links() }}
+
+                        @php
+                            $paginator = $trainings;
+                        @endphp
+
+                        @if ($paginator->hasPages())
+                            <nav class="flex justify-center space-x-1">
+
+                                {{-- Previous --}}
+                                @if ($paginator->onFirstPage())
+                                    <span class="px-3 py-1 rounded bg-gray-200 text-gray-500">Prev</span>
+                                @else
+                                    <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $paginator->currentPage() - 1) : $paginator->previousPageUrl() }}"
+                                        class="px-3 py-1 rounded bg-[#144F5F] text-white hover:opacity-80 transition">
+                                        Prev
+                                    </a>
+                                @endif
+
+                                {{-- Page numbers --}}
+                                @foreach ($paginator->links()->elements[0] ?? [] as $page => $url)
+                                    @if ($page == $paginator->currentPage())
+                                        <span
+                                            class="px-3 py-1 rounded bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-bold">
+                                            {{ $page }}
+                                        </span>
+                                    @else
+                                        <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : $url }}"
+                                            class="px-3 py-1 rounded bg-gray-200 text-[#144F5F] hover:bg-gray-300 transition">
+                                            {{ $page }}
+                                        </a>
+                                    @endif
+                                @endforeach
+
+                                {{-- Next --}}
+                                @if ($paginator->hasMorePages())
+                                    <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $paginator->currentPage() + 1) : $paginator->nextPageUrl() }}"
+                                        class="px-3 py-1 rounded bg-[#144F5F] text-white hover:opacity-80 transition">
+                                        Next
+                                    </a>
+                                @else
+                                    <span class="px-3 py-1 rounded bg-gray-200 text-gray-500">Next</span>
+                                @endif
+                            </nav>
+                        @endif
                     </div>
                 </div>
             @else
