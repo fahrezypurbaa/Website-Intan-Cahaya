@@ -23,17 +23,17 @@
                     <!-- Judul Besar -->
                     <h1
                         class="text-4xl md:text-6xl font-extrabold 
-               bg-gradient-to-r from-white via-gray-200 to-gray-100 
-               bg-clip-text text-transparent
-               drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]
-               tracking-wide leading-tight">
+                        bg-gradient-to-r from-white via-gray-200 to-gray-100 
+                        bg-clip-text text-transparent
+                        drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]
+                        tracking-wide leading-tight">
                         Pusat Pelatihan & Sertifikasi
                     </h1>
 
                     <!-- Subjudul -->
                     <p
-                        class="mt-4 text-lg md:text-2xl font-medium 
-              text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
+                        class="mt-4 text-lg md:text-2xl font-medium
+                        text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
                         Program Kemnaker RI, BNSP & Softskill
                     </p>
 
@@ -43,18 +43,18 @@
                         <!-- Button 1: Lihat Pilihan Program -->
                         <a href="/layanan"
                             class="px-6 py-3 rounded-xl text-lg text-white
-                  bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
-                  shadow-lg transition-all duration-300
-                  hover:scale-[1.05] hover:shadow-2xl hover:brightness-110">
+                            bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                            shadow-lg transition-all duration-300
+                            hover:scale-[1.05] hover:shadow-2xl hover:brightness-110">
                             Lihat Pilihan Program
                         </a>
 
                         <!-- Button 2: Daftar Sekarang -->
                         <a href="/registration"
                             class="px-6 py-3 rounded-xl text-lg text-white
-                  bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
-                  shadow-lg transition-all duration-300
-                  hover:scale-[1.05] hover:shadow-2xl hover:brightness-110">
+                            bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                            shadow-lg transition-all duration-300
+                            hover:scale-[1.05] hover:shadow-2xl hover:brightness-110">
                             Daftar Sekarang
                         </a>
                     </div>
@@ -84,11 +84,11 @@
 
                         <template
                             x-for="(card, index) in [
-                        {label:'Alumni',target:4000,suffix:'+'},
-                        {label:'Pembinaan',target:352,suffix:''},
-                        {label:'Loyal Customer',target:500,suffix:'+'},
-                        {label:'Perusahaan',target:352,suffix:''}
-                    ]"
+                            {label:'Alumni',target:4000,suffix:'+'},
+                            {label:'Pembinaan',target:352,suffix:''},
+                            {label:'Loyal Customer',target:500,suffix:'+'},
+                            {label:'Perusahaan',target:352,suffix:''}
+                            ]"
                             :key="index">
 
                             <div x-show="show" x-transition.duration.700ms.delay.200ms
@@ -111,10 +111,8 @@
                                     <p class="text-3xl md:text-4xl font-extrabold text-white" x-text="count + card.suffix">
                                     </p>
                                 </div>
-
                                 <p class="mt-2 text-sm md:text-lg text-gray-200" x-text="card.label"></p>
                             </div>
-
                         </template>
                     </div>
                 </div>
@@ -134,20 +132,19 @@
                         <!-- Kotak Hubungi Kami (Tengah) -->
                         <div
                             class="bg-white/20 backdrop-blur-xl border border-white/30 
-                        rounded-2xl shadow-2xl p-6 lg:p-8">
+                            rounded-2xl shadow-2xl p-6 lg:p-8">
 
                             <h3
                                 class="text-2xl font-bold mb-6 text-center 
-                    bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
+                                bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent">
                                 Hubungi Kami
                             </h3>
 
                             <div class="space-y-4">
-
                                 <!-- Telepon -->
                                 <div
                                     class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
-                        border border-white/20 transition shadow-md">
+                                    border border-white/20 transition shadow-md">
                                     <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
                                         <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
                                             stroke-width="2" viewBox="0 0 24 24">
@@ -164,7 +161,7 @@
                                 <!-- Alamat -->
                                 <div
                                     class="flex items-start p-4 rounded-xl bg-white/10 hover:bg-white/20 
-                        border border-white/20 transition shadow-md">
+                                    border border-white/20 transition shadow-md">
                                     <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
                                         <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
                                             stroke-width="2" viewBox="0 0 24 24">
@@ -186,7 +183,7 @@
                                 <!-- Email -->
                                 <div
                                     class="flex items-center p-4 rounded-xl bg-white/10 hover:bg-white/20 
-                        border border-white/20 transition shadow-md">
+                                    border border-white/20 transition shadow-md">
                                     <div class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] p-3 rounded-full mr-4">
                                         <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor"
                                             stroke-width="2" viewBox="0 0 24 24">
@@ -196,20 +193,19 @@
                                     </div>
                                     <div>
                                         <p class="text-xs font-semibold text-gray-200">Email</p>
-                                        <p class="text-sm text-white">admin@intancahayamandiri.com</p>
+                                        <p class="text-sm text-white">admin@intansafetyk3.com</p>
                                     </div>
                                 </div>
                             </div>
 
                             <a href="{{ route('hubungi-kami') }}"
                                 class="block w-full mt-6 text-center py-3 rounded-lg font-medium text-white 
-                    bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
-                    hover:scale-105 hover:shadow-[0_0_20px_rgba(20,79,95,0.5)] 
-                    transition transform">
+                                bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
+                                hover:scale-105 hover:shadow-[0_0_20px_rgba(20,79,95,0.5)] 
+                                transition transform">
                                 Kirim Pesan
                             </a>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -240,7 +236,6 @@
                 </button>
             </template>
         </div>
-
     </div>
 
     <!-- Section : Program Pelatihan Unggulan Section -->
@@ -311,12 +306,10 @@
                                                     d="M9 5l7 7-7 7"></path>
                                             </svg>
                                         </a>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Card 2 -->
                         <div class="swiper-slide">
@@ -357,7 +350,6 @@
                             </div>
                         </div>
 
-
                         <!-- Card 3 -->
                         <div class="swiper-slide">
                             <div
@@ -395,7 +387,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Card 4 -->
                         <div class="swiper-slide">
@@ -435,7 +426,6 @@
                             </div>
                         </div>
 
-
                         <!-- Card 5 -->
                         <div class="swiper-slide">
                             <div
@@ -474,23 +464,21 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <!-- Navigation buttons -->
                     <!-- Tombol Prev -->
                     <div
-                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
-    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
-    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2
+                        bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full
+                        hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❮
                     </div>
 
                     <!-- Tombol Next -->
                     <div
-                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
-    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
-    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2
+                        bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
+                        hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❯
                     </div>
                 </div>
@@ -616,26 +604,23 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <!-- Navigation buttons -->
                     <!-- Tombol Prev -->
                     <div
                         class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
-    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
-    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+                        bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full
+                        hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❮
                     </div>
 
                     <!-- Tombol Next -->
                     <div
-                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
-    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
-    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2
+                        bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full
+                        hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❯
                     </div>
-
                 </div>
             </div>
 
@@ -682,7 +667,6 @@
                             </div>
                         </div>
 
-
                         <!-- Soft Skill Card 2 -->
                         <div class="swiper-slide">
                             <div
@@ -720,7 +704,6 @@
                                 </div>
                             </div>
                         </div>
-
 
                         <!-- Soft Skill Card 3 -->
                         <div class="swiper-slide">
@@ -760,26 +743,23 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
-                    <!-- Navigation buttons -->
                     <!-- Tombol Prev -->
                     <div
-                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2 
-    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
-    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+                        class="swiper-button-prev !static absolute left-4 top-1/2 -translate-y-1/2
+                        bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full
+                        hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❮
                     </div>
 
                     <!-- Tombol Next -->
                     <div
-                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2 
-    bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full 
-    hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
+                        class="swiper-button-next !static absolute right-4 top-1/2 -translate-y-1/2
+                        bg-white/70 backdrop-blur-md text-[#144F5F] px-3 py-2 rounded-full
+                        hover:bg-white hover:scale-110 transition-all shadow-xl flex items-center justify-center cursor-pointer z-10">
                         ❯
                     </div>
-
                 </div>
             </div>
         </div>
@@ -872,7 +852,6 @@
                 </div>
             </div>
 
-            <!-- Bagian Kanan -->
             <!-- Bagian Kanan -->
             <div class="lg:w-1/2">
                 <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-white/70 backdrop-blur-md">
@@ -1071,7 +1050,6 @@
                     class="px-6 py-2 rounded-md shadow bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-medium transition-all duration-300 hover:opacity-90">
                     Selengkapnya
                 </a>
-
             </div>
         </div>
     </div>
@@ -1094,7 +1072,6 @@
                         class="mt-2 text-3xl font-bold leading-snug bg-gradient-to-r from-[#144F5F] to-[#73BA7D] bg-clip-text text-transparent inline-block">
                         Journeys of Discovery <br> Uncovering Hidden
                     </h2>
-
                 </div>
             </div>
 

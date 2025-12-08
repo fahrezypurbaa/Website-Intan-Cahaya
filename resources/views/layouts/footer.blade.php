@@ -26,8 +26,8 @@
                 <ul class="space-y-1 text-sm">
                     <li class="flex items-center gap-2">
                         <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:admin@intancahayamandiri.com" class="hover:underline">
-                            admin@intancahayamandiri.com
+                        <a href="mailto:admin@intansafetyk3.com" class="hover:underline">
+                            admin@intansafetyk3.com
                         </a>
                     </li>
                     <li class="flex items-center gap-2">
