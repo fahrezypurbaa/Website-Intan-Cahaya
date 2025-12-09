@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Intan Safety')</title>
 
+    {{-- Canonical --}}
+    <link rel="canonical" 
+    href="{{ request()->is('/') ? url('/') . '/' : url()->current() }}">
+
     {{-- Favicon --}}
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/png">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
