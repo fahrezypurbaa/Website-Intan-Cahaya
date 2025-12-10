@@ -98,46 +98,59 @@
                         @if ($paginator->hasPages())
                             <nav class="flex flex-wrap justify-center gap-2 sm:space-x-1">
 
+                                @php
+                                    $current = $paginator->currentPage();
+                                    $last = $paginator->lastPage();
+                                    $blockSize = 10;
+
+                                    $start = floor(($current - 1) / $blockSize) * $blockSize + 1;
+                                    $end = min($start + $blockSize - 1, $last);
+                                @endphp
+
                                 {{-- Previous --}}
                                 @if ($paginator->onFirstPage())
-                                    <span class="px-2 py-1 sm:px-3 rounded bg-gray-200 text-gray-500 text-sm sm:text-base">
-                                        Prev
-                                    </span>
+                                    <span
+                                        class="px-2 py-1 sm:px-3 rounded bg-gray-200 text-gray-500 text-sm sm:text-base">Prev</span>
                                 @else
-                                    <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $paginator->currentPage() - 1) : $paginator->previousPageUrl() }}"
+                                    <a href="{{ $categorySlug 
+                                        ? url('/layanan/' . $categorySlug . '/page/' . ($current - 1)) 
+                                        : url('/layanan/page/' . ($current - 1)) }}"
                                         class="px-2 py-1 sm:px-3 rounded bg-[#144F5F] text-white hover:opacity-80 transition text-sm sm:text-base">
                                         Prev
                                     </a>
                                 @endif
 
-                                {{-- Page numbers --}}
-                                @foreach ($paginator->links()->elements[0] ?? [] as $page => $url)
-                                    @if ($page == $paginator->currentPage())
+                                {{-- Page numbers (blok 10 halaman) --}}
+                                @for ($page = $start; $page <= $end; $page++)
+                                    @if ($page == $current)
                                         <span
                                             class="px-2 py-1 sm:px-3 rounded bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-bold text-sm sm:text-base">
                                             {{ $page }}
                                         </span>
                                     @else
-                                        <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : $url }}"
+                                        <a href="{{ $categorySlug
+                                            ? url('/layanan/' . $categorySlug . '/page/' . $page)
+                                            : url('/layanan/page/' . $page) }}"
                                             class="px-2 py-1 sm:px-3 rounded bg-gray-200 text-[#144F5F] hover:bg-gray-300 transition text-sm sm:text-base">
                                             {{ $page }}
                                         </a>
                                     @endif
-                                @endforeach
+                                @endfor
 
                                 {{-- Next --}}
                                 @if ($paginator->hasMorePages())
-                                    <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $paginator->currentPage() + 1) : $paginator->nextPageUrl() }}"
+                                    <a href="{{ $categorySlug
+                                        ? url('/layanan/' . $categorySlug . '/page/' . ($current + 1))
+                                        : url('/layanan/page/' . ($current + 1)) }}"
                                         class="px-2 py-1 sm:px-3 rounded bg-[#144F5F] text-white hover:opacity-80 transition text-sm sm:text-base">
                                         Next
                                     </a>
                                 @else
-                                    <span class="px-2 py-1 sm:px-3 rounded bg-gray-200 text-gray-500 text-sm sm:text-base">
-                                        Next
-                                    </span>
+                                    <span
+                                        class="px-2 py-1 sm:px-3 rounded bg-gray-200 text-gray-500 text-sm sm:text-base">Next</span>
                                 @endif
-
                             </nav>
+
                         @endif
                     </div>
                 </div>

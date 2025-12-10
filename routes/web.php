@@ -42,15 +42,21 @@ Route::get('/legalitas', [LegalitasController::class, 'index'])->name('legalitas
 // Galeri Publik
 Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri');
 
-// Layanan list berdasarkan kategori + pagination
+// LISTING UTAMA (sudah ada)
 Route::get('/layanan/{categorySlug?}', [LayananController::class, 'index'])
     ->name('layanan.index');
 
-// Pagination SEO friendly
-Route::get('/layanan/{categorySlug}/page/{page}', [LayananController::class, 'index'])
-    ->name('layanan.pagination');
+// PAGINATION TANPA KATEGORI → /layanan/page/5
+Route::get('/layanan/page/{page}', [LayananController::class, 'index'])
+    ->where('page', '[0-9]+')
+    ->name('layanan.page');
 
-// Detail layanan
+// PAGINATION DENGAN KATEGORI → /layanan/k3/page/5
+Route::get('/layanan/{categorySlug}/page/{page}', [LayananController::class, 'index'])
+    ->where(['categorySlug' => '.*', 'page' => '[0-9]+'])
+    ->name('layanan.pagination');
+    
+// DETAIL TRAINING
 Route::get('/layanan/detail/{slug}', [LayananController::class, 'show'])
     ->name('layanan.show');
 
