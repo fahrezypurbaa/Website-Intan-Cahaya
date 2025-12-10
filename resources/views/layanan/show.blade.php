@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@section('title', $training->title . ' - Intan Safety')
     @php
         $groups = $groups ?? [
             'Kelompok Dasar',
