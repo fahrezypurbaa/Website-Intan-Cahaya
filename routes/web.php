@@ -39,8 +39,10 @@ Route::post('/hubungi-kami', [ContactController::class, 'store'])->name('contact
 // Legalitas
 Route::get('/legalitas', [LegalitasController::class, 'index'])->name('legalitas.index');
 
-// Galeri Publik
+// SEO Friendly Gallery Route
 Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri');
+Route::get('/galeri/category/{slug}', [GalleryPublicController::class, 'category'])
+     ->name('galeri.category');
 
 // LISTING UTAMA (sudah ada)
 Route::get('/layanan/{categorySlug?}', [LayananController::class, 'index'])

@@ -3,23 +3,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Category;
 
 class GalleryPublicController extends Controller
 {
+    // === HALAMAN GALERI UTAMA (SEMUA) ===
     public function index()
     {
-        $selectedCategory = request('category'); // ambil kategori dari URL
+        $categories = Category::orderBy('name')->get();
+        $galleries = Gallery::latest()->get();
+        $activeCategory = 'all';
 
-        // Ambil semua kategori unik
-        $categories = Gallery::select('category')->distinct()->pluck('category');
+        return view('galeri', compact('categories', 'galleries', 'activeCategory'));
+    }
 
-        // Jika ada kategori dipilih → filter
-        if ($selectedCategory && $selectedCategory !== 'all') {
-            $galleries = Gallery::where('category', $selectedCategory)->latest()->get();
-        } else {
-            $galleries = Gallery::latest()->get();
+    // === HALAMAN GALERI BERDASARKAN KATEGORI ===
+    public function category($slug)
+    {
+        if ($slug === 'all') {
+            return redirect()->route('galeri');
         }
 
-        return view('galeri', compact('categories', 'galleries', 'selectedCategory'));
+        $category = Category::where('slug', $slug)->firstOrFail();
+
+        $categories = Category::orderBy('name')->get();
+        $galleries = Gallery::where('category', $category->name)
+                            ->latest()
+                            ->get();
+
+        $activeCategory = $slug;
+
+        return view('galeri', compact('categories', 'galleries', 'activeCategory'));
     }
 }

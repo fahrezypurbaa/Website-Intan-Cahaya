@@ -21,27 +21,54 @@
         </h2>
 
         {{-- Filter kategori --}}
-        <div id="galleryFilters" class="flex space-x-3 overflow-x-auto pb-2 mb-10 no-scrollbar justify-center">
+        <div class="w-full mt-6 mb-10">
 
-            {{-- Tombol "Semua" --}}
-            <a href="{{ route('galeri', ['category' => 'all']) }}"
-                class="px-5 py-2 rounded-full 
-                {{ request('category') == 'all' || request('category') == null ? 'bg-[#73BA7D] text-white' : 'bg-gray-200 text-gray-700' }}
-                font-medium shadow hover:opacity-90 transition">
-                Semua
-            </a>
-
-            {{-- Loop kategori --}}
-            @foreach ($categories as $category)
-                <a href="{{ route('galeri', ['category' => $category]) }}"
-                    class="px-5 py-2 rounded-full 
-                    {{ request('category') == $category ? 'bg-[#73BA7D] text-white' : 'bg-gray-200 text-gray-700' }}
-                    font-medium hover:bg-[#73BA7D] hover:text-white transition whitespace-nowrap">
-                    {{ ucfirst($category) }}
+            {{-- Mobile: Scroll Horizontal --}}
+            <div class="md:hidden px-4 overflow-x-auto no-scrollbar flex gap-3 pb-2">
+                {{-- Semua --}}
+                <a href="{{ route('galeri.category', ['slug' => 'all']) }}"
+                    class="whitespace-nowrap px-4 py-2 rounded-full text-sm border shadow-sm transition
+            {{ $activeCategory == 'all'
+                ? 'bg-[#73BA7D] text-white border-[#73BA7D]'
+                : 'bg-white text-gray-700 border-gray-300' }}">
+                    Semua
                 </a>
-            @endforeach
-        </div>
 
+                @foreach ($categories as $category)
+                    <a href="{{ route('galeri.category', $category->slug) }}"
+                        class="whitespace-nowrap px-4 py-2 rounded-full text-sm border shadow-sm transition
+                {{ $activeCategory == $category->slug
+                    ? 'bg-[#73BA7D] text-white border-[#73BA7D]'
+                    : 'bg-white text-gray-700 border-gray-300' }}">
+                        {{ $category->name }}
+                    </a>
+                @endforeach
+            </div>
+
+            {{-- Desktop: Grid --}}
+            <div class="hidden md:grid 
+            grid-cols-4 xl:grid-cols-5 
+            gap-4 max-w-5xl mx-auto px-4">
+
+                <a href="{{ route('galeri.category', ['slug' => 'all']) }}"
+                    class="text-center px-4 py-3 rounded-lg font-medium text-sm border shadow-sm transition
+        {{ $activeCategory == 'all'
+            ? 'bg-[#73BA7D] text-white border-[#73BA7D]'
+            : 'bg-white text-gray-700 border-gray-300 hover:bg-[#73BA7D] hover:text-white hover:border-[#73BA7D]' }}">
+                    Semua
+                </a>
+
+                @foreach ($categories as $category)
+                    <a href="{{ route('galeri.category', $category->slug) }}"
+                        class="text-center px-4 py-3 rounded-lg font-medium text-sm border shadow-sm transition
+            {{ $activeCategory == $category->slug
+                ? 'bg-[#73BA7D] text-white border-[#73BA7D]'
+                : 'bg-white text-gray-700 border-gray-300 hover:bg-[#73BA7D] hover:text-white hover:border-[#73BA7D]' }}">
+                        {{ $category->name }}
+                    </a>
+                @endforeach
+            </div>
+        </div>
         {{-- Grid galeri --}}
         <div id="galleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
             @forelse ($galleries as $gallery)
