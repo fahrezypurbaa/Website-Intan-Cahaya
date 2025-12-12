@@ -1,6 +1,8 @@
 import "./bootstrap";
 
-// === Utility ===
+/* =============================
+   Utility: Slugify
+============================= */
 function slugify(text) {
     return text
         .toString()
@@ -13,10 +15,9 @@ function slugify(text) {
         .replace(/-+/g, "-");
 }
 
-// === DOM Ready ===
 document.addEventListener("DOMContentLoaded", () => {
     /* =============================
-       🟢 NAVBAR MOBILE
+       NAVBAR MOBILE
     ============================== */
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -36,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // === Dropdown di Mobile Menu ===
     document.querySelectorAll(".mobile-dropdown-btn").forEach((btn) => {
         btn.addEventListener("click", function () {
             const target = document.getElementById(this.dataset.target);
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* =============================
-       🟢 PROGRAM SECTION + SWIPER
+       PROGRAM SWIPER
     ============================== */
     const programSwipers = [];
 
-    function initSwipers() {
+    const initProgramSwipers = () => {
         document.querySelectorAll(".programSwiper").forEach((el) => {
             const swiper = new Swiper(el, {
                 slidesPerView: 1,
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             programSwipers.push(swiper);
         });
-    }
+    };
 
     document.querySelectorAll(".tab-btn").forEach((btn) => {
         btn.addEventListener("click", function () {
@@ -89,10 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    initSwipers();
+    initProgramSwipers();
 
     /* =============================
-       🟢 CLIENT LOGO SWIPER
+       CLIENT LOGO SWIPER
     ============================== */
     if (document.querySelector(".clientSwiper")) {
         new Swiper(".clientSwiper", {
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =============================
-       🟢 COUNTER (ANIMASI ANGKA)
+       COUNTER ANIMATION
     ============================== */
     const counters = document.querySelectorAll(".counter");
     if (counters.length) {
@@ -128,8 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         const interval = setInterval(() => {
                             count += step;
                             if (count >= target) {
-                                clearInterval(interval);
                                 count = target;
+                                clearInterval(interval);
                             }
                             el.innerText =
                                 target >= 1000 ? `${target}+` : count;
@@ -146,79 +146,53 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =============================
-       🟢 GALLERY FILTER
+       GALLERY MODAL PREVIEW
     ============================== */
-    const galleryButtons = document.querySelectorAll("#galleryFilters button");
-    const galleryItems = document.querySelectorAll(".gallery-item");
+    const images = document.querySelectorAll(".gallery-item img");
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.getElementById("closeModal");
 
-    if (galleryButtons.length && galleryItems.length) {
-        galleryButtons.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                galleryButtons.forEach((b) => {
-                    b.classList.remove("bg-[#73BA7D]", "text-white");
-                    b.classList.add("bg-gray-200");
-                });
-                btn.classList.remove("bg-gray-200");
-                btn.classList.add("bg-[#73BA7D]", "text-white");
-
-                const category = btn.dataset.category;
-                galleryItems.forEach((item) => {
-                    item.style.display =
-                        category === "all" || item.dataset.category === category
-                            ? "block"
-                            : "none";
-                });
+    if (modal && modalImg && images.length) {
+        images.forEach((img) => {
+            img.addEventListener("click", () => {
+                modal.classList.remove("hidden");
+                modalImg.src = img.dataset.full;
             });
         });
-    }
 
-    /* =============================
-       🟢 LEGALITAS & GALLERY PREVIEW
-    ============================== */
-    const docModal = document.getElementById("docModal");
-    const docImg = document.getElementById("docModalImg");
-    const closeDoc = document.getElementById("closeDocModal");
-
-    if (docModal && docImg && closeDoc) {
-        document.body.addEventListener("click", (e) => {
-            const btn = e.target.closest(".lihat-gambar, .doc-preview");
-            if (btn) {
-                docImg.src = btn.dataset.image;
-                docModal.classList.remove("hidden");
-                docModal.classList.add("flex");
-                document.body.style.overflow = "hidden";
-            }
-            if (e.target === closeDoc || e.target === docModal) {
-                docModal.classList.add("hidden");
-                docModal.classList.remove("flex");
-                docImg.src = "";
-                document.body.style.overflow = "";
-            }
+        closeBtn?.addEventListener("click", () =>
+            modal.classList.add("hidden")
+        );
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) modal.classList.add("hidden");
         });
     }
 
     /* =============================
-   🟢 FORM REGISTRASI (FINAL BERSIH)
-============================== */
+       FORM REGISTRASI
+    ============================== */
     const participantType = document.getElementById("participant_type");
     const personalFields = document.getElementById("personal_fields");
     const companyFields = document.getElementById("company_fields");
-    const categorySelect = document.getElementById("category_id");
-    const trainingSelect = document.getElementById("training_id");
 
-    // Toggle personal/company field
     if (participantType && personalFields && companyFields) {
-        const toggleParticipantFields = () => {
+        const updateFields = () => {
             const type = participantType.value;
             personalFields.classList.toggle("hidden", type !== "personal");
             companyFields.classList.toggle("hidden", type !== "company");
         };
 
-        toggleParticipantFields(); // load pertama
-        participantType.addEventListener("change", toggleParticipantFields);
+        updateFields();
+        participantType.addEventListener("change", updateFields);
     }
 
-    // Filter training berdasarkan kategori
+    /* =============================
+       FILTER TRAINING BERDASARKAN KATEGORI
+    ============================== */
+    const categorySelect = document.getElementById("category_id");
+    const trainingSelect = document.getElementById("training_id");
+
     if (categorySelect && trainingSelect) {
         categorySelect.addEventListener("change", () => {
             const selected = categorySelect.value;
@@ -235,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =============================
-       🟢 SLUG GENERATOR (ARTIKEL)
+       SLUG GENERATOR
     ============================== */
     const titleInput = document.getElementById("title");
     const slugInput = document.getElementById("slug");
@@ -247,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* =============================
-       🟢 PREVIEW THUMBNAIL
+       PREVIEW THUMBNAIL
     ============================== */
     const fileInput = document.getElementById("thumbnail");
     const previewContainer = document.getElementById("preview-container");

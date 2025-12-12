@@ -8,13 +8,18 @@ class GalleryPublicController extends Controller
 {
     public function index()
     {
-        // ambil semua kategori unik
+        $selectedCategory = request('category'); // ambil kategori dari URL
+
+        // Ambil semua kategori unik
         $categories = Gallery::select('category')->distinct()->pluck('category');
 
-        // ambil semua data gallery
-        $galleries = Gallery::latest()->get();
+        // Jika ada kategori dipilih → filter
+        if ($selectedCategory && $selectedCategory !== 'all') {
+            $galleries = Gallery::where('category', $selectedCategory)->latest()->get();
+        } else {
+            $galleries = Gallery::latest()->get();
+        }
 
-        return view('galeri', compact('categories', 'galleries'));
+        return view('galeri', compact('categories', 'galleries', 'selectedCategory'));
     }
 }
-
