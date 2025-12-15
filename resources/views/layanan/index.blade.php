@@ -26,7 +26,7 @@
                 <a href="{{ route('registration.form') }}"
                     class="mt-6 block w-full text-center px-4 py-2 bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
                 text-white rounded-lg font-bold shadow-md hover:opacity-90 transition sticky bottom-0">
-                    📋 Formulir Registrasi
+                    Formulir Registrasi
                 </a>
             </div>
         </aside>

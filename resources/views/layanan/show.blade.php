@@ -1,7 +1,13 @@
 @extends('layouts.app')
 
-@section('content')
 @section('title', $training->title . ' - Intan Safety')
+
+@section('meta')
+    <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($training->description ?? ''), 155) }}">
+    <link rel="canonical" href="{{ url()->current() }}">
+@endsection
+
+@section('content')
     @php
         $groups = $groups ?? [
             'Kelompok Dasar',
@@ -10,7 +16,6 @@
             'Praktek Pemeriksaan',
             'Evaluasi',
         ];
-        $training = $training ?? null;
     @endphp
 
     <div class="max-w-7xl mx-auto py-12 px-4 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -19,11 +24,11 @@
         <div class="flex flex-col">
             @if ($training && $training->image)
                 <div class="w-full flex justify-center items-center mb-6">
-                    <img src="{{ asset('storage/' . $training->image) }}" alt="{{ $training->title }}"
+                    <img src="{{ asset('storage/' . $training->image) }}" alt="{{ $training->title }}" width="800"
+                        height="500"
                         class="w-full max-h-[500px] object-contain rounded-2xl shadow-md border border-gray-200">
                 </div>
             @endif
-
 
             {{-- Rundown --}}
             <div x-data="{ openRundown: false }" class="space-y-4">
@@ -62,6 +67,7 @@
                     </div>
                 </div>
             </div>
+
             <br>
 
             {{-- Materi Pembinaan --}}
@@ -80,7 +86,7 @@
                         $category = strtolower($training->category->slug ?? '');
                     @endphp
 
-                    @if (Str::contains($category, 'kemnaker'))
+                    @if (\Illuminate\Support\Str::contains($category, 'kemnaker'))
                         {{-- FORMAT KEMNAKER --}}
                         @php $total = 0; @endphp
                         <table class="w-full border-collapse border text-sm">
@@ -112,8 +118,8 @@
                                 </tr>
                             </tbody>
                         </table>
-                    @elseif (Str::contains($category, 'bnsp') || Str::contains($category, 'ppsdm'))
-                        {{-- FORMAT BNSP & PPSDM MIGAS --}}
+                    @elseif (\Illuminate\Support\Str::contains($category, 'bnsp') || \Illuminate\Support\Str::contains($category, 'ppsdm'))
+                        {{-- FORMAT BNSP & PPSDM --}}
                         <table class="w-full border-collapse border text-sm">
                             <thead>
                                 <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
@@ -130,8 +136,8 @@
                                 @endforeach
                             </tbody>
                         </table>
-                    @elseif (Str::contains($category, 'non' || Str::contains($category, 'iso'))
-                        {{-- FORMAT NON SERTIFIKASI: HANYA JUDUL --}}
+                    @elseif (\Illuminate\Support\Str::contains($category, 'non') || \Illuminate\Support\Str::contains($category, 'iso'))
+                        {{-- FORMAT NON SERTIFIKASI --}}
                         <table class="w-full border-collapse border text-sm">
                             <thead>
                                 <tr class="bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white">
@@ -147,10 +153,8 @@
                             </tbody>
                         </table>
                     @endif
-
                 </div>
             </div>
-
         </div>
 
         {{-- Detail --}}
@@ -170,7 +174,6 @@
                     Daftar Sekarang
                 </a>
 
-                {{-- PDF --}}
                 @if ($training->brochure_path)
                     <a href="{{ route('trainings.brochure', $training->id) }}"
                         class="px-6 py-3 text-center border-2 border-[#144F5F] text-[#144F5F] rounded-lg font-semibold 
@@ -186,8 +189,6 @@
                         PDF Belum Tersedia
                     </button>
                 @endif
-
-
             </div>
 
             {{-- Info --}}
@@ -226,21 +227,13 @@
                         @foreach ($requirements as $req)
                             @if (trim($req))
                                 <li class="flex items-start gap-3">
-                                    <!-- Bullet warna gradasi (tetap muncul) -->
                                     <span
-                                        class="w-2 h-2 mt-1 flex-shrink-0 rounded-full 
-                                     bg-gradient-to-r from-[#144F5F] to-[#73BA7D]">
-                                    </span>
-
-                                    <!-- Teks rapi dan justify -->
-                                    <span class="text-justify leading-relaxed">
-                                        {{ trim($req) }}
-                                    </span>
+                                        class="w-2 h-2 mt-1 flex-shrink-0 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span>
+                                    <span class="text-justify leading-relaxed">{{ trim($req) }}</span>
                                 </li>
                             @endif
                         @endforeach
                     </ul>
-
                 </div>
             @endif
 
@@ -255,8 +248,8 @@
                             class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Modul
                         Pelatihan</li>
                     <li class="flex items-center gap-2"><span
-                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Lunch & Coffee
-                        Break</li>
+                            class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Lunch &
+                        Coffee Break</li>
                     <li class="flex items-center gap-2"><span
                             class="w-2 h-2 rounded-full bg-gradient-to-r from-[#144F5F] to-[#73BA7D]"></span> Souvenir
                         Eksklusif</li>
