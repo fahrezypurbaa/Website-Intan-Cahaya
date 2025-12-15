@@ -2,7 +2,8 @@
 
 @section('title', 'Tentang Perusahaan Intan Safety Jogja | Profil, Visi Misi & Sejarah')
 
-@section('meta_description', 'Profil lengkap PT Intan Cahaya Mandiri (Intan Safety Jogja) sebagai PJK3 resmi Kemenaker
+@section('meta_description',
+    'Profil lengkap PT Intan Cahaya Mandiri (Intan Safety Jogja) sebagai PJK3 resmi Kemenaker
     RI. Mengenal visi, misi, sejarah, dan komitmen kami dalam pelatihan K3.')
 
 @section('canonical', url('/tentang-perusahaan'))
@@ -11,7 +12,8 @@
     <!-- ================= HERO / BANNER ================= -->
     <section class="relative">
         <img src="{{ asset('images/hubungi-kami-banner.png') }}"
-            alt="Profil Perusahaan Intan Safety Jogja sebagai PJK3 Kemenaker RI" class="w-full h-64 md:h-72 object-cover">
+            alt="Profil Perusahaan Intan Safety Jogja sebagai PJK3 Kemenaker RI" width="1920" height="450"
+            class="w-full h-64 md:h-72 object-cover">
 
         <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/90 to-[#73BA7D]/70"></div>
 
@@ -31,7 +33,7 @@
         <div class="flex flex-col items-center">
             <div class="relative w-full max-w-4xl">
                 <img src="{{ asset('images/tim-kami.JPG') }}"
-                    alt="Tim profesional Intan Safety Jogja dalam layanan pelatihan K3"
+                    alt="Tim profesional Intan Safety Jogja dalam layanan pelatihan K3" width="1200" height="800"
                     class="rounded-xl shadow-lg border-4 border-white w-full h-auto object-cover
                            max-h-[260px] sm:max-h-[340px] md:max-h-[420px] lg:max-h-[500px]">
                 <div class="absolute inset-0 rounded-xl ring-4 ring-[#73BA7D]/40"></div>
