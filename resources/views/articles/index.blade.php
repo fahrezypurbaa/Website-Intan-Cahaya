@@ -10,7 +10,6 @@
 
 @section('content')
 
-    ```
     {{-- Banner --}}
     <section class="relative">
         <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Artikel dan Blog Intan Safety"
