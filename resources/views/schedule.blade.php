@@ -1,95 +1,149 @@
 @extends('layouts.app')
 
-@section('title', 'Jadwal Pelatihan 2025 - Intan Safety')
+@section('title', 'Jadwal Pelatihan K3 2025 Intan Safety Jogja | Sertifikasi Kemenaker & BNSP')
+
+@section('meta_description', 'Lihat jadwal lengkap pelatihan K3 Intan Safety Jogja tahun 2025. Tersedia pelatihan
+    Kemenaker RI, BNSP, dan non-sertifikasi dengan instruktur berpengalaman.')
+
+@section('canonical', url('/jadwal-pelatihan'))
 
 @section('content')
 
-    {{-- Banner --}}
-    <div class="relative">
-        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Jadwal Kami"
-            class="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover rounded-lg shadow-md">
+    <!-- ================= HERO / BANNER ================= -->
+    <section class="relative">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Jadwal Pelatihan K3 Intan Safety Jogja Tahun 2025"
+            class="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover">
+
         <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/80 to-[#73BA7D]/80 flex items-center justify-center">
-            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white drop-shadow">
-                JADWAL PELATIHAN 2025
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white drop-shadow text-center">
+                Jadwal Pelatihan K3 Tahun 2025
             </h1>
         </div>
-    </div>
+    </section>
 
-    <div class="max-w-6xl mx-auto py-12 px-4 sm:px-6">
-        {{-- Ringkasan Highlight --}}
-        <h2 class="text-2xl md:text-3xl font-bold text-center text-[#144F5F] mb-10">
-            Ringkasan Jadwal Utama
-        </h2>
+    <main class="max-w-6xl mx-auto py-12 px-4 sm:px-6">
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-[#144F5F] mb-2">
-                    <i class="fa-solid fa-thumbtack text-[#73BA7D]"></i> Januari
-                </h3>
-                <p class="text-gray-600 text-sm">Pelatihan Juru Las, K3 Umum</p>
+        <!-- ================= INTRO KONTEN ================= -->
+        <section class="mb-12 text-center max-w-3xl mx-auto">
+            <p class="text-gray-700 leading-relaxed">
+                <strong>Intan Safety Jogja</strong> menyediakan berbagai program
+                <strong>pelatihan dan sertifikasi K3</strong> sepanjang tahun 2025,
+                baik <strong>Kemenaker RI</strong>, <strong>BNSP</strong>,
+                maupun <strong>non-sertifikasi</strong>.
+                Jadwal disusun fleksibel untuk memenuhi kebutuhan individu maupun perusahaan.
+            </p>
+        </section>
+
+        <!-- ================= RINGKASAN JADWAL ================= -->
+        <section>
+            <h2 class="text-2xl md:text-3xl font-bold text-center text-[#144F5F] mb-10">
+                Ringkasan Jadwal Pelatihan Utama
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                <article class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-[#144F5F] mb-2">Pelatihan Januari</h3>
+                    <p class="text-gray-600 text-sm">
+                        Juru Las • K3 Umum • Keselamatan Kerja Dasar
+                    </p>
+                </article>
+
+                <article class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-[#144F5F] mb-2">Pelatihan Maret</h3>
+                    <p class="text-gray-600 text-sm">
+                        Operator Forklift • Operator Crane • Pesawat Angkat Angkut
+                    </p>
+                </article>
+
+                <article class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
+                    <h3 class="text-xl font-bold text-[#144F5F] mb-2">Pelatihan Juli</h3>
+                    <p class="text-gray-600 text-sm">
+                        K3 Migas • Scaffolding • Sertifikasi Lanjutan
+                    </p>
+                </article>
             </div>
-            <div class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-[#144F5F] mb-2">
-                    <i class="fa-solid fa-thumbtack text-[#73BA7D]"></i> Maret
-                </h3>
-                <p class="text-gray-600 text-sm">Pelatihan Forklift, Operator Crane</p>
+        </section>
+
+        <!-- ================= DETAIL JADWAL PDF ================= -->
+        <section class="mt-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center text-[#144F5F]">
+                Detail Lengkap Jadwal Pelatihan 2025
+            </h2>
+
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                Unduh atau lihat dokumen resmi jadwal pelatihan Intan Safety Jogja tahun 2025
+                untuk informasi tanggal, lokasi, dan jenis sertifikasi yang tersedia.
+            </p>
+
+            <div class="w-full h-[800px] md:h-[900px] border rounded shadow">
+                <iframe src="{{ asset('files/jadwal-2025.pdf') }}" title="PDF Jadwal Pelatihan K3 Intan Safety 2025"
+                    class="w-full h-full rounded" loading="lazy">
+                </iframe>
             </div>
-            <div class="p-6 bg-white shadow rounded-xl hover:shadow-md transition">
-                <h3 class="text-xl font-bold text-[#144F5F] mb-2">
-                    <i class="fa-solid fa-thumbtack text-[#73BA7D]"></i> Juli
-                </h3>
-                <p class="text-gray-600 text-sm">Pelatihan K3 Migas, Scaffolding</p>
+
+            <div class="mt-6 text-center">
+                <a href="{{ asset('files/jadwal-2025.pdf') }}" download
+                    class="px-6 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                           text-white font-semibold rounded-lg shadow hover:opacity-90 transition">
+                    Download Jadwal Pelatihan 2025 (PDF)
+                </a>
             </div>
-        </div>
+        </section>
 
-        {{-- Judul PDF --}}
-        <h2 class="text-2xl md:text-3xl font-bold mt-16 mb-6 text-center text-gray-800">
-            Detail Jadwal Pelatihan 2025 (PDF)
-        </h2>
-
-        {{-- PDF Viewer --}}
-        <div class="w-full h-[800px] md:h-[900px] border rounded shadow">
-            <iframe src="{{ asset('files/jadwal-2025.pdf') }}" class="w-full h-full rounded" frameborder="0"></iframe>
-        </div>
-
-        {{-- Tombol download --}}
-        <div class="mt-6 text-center">
-            <a href="{{ asset('files/jadwal-2025.pdf') }}" download
-                class="px-6 py-3 bg-gradient-to-r from-[#144F5F] to-[#73BA7D] text-white font-semibold rounded-lg shadow hover:opacity-90 transition">
-                <i class="fa-solid fa-download mr-2"></i> Download Jadwal PDF
-            </a>
-        </div>
-
-        {{-- Call to Action --}}
-        <div class="mt-16 text-center">
-            <p class="text-gray-700 mb-4">Siap ikut pelatihan? Hubungi tim kami untuk informasi pendaftaran.</p>
+        <!-- ================= CTA ================= -->
+        <section class="mt-16 text-center">
+            <h2 class="text-2xl font-bold text-[#144F5F] mb-4">
+                Daftar Pelatihan K3 Sekarang
+            </h2>
+            <p class="text-gray-700 mb-6">
+                Konsultasikan kebutuhan pelatihan Anda bersama tim Intan Safety Jogja.
+            </p>
             <a href="{{ url('/hubungi-kami') }}"
                 class="px-6 py-3 bg-[#73BA7D] text-white font-semibold rounded-lg shadow hover:bg-green-700 transition">
-                <i class="fa-solid fa-phone mr-2"></i> Hubungi Kami
+                Hubungi Tim Intan Safety
             </a>
-        </div>
+        </section>
 
-        {{-- FAQ --}}
-        <div class="mt-20">
-            <h3 class="text-xl md:text-2xl font-bold text-[#144F5F] mb-6 text-center">FAQ - Pertanyaan Umum</h3>
+        <!-- ================= FAQ ================= -->
+        <section class="mt-20">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#144F5F] mb-8 text-center">
+                FAQ Jadwal Pelatihan K3
+            </h2>
+
             <div class="space-y-4 max-w-3xl mx-auto">
-                <div class="p-4 bg-white rounded-lg shadow hover:shadow-md transition">
-                    <h4 class="font-semibold text-[#144F5F]">Bagaimana cara mendaftar pelatihan?</h4>
-                    <p class="text-gray-600 text-sm">Silakan hubungi tim kami melalui halaman <a
-                            href="{{ url('/hubungi-kami') }}" class="text-[#73BA7D] underline">Hubungi Kami</a> atau
-                        langsung klik tombol daftar di atas.</p>
-                </div>
-                <div class="p-4 bg-white rounded-lg shadow hover:shadow-md transition">
-                    <h4 class="font-semibold text-[#144F5F]">Apakah tersedia pelatihan online?</h4>
-                    <p class="text-gray-600 text-sm">Ya, beberapa program kami tersedia secara online untuk memudahkan
-                        peserta dari luar kota.</p>
-                </div>
-                <div class="p-4 bg-white rounded-lg shadow hover:shadow-md transition">
-                    <h4 class="font-semibold text-[#144F5F]">Apakah mendapat sertifikat resmi?</h4>
-                    <p class="text-gray-600 text-sm">Setiap peserta yang lulus akan mendapatkan sertifikat resmi dari
-                        Kemenaker RI atau BNSP sesuai jenis pelatihan.</p>
-                </div>
+                <article class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="font-semibold text-[#144F5F]">
+                        Bagaimana cara mendaftar pelatihan?
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Anda dapat mendaftar melalui halaman
+                        <a href="{{ url('/hubungi-kami') }}" class="text-[#73BA7D] underline">
+                            Hubungi Kami
+                        </a>
+                        atau langsung menghubungi admin Intan Safety.
+                    </p>
+                </article>
+
+                <article class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="font-semibold text-[#144F5F]">
+                        Apakah tersedia pelatihan online?
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Ya, beberapa program tersedia dalam format pelatihan online dan hybrid.
+                    </p>
+                </article>
+
+                <article class="p-4 bg-white rounded-lg shadow">
+                    <h3 class="font-semibold text-[#144F5F]">
+                        Apakah peserta mendapatkan sertifikat resmi?
+                    </h3>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Peserta akan memperoleh sertifikat resmi dari
+                        Kemenaker RI atau BNSP sesuai jenis pelatihan.
+                    </p>
+                </article>
             </div>
-        </div>
-    </div>
+        </section>
+
+    </main>
 @endsection
