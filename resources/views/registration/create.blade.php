@@ -1,41 +1,42 @@
 @extends('layouts.app')
 
-@section('title', 'Pendaftaran Pelatihan K3 | Intan Safety')
+@section('title', 'Pendaftaran Pelatihan K3 Intan Safety Jogja | Sertifikasi Kemenaker & BNSP')
 
-@section('meta')
-    <meta name="description"
-        content="Formulir pendaftaran pelatihan K3 resmi dari Intan Safety. Daftar pelatihan keselamatan kerja, sertifikasi K3, dan pengembangan kompetensi profesional.">
-    <link rel="canonical" href="{{ url()->current() }}">
-@endsection
+@section('meta_description',
+    'Formulir pendaftaran pelatihan K3 resmi dari Intan Safety Jogja. Daftar pelatihan
+    keselamatan kerja, sertifikasi K3 Kemenaker RI, BNSP, dan program pengembangan kompetensi profesional.')
+
+@section('canonical', url('/pendaftaran-pelatihan'))
 
 @section('content')
 
-    {{-- Banner --}}
+    {{-- ================= HERO / BANNER ================= --}}
     <section class="relative">
-        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Pendaftaran Pelatihan K3 Intan Safety"
-            class="w-full h-64 object-cover rounded-lg shadow-md" width="1920" height="400">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Pendaftaran Pelatihan K3 Intan Safety Jogja"
+            class="w-full h-64 object-cover shadow-md" width="1920" height="400">
 
         <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/70 to-[#73BA7D]/70 flex items-center justify-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow">
+            <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow text-center">
                 Pendaftaran Pelatihan K3
             </h1>
         </div>
     </section>
 
-    <section class="max-w-2xl mx-auto py-12 px-6">
+    <main class="max-w-2xl mx-auto py-12 px-6">
 
-        {{-- Intro --}}
+        {{-- ================= INTRO ================= --}}
         <header class="mb-8 text-center">
             <h2 class="text-2xl font-bold text-[#144F5F] mb-3">
-                Formulir Registrasi Pelatihan
+                Formulir Registrasi Pelatihan K3
             </h2>
-            <p class="text-gray-600">
-                Silakan lengkapi formulir berikut untuk mendaftar pelatihan keselamatan dan kesehatan kerja
-                (K3) bersama Intan Safety.
+            <p class="text-gray-600 leading-relaxed">
+                Silakan lengkapi formulir berikut untuk mendaftar
+                <strong>pelatihan keselamatan dan kesehatan kerja (K3)</strong>
+                bersama <strong>Intan Safety Jogja</strong>.
             </p>
         </header>
 
-        <div class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
+        <section class="bg-white shadow-xl rounded-2xl p-8 border border-gray-100">
 
             @if (session('success'))
                 <div class="bg-green-100 border border-green-300 text-green-700 p-3 rounded mb-6 text-center font-medium">
@@ -115,7 +116,7 @@
                     </select>
                 </div>
 
-                {{-- Participant --}}
+                {{-- Jenis Peserta --}}
                 <div>
                     <label for="participant_type" class="block text-sm font-semibold text-gray-700 mb-2">
                         Jenis Peserta <span class="text-red-500">*</span>
@@ -174,7 +175,7 @@
                     Daftar Sekarang
                 </button>
             </form>
-        </div>
-    </section>
+        </section>
+    </main>
 
 @endsection
