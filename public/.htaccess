@@ -6,56 +6,39 @@
 
     RewriteEngine On
 
-    # =====================================
-    # FORCE HTTPS + NON-WWW (SEO FINAL)
-    # =====================================
-
-    # Force HTTPS
+    # FORCE HTTPS
     RewriteCond %{HTTPS} !=on
     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Force non-WWW
+    # FORCE NON-WWW
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
-    # =====================================
-    # HANDLE AUTHORIZATION HEADER (Laravel)
-    # =====================================
+    # AUTH HEADER
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    # =====================================
-    # REMOVE TRAILING SLASH (NON-FOLDER)
-    # =====================================
+    # REMOVE TRAILING SLASH
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # =====================================
-    # SEND REQUESTS TO LARAVEL FRONT CONTROLLER
-    # =====================================
+    # FRONT CONTROLLER
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
 </IfModule>
 
-# =====================================
-# FIX BAD CONTENT-TYPE + SECURITY
-# =====================================
-
-AddType text/html .html .htm
-AddType text/css .css
-AddType application/javascript .js
-AddType application/json .json
-AddType image/svg+xml .svg
+# MIME TYPES (OPTIONAL, SAFE)
 AddType image/webp .webp
-AddType application/pdf .pdf
+AddType image/svg+xml .svg
 AddType font/woff .woff
 AddType font/woff2 .woff2
-AddType application/xml .xml
-AddType text/plain .txt
 
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
