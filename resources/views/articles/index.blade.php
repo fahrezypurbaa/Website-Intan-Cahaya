@@ -32,9 +32,10 @@
                     Artikel Keselamatan & Kesehatan Kerja
                 </p>
 
-                <h2 class="text-3xl font-bold text-[#144F5F] leading-snug mb-4">
+                <h2 class="sr-only">
                     Insight, Edukasi, dan Informasi Terbaru Dunia K3
                 </h2>
+
 
                 <p class="text-gray-700 text-base">
                     Temukan berbagai artikel informatif seputar keselamatan kerja, sertifikasi K3,
