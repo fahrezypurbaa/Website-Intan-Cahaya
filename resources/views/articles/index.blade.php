@@ -1,52 +1,60 @@
 @extends('layouts.app')
-@section('title', 'Artikel - Intan Safety')
+
+@section('title', 'Artikel & Blog K3 Terbaru | Intan Safety')
+
+@section('meta')
+    <meta name="description"
+        content="Kumpulan artikel dan blog terbaru seputar K3, keselamatan kerja, sertifikasi, regulasi, dan tips safety dari Intan Safety Indonesia.">
+    <link rel="canonical" href="{{ url()->current() }}">
+@endsection
+
 @section('content')
 
     {{-- Banner --}}
-    <div class="relative">
-        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="artikel"
-            class="w-full h-64 object-cover rounded-lg shadow-md">
+    <section class="relative">
+        <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Artikel dan Blog Intan Safety"
+            class="w-full h-64 object-cover rounded-lg shadow-md" width="1920" height="400">
+
         <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/70 to-[#73BA7D]/70 flex items-center justify-center">
             <h1 class="text-3xl md:text-4xl font-bold text-white drop-shadow">
-                ARTIKEL & BLOG 
+                Artikel & Blog K3 Intan Safety
             </h1>
         </div>
-    </div>
+    </section>
 
-    <div class="bg-[#F3F7F0] py-16">
-
+    <section class="bg-[#F3F7F0] py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
-            <!-- Header -->
-            <div class="flex items-center justify-between mb-8">
-                <div>
-                    <p class="text-sm font-medium text-green-700 flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-700" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 6v6h4m6 6V6a2 2 0 00-2-2H4a2 2 0 00-2 2v12a2 2 0 002 2h10" />
-                        </svg>
-                        RECENT BLOGS
-                    </p>
-                    <h2 class="mt-2 text-3xl font-bold text-[#144F5F] leading-snug">
-                        Journeys of Discovery <br> Uncovering Hidden
-                    </h2>
-                </div>
-            </div>
+            {{-- Intro --}}
+            <header class="mb-10 max-w-3xl">
+                <p class="text-sm font-medium text-green-700 mb-2">
+                    Artikel Keselamatan & Kesehatan Kerja
+                </p>
 
-            <!-- Blog Cards -->
+                <h2 class="text-3xl font-bold text-[#144F5F] leading-snug mb-4">
+                    Insight, Edukasi, dan Informasi Terbaru Dunia K3
+                </h2>
+
+                <p class="text-gray-700 text-base">
+                    Temukan berbagai artikel informatif seputar keselamatan kerja, sertifikasi K3,
+                    regulasi pemerintah, tips safety di tempat kerja, serta pembaruan terbaru dari
+                    Intan Safety untuk mendukung lingkungan kerja yang aman dan profesional.
+                </p>
+            </header>
+
+            {{-- Blog Cards --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach ($articles as $article)
-                    <div
+                    <article
                         class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition">
-                        <!-- Thumbnail -->
+
+                        {{-- Thumbnail --}}
                         <img src="{{ $article->thumbnail ? asset('storage/' . $article->thumbnail) : 'https://via.placeholder.com/400x250?text=No+Image' }}"
-                            alt="{{ $article->title }}" class="w-full h-56 object-cover">
+                            alt="{{ $article->title }}" class="w-full h-56 object-cover" width="400" height="250">
 
                         <div class="p-5">
-                            <!-- Meta Info -->
+                            {{-- Meta --}}
                             <div class="flex items-center text-sm text-gray-500 mb-3 gap-4">
-                                <!-- Tanggal -->
                                 <span class="flex items-center gap-1">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -54,32 +62,33 @@
                                     </svg>
                                     {{ $article->created_at->format('F j, Y') }}
                                 </span>
-                                <!-- Author -->
+
                                 <span class="flex items-center gap-1">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                             d="M5.121 17.804A9.935 9.935 0 0112 15c2.21 0 4.235.716 5.879 1.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                     </svg>
-                                    By {{ $article->user->name ?? 'admin' }}
+                                    {{ $article->user->name ?? 'Admin Intan Safety' }}
                                 </span>
                             </div>
 
-                            <!-- Judul -->
+                            {{-- Title --}}
                             <h3 class="text-lg font-semibold text-green-800 mb-2 line-clamp-2">
                                 <a href="{{ route('articles.show', $article->slug) }}" class="hover:underline">
                                     {{ $article->title }}
                                 </a>
                             </h3>
 
-                            <!-- Ringkasan -->
+                            {{-- Excerpt --}}
                             <p class="text-gray-600 text-sm mb-4 line-clamp-3">
-                                {{ $article->excerpt ?? Str::limit(strip_tags($article->content), 120) }}
+                                {{ $article->excerpt ?? Str::limit(strip_tags($article->content), 150) }}
                             </p>
 
-                            <!-- Tombol Read More -->
+                            {{-- Read More --}}
                             <a href="{{ route('articles.show', $article->slug) }}"
-                                class="text-green-700 font-medium flex items-center gap-1 hover:underline">
-                                Read More
+                                class="text-green-700 font-medium inline-flex items-center gap-1 hover:underline"
+                                aria-label="Baca artikel {{ $article->title }}">
+                                Baca Selengkapnya
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -87,14 +96,16 @@
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </article>
                 @endforeach
             </div>
 
-            <!-- Pagination -->
-            <div class="mt-10">
+            {{-- Pagination --}}
+            <nav class="mt-12" aria-label="Navigasi halaman artikel">
                 {{ $articles->links() }}
-            </div>
+            </nav>
+
         </div>
-    </div>
+    </section>
+
 @endsection
