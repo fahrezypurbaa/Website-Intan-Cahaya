@@ -2,7 +2,8 @@
 
 @section('title', 'Jadwal Pelatihan K3 2025 Intan Safety Jogja | Sertifikasi Kemenaker & BNSP')
 
-@section('meta_description', 'Lihat jadwal lengkap pelatihan K3 Intan Safety Jogja tahun 2025. Tersedia pelatihan
+@section('meta_description',
+    'Lihat jadwal lengkap pelatihan K3 Intan Safety Jogja tahun 2025. Tersedia pelatihan
     Kemenaker RI, BNSP, dan non-sertifikasi dengan instruktur berpengalaman.')
 
 @section('canonical', url('/jadwal-pelatihan'))
@@ -12,7 +13,7 @@
     <!-- ================= HERO / BANNER ================= -->
     <section class="relative">
         <img src="{{ asset('images/hubungi-kami-banner.png') }}" alt="Jadwal Pelatihan K3 Intan Safety Jogja Tahun 2025"
-            class="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover">
+            width="1920" height="450" class="w-full h-48 sm:h-56 md:h-72 lg:h-80 object-cover">
 
         <div class="absolute inset-0 bg-gradient-to-r from-[#144F5F]/80 to-[#73BA7D]/80 flex items-center justify-center">
             <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white drop-shadow text-center">
