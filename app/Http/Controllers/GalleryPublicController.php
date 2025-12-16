@@ -2,15 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery;
 use App\Models\Category;
+use App\Models\Gallery;
 
 class GalleryPublicController extends Controller
 {
+    /**
+     * Ambil kategori dengan urutan prioritas
+     */
+    private function getOrderedCategories()
+    {
+        $priorityOrder = [
+            'ppsdm-migas',
+            'non-sertifikasi',
+            'sertifikasi-bnsp',
+            'sertifikasi-kemnaker-ri',
+        ];
+
+        return Category::orderByRaw(
+            "FIELD(slug, '".implode("','", $priorityOrder)."') DESC"
+        )
+            ->orderBy('name') // sisanya tetap rapi alfabet
+            ->get();
+    }
+
     // === HALAMAN GALERI UTAMA (SEMUA) ===
     public function index()
     {
-        $categories = Category::orderBy('name')->get();
+        $categories = $this->getOrderedCategories();
         $galleries = Gallery::latest()->get();
         $activeCategory = 'all';
 
@@ -26,10 +45,11 @@ class GalleryPublicController extends Controller
 
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        $categories = Category::orderBy('name')->get();
+        $categories = $this->getOrderedCategories();
+
         $galleries = Gallery::where('category', $category->name)
-                            ->latest()
-                            ->get();
+            ->latest()
+            ->get();
 
         $activeCategory = $slug;
 
