@@ -49,9 +49,9 @@ Route::get('/layanan/{categorySlug?}', [LayananController::class, 'index'])
     ->name('layanan.index');
 
 // PAGINATION TANPA KATEGORI → /layanan/page/5
-// Route::get('/layanan/page/{page}', [LayananController::class, 'index'])
-//     ->where('page', '[0-9]+')
-//     ->name('layanan.page');
+Route::get('/layanan/page/{page}', [LayananController::class, 'index'])
+    ->where('page', '[0-9]+')
+    ->name('layanan.page');
 
 // PAGINATION DENGAN KATEGORI → /layanan/k3/page/5
 Route::get('/layanan/{categorySlug}/page/{page}', [LayananController::class, 'index'])

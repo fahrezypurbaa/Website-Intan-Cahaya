@@ -5,7 +5,7 @@
 @section('content')
 <div class="max-w-7xl mx-auto py-10 px-4 grid grid-cols-1 lg:grid-cols-[16rem_1fr] gap-8">
 
-    {{-- Sidebar Kategori --}}
+    {{-- ================= SIDEBAR KATEGORI ================= --}}
     <aside class="order-1 lg:order-none lg:sticky lg:top-24 self-start max-h-[80vh] overflow-y-auto">
         <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
             <h3 class="font-bold text-lg mb-4 text-[#144F5F] sticky top-0 bg-white py-2">
@@ -27,18 +27,19 @@
             </ul>
 
             <a href="{{ route('registration.form') }}"
-               class="mt-6 block w-full text-center px-4 py-2
-               bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
-               text-white rounded-lg font-bold shadow-md hover:opacity-90 transition">
+                class="mt-6 block w-full text-center px-4 py-2
+                bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                text-white rounded-lg font-bold shadow-md hover:opacity-90 transition">
                 Formulir Registrasi
             </a>
         </div>
     </aside>
 
-    {{-- Main Content --}}
+    {{-- ================= MAIN CONTENT ================= --}}
     <main>
-        <h1 class="text-3xl font-extrabold text-[#144F5F] mb-6 pb-1 border-b-4
-                   border-[#73BA7D] inline-block">
+
+        {{-- Judul --}}
+        <h1 class="text-3xl font-extrabold text-[#144F5F] mb-8 border-b-4 inline-block pb-1">
             @if (!empty($categorySlug))
                 {{ ucwords(str_replace('-', ' ', $categorySlug)) }}
             @else
@@ -46,56 +47,62 @@
             @endif
         </h1>
 
+        {{-- ================= LIST TRAINING ================= --}}
         @if ($trainings->count())
             <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
                 @foreach ($trainings as $t)
                     <div
                         class="bg-white rounded-xl shadow-md hover:shadow-xl
-                               overflow-hidden transition transform hover:-translate-y-1
-                               border border-gray-100 flex flex-col">
+                        overflow-hidden transition transform hover:-translate-y-1
+                        border border-gray-100 flex flex-col">
 
-                        {{-- IMAGE (ABSOLUT - AMAN PAGINATION) --}}
-                        <img
-                            src="{{ asset('storage/' . $t->image) }}"
+                        {{-- Image --}}
+                        <img src="{{ asset('storage/' . $t->image) }}"
                             alt="{{ $t->title }}"
-                            class="h-40 w-full object-cover"
-                            loading="lazy"
-                        >
+                            class="h-40 w-full object-cover">
 
-                        <div class="p-5 flex-1 flex flex-col">
+                        {{-- Content --}}
+                        <div class="p-5 flex flex-col flex-1">
+
+                            {{-- Badge --}}
                             <div class="flex flex-wrap gap-2 mb-2">
                                 @if ($t->mode)
-                                    <span class="px-2 py-1 text-xs
-                                        bg-gradient-to-r from-[#144F5F]/20 to-[#73BA7D]/20
-                                        text-[#144F5F] rounded">
+                                    <span class="px-2 py-1 text-xs rounded
+                                        bg-gradient-to-r from-[#144F5F]/20 to-[#73BA7D]/20 text-[#144F5F]">
                                         {{ $t->mode }}
                                     </span>
                                 @endif
 
-                                <span class="px-2 py-1 text-xs bg-[#144F5F]/10
-                                    text-[#144F5F] rounded">
+                                <span class="px-2 py-1 text-xs rounded bg-[#144F5F]/10 text-[#144F5F]">
                                     {{ $t->category->name }}
                                 </span>
                             </div>
 
-                            <h3 class="text-lg font-bold mb-1 text-[#144F5F]">
+                            {{-- Title --}}
+                            <h3 class="text-lg font-bold text-[#144F5F] mb-1">
                                 {{ $t->title }}
                             </h3>
 
-                            <div class="flex items-center gap-2 mb-2 text-sm text-gray-600">
+                            {{-- Duration --}}
+                            <div class="flex items-center gap-2 mb-2">
                                 <x-heroicon-o-calendar class="w-5 h-5 text-[#144F5F]" />
-                                {{ $t->duration }}
+                                <p class="text-sm text-gray-600">
+                                    {{ $t->duration }}
+                                </p>
                             </div>
 
-                            <p class="text-gray-600 text-sm line-clamp-3 mb-4">
+                            {{-- Desc --}}
+                            <p class="text-sm text-gray-600 line-clamp-3 mb-4">
                                 {{ $t->description }}
                             </p>
 
+                            {{-- Button --}}
                             <a href="{{ route('layanan.show', $t->slug) }}"
-                               class="mt-auto block w-full text-center py-2 rounded
-                               font-semibold text-white
-                               bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
-                               hover:opacity-90 transition">
+                                class="mt-auto block w-full text-center py-2 rounded
+                                font-semibold text-white
+                                bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
+                                hover:opacity-90 transition">
                                 Lihat Detail Kelas
                             </a>
                         </div>
@@ -103,65 +110,108 @@
                 @endforeach
             </div>
 
-            Pagination
+            {{-- ================= PAGINATION ================= --}}
             @if ($trainings->hasPages())
-                <div class="mt-10 flex justify-center">
-                    <nav class="flex flex-wrap gap-2">
+                <div class="mt-10">
+
+                    {{-- ===== MOBILE ===== --}}
+                    <div class="flex justify-between items-center sm:hidden">
 
                         {{-- Prev --}}
                         @if ($trainings->onFirstPage())
-                            <span class="px-3 py-1 bg-gray-200 text-gray-500 rounded">
+                            <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded">
                                 Prev
                             </span>
                         @else
                             <a href="{{ $categorySlug
                                 ? url('/layanan/' . $categorySlug . '/page/' . ($trainings->currentPage() - 1))
                                 : url('/layanan/page/' . ($trainings->currentPage() - 1)) }}"
-                               class="px-3 py-1 bg-[#144F5F] text-white rounded">
+                                class="px-4 py-2 bg-[#144F5F] text-white rounded">
                                 Prev
                             </a>
                         @endif
 
-                        {{-- Page Numbers --}}
-                        @for ($i = 1; $i <= $trainings->lastPage(); $i++)
-                            @if ($i == $trainings->currentPage())
-                                <span class="px-3 py-1 rounded
-                                    bg-gradient-to-r from-[#144F5F] to-[#73BA7D]
-                                    text-white font-bold">
-                                    {{ $i }}
-                                </span>
-                            @else
-                                <a href="{{ $categorySlug
-                                    ? url('/layanan/' . $categorySlug . '/page/' . $i)
-                                    : url('/layanan/page/' . $i) }}"
-                                   class="px-3 py-1 bg-gray-200 rounded hover:bg-gray-300">
-                                    {{ $i }}
-                                </a>
-                            @endif
-                        @endfor
+                        {{-- Info --}}
+                        <span class="text-sm font-medium text-gray-700">
+                            {{ $trainings->currentPage() }} / {{ $trainings->lastPage() }}
+                        </span>
 
                         {{-- Next --}}
                         @if ($trainings->hasMorePages())
                             <a href="{{ $categorySlug
                                 ? url('/layanan/' . $categorySlug . '/page/' . ($trainings->currentPage() + 1))
                                 : url('/layanan/page/' . ($trainings->currentPage() + 1)) }}"
-                               class="px-3 py-1 bg-[#144F5F] text-white rounded">
+                                class="px-4 py-2 bg-[#144F5F] text-white rounded">
                                 Next
                             </a>
                         @else
-                            <span class="px-3 py-1 bg-gray-200 text-gray-500 rounded">
+                            <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded">
                                 Next
                             </span>
                         @endif
+                    </div>
 
-                    </nav>
+                    {{-- ===== DESKTOP ===== --}}
+                    <div class="hidden sm:flex justify-center">
+                        <nav class="flex gap-2">
+
+                            @php
+                                $current = $trainings->currentPage();
+                                $last = $trainings->lastPage();
+                                $block = 10;
+
+                                $start = floor(($current - 1) / $block) * $block + 1;
+                                $end = min($start + $block - 1, $last);
+                            @endphp
+
+                            {{-- Prev --}}
+                            @if (!$trainings->onFirstPage())
+                                <a href="{{ $categorySlug
+                                    ? url('/layanan/' . $categorySlug . '/page/' . ($current - 1))
+                                    : url('/layanan/page/' . ($current - 1)) }}"
+                                    class="px-3 py-1 bg-[#144F5F] text-white rounded">
+                                    Prev
+                                </a>
+                            @endif
+
+                            {{-- Pages --}}
+                            @for ($page = $start; $page <= $end; $page++)
+                                @if ($page == $current)
+                                    <span class="px-3 py-1 rounded text-white font-bold
+                                        bg-gradient-to-r from-[#144F5F] to-[#73BA7D]">
+                                        {{ $page }}
+                                    </span>
+                                @else
+                                    <a href="{{ $categorySlug
+                                        ? url('/layanan/' . $categorySlug . '/page/' . $page)
+                                        : url('/layanan/page/' . $page) }}"
+                                        class="px-3 py-1 bg-gray-200 text-[#144F5F] rounded hover:bg-gray-300">
+                                        {{ $page }}
+                                    </a>
+                                @endif
+                            @endfor
+
+                            {{-- Next --}}
+                            @if ($trainings->hasMorePages())
+                                <a href="{{ $categorySlug
+                                    ? url('/layanan/' . $categorySlug . '/page/' . ($current + 1))
+                                    : url('/layanan/page/' . ($current + 1)) }}"
+                                    class="px-3 py-1 bg-[#144F5F] text-white rounded">
+                                    Next
+                                </a>
+                            @endif
+
+                        </nav>
+                    </div>
+
                 </div>
             @endif
+
         @else
+            {{-- EMPTY STATE --}}
             <div class="text-center py-20">
                 <img src="{{ asset('images/update-website.jpg') }}"
-                     class="mx-auto w-64 mb-6 opacity-90"
-                     alt="Update layanan">
+                    class="w-64 mx-auto mb-6 opacity-90">
                 <h2 class="text-xl font-semibold text-gray-800">
                     Layanan sedang kami update
                 </h2>
@@ -170,6 +220,7 @@
                 </p>
             </div>
         @endif
+
     </main>
 </div>
 @endsection

@@ -2,38 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Training;
 use App\Models\Category;
+use App\Models\Training;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class LayananController extends Controller
 {
-    public function index(Request $request, $categorySlug = null, $page = null)
-{
-    $categories = Category::all();
+    public function index(Request $request, $categorySlug = null, $page = 1)
+    {
+        Paginator::currentPageResolver(function () use ($page) {
+            return $page;
+        });
 
-    // Jika menggunakan SEO pagination: /layanan/{category}/page/{page}
-    if ($page) {
-        $request->merge(['page' => $page]);
+        $categories = Category::orderBy('name')->get();
+
+        $trainings = Training::with('category')
+            ->when($categorySlug, function ($query) use ($categorySlug) {
+                $query->whereHas('category', function ($subQuery) use ($categorySlug) {
+                    $subQuery->where('slug', $categorySlug);
+                });
+            })
+            ->latest()
+            ->paginate(9);
+
+        return view('layanan.index', [
+            'categories' => $categories,
+            'trainings' => $trainings,
+            'categorySlug' => $categorySlug,
+        ]);
     }
-
-    // Query training
-    $trainings = Training::with('category')
-        ->when($categorySlug, function ($query) use ($categorySlug) {
-            $query->whereHas('category', function ($subQuery) use ($categorySlug) {
-                $subQuery->where('slug', $categorySlug);
-            });
-        })
-        ->oldest()
-        ->paginate(9);
-
-    return view('layanan.index', compact('categories', 'trainings', 'categorySlug'));
-}
 
     public function show($slug)
     {
-        $training = Training::where('slug', $slug)
-            ->with('category')
+        $training = Training::with('category')
+            ->where('slug', $slug)
             ->firstOrFail();
 
         return view('layanan.show', compact('training'));
