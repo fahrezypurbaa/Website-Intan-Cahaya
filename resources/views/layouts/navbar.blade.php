@@ -1,4 +1,3 @@
-<!-- 🔹 Topbar -->
 <div class="bg-gray-100 border-b border-gray-200 text-sm w-full">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between px-4 py-2 gap-2 sm:gap-0">
 

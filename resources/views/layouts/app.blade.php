@@ -8,7 +8,11 @@
     <title>@yield('title', 'Intan Safety')</title>
 
     {{-- Canonical --}}
-    <link rel="canonical" href="{{ request()->is('/') ? url('/') . '/' : url()->current() }}">
+    @if(request()->has('category'))
+        <link rel="canonical" href="{{ url('/layanan/' . request('category')) }}">
+    @else
+        <link rel="canonical" href="{{ rtrim(url()->current(), '/') }}">
+    @endif
 
     {{-- Meta default --}}
     @yield('meta')
