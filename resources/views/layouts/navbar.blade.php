@@ -262,68 +262,87 @@
                         </svg>
                     </button>
                     <div id="mobile-services" class="hidden pl-6 space-y-1">
-                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-kemnaker-ri']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
-                            Kemnaker RI</a>
-                        <a href="{{ route('layanan.index', ['category' => 'sertifikasi-bnsp']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Sertifikasi
-                            BNSP</a>
-                        <a href="{{ route('layanan.index', ['category' => 'non-sertifikasi']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Non
-                            Sertifikasi</a>
-                        <a href="{{ route('layanan.index', ['category' => 'ppsdm-migas']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">PPSDM Migas</a>
-                        <a href="{{ route('layanan.index', ['category' => 'iso']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ISO</a>
-                        <a href="{{ route('layanan.index', ['category' => 'esdm']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">ESDM</a>
-                        <a href="{{ route('layanan.index', ['category' => 'riksa-uji']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Riksa Uji</a>
-                        <a href="{{ route('layanan.index', ['category' => 'perpanjangan-sio-lisensi']) }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Perpanjangan SIO &
-                            Lisensi</a>
+                        <a href="{{ route('layanan.category', 'sertifikasi-kemnaker-ri') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            Sertifikasi Kemnaker RI
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'sertifikasi-bnsp') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            Sertifikasi BNSP
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'non-sertifikasi') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            Non Sertifikasi
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'ppsdm-migas') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            PPSDM Migas
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'iso') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            ISO
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'esdm') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            ESDM
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'riksa-uji') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            Riksa Uji
+                        </a>
+
+                        <a href="{{ route('layanan.category', 'perpanjangan-sio-lisensi') }}"
+                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">
+                            Perpanjangan SIO & Lisensi
+                        </a>
                     </div>
-                </div>
 
-                <!-- Mobile Informasi -->
-                <div class="block">
-                    <button
-                        class="mobile-dropdown-btn w-full text-left text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 flex items-center justify-between"
-                        data-target="mobile-info">
-                        <span>INFORMASI</span>
-                        <svg class="w-4 h-4 transform transition-transform duration-300" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </button>
-                    <div id="mobile-info" class="hidden pl-6 space-y-1">
-                        <a href="{{ route('schedule') }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Schedule</a>
-                        <a href="{{ route('legalitas.index') }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Legalitas</a>
-                        <a href="#" class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Cek
-                            Sertifikat</a>
-                        <a href="{{ route('articles.index') }}"
-                            class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Artikel</a>
+                    <!-- Mobile Informasi -->
+                    <div class="block">
+                        <button
+                            class="mobile-dropdown-btn w-full text-left text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 flex items-center justify-between"
+                            data-target="mobile-info">
+                            <span>INFORMASI</span>
+                            <svg class="w-4 h-4 transform transition-transform duration-300" fill="currentColor"
+                                viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                        <div id="mobile-info" class="hidden pl-6 space-y-1">
+                            <a href="{{ route('schedule') }}"
+                                class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Schedule</a>
+                            <a href="{{ route('legalitas.index') }}"
+                                class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Legalitas</a>
+                            <a href="#"
+                                class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Cek
+                                Sertifikat</a>
+                            <a href="{{ route('articles.index') }}"
+                                class="block text-gray-600 hover:text-[#73BA7D] py-2 transition-colors">Artikel</a>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Mobile Contact -->
-                <a href="{{ route('galeri') }}"
-                    class="block text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 transition-colors">GALERI</a>
+                    <!-- Mobile Contact -->
+                    <a href="{{ route('galeri') }}"
+                        class="block text-gray-700 hover:text-[#73BA7D] font-medium px-3 py-2 transition-colors">GALERI</a>
 
-                <!-- Mobile Button -->
-                <div class="px-3 py-2">
-                    <a href="{{ route('layanan.index') }}"
-                        class="block w-full text-center text-white px-4 py-2 rounded-full font-medium 
+                    <!-- Mobile Button -->
+                    <div class="px-3 py-2">
+                        <a href="{{ route('layanan.index') }}"
+                            class="block w-full text-center text-white px-4 py-2 rounded-full font-medium 
                                bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
                                hover:opacity-90 transition duration-300">
-                        Daftar Pelatihan →
-                    </a>
+                            Daftar Pelatihan →
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
     </nav>
 </header>

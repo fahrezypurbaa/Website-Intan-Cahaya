@@ -44,21 +44,23 @@ Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri')
 Route::get('/galeri/category/{slug}', [GalleryPublicController::class, 'category'])
      ->name('galeri.category');
 
-// LISTING UTAMA (sudah ada)
-Route::get('/layanan/{categorySlug?}', [LayananController::class, 'index'])
+// LIST SEMUA
+Route::get('/layanan', [LayananController::class, 'index'])
     ->name('layanan.index');
 
-// PAGINATION TANPA KATEGORI → /layanan/page/5
 Route::get('/layanan/page/{page}', [LayananController::class, 'index'])
-    ->where('page', '[0-9]+')
+    ->whereNumber('page')
     ->name('layanan.page');
 
-// PAGINATION DENGAN KATEGORI → /layanan/k3/page/5
-Route::get('/layanan/{categorySlug}/page/{page}', [LayananController::class, 'index'])
-    ->where(['categorySlug' => '.*', 'page' => '[0-9]+'])
-    ->name('layanan.pagination');
-    
-// DETAIL TRAINING
+// LIST PER KATEGORI
+Route::get('/layanan/{categorySlug}', [LayananController::class, 'category'])
+    ->name('layanan.category');
+
+Route::get('/layanan/{categorySlug}/page/{page}', [LayananController::class, 'category'])
+    ->whereNumber('page')
+    ->name('layanan.category.page');
+
+// DETAIL
 Route::get('/layanan/detail/{slug}', [LayananController::class, 'show'])
     ->name('layanan.show');
 
