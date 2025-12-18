@@ -10,48 +10,47 @@
 
     <!-- Hero Section -->
     <div x-data="{ activeSlide: 0, slides: 3 }" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides }, 8000)"
-        class="relative w-full h-[75vh] sm:h-[85vh] md:h-screen overflow-hidden">
+        class="relative w-full min-h-[100svh] md:min-h-screen h-auto overflow-hidden">
 
         <!-- Wrapper Slides -->
-        <div class="flex h-full transition-transform duration-700 ease-in-out"
+        <div class="flex min-h-[100svh] md:min-h-screen transition-transform duration-700 ease-in-out"
             :style="`transform: translateX(-${activeSlide * 100}%)`">
 
             <!-- ================= SLIDE 1 ================= -->
-            <div class="w-full flex-shrink-0 relative h-full min-h-[75vh] sm:min-h-[85vh] md:min-h-screen">
+            <div class="w-full flex-shrink-0 relative min-h-[100svh] md:min-h-screen h-auto">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/Kolase 2.jpg') }}"
-                        alt="Pelatihan dan Sertifikasi K3, BNSP, dan Kemnaker RI oleh Intan Safety" width="1920"
-                        height="1080" class="w-full h-full object-cover">
+                        alt="Pelatihan dan Sertifikasi K3, BNSP, dan Kemnaker RI oleh Intan Safety"
+                        class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
                 </div>
 
-                <div class="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+                <div
+                    class="relative min-h-[100svh] md:min-h-screen
+                flex flex-col items-center justify-start md:justify-center
+                px-4 py-20 md:py-0 text-center">
 
-                    <!-- H1 -->
                     <h1
-                        class="text-4xl md:text-6xl font-extrabold 
-                    bg-gradient-to-r from-white via-gray-200 to-gray-100 
+                        class="text-4xl md:text-6xl font-extrabold
+                    bg-gradient-to-r from-white via-gray-200 to-gray-100
                     bg-clip-text text-transparent
                     drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]
                     tracking-wide leading-tight">
                         Pusat Pelatihan & Sertifikasi
                     </h1>
 
-                    <!-- Paragraf Kontekstual SEO -->
                     <p class="mt-6 max-w-3xl text-base md:text-xl text-white/90">
                         Intan Safety menyediakan layanan pelatihan dan sertifikasi resmi yang dirancang untuk
                         meningkatkan kompetensi tenaga kerja di berbagai sektor industri melalui standar nasional
                         dan praktik terbaik.
                     </p>
 
-                    <!-- Subjudul -->
                     <p
                         class="mt-4 text-lg md:text-2xl font-medium
                     text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
                         Program Kemnaker RI, BNSP & Pengembangan Soft Skill
                     </p>
 
-                    <!-- CTA -->
                     <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
                         <a href="/layanan"
                             class="px-6 py-3 rounded-xl text-lg text-white
@@ -73,17 +72,20 @@
             </div>
 
             <!-- ================= SLIDE 2 ================= -->
-            <div class="w-full flex-shrink-0 relative h-full min-h-[75vh] sm:min-h-[85vh] md:min-h-screen">
+            <div class="w-full flex-shrink-0 relative min-h-[100svh] md:min-h-screen h-auto">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/2.png') }}" alt="Pencapaian dan pengalaman Intan Safety dalam pelatihan K3"
-                        width="1920" height="1080" class="w-full h-full object-cover">
+                        class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
                 </div>
 
-                <div class="absolute inset-0 flex flex-col items-center justify-center text-white px-6"
-                    x-data="{ show: false }" x-init="$watch('activeSlide', val => show = (val === 1))">
+                <div class="relative min-h-[100svh] md:min-h-screen
+                flex flex-col items-center justify-start md:justify-center
+                px-6 py-20 md:py-0 text-white"
+                    x-data="{ show: false }" x-init="$watch('activeSlide', v => show = (v === 1))">
+
                     <h2 x-show="show" x-transition.duration.700ms
-                        class="text-3xl md:text-5xl font-extrabold mb-6 text-center 
+                        class="text-3xl md:text-5xl font-extrabold mb-6 text-center
                     bg-gradient-to-r from-white via-gray-200 to-gray-100 bg-clip-text text-transparent">
                         Pencapaian dan Kepercayaan Klien Kami
                     </h2>
@@ -93,7 +95,6 @@
                         dalam penyelenggaraan pelatihan dan sertifikasi yang berkualitas.
                     </p>
 
-                    <!-- GRID CARD -->
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full max-w-5xl">
 
                         <template
@@ -134,15 +135,19 @@
             </div>
 
             <!-- ================= SLIDE 3 ================= -->
-            <div class="w-full flex-shrink-0 relative h-full min-h-[75vh] sm:min-h-[85vh] md:min-h-screen">
+            <div class="w-full flex-shrink-0 relative min-h-[100svh] md:min-h-screen h-auto">
                 <div class="absolute inset-0">
                     <img src="{{ asset('images/Kolase 1.jpg') }}"
-                        alt="Layanan konsultasi dan pusat pelatihan keselamatan kerja Intan Safety" width="1920"
-                        height="1080" class="w-full h-full object-cover">
+                        alt="Layanan konsultasi dan pusat pelatihan keselamatan kerja Intan Safety"
+                        class="w-full h-full object-cover">
                     <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-black/50 to-black/70"></div>
                 </div>
 
-                <div class="absolute inset-0 flex items-center justify-center py-8 px-4">
+                <div
+                    class="relative min-h-[100svh] md:min-h-screen
+                flex items-start md:items-center justify-center
+                px-4 py-20 md:py-0">
+
                     <div class="w-full max-w-xl mx-auto">
 
                         <div
@@ -916,7 +921,7 @@
                            bg-gradient-to-r from-[#144F5F] to-[#73BA7D] 
                            text-white font-semibold rounded-lg shadow-lg 
                            hover:scale-105 transition">
-                        📅 Lihat Jadwal Pelatihan
+                        Lihat Jadwal Pelatihan
                     </a>
                 </div>
             </div>
@@ -1091,13 +1096,15 @@
                 <div class="overflow-hidden rounded-xl shadow-lg relative">
                     <img id="galleryImage" src="{{ asset('images/galeri/pict1.jpg') }}"
                         alt="Dokumentasi pelatihan dan pembinaan K3 bersama alumni Intan Safety" width="1200"
-                        height="500" loading="lazy" class="w-full h-[500px] object-cover transition-all duration-700">
+                        height="500" loading="lazy" class="pointer-events-none w-full h-[500px] object-cover">
 
                     <!-- Prev Button -->
-                    <button type="button" onclick="prevImage()" aria-label="Gambar sebelumnya"
+                    <button type="button" id="prevBtn"
                         class="absolute left-4 top-1/2 -translate-y-1/2
-                           bg-white/80 text-black p-3 rounded-full
-                           shadow-lg hover:bg-white transition">
+                        z-50 pointer-events-auto
+                        bg-white/80 text-black p-3 rounded-full
+                        shadow-lg hover:bg-white transition">
+
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -1105,10 +1112,12 @@
                     </button>
 
                     <!-- Next Button -->
-                    <button type="button" onclick="nextImage()" aria-label="Gambar berikutnya"
+                    <button type="button" id="nextBtn"
                         class="absolute right-4 top-1/2 -translate-y-1/2
-                           bg-white/80 text-black p-3 rounded-full
-                           shadow-lg hover:bg-white transition">
+                        z-50 pointer-events-auto
+                        bg-white/80 text-black p-3 rounded-full
+                        shadow-lg hover:bg-white transition">
+
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -1313,5 +1322,39 @@
 
 @endsection
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const images = [
+            "/images/galeri/pict1.jpg",
+            "/images/galeri/pict2.jpg",
+            "/images/galeri/pict3.jpg"
+        ];
+
+        let currentIndex = 0;
+        const img = document.getElementById("galleryImage");
+        const next = document.getElementById("nextBtn");
+        const prev = document.getElementById("prevBtn");
+
+        if (!img || !next || !prev) return;
+
+        function update() {
+            img.src = images[currentIndex];
+        }
+
+        next.onclick = () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            update();
+        };
+
+        prev.onclick = () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            update();
+        };
+
+        update();
+    });
+</script>
+
 </body>
+
 </html>
