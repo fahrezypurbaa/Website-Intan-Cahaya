@@ -2,23 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Training;
 use App\Models\Category;
+use App\Models\Training;
 use Illuminate\Pagination\Paginator;
 
 class LayananController extends Controller
 {
-    /**
-     * LIST SEMUA TRAINING
-     * /layanan
-     * /layanan/page/{page}
-     */
+    private function orderedCategories()
+    {
+        return Category::orderByRaw("
+            CASE slug
+                WHEN 'sertifikasi-kemnaker-ri' THEN 1
+                WHEN 'sertifikasi-bnsp' THEN 2
+                WHEN 'non-sertifikasi' THEN 3
+                WHEN 'ppsdm-migas' THEN 4
+                WHEN 'iso' THEN 5
+                WHEN 'esdm' THEN 6
+                WHEN 'riksa-uji' THEN 7
+                WHEN 'perpanjangan-sio-lisensi' THEN 8
+                ELSE 99
+            END
+        ")
+            ->orderBy('name')
+            ->get();
+    }
+
     public function index($page = 1)
     {
-        // Inject page ke paginator
+
         Paginator::currentPageResolver(fn () => $page);
 
-        $categories = Category::orderBy('name')->get();
+        $categories = $this->orderedCategories();
 
         $trainings = Training::with('category')
             ->latest()
@@ -31,17 +45,11 @@ class LayananController extends Controller
         ]);
     }
 
-    /**
-     * LIST TRAINING BY CATEGORY
-     * /layanan/{category}
-     * /layanan/{category}/page/{page}
-     */
     public function category($categorySlug, $page = 1)
     {
-        // Inject page ke paginator
         Paginator::currentPageResolver(fn () => $page);
 
-        $categories = Category::orderBy('name')->get();
+        $categories = $this->orderedCategories();
 
         $trainings = Training::with('category')
             ->whereHas('category', function ($q) use ($categorySlug) {
@@ -57,9 +65,6 @@ class LayananController extends Controller
         ]);
     }
 
-    /**
-     * DETAIL TRAINING
-     */
     public function show($slug)
     {
         $training = Training::with('category')

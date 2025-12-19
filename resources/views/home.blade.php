@@ -1327,7 +1327,12 @@
         const images = [
             "/images/galeri/pict1.jpg",
             "/images/galeri/pict2.jpg",
-            "/images/galeri/pict3.jpg"
+            "/images/galeri/pict3.jpg",
+            "/images/galeri/pict4.jpg",
+            "/images/galeri/pict5.jpg",
+            "/images/galeri/pict6.jpg",
+            "/images/galeri/pict7.jpg",
+            "/images/galeri/pict8.jpg"
         ];
 
         let currentIndex = 0;
