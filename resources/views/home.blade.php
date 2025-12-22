@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Home - Intan Safety')
+@section('title', 'Pelatihan & Sertifikasi K3 Resmi | Intan Safety')
 
 @section('meta_description',
     'Intan Safety adalah pusat pelatihan dan sertifikasi K3, BNSP, dan Kemnaker RI yang

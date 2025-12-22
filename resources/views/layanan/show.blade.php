@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', $training->title . ' - Intan Safety Jogja')
+@section('title')
+    Pelatihan {{ $training->title }} Resmi | Intan Safety K3
+@endsection
 
 @section('meta')
     <meta name="description" content="{{ \Illuminate\Support\Str::limit(strip_tags($training->description ?? ''), 155) }}">
