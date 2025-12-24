@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $article->title . ' | Artikel K3 Intan Safety')
+@section('title', $article->title . ' | Intan Safety')
 
 @section('meta')
     <meta name="description" content="{{ $article->excerpt ?? Str::limit(strip_tags($article->content), 155) }}">

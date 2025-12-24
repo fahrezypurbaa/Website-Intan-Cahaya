@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Tentang Perusahaan Intan Safety Jogja | Profil, Visi, Misi & Sejarah')
+@section('title', '@section('title', 'Tentang Perusahaan | Intan Safety')')
 
 @section('meta')
     <meta name="description"

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Galeri Kegiatan Intan Safety Jogja | Dokumentasi Pelatihan & Sertifikasi K3')
+@section('title', 'Galeri Kegiatan | Intan Safety')
 
 @section('meta_description',
     'Galeri dokumentasi kegiatan Intan Safety Jogja meliputi pelatihan dan sertifikasi K3
