@@ -122,5 +122,32 @@
         <img id="docModalImg" src="" alt="Preview Dokumen Legalitas Intan Safety" width="900" height="1200"
             class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg">
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('docModal');
+            const modalImg = document.getElementById('docModalImg');
+            const closeBtn = document.getElementById('closeDocModal');
+
+            document.querySelectorAll('.lihat-gambar').forEach(button => {
+                button.addEventListener('click', function() {
+                    const imageSrc = this.dataset.image;
+                    modalImg.src = imageSrc;
+                    modal.classList.remove('hidden');
+                });
+            });
+
+            closeBtn.addEventListener('click', function() {
+                modal.classList.add('hidden');
+                modalImg.src = '';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.add('hidden');
+                    modalImg.src = '';
+                }
+            });
+        });
+    </script>
 
 @endsection
