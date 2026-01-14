@@ -35,6 +35,10 @@ class LayananController extends Controller
         $categories = $this->orderedCategories();
 
         $trainings = Training::with('category')
+            ->when(request('q'), function ($query) {
+                $query->where('title', 'like', '%'.request('q').'%');
+            })
+
             ->latest()
             ->paginate(9);
 
@@ -52,9 +56,14 @@ class LayananController extends Controller
         $categories = $this->orderedCategories();
 
         $trainings = Training::with('category')
-            ->whereHas('category', function ($q) use ($categorySlug) {
-                $q->where('slug', $categorySlug);
+            ->when(request('q'), function ($query) {
+                $query->where('title', 'like', '%'.request('q').'%');
             })
+
+            ->when(request('q'), function ($query) {
+                $query->where('title', 'like', '%'.request('q').'%');
+            })
+
             ->latest()
             ->paginate(9);
 
