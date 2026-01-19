@@ -42,7 +42,7 @@ Route::get('/legalitas', [LegalitasController::class, 'index'])->name('legalitas
 // SEO Friendly Gallery Route
 Route::get('/galeri', [GalleryPublicController::class, 'index'])->name('galeri');
 Route::get('/galeri/category/{slug}', [GalleryPublicController::class, 'category'])
-     ->name('galeri.category');
+    ->name('galeri.category');
 
 // LIST SEMUA
 Route::get('/layanan', [LayananController::class, 'index'])
