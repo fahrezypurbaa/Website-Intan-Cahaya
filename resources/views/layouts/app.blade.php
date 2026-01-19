@@ -8,7 +8,7 @@
     <title>@yield('title', 'Pelatihan K3 Resmi')</title>
 
     {{-- Canonical --}}
-    @if(request()->has('category'))
+    @if (request()->has('category'))
         <link rel="canonical" href="{{ url('/layanan/' . request('category')) }}">
     @else
         <link rel="canonical" href="{{ rtrim(url()->current(), '/') }}">
