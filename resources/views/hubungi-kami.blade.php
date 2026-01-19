@@ -2,7 +2,8 @@
 
 @section('title', 'Hubungi Kami Intan Safety Jogja | Kontak Resmi & Lokasi Kantor')
 
-@section('meta_description', 'Hubungi Intan Safety Jogja untuk informasi pelatihan dan sertifikasi K3 Kemenaker RI,
+@section('meta_description',
+    'Hubungi Intan Safety Jogja untuk informasi pelatihan dan sertifikasi K3 Kemenaker RI,
     BNSP, dan non-sertifikasi. Tersedia kontak telepon, email, alamat kantor, dan formulir online.')
 
 @section('canonical', url('/hubungi-kami'))
