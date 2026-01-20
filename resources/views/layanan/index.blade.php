@@ -194,9 +194,9 @@
                                             {{ $page }}
                                         </span>
                                     @else
-                                        <a
-                                            href="{{ ($categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : url('/layanan/page/' . $page)) .
-                                                ($q ? '?q=' . urlencode($q) : '') }}">
+                                        <a href="{{ ($categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : url('/layanan/page/' . $page)) .
+                                            ($q ? '?q=' . urlencode($q) : '') }}"class="px-3 py-1 rounded text-bg-gradient-to-r from-[#144F5F] to-[#73BA7D] font-bold
+                                           white">
                                             {{ $page }}
                                         </a>
                                     @endif
