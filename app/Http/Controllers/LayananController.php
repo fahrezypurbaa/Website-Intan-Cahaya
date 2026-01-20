@@ -29,18 +29,18 @@ class LayananController extends Controller
 
     public function index($page = 1)
     {
-
         Paginator::currentPageResolver(fn () => $page);
 
         $categories = $this->orderedCategories();
+        $keyword = request()->query('q');
 
         $trainings = Training::with('category')
-            ->when(request('q'), function ($query) {
-                $query->where('title', 'like', '%'.request('q').'%');
+            ->when($keyword, function ($query) use ($keyword) {
+                $query->where('title', 'like', '%'.$keyword.'%');
             })
-
             ->latest()
-            ->paginate(9);
+            ->paginate(9)
+            ->appends(['q' => $keyword]);
 
         return view('layanan.index', [
             'categories' => $categories,
@@ -54,18 +54,18 @@ class LayananController extends Controller
         Paginator::currentPageResolver(fn () => $page);
 
         $categories = $this->orderedCategories();
+        $keyword = request()->query('q');
 
         $trainings = Training::with('category')
-            ->when(request('q'), function ($query) {
-                $query->where('title', 'like', '%'.request('q').'%');
+            ->whereHas('category', function ($q) use ($categorySlug) {
+                $q->where('slug', $categorySlug);
             })
-
-            ->when(request('q'), function ($query) {
-                $query->where('title', 'like', '%'.request('q').'%');
+            ->when($keyword, function ($query) use ($keyword) {
+                $query->where('title', 'like', '%'.$keyword.'%');
             })
-
             ->latest()
-            ->paginate(9);
+            ->paginate(9)
+            ->appends(['q' => $keyword]);
 
         return view('layanan.index', [
             'categories' => $categories,

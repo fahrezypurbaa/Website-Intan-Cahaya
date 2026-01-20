@@ -48,7 +48,8 @@
             </h1>
 
             {{-- SEARCH --}}
-            <form method="GET" class="mb-8">
+            <form method="GET" action="{{ $categorySlug ? url('/layanan/' . $categorySlug) : url('/layanan') }}"
+                class="mb-8">
                 <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari pelatihan..."
                     class="w-full max-w-md px-4 py-2 rounded-lg border border-gray-300
                focus:ring-2 focus:ring-[#73BA7D] focus:outline-none">
@@ -117,6 +118,11 @@
                     @endforeach
                 </div>
 
+                @php
+                    $q = request('q');
+                    $current = $trainings->currentPage();
+                @endphp
+
                 {{-- ================= PAGINATION ================= --}}
                 @if ($trainings->hasPages())
                     <div class="mt-10">
@@ -126,13 +132,11 @@
 
                             {{-- Prev --}}
                             @if ($trainings->onFirstPage())
-                                <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded">
-                                    Prev
-                                </span>
+                                <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded">Prev</span>
                             @else
-                                <a href="{{ $categorySlug
-                                    ? url('/layanan/' . $categorySlug . '/page/' . ($trainings->currentPage() - 1))
-                                    : url('/layanan/page/' . ($trainings->currentPage() - 1)) }}"
+                                <a href="{{ ($categorySlug
+                                    ? url('/layanan/' . $categorySlug . '/page/' . ($current - 1))
+                                    : url('/layanan/page/' . ($current - 1))) . ($q ? '?q=' . urlencode($q) : '') }}"
                                     class="px-4 py-2 bg-[#144F5F] text-white rounded">
                                     Prev
                                 </a>
@@ -145,16 +149,14 @@
 
                             {{-- Next --}}
                             @if ($trainings->hasMorePages())
-                                <a href="{{ $categorySlug
-                                    ? url('/layanan/' . $categorySlug . '/page/' . ($trainings->currentPage() + 1))
-                                    : url('/layanan/page/' . ($trainings->currentPage() + 1)) }}"
+                                <a href="{{ ($categorySlug
+                                    ? url('/layanan/' . $categorySlug . '/page/' . ($current + 1))
+                                    : url('/layanan/page/' . ($current + 1))) . ($q ? '?q=' . urlencode($q) : '') }}"
                                     class="px-4 py-2 bg-[#144F5F] text-white rounded">
                                     Next
                                 </a>
                             @else
-                                <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded">
-                                    Next
-                                </span>
+                                <span class="px-4 py-2 bg-gray-200 text-gray-500 rounded">Next</span>
                             @endif
                         </div>
 
@@ -163,19 +165,21 @@
                             <nav class="flex gap-2">
 
                                 @php
-                                    $current = $trainings->currentPage();
                                     $last = $trainings->lastPage();
                                     $block = 10;
-
-                                    $start = floor(($current - 1) / $block) * $block + 1;
+                                    if ($current >= 9) {
+                                        $start = max(1, $current - 8);
+                                    } else {
+                                        $start = 1;
+                                    }
                                     $end = min($start + $block - 1, $last);
                                 @endphp
 
                                 {{-- Prev --}}
                                 @if (!$trainings->onFirstPage())
-                                    <a href="{{ $categorySlug
+                                    <a href="{{ ($categorySlug
                                         ? url('/layanan/' . $categorySlug . '/page/' . ($current - 1))
-                                        : url('/layanan/page/' . ($current - 1)) }}"
+                                        : url('/layanan/page/' . ($current - 1))) . ($q ? '?q=' . urlencode($q) : '') }}"
                                         class="px-3 py-1 bg-[#144F5F] text-white rounded">
                                         Prev
                                     </a>
@@ -190,8 +194,9 @@
                                             {{ $page }}
                                         </span>
                                     @else
-                                        <a href="{{ $categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : url('/layanan/page/' . $page) }}"
-                                            class="px-3 py-1 bg-gray-200 text-[#144F5F] rounded hover:bg-gray-300">
+                                        <a
+                                            href="{{ ($categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : url('/layanan/page/' . $page)) .
+                                                ($q ? '?q=' . urlencode($q) : '') }}">
                                             {{ $page }}
                                         </a>
                                     @endif
@@ -199,13 +204,14 @@
 
                                 {{-- Next --}}
                                 @if ($trainings->hasMorePages())
-                                    <a href="{{ $categorySlug
-                                        ? url('/layanan/' . $categorySlug . '/page/' . ($current + 1))
-                                        : url('/layanan/page/' . ($current + 1)) }}"
-                                        class="px-3 py-1 bg-[#144F5F] text-white rounded">
+                                    <a
+                                        href="{{ ($categorySlug
+                                            ? url('/layanan/' . $categorySlug . '/page/' . ($current + 1))
+                                            : url('/layanan/page/' . ($current + 1))) . ($q ? '?q=' . urlencode($q) : '') }}"class="px-3 py-1 bg-[#144F5F] text-white rounded">
                                         Next
                                     </a>
                                 @endif
+
 
                             </nav>
                         </div>
