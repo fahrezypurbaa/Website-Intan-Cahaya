@@ -55,7 +55,7 @@
                 @endif
 
                 {{-- Body --}}
-                <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed">
+                <div class="prose prose-lg max-w-none text-gray-800 leading-relaxed text-justify">
                     {!! $article->content !!}
                 </div>
 
