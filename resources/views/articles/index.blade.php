@@ -35,7 +35,6 @@
                     Insight, Edukasi, dan Informasi Terbaru Dunia K3
                 </h2>
 
-
                 <p class="text-gray-700 text-base">
                     Temukan berbagai artikel informatif seputar keselamatan kerja, sertifikasi K3,
                     regulasi pemerintah, tips safety di tempat kerja, serta pembaruan terbaru dari
