@@ -211,13 +211,11 @@
                                         Next
                                     </a>
                                 @endif
-
-
                             </nav>
                         </div>
-
                     </div>
                 @endif
+
             @else
                 {{-- EMPTY STATE --}}
                 <div class="text-center py-20">
