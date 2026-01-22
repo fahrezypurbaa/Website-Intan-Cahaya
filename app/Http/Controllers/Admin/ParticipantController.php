@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Participant;
 use Illuminate\Http\Request;
-use App\Models\Participant; 
 
 class ParticipantController extends Controller
 {
@@ -13,7 +13,8 @@ class ParticipantController extends Controller
      */
     public function index()
     {
-         $participants = Participant::all(); // ambil semua data participant
+        $participants = Participant::all(); // ambil semua data participant
+
         return view('admin.participants.index', compact('participants'));
     }
 
