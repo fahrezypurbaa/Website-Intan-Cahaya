@@ -4,8 +4,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class LegalitasController extends Controller
 {
     public function index()
@@ -13,4 +11,3 @@ class LegalitasController extends Controller
         return view('legalitas');
     }
 }
-
