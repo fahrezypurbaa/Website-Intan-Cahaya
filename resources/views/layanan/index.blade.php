@@ -81,7 +81,6 @@
                                             {{ $t->mode }}
                                         </span>
                                     @endif
-
                                     <span class="px-2 py-1 text-xs rounded bg-[#144F5F]/10 text-[#144F5F]">
                                         {{ $t->category->name }}
                                     </span>
@@ -117,7 +116,6 @@
                         </div>
                     @endforeach
                 </div>
-
                 @php
                     $q = request('q');
                     $current = $trainings->currentPage();
@@ -163,7 +161,6 @@
                         {{-- ===== DESKTOP ===== --}}
                         <div class="hidden sm:flex justify-center">
                             <nav class="flex gap-2">
-
                                 @php
                                     $last = $trainings->lastPage();
                                     $block = 10;
@@ -196,7 +193,7 @@
                                     @else
                                         <a href="{{ ($categorySlug ? url('/layanan/' . $categorySlug . '/page/' . $page) : url('/layanan/page/' . $page)) .
                                             ($q ? '?q=' . urlencode($q) : '') }}"class="px-3 py-1 rounded text-bg-gradient-to-r from-[#144F5F] to-[#73BA7D] font-bold
-                                           white">
+                                               white">
                                             {{ $page }}
                                         </a>
                                     @endif
@@ -215,7 +212,6 @@
                         </div>
                     </div>
                 @endif
-
             @else
                 {{-- EMPTY STATE --}}
                 <div class="text-center py-20">
